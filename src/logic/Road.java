@@ -8,7 +8,7 @@ public class Road implements Space{
 	public int size;
 	public Port inputPort, outputPort;
 	public ArrayList <Car> listOFcars = new ArrayList <Car>();
-	public void AddEntity(Entity entity) {};
+	public Direction [] directionList;
 	
 	public Road(Port inputPort, Port outputPort, int size) {
 		super();
@@ -19,6 +19,21 @@ public class Road implements Space{
 	}
 
 	
+	
+
+
+	public Direction[] getDirectionList() {
+		return directionList;
+	}
+	
+	public void setDirectionList(Direction[] directionList) {
+		this.directionList = directionList;
+	}
+
+
+
+
+
 	public void move() {
 		// TODO Auto-generated method stub
 		

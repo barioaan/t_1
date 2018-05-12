@@ -28,8 +28,6 @@ public class World extends JPanel implements Space, ActionListener {
 	public World() {
 		setLayout(null);
 		
-		
-		
 	}
 	
 	public static int adaugare = 0;
@@ -186,6 +184,10 @@ public class World extends JPanel implements Space, ActionListener {
 			
 		}
 		
+		Direction [] directionListRoad1 = new Direction[3];
+		directionListRoad1[0] = Direction.E_left;
+		directionListRoad1[1] = Direction.E_Forward;
+		directionListRoad1[2] = Direction.E_right;
 		
 		
 	}
