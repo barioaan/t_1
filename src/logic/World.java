@@ -89,7 +89,7 @@ public class World extends JPanel implements Space, ActionListener {
 		P18I = new Port (1250,600); 
 		P19I = new Port (1200,600); 
 		 
-		//Porturile de iesire ale benzilor - BRANESCU SERBAN
+		//Porturile de iesire ale benzilor - BRANESCU SERBAN 
 		P1O = new Port (600,400); 
 		P2O = new Port (600,400); 
 		P3O = new Port (650,400); 
