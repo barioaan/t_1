@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 
 public class World extends JPanel implements Space, ActionListener {
 	
-	public static int numar_masini = 7;
+	public static int numar_masini = 15 ;
 	
 	public static Random random = new Random();
 	
@@ -168,10 +168,20 @@ public class World extends JPanel implements Space, ActionListener {
 			
 			int nrRandom_colors = random.nextInt(7);
 		    int nrRandom_roads = random.nextInt(18);
-		    if(nrRandom_roads == 0 || nrRandom_roads == 1 || nrRandom_roads == 3 || nrRandom_roads == 4 || nrRandom_roads == 7) {
+		    if(nrRandom_roads == 1 || nrRandom_roads == 9 || nrRandom_roads == 10  ) {
 		    	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).inputPort.cordX, roads.get(nrRandom_roads).inputPort.cordY, carColors.get(nrRandom_colors),50,50));
 		    	i++;
 		    }
+		    if (nrRandom_roads == 7 || nrRandom_roads == 17) {
+		    	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).outputPort.cordX, roads.get(nrRandom_roads).outputPort.cordY-50, carColors.get(nrRandom_colors),50,50));
+		    	i++;
+		    }
+		    
+		    
+		    		if (nrRandom_roads == 13 || nrRandom_roads == 14) {
+				    	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).outputPort.cordX-50, roads.get(nrRandom_roads).outputPort.cordY, carColors.get(nrRandom_colors),50,50));
+				    	i++;
+				    }
 			
 			
 		}
@@ -192,6 +202,11 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		
 		g.setColor(Color.GRAY);
+		
+		
+		// TRASARE INTERSECTII
+		g.fillRect(Road1.inputPort.cordX+600, Road1.inputPort.cordY, 100, 200);
+		g.fillRect(Road1.inputPort.cordX+1200, Road1.inputPort.cordY, 100, 200);
 		
 		//TRASARE BENZI DE CIRCULATIE - BAR IOAN
 		g.fillRect(Road1.inputPort.cordX, Road1.inputPort.cordY, Road1.size, 50);
@@ -278,36 +293,8 @@ public class World extends JPanel implements Space, ActionListener {
 			
 		}
 	
-		/*
-		adaugare = adaugare + 10;
-		
-		for(int j=0; j<roads.size(); j++) {
-		
-			for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-				g.setColor(roads.get(j).listOFcars.get(i).color);
-				
-				
-				if(j==2-1 || j==3-1 || j==8-1 || j==9-1 || j==13-1 || j==18-1 || j==19-1) {
-					
-					g.fillRect(roads.get(j).inputPort.cordX, adaugare, 50, 50);
-					
-					
-				}else {
-					g.fillRect(adaugare, roads.get(j).inputPort.cordY, 50, 50);
-					
-				}
-			}
-			
-		}
-		*/
-		
-		
-			
-		
-		
-		
-		
 	}
+	
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
