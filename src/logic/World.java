@@ -186,15 +186,90 @@ public class World extends JPanel implements Space, ActionListener {
 			
 		}
 		
+		//SEMAFOARE 1-4 OCTAVIA
 		semaphore1 = new Semaphore(Color.RED, 530, 330);
 		semaphore2 = new Semaphore(Color.RED, 720, 330);
 		semaphore3 = new Semaphore(Color.RED, 530, 620);
 		semaphore4 = new Semaphore(Color.RED, 720, 620);
-		
-		// = new Semaphore(Color.RED, 1130, 340);
+		//SEMAFOARE 6-8 SERBAN
 		semaphore6 = new Semaphore(Color.RED, 1320, 340);
 		semaphore7 = new Semaphore(Color.RED, 1130, 620);
 		semaphore8 = new Semaphore(Color.RED, 1320, 620);
+		
+		
+		//DIRECTII BENZI - ALBU ADELA
+		Direction [] directionListRoad2 = new Direction[3];
+		directionListRoad2[0] = Direction.E_left;
+		directionListRoad2[1] = Direction.E_Forward;
+		directionListRoad2[2] = Direction.E_right;
+		
+		roads.get(1).directionList = directionListRoad2;
+
+		Direction [] directionListRoad4 = new Direction[3];
+		directionListRoad4[0] = Direction.E_left;
+		directionListRoad4[1] = Direction.E_Forward;
+		directionListRoad4[2] = Direction.E_right;
+		
+		roads.get(3).directionList = directionListRoad4;
+
+		Direction [] directionListRoad5 = new Direction[3];
+		directionListRoad5[0] = Direction.E_left;
+		directionListRoad5[1] = Direction.E_Forward;
+		directionListRoad5[2] = Direction.E_right;
+		
+		roads.get(4).directionList = directionListRoad5;
+
+		Direction [] directionListRoad6 = new Direction[3];
+		directionListRoad6[0] = Direction.E_left;
+		directionListRoad6[1] = Direction.E_Forward;
+		directionListRoad6[2] = Direction.E_right;
+		
+		roads.get(5).directionList = directionListRoad6;
+
+		Direction [] directionListRoad7 = new Direction[3];
+		directionListRoad7[0] = Direction.E_left;
+		directionListRoad7[1] = Direction.E_Forward;
+		directionListRoad7[2] = Direction.E_right;
+		
+		roads.get(6).directionList = directionListRoad7;
+
+		Direction [] directionListRoad8 = new Direction[3];
+		directionListRoad8[0] = Direction.E_left;
+		directionListRoad8[1] = Direction.E_Forward;
+		directionListRoad8[2] = Direction.E_right;
+		
+		roads.get(7).directionList = directionListRoad8;
+
+		Direction [] directionListRoad10 = new Direction[2];
+		directionListRoad10[0] = Direction.E_Forward;
+		directionListRoad10[1] = Direction.E_right;
+		
+		roads.get(9).directionList = directionListRoad10;
+
+		Direction [] directionListRoad11 = new Direction[2];
+		directionListRoad11[0] = Direction.E_left;
+		directionListRoad11[1] = Direction.E_Forward;
+		
+		roads.get(10).directionList = directionListRoad11;
+
+		Direction [] directionListRoad14 = new Direction[2];
+		directionListRoad14[0] = Direction.E_left;
+		directionListRoad14[1] = Direction.E_Forward;
+		
+		roads.get(13).directionList = directionListRoad14;
+
+		Direction [] directionListRoad15 = new Direction[2];
+		directionListRoad15[0] = Direction.E_Forward;
+		directionListRoad15[1] = Direction.E_right;
+		
+		roads.get(14).directionList = directionListRoad15;
+
+		Direction [] directionListRoad18 = new Direction[3];
+		directionListRoad18[0] = Direction.E_left;
+		directionListRoad18[1] = Direction.E_Forward;
+		directionListRoad18[2] = Direction.E_right;
+		
+		roads.get(17).directionList = directionListRoad18;
 		
 		
 	}
@@ -254,14 +329,13 @@ public class World extends JPanel implements Space, ActionListener {
 		g.fillRect(Road19.inputPort.cordX+48, Road19.inputPort.cordY, 2, Road19.size);
 		
 		g.setColor(semaphore1.color);
-		g.fillRect(semaphore1.cordX, semaphore1.cordY, 50, 50);
-		g.fillRect(semaphore2.cordX, semaphore2.cordY, 50, 50);
-		g.fillRect(semaphore3.cordX, semaphore3.cordY, 50, 50);
-		g.fillRect(semaphore4.cordX, semaphore4.cordY, 50, 50);
-		//g.fillRect(semaphore5.cordX, semaphore5.cordY, 50, 50);
-		g.fillRect(semaphore6.cordX, semaphore6.cordY, 50, 50);
-		g.fillRect(semaphore7.cordX, semaphore7.cordY, 50, 50);
-		g.fillRect(semaphore8.cordX, semaphore8.cordY, 50, 50);
+		g.fillOval(semaphore1.cordX, semaphore1.cordY, 50, 50);
+		g.fillOval(semaphore2.cordX, semaphore2.cordY, 50, 50);
+		g.fillOval(semaphore3.cordX, semaphore3.cordY, 50, 50);
+		g.fillOval(semaphore4.cordX, semaphore4.cordY, 50, 50);
+		g.fillOval(semaphore6.cordX, semaphore6.cordY, 50, 50);
+		g.fillOval(semaphore7.cordX, semaphore7.cordY, 50, 50);
+		g.fillOval(semaphore8.cordX, semaphore8.cordY, 50, 50);
 		
 		
 		
