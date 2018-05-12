@@ -38,6 +38,8 @@ public class World extends JPanel implements Space, ActionListener {
 	private static Port P1I, P2I, P3I, P4I, P5I, P6I, P7I, P8I, P9I, P10I, P11I, P12I, P13I, P14I, P15I, P16I, P17I, P18I, P19I;
 	private static Port P1O, P2O, P3O, P4O, P5O, P6O, P7O, P8O, P9O, P10O, P11O, P12O, P13O, P14O, P15O, P16O, P17O, P18O, P19O;
 	private static Road Road1, Road2, Road3, Road4, Road5, Road6, Road7, Road8, Road9, Road10, Road11, Road12, Road13, Road14, Road15, Road16, Road17, Road18, Road19;
+	public static Semaphore semaphore1, semaphore2, semaphore3, semaphore4, semaphore5, semaphore6, semaphore7, semaphore8;
+	
 	private static Intersection intersectia_A;
 	
 	
@@ -184,10 +186,15 @@ public class World extends JPanel implements Space, ActionListener {
 			
 		}
 		
-		Direction [] directionListRoad1 = new Direction[3];
-		directionListRoad1[0] = Direction.E_left;
-		directionListRoad1[1] = Direction.E_Forward;
-		directionListRoad1[2] = Direction.E_right;
+		semaphore1 = new Semaphore(Color.RED, 530, 330);
+		semaphore2 = new Semaphore(Color.RED, 720, 330);
+		semaphore3 = new Semaphore(Color.RED, 530, 620);
+		semaphore4 = new Semaphore(Color.RED, 720, 620);
+		
+		// = new Semaphore(Color.RED, 1130, 340);
+		semaphore6 = new Semaphore(Color.RED, 1320, 340);
+		semaphore7 = new Semaphore(Color.RED, 1130, 620);
+		semaphore8 = new Semaphore(Color.RED, 1320, 620);
 		
 		
 	}
@@ -246,7 +253,15 @@ public class World extends JPanel implements Space, ActionListener {
 		g.fillRect(Road9.inputPort.cordX+48, Road9.inputPort.cordY, 2, Road9.size);
 		g.fillRect(Road19.inputPort.cordX+48, Road19.inputPort.cordY, 2, Road19.size);
 		
-		
+		g.setColor(semaphore1.color);
+		g.fillRect(semaphore1.cordX, semaphore1.cordY, 50, 50);
+		g.fillRect(semaphore2.cordX, semaphore2.cordY, 50, 50);
+		g.fillRect(semaphore3.cordX, semaphore3.cordY, 50, 50);
+		g.fillRect(semaphore4.cordX, semaphore4.cordY, 50, 50);
+		//g.fillRect(semaphore5.cordX, semaphore5.cordY, 50, 50);
+		g.fillRect(semaphore6.cordX, semaphore6.cordY, 50, 50);
+		g.fillRect(semaphore7.cordX, semaphore7.cordY, 50, 50);
+		g.fillRect(semaphore8.cordX, semaphore8.cordY, 50, 50);
 		
 		
 		
