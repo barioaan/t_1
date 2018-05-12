@@ -28,6 +28,15 @@ public class World extends JPanel implements Space, ActionListener {
 	public World() {
 		setLayout(null);
 		
+		JButton btnClick = new JButton("CLICK");
+		btnClick.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				timer.start();
+			}
+		});
+		btnClick.setBounds(52, 78, 89, 23);
+		add(btnClick);
+		
 	}
 	
 	public static int adaugare = 0;
@@ -278,7 +287,7 @@ public class World extends JPanel implements Space, ActionListener {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		
-		timer.start();
+		//timer.start();
 		
 		//DESENARE BACKGROUND - BAR IOAN
 		g.setColor(Color.GREEN);
@@ -375,6 +384,12 @@ public class World extends JPanel implements Space, ActionListener {
 						roads.get(j).listOFcars.get(i).y += 10;
 						g.setColor(roads.get(j).listOFcars.get(i).color);
 						g.fillRect(roads.get(j).listOFcars.get(i).x, roads.get(j).listOFcars.get(i).y, 50, 50);
+					}
+					if(roads.get(j).listOFcars.get(i).y == roads.get(j).outputPort.cordY) {
+						int nrRandom_direction = random.nextInt(roads.get(j).directionList.length);
+						if(nrRandom_direction == 2 || nrRandom_direction == 1 || nrRandom_direction == 0) {
+							roads.get(0).listOFcars.add(roads.get(j).listOFcars.get(i));							
+						}
 					}
 						
 				}

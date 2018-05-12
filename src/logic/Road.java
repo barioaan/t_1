@@ -15,7 +15,7 @@ public class Road implements Space{
 		this.size = size;
 		this.inputPort = inputPort;
 		this.outputPort = outputPort;
-		//this.entities = entities;
+		
 	}
 
 	
