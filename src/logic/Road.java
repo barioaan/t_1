@@ -11,11 +11,12 @@ public class Road implements Space{
 	public Direction [] directionList;
 	public Orientation orientation;
 	
-	public Road(Port inputPort, Port outputPort, int size) {
+	public Road(Port inputPort, Port outputPort, int size, Orientation orientation) {
 		super();
 		this.size = size;
 		this.inputPort = inputPort;
 		this.outputPort = outputPort;
+		this.orientation = orientation;
 		
 	}
 
