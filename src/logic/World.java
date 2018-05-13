@@ -370,13 +370,9 @@ public class World extends JPanel implements Space, ActionListener {
 						if(roads.get(j).listOFcars.get(i).x >= roads.get(j).outputPort.cordX+10) {
 							
 							roads.get(j).listOFcars.get(i).x -= 10;
-							
-							
-							
+								
 						}	
 					}	
-					
-					
 					
 				}
 				
