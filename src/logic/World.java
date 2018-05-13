@@ -370,8 +370,12 @@ public class World extends JPanel implements Space, ActionListener {
 						if(roads.get(j).listOFcars.get(i).x >= roads.get(j).outputPort.cordX+10) {
 							
 							roads.get(j).listOFcars.get(i).x -= 10;
-								
-						}	
+						}
+						
+						if(roads.get(j).listOFcars.get(i).x == roads.get(j).outputPort.cordX) {
+							int randomDirection = random.nextInt(roads.get(j).directionList.length-1);
+							
+						}
 					}	
 					
 				}
@@ -393,7 +397,13 @@ public class World extends JPanel implements Space, ActionListener {
 							
 							roads.get(j).listOFcars.get(i).x += 10;
 							
-						}	
+						}
+						if(roads.get(j).listOFcars.get(i).x == roads.get(j).outputPort.cordX-50) {
+							int randomDirection = random.nextInt(roads.get(j).directionList.length-1);
+							if(roads.get(j).directionList[randomDirection] == Direction.E_Forward) {
+								
+							}
+						}
 					}
 				}
 				
