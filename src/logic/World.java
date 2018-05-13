@@ -78,67 +78,67 @@ public class World extends JPanel implements Space, ActionListener {
 		frame.getContentPane().add(w);
 	
 		//Porturile de intrare ale benzilor - BRADEA OCTAVIA
-		P1I = new Port(0,400);
-		P2I = new Port(600,0); 
-		P3I = new Port(650,0); 
-		P4I = new Port(700,400);
-		P5I = new Port(700,450);
-		P6I = new Port(700,500);
-		P7I = new Port(700,550);
+		P1I = new Port (600,400); 
+		P2I = new Port (600,0);  
+		P3I = new Port (650,400); 
+		P4I = new Port (1200,400);
+		P5I = new Port (1200,450); 
+		P6I = new Port (700,500);
+		P7I = new Port (700,550);
 		P8I = new Port (650,600);
-		P9I = new Port (600,600);
-		P10I = new Port(0,550);
-		P11I = new Port(0,500);
-		P12I = new Port(0,450);
-		P13I = new Port(1250,0); 
-		P14I = new Port(1300,400);
-		P15I = new Port(1300,450);
-		P16I = new Port(1300,500);
-		P17I = new Port(1300,550);
+		P9I = new Port (600,1000);
+		P10I = new Port (0,550);
+		P11I = new Port (0,500);
+		P12I = new Port (600,450); 
+		P13I = new Port (1250,400); 
+		P14I = new Port (1900,400);
+		P15I = new Port (1900,450);
+		P16I = new Port (1300,500);
+		P17I = new Port (1300,550);
 		P18I = new Port (1250,600); 
-		P19I = new Port (1200,600); 
+		P19I = new Port (1200,1000);
 		 
 		//Porturile de iesire ale benzilor - BRANESCU SERBAN 
-		P1O = new Port (600,400); 
-		P2O = new Port (600,400); 
-		P3O = new Port (650,400); 
-		P4O = new Port (1200,400); 
-		P5O = new Port (1200,450); 
+		P1O = new Port (0,400);
+		P2O = new Port (600,400);  
+		P3O = new Port (650,0); 
+		P4O = new Port (700,400); 
+		P5O = new Port (700,450);
 		P6O = new Port (1200,500); 
 		P7O = new Port (1200,550); 
-		P8O = new Port(650,1000); 
-		P9O = new Port(600,1000);
+		P8O = new Port (650,1000); 
+		P9O = new Port (600,600);
 		P10O = new Port (600,550); 
 		P11O = new Port (600,500); 
-		P12O = new Port (600,450); 
-		P13O = new Port (1250,400); 
-		P14O = new Port (1900,400); 
-		P15O = new Port (1900,450); 
+		P12O = new Port (0,450); 
+		P13O = new Port (1250,0);  
+		P14O = new Port (1300,400); 
+		P15O = new Port (1300,450);  
 		P16O = new Port (1900,500); 
 		P17O = new Port (1900,550); 
-		P18O = new Port(1250,1000); 
-		P19O = new Port(1200,1000);
+		P18O = new Port (1250,1000); 
+		P19O = new Port (1200,600);  
 		
 		//Drumurile - ALBU ADELA
-		Road1 = new Road(P1I, P1O, 600);
+		Road1 = new Road(P1O, P1I, 600);
 		Road2 = new Road(P2I, P2O, 400);
-		Road3 = new Road(P3I, P3O, 400);
-		Road4 = new Road(P4I, P4O, 500);
-		Road5 = new Road(P5I, P5O, 500);
+		Road3 = new Road(P3O, P3I, 400);
+		Road4 = new Road(P4O, P4I, 500);
+		Road5 = new Road(P5O, P5I, 500);
 		Road6 = new Road(P6I, P6O, 500);
 		Road7 = new Road(P7I, P7O, 500);
 		Road8 = new Road(P8I, P8O, 400);
-		Road9 = new Road(P9I, P9O, 400);
+		Road9 = new Road(P9O, P9I, 400);
 		Road10 = new Road(P10I, P10O, 600);
 		Road11 = new Road(P11I, P11O, 600);
-		Road12 = new Road(P12I, P12O, 600);
-		Road13 = new Road(P13I, P13O, 400);
-		Road14 = new Road(P14I, P14O, 600);
-		Road15 = new Road(P15I, P15O, 600);
+		Road12 = new Road(P12O, P12I, 600);
+		Road13 = new Road(P13O, P13I, 400);
+		Road14 = new Road(P14O, P14I, 600);
+		Road15 = new Road(P15O, P15I, 600);
 		Road16 = new Road(P16I, P16O, 600);
 		Road17 = new Road(P17I, P17O, 600);
 		Road18 = new Road(P18I, P18O, 400);
-		Road19 = new Road(P19I, P19O, 400);
+		Road19 = new Road(P19O, P19I, 400);
 		
 		roads.add(Road1);
 		roads.add(Road2);
@@ -159,6 +159,7 @@ public class World extends JPanel implements Space, ActionListener {
 		roads.add(Road17);
 		roads.add(Road18);
 		roads.add(Road19);
+		
 		
 		//CULORILE MASINILOR - BRANESCU SERBAN
 		carColors.add(Color.BLACK);
