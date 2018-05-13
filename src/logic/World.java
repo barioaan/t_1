@@ -120,25 +120,25 @@ public class World extends JPanel implements Space, ActionListener {
 		P19O = new Port (1200,600);  
 		
 		//Drumurile - ALBU ADELA
-		Road1 = new Road(P1O, P1I, 600);
-		Road2 = new Road(P2I, P2O, 400);
-		Road3 = new Road(P3O, P3I, 400);
-		Road4 = new Road(P4O, P4I, 500);
-		Road5 = new Road(P5O, P5I, 500);
-		Road6 = new Road(P6I, P6O, 500);
-		Road7 = new Road(P7I, P7O, 500);
-		Road8 = new Road(P8I, P8O, 400);
-		Road9 = new Road(P9O, P9I, 400);
-		Road10 = new Road(P10I, P10O, 600);
-		Road11 = new Road(P11I, P11O, 600);
-		Road12 = new Road(P12O, P12I, 600);
-		Road13 = new Road(P13O, P13I, 400);
-		Road14 = new Road(P14O, P14I, 600);
-		Road15 = new Road(P15O, P15I, 600);
-		Road16 = new Road(P16I, P16O, 600);
-		Road17 = new Road(P17I, P17O, 600);
-		Road18 = new Road(P18I, P18O, 400);
-		Road19 = new Road(P19O, P19I, 400);
+		Road1 = new Road(P1O, P1I, 600, Orientation.E_West);
+		Road2 = new Road(P2I, P2O, 400, Orientation.E_South);
+		Road3 = new Road(P3O, P3I, 400, Orientation.E_North);
+		Road4 = new Road(P4O, P4I, 500, Orientation.E_West);
+		Road5 = new Road(P5O, P5I, 500, Orientation.E_West);
+		Road6 = new Road(P6I, P6O, 500, Orientation.E_East);
+		Road7 = new Road(P7I, P7O, 500, Orientation.E_East);
+		Road8 = new Road(P8I, P8O, 400, Orientation.E_North);
+		Road9 = new Road(P9O, P9I, 400, Orientation.E_South);
+		Road10 = new Road(P10I, P10O, 600, Orientation.E_East);
+		Road11 = new Road(P11I, P11O, 600, Orientation.E_East);
+		Road12 = new Road(P12O, P12I, 600, Orientation.E_West);
+		Road13 = new Road(P13O, P13I, 400, Orientation.E_North);
+		Road14 = new Road(P14O, P14I, 600, Orientation.E_West);
+		Road15 = new Road(P15O, P15I, 600, Orientation.E_West);
+		Road16 = new Road(P16I, P16O, 600, Orientation.E_East);
+		Road17 = new Road(P17I, P17O, 600, Orientation.E_East);
+		Road18 = new Road(P18I, P18O, 400, Orientation.E_North);
+		Road19 = new Road(P19O, P19I, 400, Orientation.E_South);
 		
 		roads.add(Road1);
 		roads.add(Road2);
