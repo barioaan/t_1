@@ -323,7 +323,7 @@ public class World extends JPanel implements Space, ActionListener {
 		g.fillRect(Road19.inputPort.cordX, Road19.inputPort.cordY, 50, Road19.size);
 		g.fillRect(Road18.inputPort.cordX, Road18.inputPort.cordY, 50, Road18.size);
 		
-		// TRASARE BENZI DELIMITATOARE - BAR IOAN
+		// TRASARE BENZI DELIMITATOARE - BRANESCU SERBAN
 		g.setColor(Color.WHITE);
 		g.fillRect(Road1.inputPort.cordX, Road1.inputPort.cordY+48, Road1.size, 2);
 		g.fillRect(Road12.inputPort.cordX, Road12.inputPort.cordY+48, Road12.size, 4);
