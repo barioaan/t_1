@@ -8,13 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import javax.swing.JButton;
-import java.awt.Font;
-import java.awt.Cursor;
-import javax.swing.JTextField;
 
 public class World extends JPanel implements Space, ActionListener {
 	
@@ -120,25 +117,25 @@ public class World extends JPanel implements Space, ActionListener {
 		P19O = new Port (1200,600);  
 		
 		//Drumurile - ALBU ADELA
-		Road1 = new Road(P1O, P1I, 600, Orientation.E_West);
+		Road1 = new Road(P1I, P1O, 600, Orientation.E_West);
 		Road2 = new Road(P2I, P2O, 400, Orientation.E_South);
-		Road3 = new Road(P3O, P3I, 400, Orientation.E_North);
-		Road4 = new Road(P4O, P4I, 500, Orientation.E_West);
-		Road5 = new Road(P5O, P5I, 500, Orientation.E_West);
+		Road3 = new Road(P3I, P3O, 400, Orientation.E_North);
+		Road4 = new Road(P4I, P4O, 500, Orientation.E_West);
+		Road5 = new Road(P5I, P5O, 500, Orientation.E_West);
 		Road6 = new Road(P6I, P6O, 500, Orientation.E_East);
 		Road7 = new Road(P7I, P7O, 500, Orientation.E_East);
 		Road8 = new Road(P8I, P8O, 400, Orientation.E_North);
-		Road9 = new Road(P9O, P9I, 400, Orientation.E_South);
+		Road9 = new Road(P9I, P9O, 400, Orientation.E_South);
 		Road10 = new Road(P10I, P10O, 600, Orientation.E_East);
 		Road11 = new Road(P11I, P11O, 600, Orientation.E_East);
-		Road12 = new Road(P12O, P12I, 600, Orientation.E_West);
-		Road13 = new Road(P13O, P13I, 400, Orientation.E_North);
-		Road14 = new Road(P14O, P14I, 600, Orientation.E_West);
+		Road12 = new Road(P12I, P12O, 600, Orientation.E_West);
+		Road13 = new Road(P13I, P13O, 400, Orientation.E_North);
+		Road14 = new Road(P14I, P14O, 600, Orientation.E_West);
 		Road15 = new Road(P15I, P15O, 600, Orientation.E_West);
 		Road16 = new Road(P16I, P16O, 600, Orientation.E_East);
 		Road17 = new Road(P17I, P17O, 600, Orientation.E_East);
 		Road18 = new Road(P18I, P18O, 400, Orientation.E_North);
-		Road19 = new Road(P19O, P19I, 400, Orientation.E_South);
+		Road19 = new Road(P19I, P19O, 400, Orientation.E_South);
 		
 		roads.add(Road1);
 		roads.add(Road2);
@@ -303,40 +300,40 @@ public class World extends JPanel implements Space, ActionListener {
 		g.fillRect(Road1.inputPort.cordX+1200, Road1.inputPort.cordY, 100, 200);
 		
 		//TRASARE BENZI DE CIRCULATIE - BAR IOAN
-		g.fillRect(Road1.inputPort.cordX, Road1.inputPort.cordY, Road1.size, 50);
-		g.fillRect(Road12.inputPort.cordX, Road12.inputPort.cordY, Road12.size, 50);
+		g.fillRect(Road1.outputPort.cordX, Road1.outputPort.cordY, Road1.size, 50);
+		g.fillRect(Road12.outputPort.cordX, Road12.outputPort.cordY, Road12.size, 50);
 		g.fillRect(Road11.inputPort.cordX, Road11.inputPort.cordY, Road11.size, 50);
 		g.fillRect(Road10.inputPort.cordX, Road10.inputPort.cordY, Road10.size, 50);
-		g.fillRect(Road4.inputPort.cordX, Road4.inputPort.cordY, Road4.size, 50);
-		g.fillRect(Road5.inputPort.cordX, Road5.inputPort.cordY, Road5.size, 50);
+		g.fillRect(Road4.outputPort.cordX, Road4.outputPort.cordY, Road4.size, 50);
+		g.fillRect(Road5.outputPort.cordX, Road5.outputPort.cordY, Road5.size, 50);
 		g.fillRect(Road6.inputPort.cordX, Road6.inputPort.cordY, Road6.size, 50);
 		g.fillRect(Road7.inputPort.cordX, Road7.inputPort.cordY, Road7.size, 50);
-		g.fillRect(Road14.inputPort.cordX, Road14.inputPort.cordY, Road14.size, 50);
+		g.fillRect(Road14.outputPort.cordX, Road14.outputPort.cordY, Road14.size, 50);
 		g.fillRect(Road15.outputPort.cordX, Road15.outputPort.cordY, Road15.size, 50);
 		g.fillRect(Road16.inputPort.cordX, Road16.inputPort.cordY, Road16.size, 50);
 		g.fillRect(Road17.inputPort.cordX, Road17.inputPort.cordY, Road17.size, 50);
 		g.fillRect(Road2.inputPort.cordX, Road2.inputPort.cordY, 50, Road2.size);
-		g.fillRect(Road3.inputPort.cordX, Road3.inputPort.cordY, 50, Road3.size);
-		g.fillRect(Road13.inputPort.cordX, Road13.inputPort.cordY, 50, Road13.size);
-		g.fillRect(Road9.inputPort.cordX, Road9.inputPort.cordY, 50, Road9.size);
+		g.fillRect(Road3.outputPort.cordX, Road3.outputPort.cordY, 50, Road3.size);
+		g.fillRect(Road13.outputPort.cordX, Road13.outputPort.cordY, 50, Road13.size);
+		g.fillRect(Road9.outputPort.cordX, Road9.outputPort.cordY, 50, Road9.size);
 		g.fillRect(Road8.inputPort.cordX, Road8.inputPort.cordY, 50, Road8.size);
-		g.fillRect(Road19.inputPort.cordX, Road19.inputPort.cordY, 50, Road19.size);
+		g.fillRect(Road19.outputPort.cordX, Road19.outputPort.cordY, 50, Road19.size);
 		g.fillRect(Road18.inputPort.cordX, Road18.inputPort.cordY, 50, Road18.size);
 		
 		// TRASARE BENZI DELIMITATOARE - BRANESCU SERBAN
 		g.setColor(Color.WHITE);
-		g.fillRect(Road1.inputPort.cordX, Road1.inputPort.cordY+48, Road1.size, 2);
-		g.fillRect(Road12.inputPort.cordX, Road12.inputPort.cordY+48, Road12.size, 4);
+		g.fillRect(Road1.outputPort.cordX, Road1.outputPort.cordY+48, Road1.size, 2);
+		g.fillRect(Road12.outputPort.cordX, Road12.outputPort.cordY+48, Road12.size, 4);
 		g.fillRect(Road11.inputPort.cordX, Road11.inputPort.cordY+48, Road11.size, 2);
-		g.fillRect(Road4.inputPort.cordX, Road4.inputPort.cordY+48, Road4.size, 2);
-		g.fillRect(Road5.inputPort.cordX, Road5.inputPort.cordY+48, Road5.size, 4);
+		g.fillRect(Road4.outputPort.cordX, Road4.outputPort.cordY+48, Road4.size, 2);
+		g.fillRect(Road5.outputPort.cordX, Road5.outputPort.cordY+48, Road5.size, 4);
 		g.fillRect(Road6.inputPort.cordX, Road6.inputPort.cordY+48, Road6.size, 2);
-		g.fillRect(Road14.inputPort.cordX, Road14.inputPort.cordY+48, Road14.size, 2);
+		g.fillRect(Road14.outputPort.cordX, Road14.outputPort.cordY+48, Road14.size, 2);
 		g.fillRect(Road15.outputPort.cordX, Road15.outputPort.cordY+48, Road15.size, 4);
 		g.fillRect(Road16.inputPort.cordX, Road16.inputPort.cordY+48, Road16.size, 2);
 		g.fillRect(Road2.inputPort.cordX+48, Road2.inputPort.cordY, 2, Road2.size);
-		g.fillRect(Road9.inputPort.cordX+48, Road9.inputPort.cordY, 2, Road9.size);
-		g.fillRect(Road19.inputPort.cordX+48, Road19.inputPort.cordY, 2, Road19.size);
+		g.fillRect(Road9.outputPort.cordX+48, Road9.outputPort.cordY, 2, Road9.size);
+		g.fillRect(Road19.outputPort.cordX+48, Road19.outputPort.cordY, 2, Road19.size);
 		
 		g.setColor(semaphore1.color);
 		g.fillOval(semaphore1.cordX, semaphore1.cordY, 50, 50);
