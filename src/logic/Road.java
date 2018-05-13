@@ -9,6 +9,7 @@ public class Road implements Space{
 	public Port inputPort, outputPort;
 	public ArrayList <Car> listOFcars = new ArrayList <Car>();
 	public Direction [] directionList;
+	public Orientation orientation;
 	
 	public Road(Port inputPort, Port outputPort, int size) {
 		super();
@@ -20,17 +21,6 @@ public class Road implements Space{
 
 	
 	
-
-
-	public Direction[] getDirectionList() {
-		return directionList;
-	}
-	
-	public void setDirectionList(Direction[] directionList) {
-		this.directionList = directionList;
-	}
-
-
 
 
 
