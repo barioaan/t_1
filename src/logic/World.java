@@ -188,10 +188,10 @@ public class World extends JPanel implements Space, ActionListener {
 		    }
 		    
 		    
-		    		if (nrRandom_roads == 13 || nrRandom_roads == 14) {
-				    	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).outputPort.cordX-50, roads.get(nrRandom_roads).outputPort.cordY, carColors.get(nrRandom_colors),50,50));
-				    	i++;
-				    }
+		    if (nrRandom_roads == 13 || nrRandom_roads == 14) {
+			   	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).outputPort.cordX-50, roads.get(nrRandom_roads).outputPort.cordY, carColors.get(nrRandom_colors),50,50));
+			   	i++;
+			}
 			
 			
 		}
@@ -363,6 +363,19 @@ public class World extends JPanel implements Space, ActionListener {
 		}
 		
 		for(int j=0; j<roads.size(); j++) {
+			
+			if(j==10) {
+				for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
+					
+					if(roads.get(j).listOFcars.get(i).x < roads.get(j).outputPort.cordX-50) {
+						
+						roads.get(j).listOFcars.get(i).x += 10;
+						
+					}	
+				}
+			}
+			
+			
 			
 			for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
 				
