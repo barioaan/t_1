@@ -32,7 +32,7 @@ public class World extends JPanel implements Space, ActionListener {
 		btnClick.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				timer.start();
-			}
+			}//
 		});
 		btnClick.setBounds(52, 78, 89, 23);
 		add(btnClick);
