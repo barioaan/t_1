@@ -134,7 +134,7 @@ public class World extends JPanel implements Space, ActionListener {
 		Road12 = new Road(P12O, P12I, 600, Orientation.E_West);
 		Road13 = new Road(P13O, P13I, 400, Orientation.E_North);
 		Road14 = new Road(P14O, P14I, 600, Orientation.E_West);
-		Road15 = new Road(P15O, P15I, 600, Orientation.E_West);
+		Road15 = new Road(P15I, P15O, 600, Orientation.E_West);
 		Road16 = new Road(P16I, P16O, 600, Orientation.E_East);
 		Road17 = new Road(P17I, P17O, 600, Orientation.E_East);
 		Road18 = new Road(P18I, P18O, 400, Orientation.E_North);
@@ -312,7 +312,7 @@ public class World extends JPanel implements Space, ActionListener {
 		g.fillRect(Road6.inputPort.cordX, Road6.inputPort.cordY, Road6.size, 50);
 		g.fillRect(Road7.inputPort.cordX, Road7.inputPort.cordY, Road7.size, 50);
 		g.fillRect(Road14.inputPort.cordX, Road14.inputPort.cordY, Road14.size, 50);
-		g.fillRect(Road15.inputPort.cordX, Road15.inputPort.cordY, Road15.size, 50);
+		g.fillRect(Road15.outputPort.cordX, Road15.outputPort.cordY, Road15.size, 50);
 		g.fillRect(Road16.inputPort.cordX, Road16.inputPort.cordY, Road16.size, 50);
 		g.fillRect(Road17.inputPort.cordX, Road17.inputPort.cordY, Road17.size, 50);
 		g.fillRect(Road2.inputPort.cordX, Road2.inputPort.cordY, 50, Road2.size);
@@ -332,7 +332,7 @@ public class World extends JPanel implements Space, ActionListener {
 		g.fillRect(Road5.inputPort.cordX, Road5.inputPort.cordY+48, Road5.size, 4);
 		g.fillRect(Road6.inputPort.cordX, Road6.inputPort.cordY+48, Road6.size, 2);
 		g.fillRect(Road14.inputPort.cordX, Road14.inputPort.cordY+48, Road14.size, 2);
-		g.fillRect(Road15.inputPort.cordX, Road15.inputPort.cordY+48, Road15.size, 4);
+		g.fillRect(Road15.outputPort.cordX, Road15.outputPort.cordY+48, Road15.size, 4);
 		g.fillRect(Road16.inputPort.cordX, Road16.inputPort.cordY+48, Road16.size, 2);
 		g.fillRect(Road2.inputPort.cordX+48, Road2.inputPort.cordY, 2, Road2.size);
 		g.fillRect(Road9.inputPort.cordX+48, Road9.inputPort.cordY, 2, Road9.size);
@@ -364,19 +364,52 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		for(int j=0; j<roads.size(); j++) {
 			
-			if(j==10) {
-				for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
+			
+				
+				if(roads.get(j).orientation == Orientation.E_West) {
+					
+					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
+						if(roads.get(j).listOFcars.get(i).x >= roads.get(j).inputPort.cordX+50) {
+							
+							roads.get(j).listOFcars.get(i).x -= 10;
+							
+						}	
+					}	
+					
+					
+					
+				}
+				
+				if(roads.get(j).orientation == Orientation.E_North) {
+					
+				}
+				
+				if(roads.get(j).orientation == Orientation.E_East) {
+
+					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
+						if(roads.get(j).listOFcars.get(i).x < roads.get(j).outputPort.cordX-50) {
+							
+							roads.get(j).listOFcars.get(i).x += 10;
+							
+						}	
+					}
+				}
+				
+				if(roads.get(j).orientation == Orientation.E_South) {
+					
+				}
+					/*for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
 					
 					if(roads.get(j).listOFcars.get(i).x < roads.get(j).outputPort.cordX-50) {
 						
 						roads.get(j).listOFcars.get(i).x += 10;
 						
-					}	
-				}
+					}	*/
+				
 			}
 			
 			
-			
+			/*
 			for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
 				
 				if(j==0 || j==3 || j==4) {
@@ -409,11 +442,11 @@ public class World extends JPanel implements Space, ActionListener {
 				}
 				
 				
-			}
+			}*/
 			
 		}
 	
-	}
+	
 	
 	
 	@Override
