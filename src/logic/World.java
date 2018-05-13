@@ -19,6 +19,7 @@ public class World extends JPanel implements Space, ActionListener {
 	
 	public static Random random = new Random();
 	
+	Timer timer = new Timer(100,this);
 	
 	public static ArrayList<Color> carColors = new ArrayList<Color>();
 
@@ -38,7 +39,7 @@ public class World extends JPanel implements Space, ActionListener {
 	
 	public static int adaugare = 0;
 	
-	Timer timer = new Timer(100,this);
+	
 	 
 
 	private static Port P1I, P2I, P3I, P4I, P5I, P6I, P7I, P8I, P9I, P10I, P11I, P12I, P13I, P14I, P15I, P16I, P17I, P18I, P19I;
@@ -82,7 +83,7 @@ public class World extends JPanel implements Space, ActionListener {
 		P5I = new Port (1200,450); 
 		P6I = new Port (700,500);
 		P7I = new Port (700,550);
-		P8I = new Port (650,600);
+		P8I = new Port (650,1000);
 		P9I = new Port (600,1000);
 		P10I = new Port (0,550);
 		P11I = new Port (0,500);
@@ -92,7 +93,7 @@ public class World extends JPanel implements Space, ActionListener {
 		P15I = new Port (1900,450);
 		P16I = new Port (1300,500);
 		P17I = new Port (1300,550);
-		P18I = new Port (1250,600); 
+		P18I = new Port (1250,1000); 
 		P19I = new Port (1200,1000);
 		 
 		//Porturile de iesire ale benzilor - BRANESCU SERBAN 
@@ -103,7 +104,7 @@ public class World extends JPanel implements Space, ActionListener {
 		P5O = new Port (700,450);
 		P6O = new Port (1200,500); 
 		P7O = new Port (1200,550); 
-		P8O = new Port (650,1000); 
+		P8O = new Port (650,600); 
 		P9O = new Port (600,600);
 		P10O = new Port (600,550); 
 		P11O = new Port (600,500); 
@@ -113,7 +114,7 @@ public class World extends JPanel implements Space, ActionListener {
 		P15O = new Port (1300,450);  
 		P16O = new Port (1900,500); 
 		P17O = new Port (1900,550); 
-		P18O = new Port (1250,1000); 
+		P18O = new Port (1250,600); 
 		P19O = new Port (1200,600);  
 		
 		//Drumurile - ALBU ADELA
@@ -180,13 +181,13 @@ public class World extends JPanel implements Space, ActionListener {
 		    	i++;
 		    }
 		    if (nrRandom_roads == 7 || nrRandom_roads == 17) {
-		    	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).outputPort.cordX, roads.get(nrRandom_roads).outputPort.cordY-50, carColors.get(nrRandom_colors),50,50));
+		    	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).inputPort.cordX, roads.get(nrRandom_roads).inputPort.cordY-50, carColors.get(nrRandom_colors),50,50));
 		    	i++;
 		    }
 		    
 		    
 		    if (nrRandom_roads == 13 || nrRandom_roads == 14) {
-			   	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).outputPort.cordX-50, roads.get(nrRandom_roads).outputPort.cordY, carColors.get(nrRandom_colors),50,50));
+			   	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).inputPort.cordX-50, roads.get(nrRandom_roads).inputPort.cordY, carColors.get(nrRandom_colors),50,50));
 			   	i++;
 			}
 			
@@ -316,9 +317,9 @@ public class World extends JPanel implements Space, ActionListener {
 		g.fillRect(Road3.outputPort.cordX, Road3.outputPort.cordY, 50, Road3.size);
 		g.fillRect(Road13.outputPort.cordX, Road13.outputPort.cordY, 50, Road13.size);
 		g.fillRect(Road9.outputPort.cordX, Road9.outputPort.cordY, 50, Road9.size);
-		g.fillRect(Road8.inputPort.cordX, Road8.inputPort.cordY, 50, Road8.size);
+		g.fillRect(Road8.outputPort.cordX, Road8.outputPort.cordY, 50, Road8.size);
 		g.fillRect(Road19.outputPort.cordX, Road19.outputPort.cordY, 50, Road19.size);
-		g.fillRect(Road18.inputPort.cordX, Road18.inputPort.cordY, 50, Road18.size);
+		g.fillRect(Road18.outputPort.cordX, Road18.outputPort.cordY, 50, Road18.size);
 		
 		// TRASARE BENZI DELIMITATOARE - BRANESCU SERBAN
 		g.setColor(Color.WHITE);
@@ -353,7 +354,7 @@ public class World extends JPanel implements Space, ActionListener {
 			
 			for(int i=0; i<r.listOFcars.size(); i++) {
 				g.setColor(r.listOFcars.get(i).color);
-				g.fillRect(r.listOFcars.get(i).x, r.listOFcars.get(i).y, 50, 50);
+				g.fillRect(r.listOFcars.get(i).x, r.listOFcars.get(i).y, r.listOFcars.get(i).width, r.listOFcars.get(i).height);
 				
 			}
 			
@@ -366,9 +367,11 @@ public class World extends JPanel implements Space, ActionListener {
 				if(roads.get(j).orientation == Orientation.E_West) {
 					
 					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-						if(roads.get(j).listOFcars.get(i).x >= roads.get(j).inputPort.cordX+50) {
+						if(roads.get(j).listOFcars.get(i).x >= roads.get(j).outputPort.cordX+10) {
 							
 							roads.get(j).listOFcars.get(i).x -= 10;
+							
+							
 							
 						}	
 					}	
@@ -378,7 +381,13 @@ public class World extends JPanel implements Space, ActionListener {
 				}
 				
 				if(roads.get(j).orientation == Orientation.E_North) {
-					
+					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
+						if(roads.get(j).listOFcars.get(i).y >= roads.get(j).outputPort.cordY+10) {
+							
+							roads.get(j).listOFcars.get(i).y -= 10;
+							
+						}	
+					}
 				}
 				
 				if(roads.get(j).orientation == Orientation.E_East) {
@@ -393,15 +402,14 @@ public class World extends JPanel implements Space, ActionListener {
 				}
 				
 				if(roads.get(j).orientation == Orientation.E_South) {
-					
+					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
+						if(roads.get(j).listOFcars.get(i).y < roads.get(j).outputPort.cordY-50) {
+							
+							roads.get(j).listOFcars.get(i).y += 10;
+							
+						}	
+					}
 				}
-					/*for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-					
-					if(roads.get(j).listOFcars.get(i).x < roads.get(j).outputPort.cordX-50) {
-						
-						roads.get(j).listOFcars.get(i).x += 10;
-						
-					}	*/
 				
 			}
 			
