@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 public class World extends JPanel implements Space, ActionListener {
-	
+	//aceasta este linia
 	public static int numar_masini = 15 ;
 	
 	public static Random random = new Random();
