@@ -14,11 +14,11 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 public class World extends JPanel implements Space, ActionListener {
-	//aceasta nu este linia
+
 	public static int numar_masini = 15 ;
 	
 	public static Random random = new Random();
-	//aceasta este linia 2 3
+
 	Timer timer = new Timer(100,this);
 	
 	public static ArrayList<Color> carColors = new ArrayList<Color>();
