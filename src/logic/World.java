@@ -18,7 +18,7 @@ public class World extends JPanel implements Space, ActionListener {
 	public static int numar_masini = 15 ;
 	
 	public static Random random = new Random();
-	//aceasta este linia 2
+	//aceasta este linia 2 3
 	Timer timer = new Timer(100,this);
 	
 	public static ArrayList<Color> carColors = new ArrayList<Color>();
