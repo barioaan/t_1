@@ -39,7 +39,7 @@ public class World extends JPanel implements Space, ActionListener {
 	
 	public static int adaugare = 0;
 	
-	
+	//COMENTARIU DE TEST
 	 
 
 	private static Port P1I, P2I, P3I, P4I, P5I, P6I, P7I, P8I, P9I, P10I, P11I, P12I, P13I, P14I, P15I, P16I, P17I, P18I, P19I;
