@@ -461,7 +461,7 @@ public class World extends JPanel implements Space, ActionListener {
 				if(roads.get(j).orientation == Orientation.E_West && roads.get(j).areLiniePietoni == true) {
 					
 					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-						if(roads.get(j).listOFcars.get(i).x >= roads.get(j).coordonataLiniePietoni+10) {
+						if(roads.get(j).listOFcars.get(i).x >= roads.get(j).coordonataLiniePietoni+14) {
 							
 							roads.get(j).listOFcars.get(i).x -= 10;
 						}
@@ -477,7 +477,7 @@ public class World extends JPanel implements Space, ActionListener {
 					if(roads.get(j).orientation == Orientation.E_West && roads.get(j).areLiniePietoni == false) {
 					
 					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-						if(roads.get(j).listOFcars.get(i).x >= roads.get(j).outputPort.cordX+10) {
+						if(roads.get(j).listOFcars.get(i).x >= roads.get(j).outputPort.cordX+14) {
 							
 							roads.get(j).listOFcars.get(i).x -= 10;
 						}
@@ -493,7 +493,7 @@ public class World extends JPanel implements Space, ActionListener {
 				//ORIENTATION NORTH
 				if(roads.get(j).orientation == Orientation.E_North && roads.get(j).areLiniePietoni ==true) {
 					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-						if(roads.get(j).listOFcars.get(i).y >= roads.get(j).coordonataLiniePietoni+10) {
+						if(roads.get(j).listOFcars.get(i).y >= roads.get(j).coordonataLiniePietoni+14) {
 							
 							roads.get(j).listOFcars.get(i).y -= 10;
 							
@@ -503,7 +503,7 @@ public class World extends JPanel implements Space, ActionListener {
 				
 				if(roads.get(j).orientation == Orientation.E_North && roads.get(j).areLiniePietoni == false) {
 					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-						if(roads.get(j).listOFcars.get(i).y >= roads.get(j).outputPort.cordY+10) {
+						if(roads.get(j).listOFcars.get(i).y >= roads.get(j).outputPort.cordY+14) {
 							
 							roads.get(j).listOFcars.get(i).y -= 10;
 							
@@ -516,12 +516,12 @@ public class World extends JPanel implements Space, ActionListener {
 				if(roads.get(j).orientation == Orientation.E_East && roads.get(j).areLiniePietoni == false) {
 
 					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-						if(roads.get(j).listOFcars.get(i).x < roads.get(j).outputPort.cordX-50) {
+						if(roads.get(j).listOFcars.get(i).x < roads.get(j).outputPort.cordX-54) {
 							
 							roads.get(j).listOFcars.get(i).x += 10;
 							
 						}
-						if(roads.get(j).listOFcars.get(i).x == roads.get(j).outputPort.cordX-50) {
+						if(roads.get(j).listOFcars.get(i).x == roads.get(j).outputPort.cordX-54) {
 							int randomDirection = random.nextInt(roads.get(j).directionList.length-1);
 							if(roads.get(j).directionList[randomDirection] == Direction.E_Forward) {
 								
@@ -533,7 +533,7 @@ public class World extends JPanel implements Space, ActionListener {
 				if(roads.get(j).orientation == Orientation.E_East && roads.get(j).areLiniePietoni == true) {
 
 					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-						if(roads.get(j).listOFcars.get(i).x < roads.get(j).coordonataLiniePietoni-50) {
+						if(roads.get(j).listOFcars.get(i).x < roads.get(j).coordonataLiniePietoni-54) {
 							
 							roads.get(j).listOFcars.get(i).x += 10;
 							
@@ -550,7 +550,7 @@ public class World extends JPanel implements Space, ActionListener {
 				//ORIENTATION SOUTH
 				if(roads.get(j).orientation == Orientation.E_South && roads.get(j).areLiniePietoni == true) {
 					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-						if(roads.get(j).listOFcars.get(i).y < roads.get(j).coordonataLiniePietoni-50) {
+						if(roads.get(j).listOFcars.get(i).y < roads.get(j).coordonataLiniePietoni-54) {
 							
 							roads.get(j).listOFcars.get(i).y += 10;
 							
