@@ -138,11 +138,27 @@ public class World extends JPanel implements Space, ActionListener {
 		Road18 = new Road(P18I, P18O, 400, Orientation.E_North);
 		Road19 = new Road(P19I, P19O, 400, Orientation.E_South);
 		
-		//ADAUGARE LINIE UNDE SA SE OPREASCA MASINILE
+		//ADAUGARE LINIE UNDE SA SE OPREASCA MASINILE - BRANESCU SERBAN
 		
 		Road1.areLiniePietoni = false;
 		Road2.areLiniePietoni = true;
-		//stergi comentariul asta si faci asa pentru toate cele 19 drumuri
+		Road3.areLiniePietoni = false;
+		Road4.areLiniePietoni = false;
+		Road5.areLiniePietoni = false;
+		Road6.areLiniePietoni = false;
+		Road7.areLiniePietoni = false;
+		Road8.areLiniePietoni = true;
+		Road9.areLiniePietoni = false;
+		Road10.areLiniePietoni = true;
+		Road11.areLiniePietoni = true;
+		Road12.areLiniePietoni = false;
+		Road13.areLiniePietoni = false;
+		Road14.areLiniePietoni = true;
+		Road15.areLiniePietoni = true;
+		Road16.areLiniePietoni = false;
+		Road17.areLiniePietoni = false;
+		Road18.areLiniePietoni = true;
+		Road19.areLiniePietoni = false;
 		
 		
 		
