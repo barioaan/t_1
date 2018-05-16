@@ -325,7 +325,7 @@ public class World extends JPanel implements Space, ActionListener {
 		//timer.start();
 		
 		//DESENARE BACKGROUND - BAR IOAN\
-		//g.setColor(darkGreen);
+		//g.setColor(darkGreen);//
 		g.setColor(backgroundColor);
 		g.fillRect(0,0,1900,1000);
 		
