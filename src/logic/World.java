@@ -138,6 +138,7 @@ public class World extends JPanel implements Space, ActionListener {
 		Road18 = new Road(P18I, P18O, 400, Orientation.E_North);
 		Road19 = new Road(P19I, P19O, 400, Orientation.E_South);
 		
+		
 		roads.add(Road1);
 		roads.add(Road2);
 		roads.add(Road3);
@@ -157,6 +158,8 @@ public class World extends JPanel implements Space, ActionListener {
 		roads.add(Road17);
 		roads.add(Road18);
 		roads.add(Road19);
+		
+		
 		
 		
 		//CULORILE MASINILOR - BRANESCU SERBAN
@@ -286,9 +289,11 @@ public class World extends JPanel implements Space, ActionListener {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		
+		Color darkGreen = new Color(28,98,71);
 		//timer.start();
 		
-		//DESENARE BACKGROUND - BAR IOAN
+		//DESENARE BACKGROUND - BAR IOAN\
+		//g.setColor(darkGreen);
 		g.setColor(Color.GREEN);
 		g.fillRect(0,0,1900,1000);
 		
@@ -323,18 +328,64 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		// TRASARE BENZI DELIMITATOARE - BRANESCU SERBAN
 		g.setColor(Color.WHITE);
-		g.fillRect(Road1.outputPort.cordX, Road1.outputPort.cordY+48, Road1.size, 2);
-		g.fillRect(Road12.outputPort.cordX, Road12.outputPort.cordY+48, Road12.size, 4);
-		g.fillRect(Road11.inputPort.cordX, Road11.inputPort.cordY+48, Road11.size, 2);
+		g.fillRect(Road1.outputPort.cordX-110, Road1.outputPort.cordY+48, Road1.size, 2);
+		g.fillRect(Road12.outputPort.cordX-110, Road12.outputPort.cordY+48, Road12.size, 4);
+		g.fillRect(Road11.inputPort.cordX-110, Road11.inputPort.cordY+48, Road11.size, 2);
 		g.fillRect(Road4.outputPort.cordX, Road4.outputPort.cordY+48, Road4.size, 2);
 		g.fillRect(Road5.outputPort.cordX, Road5.outputPort.cordY+48, Road5.size, 4);
 		g.fillRect(Road6.inputPort.cordX, Road6.inputPort.cordY+48, Road6.size, 2);
-		g.fillRect(Road14.outputPort.cordX, Road14.outputPort.cordY+48, Road14.size, 2);
-		g.fillRect(Road15.outputPort.cordX, Road15.outputPort.cordY+48, Road15.size, 4);
-		g.fillRect(Road16.inputPort.cordX, Road16.inputPort.cordY+48, Road16.size, 2);
-		g.fillRect(Road2.inputPort.cordX+48, Road2.inputPort.cordY, 2, Road2.size);
-		g.fillRect(Road9.outputPort.cordX+48, Road9.outputPort.cordY, 2, Road9.size);
-		g.fillRect(Road19.outputPort.cordX+48, Road19.outputPort.cordY, 2, Road19.size);
+		g.fillRect(Road14.outputPort.cordX+110, Road14.outputPort.cordY+48, Road14.size, 2);
+		g.fillRect(Road15.outputPort.cordX+110, Road15.outputPort.cordY+48, Road15.size, 4);
+		g.fillRect(Road16.inputPort.cordX+110, Road16.inputPort.cordY+48, Road16.size, 2);
+		g.fillRect(Road2.inputPort.cordX+48, Road2.inputPort.cordY-110, 2, Road2.size);
+		g.fillRect(Road9.outputPort.cordX+48, Road9.outputPort.cordY+110, 2, Road9.size);
+		g.fillRect(Road19.outputPort.cordX+48, Road19.outputPort.cordY+110, 2, Road19.size);
+		
+		//treceri pietoni Intersectia B - Branescu Serban
+		
+		g.fillRect(1350, Road14.outputPort.cordY+5,50, 10);
+		g.fillRect(1350, Road14.outputPort.cordY+23,50, 10);
+		g.fillRect(1350, Road14.outputPort.cordY+43,50, 10);
+		g.fillRect(1350, Road14.outputPort.cordY+63,50, 10);
+		g.fillRect(1350, Road14.outputPort.cordY+83,50, 10);
+		g.fillRect(1350, Road14.outputPort.cordY+103,50, 10);
+		g.fillRect(1350, Road14.outputPort.cordY+123,50, 10);
+		g.fillRect(1350, Road14.outputPort.cordY+143,50, 10);
+		g.fillRect(1350, Road14.outputPort.cordY+163,50, 10);
+		g.fillRect(1350, Road14.outputPort.cordY+183,50, 10);
+		g.fillRect(1205, 650, 10, 50);
+		g.fillRect(1225, 650, 10, 50);
+		g.fillRect(1245, 650, 10, 50);
+		g.fillRect(1265, 650, 10, 50);
+		g.fillRect(1285, 650, 10, 50);
+		
+		//treceri pietoni Intersectia A - Bradea Octavia
+		g.fillRect(500, Road1.outputPort.cordY+5,50, 10);
+		g.fillRect(500, Road1.outputPort.cordY+23,50, 10);
+		g.fillRect(500, Road1.outputPort.cordY+43,50, 10);
+		g.fillRect(500, Road1.outputPort.cordY+63,50, 10);
+		g.fillRect(500, Road1.outputPort.cordY+83,50, 10);
+		g.fillRect(500, Road1.outputPort.cordY+103,50, 10);
+		g.fillRect(500, Road1.outputPort.cordY+123,50, 10);
+		g.fillRect(500, Road1.outputPort.cordY+143,50, 10);
+		g.fillRect(500, Road1.outputPort.cordY+163,50, 10);
+		g.fillRect(500, Road1.outputPort.cordY+183,50, 10);	
+		g.fillRect(Road2.inputPort.cordX+5,300, 10,50);
+		g.fillRect(Road2.inputPort.cordX+23,300, 10,50);
+		g.fillRect(Road2.inputPort.cordX+43,300, 10,50);
+		g.fillRect(Road2.inputPort.cordX+63,300, 10,50);
+		g.fillRect(Road2.inputPort.cordX+83,300, 10,50);	
+		g.fillRect(Road9.outputPort.cordX+5, 650, 10, 50);
+		g.fillRect(Road9.outputPort.cordX+23, 650, 10, 50);
+		g.fillRect(Road9.outputPort.cordX+43, 650, 10, 50);
+		g.fillRect(Road9.outputPort.cordX+63, 650, 10, 50);
+		g.fillRect(Road9.outputPort.cordX+83, 650, 10, 50);
+		g.fillRect(482,498, 8, 100);
+		g.fillRect(1410,400, 8, 100);
+		g.fillRect(600,282, 50, 8);
+		g.fillRect(648,707, 50, 8);
+		g.fillRect(1250,710, 50, 8);
+		
 		
 		g.setColor(semaphore1.color);
 		g.fillOval(semaphore1.cordX, semaphore1.cordY, 50, 50);
@@ -344,6 +395,9 @@ public class World extends JPanel implements Space, ActionListener {
 		g.fillOval(semaphore6.cordX, semaphore6.cordY, 50, 50);
 		g.fillOval(semaphore7.cordX, semaphore7.cordY, 50, 50);
 		g.fillOval(semaphore8.cordX, semaphore8.cordY, 50, 50);
+		
+		
+		
 		
 		
 		
