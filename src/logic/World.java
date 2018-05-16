@@ -4,12 +4,16 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -34,6 +38,25 @@ public class World extends JPanel implements Space, ActionListener {
 		});
 		btnClick.setBounds(52, 78, 89, 23);
 		add(btnClick);
+		
+		
+		
+		//POZA CU SCOALA - ALBU ADELA
+		JLabel poza_sc = new JLabel("");
+		URL scoala = getClass().getResource("/scoala.jpg");
+		Icon imagine_scoala = new ImageIcon (scoala);
+		poza_sc.setIcon(imagine_scoala);
+		poza_sc.setBounds(70, 80, 300, 450);
+		add(poza_sc);
+		
+		//POZA SENS UNIC - ALBU ADELA
+		JLabel sens_unic = new JLabel("");
+		URL sensunic = getClass().getResource("/imagine.jpg");
+		Icon sens = new ImageIcon (sensunic);
+		sens_unic.setIcon(sens);
+		sens_unic.setBounds(1315, 280, 55, 55);
+		add(sens_unic);
+		
 		
 	}
 	
