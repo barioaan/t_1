@@ -570,7 +570,7 @@ public class World extends JPanel implements Space, ActionListener {
 			}
 			
 			
-			/*
+			/*//
 			for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
 				
 				if(j==0 || j==3 || j==4) {
