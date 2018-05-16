@@ -164,7 +164,12 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		//aici pentru drumurile care au linie la cele orizontale pui coordonata x si la cele verticale pui coordonata y
 		Road10.coordonataLiniePietoni  = 482; 
-		
+		Road11.coordonataLiniePietoni  = 482;
+		Road2.coordonataLiniePietoni  = 282;
+		Road8.coordonataLiniePietoni  = 707;
+		Road14.coordonataLiniePietoni  = 1410;
+		Road15.coordonataLiniePietoni  = 1410;
+		Road18.coordonataLiniePietoni  = 710;
 		
 		roads.add(Road1);
 		roads.add(Road2);
