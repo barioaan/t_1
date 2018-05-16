@@ -209,6 +209,7 @@ public class World extends JPanel implements Space, ActionListener {
 			int nrRandom_colors = random.nextInt(7);
 		    int nrRandom_roads = random.nextInt(18);
 		    if(nrRandom_roads == 1 || nrRandom_roads == 9 || nrRandom_roads == 10  ) {
+		    	
 		    	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).inputPort.cordX, roads.get(nrRandom_roads).inputPort.cordY, carColors.get(nrRandom_colors),50,50));
 		    	i++;
 		    }
@@ -450,12 +451,12 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		for(int j=0; j<roads.size(); j++) {
 			
-			
+			//ORIENTATION WEST
 				
-				if(roads.get(j).orientation == Orientation.E_West) {
+				if(roads.get(j).orientation == Orientation.E_West && roads.get(j).areLiniePietoni == true) {
 					
 					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-						if(roads.get(j).listOFcars.get(i).x >= roads.get(j).outputPort.cordX+10) {
+						if(roads.get(j).listOFcars.get(i).x >= roads.get(j).coordonataLiniePietoni+10) {
 							
 							roads.get(j).listOFcars.get(i).x -= 10;
 						}
@@ -468,7 +469,34 @@ public class World extends JPanel implements Space, ActionListener {
 					
 				}
 				
-				if(roads.get(j).orientation == Orientation.E_North) {
+					if(roads.get(j).orientation == Orientation.E_West && roads.get(j).areLiniePietoni == false) {
+					
+					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
+						if(roads.get(j).listOFcars.get(i).x >= roads.get(j).outputPort.cordX+10) {
+							
+							roads.get(j).listOFcars.get(i).x -= 10;
+						}
+						
+						if(roads.get(j).listOFcars.get(i).x == roads.get(j).outputPort.cordX) {
+							int randomDirection = random.nextInt(roads.get(j).directionList.length-1);
+							
+						}
+					}
+					}
+					
+					
+				//ORIENTATION NORTH
+				if(roads.get(j).orientation == Orientation.E_North && roads.get(j).areLiniePietoni ==true) {
+					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
+						if(roads.get(j).listOFcars.get(i).y >= roads.get(j).coordonataLiniePietoni+10) {
+							
+							roads.get(j).listOFcars.get(i).y -= 10;
+							
+						}	
+					}
+				}
+				
+				if(roads.get(j).orientation == Orientation.E_North && roads.get(j).areLiniePietoni == false) {
 					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
 						if(roads.get(j).listOFcars.get(i).y >= roads.get(j).outputPort.cordY+10) {
 							
@@ -478,7 +506,9 @@ public class World extends JPanel implements Space, ActionListener {
 					}
 				}
 				
-				if(roads.get(j).orientation == Orientation.E_East) {
+				
+				//ORIENTATION EAST
+				if(roads.get(j).orientation == Orientation.E_East && roads.get(j).areLiniePietoni == false) {
 
 					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
 						if(roads.get(j).listOFcars.get(i).x < roads.get(j).outputPort.cordX-50) {
@@ -495,7 +525,34 @@ public class World extends JPanel implements Space, ActionListener {
 					}
 				}
 				
-				if(roads.get(j).orientation == Orientation.E_South) {
+				if(roads.get(j).orientation == Orientation.E_East && roads.get(j).areLiniePietoni == true) {
+
+					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
+						if(roads.get(j).listOFcars.get(i).x < roads.get(j).coordonataLiniePietoni-50) {
+							
+							roads.get(j).listOFcars.get(i).x += 10;
+							
+						}
+						if(roads.get(j).listOFcars.get(i).x == roads.get(j).outputPort.cordX-50) {
+							int randomDirection = random.nextInt(roads.get(j).directionList.length-1);
+							if(roads.get(j).directionList[randomDirection] == Direction.E_Forward) {
+								
+							}
+						}
+					}
+				}
+				
+				//ORIENTATION SOUTH
+				if(roads.get(j).orientation == Orientation.E_South && roads.get(j).areLiniePietoni == true) {
+					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
+						if(roads.get(j).listOFcars.get(i).y < roads.get(j).coordonataLiniePietoni-50) {
+							
+							roads.get(j).listOFcars.get(i).y += 10;
+							
+						}	
+					}
+				}
+				if(roads.get(j).orientation == Orientation.E_South && roads.get(j).areLiniePietoni == false) {
 					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
 						if(roads.get(j).listOFcars.get(i).y < roads.get(j).outputPort.cordY-50) {
 							
