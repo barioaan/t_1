@@ -569,42 +569,6 @@ public class World extends JPanel implements Space, ActionListener {
 				
 			}
 			
-			
-			/*//////
-			for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-				
-				if(j==0 || j==3 || j==4) {
-					if(roads.get(j).listOFcars.get(i).x < roads.get(j).outputPort.cordX) {
-						roads.get(j).listOFcars.get(i).x += 10;
-						g.setColor(roads.get(j).listOFcars.get(i).color);
-						g.fillRect(roads.get(j).listOFcars.get(i).x, roads.get(j).listOFcars.get(i).y, 50, 50);
-					}
-					if(j==0 && roads.get(j).listOFcars.get(i).x == roads.get(j).outputPort.cordX) {
-						Car car_test = roads.get(j).listOFcars.get(i);
-						roads.get(3).listOFcars.add(car_test);
-						//sjbdaf
-					}
-						
-				}
-				
-				if(j==1 ) {
-					if(roads.get(j).listOFcars.get(i).y < roads.get(j).outputPort.cordY) {
-						roads.get(j).listOFcars.get(i).y += 10;
-						g.setColor(roads.get(j).listOFcars.get(i).color);
-						g.fillRect(roads.get(j).listOFcars.get(i).x, roads.get(j).listOFcars.get(i).y, 50, 50);
-					}
-					if(roads.get(j).listOFcars.get(i).y == roads.get(j).outputPort.cordY) {
-						int nrRandom_direction = random.nextInt(roads.get(j).directionList.length);
-						if(nrRandom_direction == 2 || nrRandom_direction == 1 || nrRandom_direction == 0) {
-							roads.get(0).listOFcars.add(roads.get(j).listOFcars.get(i));							
-						}
-					}
-						
-				}
-				
-				
-			}*/
-			
 		}
 	
 	
