@@ -298,7 +298,7 @@ public class World extends JPanel implements Space, ActionListener {
 		g.fillRect(0,0,1900,1000);
 		
 		
-		g.setColor(Color.GRAY);
+		g.setColor(Color.DARK_GRAY);
 		
 		
 		// TRASARE INTERSECTII BAR IOAN
@@ -381,6 +381,7 @@ public class World extends JPanel implements Space, ActionListener {
 		g.fillRect(Road9.outputPort.cordX+43, 650, 10, 50);
 		g.fillRect(Road9.outputPort.cordX+63, 650, 10, 50);
 		g.fillRect(Road9.outputPort.cordX+83, 650, 10, 50);
+		
 		g.fillRect(482,498, 8, 100);
 		g.fillRect(1410,400, 8, 100);
 		g.fillRect(600,282, 50, 8);
