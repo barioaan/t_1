@@ -353,7 +353,7 @@ public class World extends JPanel implements Space, ActionListener {
 		g.fillRect(1350, Road14.outputPort.cordY+143,50, 10);
 		g.fillRect(1350, Road14.outputPort.cordY+163,50, 10);
 		g.fillRect(1350, Road14.outputPort.cordY+183,50, 10);
-		g.fillRect(1205, 650, 10, 50);//
+		g.fillRect(1205, 650, 10, 50);
 		g.fillRect(1225, 650, 10, 50);
 		g.fillRect(1245, 650, 10, 50);
 		g.fillRect(1265, 650, 10, 50);
