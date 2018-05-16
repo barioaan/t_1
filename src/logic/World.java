@@ -238,17 +238,17 @@ public class World extends JPanel implements Space, ActionListener {
 		    int nrRandom_roads = random.nextInt(18);
 		    if(nrRandom_roads == 1 || nrRandom_roads == 9 || nrRandom_roads == 10  ) {
 		    	
-		    	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).inputPort.cordX, roads.get(nrRandom_roads).inputPort.cordY, carColors.get(nrRandom_colors),50,50));
+		    	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).inputPort.cordX+5, roads.get(nrRandom_roads).inputPort.cordY+5, carColors.get(nrRandom_colors),40,40));
 		    	i++;
 		    }
 		    if (nrRandom_roads == 7 || nrRandom_roads == 17) {
-		    	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).inputPort.cordX, roads.get(nrRandom_roads).inputPort.cordY-50, carColors.get(nrRandom_colors),50,50));
+		    	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).inputPort.cordX+5, roads.get(nrRandom_roads).inputPort.cordY-50, carColors.get(nrRandom_colors),40,40));
 		    	i++;
 		    }
 		    
 		    
 		    if (nrRandom_roads == 13 || nrRandom_roads == 14) {
-			   	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).inputPort.cordX-50, roads.get(nrRandom_roads).inputPort.cordY, carColors.get(nrRandom_colors),50,50));
+			   	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).inputPort.cordX-50, roads.get(nrRandom_roads).inputPort.cordY+5, carColors.get(nrRandom_colors),40,40));
 			   	i++;
 			}
 			
