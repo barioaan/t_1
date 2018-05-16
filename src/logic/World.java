@@ -305,11 +305,12 @@ public class World extends JPanel implements Space, ActionListener {
 		super.paintComponent(g);
 		
 		Color darkGreen = new Color(28,98,71);
+		Color backgroundColor = new Color(109,219,54);
 		//timer.start();
 		
 		//DESENARE BACKGROUND - BAR IOAN\
 		//g.setColor(darkGreen);
-		g.setColor(Color.GREEN);
+		g.setColor(backgroundColor);
 		g.fillRect(0,0,1900,1000);
 		
 		
