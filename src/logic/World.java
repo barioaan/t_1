@@ -14,11 +14,11 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 public class World extends JPanel implements Space, ActionListener {
-	
+
 	public static int numar_masini = 15 ;
 	
 	public static Random random = new Random();
-	
+
 	Timer timer = new Timer(100,this);
 	
 	public static ArrayList<Color> carColors = new ArrayList<Color>();
@@ -298,12 +298,12 @@ public class World extends JPanel implements Space, ActionListener {
 		g.fillRect(0,0,1900,1000);
 		
 		
-		g.setColor(Color.GRAY);
+		g.setColor(Color.PINK);
 		
 		
 		// TRASARE INTERSECTII BAR IOAN
+		g.fillRect(Road1.inputPort.cordX, Road1.inputPort.cordY, 100, 200);
 		g.fillRect(Road1.inputPort.cordX+600, Road1.inputPort.cordY, 100, 200);
-		g.fillRect(Road1.inputPort.cordX+1200, Road1.inputPort.cordY, 100, 200);
 		
 		//TRASARE BENZI DE CIRCULATIE - BAR IOAN
 		g.fillRect(Road1.outputPort.cordX, Road1.outputPort.cordY, Road1.size, 50);
