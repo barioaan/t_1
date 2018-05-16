@@ -138,6 +138,9 @@ public class World extends JPanel implements Space, ActionListener {
 		Road18 = new Road(P18I, P18O, 400, Orientation.E_North);
 		Road19 = new Road(P19I, P19O, 400, Orientation.E_South);
 		
+		//ADAUGARE LINIE UNDE SA SE OPREASCA MASINILE
+		
+		
 		
 		roads.add(Road1);
 		roads.add(Road2);
