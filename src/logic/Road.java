@@ -10,6 +10,7 @@ public class Road implements Space{
 	public ArrayList <Car> listOFcars = new ArrayList <Car>();
 	public Direction [] directionList;
 	public Orientation orientation;
+	public int xPietoni, yPietoni;
 	
 	public Road(Port inputPort, Port outputPort, int size, Orientation orientation) {
 		super();

@@ -9,6 +9,7 @@ public class Car {
 	public int width, height;
 	public int x,y;
 	private Direction direction;
+	public int xPietoni, yPietoni;
 	
 	public Car(int x, int y, Color color, int width, int height) {
 		this.x = x;

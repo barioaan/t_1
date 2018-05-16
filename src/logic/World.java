@@ -172,6 +172,8 @@ public class World extends JPanel implements Space, ActionListener {
 		carColors.add(Color.CYAN);
 		carColors.add(Color.BLUE);
 		
+		
+		
 		//GENERAREA RANDOM A MASINILOR, CULORILOR MASINILOR SI PE CE DRUM SE POZITIONEAZA
 		//for(int i=0; i<numar_masini; i++) {
 		int i=0;
@@ -281,6 +283,8 @@ public class World extends JPanel implements Space, ActionListener {
 		directionListRoad18[2] = Direction.E_right;
 		
 		roads.get(17).directionList = directionListRoad18;
+		
+		
 		
 		
 	}
