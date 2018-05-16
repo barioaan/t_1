@@ -11,6 +11,7 @@ public class Road implements Space{
 	public Direction [] directionList;
 	public Orientation orientation;
 	public int coordonataLiniePietoni;
+	public boolean areLiniePietoni = false;
 	
 	public Road(Port inputPort, Port outputPort, int size, Orientation orientation) {
 		super();

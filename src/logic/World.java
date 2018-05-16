@@ -140,6 +140,14 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		//ADAUGARE LINIE UNDE SA SE OPREASCA MASINILE
 		
+		Road1.areLiniePietoni = false;
+		Road2.areLiniePietoni = true;
+		//stergi comentariul asta si faci asa pentru toate cele 19 drumuri
+		
+		
+		
+		//aici pentru drumurile care au linie la cele orizontale pui coordonata x si la cele verticale pui coordonata y
+		Road10.coordonataLiniePietoni  = 482; 
 		
 		
 		roads.add(Road1);
