@@ -18,6 +18,10 @@ public class Car {
 		this.width = width;
 		this.height = height;
 	}
+
+	public Car() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 }

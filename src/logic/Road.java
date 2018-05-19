@@ -23,11 +23,11 @@ public class Road implements Space{
 		this.orientation = orientation;
 		
 	}
-
+/*
 	public void setCompartimente(int cateCompartimente) {
 		this.compartimente = new Compartiment[cateCompartimente];
 	}
-
+*/
 
 
 

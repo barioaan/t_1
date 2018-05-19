@@ -24,7 +24,7 @@ public class World extends JPanel implements Space, ActionListener {
 	public static Random random = new Random();
 
 	Timer timer = new Timer(550,this);
-	public static int index = 0;
+
 	public static ArrayList<Color> carColors = new ArrayList<Color>();
 	
 	
@@ -200,38 +200,45 @@ public class World extends JPanel implements Space, ActionListener {
 		//COMPARTIMENTE DRUMURI
 		//Road 1 - 13 compartimente ALBU ADELA
 
-		Road1.setCompartimente(13);
+	//	Road1.setCompartimente(13);
+		
+		Compartiment [] compartimenteR1 = new Compartiment[13];
 		
 		Compartiment compartiment0 = new Compartiment(555, 400);
-		Road1.compartimente[0] = compartiment0;
+		compartimenteR1[0] = compartiment0;
 		Compartiment compartiment1 = new Compartiment(510,400);
-		Road1.compartimente[1] = compartiment1;
+		compartimenteR1[1] = compartiment1;
 		Compartiment compartiment2 = new Compartiment(465,400);
-		Road1.compartimente[2] = compartiment2;
+		compartimenteR1[2] = compartiment2;
 		Compartiment compartiment3 = new Compartiment(420,400);
-		Road1.compartimente[3] = compartiment3;
+		compartimenteR1[3] = compartiment3;
 		Compartiment compartiment4 = new Compartiment(375,400);
-		Road1.compartimente[4] = compartiment4;
+		compartimenteR1[4] = compartiment4;
 		Compartiment compartiment5 = new Compartiment(330,400);
-		Road1.compartimente[5] = compartiment5;
+		compartimenteR1[5] = compartiment5;
 		Compartiment compartiment6 = new Compartiment(285,400);
-		Road1.compartimente[6] = compartiment6;
+		compartimenteR1[6] = compartiment6;
 		Compartiment compartiment7 = new Compartiment(240,400);
-		Road1.compartimente[7] = compartiment7;
+		compartimenteR1[7] = compartiment7;
 		Compartiment compartiment8 = new Compartiment(195,400);
-		Road1.compartimente[8] = compartiment8;
+		compartimenteR1[8] = compartiment8;
 		Compartiment compartiment9 = new Compartiment(150,400);
-		Road1.compartimente[9] = compartiment9;
+		compartimenteR1[9] = compartiment9;
 		Compartiment compartiment10 = new Compartiment(105,400);
-		Road1.compartimente[10] = compartiment10;
+		compartimenteR1[10] = compartiment10;
 		Compartiment compartiment11 = new Compartiment(60,400);
-		Road1.compartimente[11] = compartiment11;
+		compartimenteR1[11] = compartiment11;
 		Compartiment compartiment12 = new Compartiment(15,400);
-		Road1.compartimente[12] = compartiment12;
+		compartimenteR1[12] = compartiment12;
 		
+		Road1.compartimente = compartimenteR1;
+		
+		
+		
+		/*
 		//Road 6 - 11 compartimente ALBU ADELA
 		
-		Road6.setCompartimente(11);
+	//	Road6.setCompartimente(11);
 		
 		Compartiment c_road6_0 = new Compartiment(705, 500);
 		Road6.compartimente[0] = c_road6_0;
@@ -258,7 +265,7 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		//Road 7 - 11 compartiemnte ALBU ADELA
 		
-		Road7.setCompartimente(11);
+	//	Road7.setCompartimente(11);
 		
 		Compartiment c_road7_0 = new Compartiment(705, 550);
 		Road7.compartimente[0] = c_road7_0;
@@ -285,7 +292,7 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		//Road 9 - 8 compartimente ALBU ADELA
 		
-		Road9.setCompartimente(8);
+		//Road9.setCompartimente(8);
 		
 		Compartiment c_road9_0 = new Compartiment (600,645);
 		Road9.compartimente[0] = c_road9_0;
@@ -306,7 +313,7 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		//Road 10 - 10 compartimente ALBU ADELA
 		
-		Road10.setCompartimente(10);
+	//	Road10.setCompartimente(10);
 		
 		Compartiment c_road10_0 = new Compartiment(32, 550);
 		Road10.compartimente[0] = c_road10_0;
@@ -332,7 +339,7 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		// Road 11 - 10 compartimente ALBU ADELA
 		
-		Road11.setCompartimente(10);
+		//Road11.setCompartimente(10);
 		
 		Compartiment c_road11_0 = new Compartiment(32, 500);
 		Road11.compartimente[0] = c_road11_0;
@@ -356,11 +363,7 @@ public class World extends JPanel implements Space, ActionListener {
 		Road11.compartimente[9] = c_road11_9;
 
 		
-		for(Road r: roads) {
-			for(int i=0; i<r.compartimente.length; i++) {
-				r.compartimente[i].setEmpty(true);
-			}
-		}
+		*/
 		
 		
 		
@@ -385,6 +388,8 @@ public class World extends JPanel implements Space, ActionListener {
 		roads.add(Road18);
 		roads.add(Road19);
 		
+		
+		
 	
 		
 		
@@ -400,7 +405,7 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		
 		
-		car1  = new Car(roads.get(9).compartimente[0].x, roads.get(9).compartimente[0].y, carColors.get(3),40,40);
+	
 		
 		//SEMAFOARE 1-4 OCTAVIA
 		semaphore1 = new Semaphore(Color.RED, 530, 330);
@@ -512,6 +517,37 @@ public class World extends JPanel implements Space, ActionListener {
 			}
 		}
 		*/
+		
+		
+			for(int i=0; i<roads.get(0).compartimente.length; i++) {
+				roads.get(0).compartimente[i].setEmpty(true);
+		
+			}
+		
+		
+
+			for(int i=0; i<roads.get(0).compartimente.length; i++) {
+				
+				if(roads.get(0).compartimente[i].isEmpty == true && i == 0) {
+					int nrRandomCulori = random.nextInt(7);
+					roads.get(0).compartimente[i].car = new Car(roads.get(0).compartimente[i].x, roads.get(0).compartimente[i].y, carColors.get(nrRandomCulori),40,40);
+					roads.get(0).compartimente[i].isEmpty = false;
+				}
+				if(roads.get(0).compartimente[i].isEmpty == true && i>0) {
+					/*roads.get(0).compartimente[i].car.color = roads.get(0).compartimente[i-1].car.color;
+					roads.get(0).compartimente[i].car.x = roads.get(0).compartimente[i].x;
+					roads.get(0).compartimente[i].car.y = roads.get(0).compartimente[i].y;
+					roads.get(0).compartimente[i].car.width = roads.get(0).compartimente[i-1].car.width;
+					roads.get(0).compartimente[i].car.height = roads.get(0).compartimente[i-1].car.height;
+					(/
+					//r.compartimente[i-1].car = null;
+					*/
+					roads.get(0).compartimente[i].car = roads.get(0).compartimente[0].car;
+					roads.get(0).compartimente[i].car.x = roads.get(0).compartimente[0].car.x;
+					roads.get(0).compartimente[i].car.y = roads.get(0).compartimente[0].car.y;
+				}
+				
+			}
 		
 		
 		
@@ -635,17 +671,14 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		
 		
-		for(Road r: roads){
-			for(int i=0; i<r.compartimente.length; i++) {
-				if(r.compartimente[i].isEmpty == false) {
-					g.setColor(r.compartimente[i].car.color);
-					g.fillRect(r.compartimente[i].car.x, r.compartimente[i].car.y, r.compartimente[i].car.width, r.compartimente[i].car.height);
+		
+			for(int i=0; i<roads.get(0).compartimente.length; i++) {
+				if(roads.get(0).compartimente[i].isEmpty == false) {
+					g.setColor(roads.get(0).compartimente[i].car.color);
+					g.fillRect(roads.get(0).compartimente[i].car.x, roads.get(0).compartimente[i].car.y, roads.get(0).compartimente[i].car.width, roads.get(0).compartimente[i].car.height);
 				}
 			}
-			
-		}
-		
-		
+				
 			
 		
 		
@@ -814,27 +847,29 @@ public class World extends JPanel implements Space, ActionListener {
 		//int nrRandom_colors = random.nextInt(7);
 		//roads.get(0).listOFcars.add(new Car(roads.get(0).compartimente[0].x, roads.get(0).compartimente[0].y, carColors.get(nrRandom_colors),40,40));
 		
-		for(Road r: roads) {
+		
+
+		for(int i=0; i<roads.get(0).compartimente.length; i++) {
 			
-			for(int i=0; i<r.compartimente.length; i++) {
-				
-				if(r.compartimente[i].isEmpty == true && i == 0) {
-					int nrRandomCulori = random.nextInt(7);
-					r.compartimente[i].car = new Car(r.compartimente[i].x, r.compartimente[i].y, carColors.get(nrRandomCulori),40,40);
-					r.compartimente[i].isEmpty = false;
-				}
-				if(r.compartimente[i].isEmpty == true && i> 0) {
-					r.compartimente[i].car.color = r.compartimente[i-1].car.color;
-					r.compartimente[i].car.x = r.compartimente[i-1].car.x;
-					r.compartimente[i].car.y = r.compartimente[i-1].car.y;
-					r.compartimente[i].car.width = r.compartimente[i-1].car.width;
-					r.compartimente[i].car.height = r.compartimente[i-1].car.height;
-					
-					//r.compartimente[i-1].car = null;
-					
-				}
-				
+			if(roads.get(0).compartimente[i].isEmpty == true && i == 0) {
+				int nrRandomCulori = random.nextInt(7);
+				roads.get(0).compartimente[i].car = new Car(roads.get(0).compartimente[i].x, roads.get(0).compartimente[i].y, carColors.get(nrRandomCulori),40,40);
+				roads.get(0).compartimente[i].isEmpty = false;
 			}
+			if(roads.get(0).compartimente[i].isEmpty == true && i>0) {
+				/*roads.get(0).compartimente[i].car.color = roads.get(0).compartimente[i-1].car.color;
+				roads.get(0).compartimente[i].car.x = roads.get(0).compartimente[i].x;
+				roads.get(0).compartimente[i].car.y = roads.get(0).compartimente[i].y;
+				roads.get(0).compartimente[i].car.width = roads.get(0).compartimente[i-1].car.width;
+				roads.get(0).compartimente[i].car.height = roads.get(0).compartimente[i-1].car.height;
+				(/
+				//r.compartimente[i-1].car = null;
+				*/
+				roads.get(0).compartimente[i].car = roads.get(0).compartimente[0].car;
+				roads.get(0).compartimente[i].car.x = roads.get(0).compartimente[0].car.x;
+				roads.get(0).compartimente[i].car.y = roads.get(0).compartimente[0].car.y;
+			}
+			
 		}
 		
 				
