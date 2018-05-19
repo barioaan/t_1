@@ -23,9 +23,11 @@ public class World extends JPanel implements Space, ActionListener {
 	
 	public static Random random = new Random();
 
-	Timer timer = new Timer(1000,this);
-	
+	Timer timer = new Timer(550,this);
+	public static int index = 0;
 	public static ArrayList<Color> carColors = new ArrayList<Color>();
+	
+	
 
 	public World() {
 		setLayout(null);
@@ -79,7 +81,7 @@ public class World extends JPanel implements Space, ActionListener {
 	private static List <Intersection> intersections = new ArrayList <Intersection>();
 	
 	private static int xx = 0;
-	
+	public static Car car1;
 	
 	
 	public void move() {
@@ -199,7 +201,7 @@ public class World extends JPanel implements Space, ActionListener {
 		//Road 1 - 13 compartimente
 
 		
-		Road1.setCompartimente(13);
+		//Road1.setCompartimente(13);
 		
 		Compartiment compartiment0 = new Compartiment(555, 400);
 		Road1.compartimente[0] = compartiment0;
@@ -235,6 +237,7 @@ public class World extends JPanel implements Space, ActionListener {
 		}
 		
 		
+		
 		roads.add(Road1);
 		roads.add(Road2);
 		roads.add(Road3);
@@ -255,7 +258,7 @@ public class World extends JPanel implements Space, ActionListener {
 		roads.add(Road18);
 		roads.add(Road19);
 		
-		
+	
 		
 		
 		//CULORILE MASINILOR - BRANESCU SERBAN
@@ -270,7 +273,7 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		
 		
-		
+		car1  = new Car(roads.get(0).compartimente[0].x, roads.get(0).compartimente[0].y, carColors.get(3),40,40);
 		
 		//SEMAFOARE 1-4 OCTAVIA
 		semaphore1 = new Semaphore(Color.RED, 530, 330);
@@ -480,11 +483,12 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		
 		
-		for(int i=0; i<1; i++) {
-			g.setColor(roads.get(i).listOFcars.get(i).color);
-			g.fillRect(roads.get(i).listOFcars.get(i).x, roads.get(i).listOFcars.get(i).y, roads.get(i).listOFcars.get(i).width, roads.get(i).listOFcars.get(i).height);
+		
+			g.setColor(Color.RED);
+			g.fillRect(car1.x, car1.y, car1.width, car1.height);
 			
-		}
+		
+		
 		
 		
 /*
@@ -647,12 +651,12 @@ public class World extends JPanel implements Space, ActionListener {
 					}
 					
 					
-				}*/
-		
-		
-		for(int i=0; i<roads.get(0).compartimente.length; i++) {
+					
+					//////////////////////////////
+					 
+		for(int i=0; i<13; i++) {
 			if(roads.get(0).compartimente[i].isEmpty == true && i == 0) {
-				int nrRandom_colors = random.nextInt(7);
+				
 					roads.get(0).listOFcars.add(new Car(roads.get(0).compartimente[i].x, roads.get(0).compartimente[i].y, carColors.get(nrRandom_colors),40,40));
 					roads.get(0).compartimente[i].isEmpty = false;
 			}
@@ -662,6 +666,19 @@ public class World extends JPanel implements Space, ActionListener {
 				roads.get(0).listOFcars.get(i-1).y = roads.get(0).compartimente[i].y;
 			}
 		}
+		
+		////////////////
+					
+				}*/
+		
+		//int nrRandom_colors = random.nextInt(7);
+		//roads.get(0).listOFcars.add(new Car(roads.get(0).compartimente[0].x, roads.get(0).compartimente[0].y, carColors.get(nrRandom_colors),40,40));
+		
+		
+			car1.x = roads.get(0).compartimente[index].x;
+			car1.y = roads.get(0).compartimente[index].y;
+		index++;
+		
 				
 				
 				//System.out.println("FINAL");
