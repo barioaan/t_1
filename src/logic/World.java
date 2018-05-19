@@ -487,6 +487,7 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		roads.get(17).directionList = directionListRoad18;
 		
+		/*
 		//GENERAREA RANDOM A MASINILOR, CULORILOR MASINILOR SI PE CE DRUM SE POZITIONEAZA
 		//for(int i=0; i<numar_masini; i++) {
 		int i=0;
@@ -510,6 +511,9 @@ public class World extends JPanel implements Space, ActionListener {
 			   	i++;
 			}
 		}
+		*/
+		
+		
 		
 		
 		
@@ -631,11 +635,17 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		
 		
+		for(Road r: roads){
+			for(int i=0; i<r.compartimente.length; i++) {
+				if(r.compartimente[i].isEmpty == false) {
+					g.setColor(r.compartimente[i].car.color);
+					g.fillRect(r.compartimente[i].car.x, r.compartimente[i].car.y, r.compartimente[i].car.width, r.compartimente[i].car.height);
+				}
+			}
+			
+		}
 		
 		
-		
-			g.setColor(Color.RED);
-			g.fillRect(car1.x, car1.y, car1.width, car1.height);
 			
 		
 		
@@ -804,23 +814,29 @@ public class World extends JPanel implements Space, ActionListener {
 		//int nrRandom_colors = random.nextInt(7);
 		//roads.get(0).listOFcars.add(new Car(roads.get(0).compartimente[0].x, roads.get(0).compartimente[0].y, carColors.get(nrRandom_colors),40,40));
 		
-		
-			for(Road r: roads) {
-				for(int i=0; i<r.compartimente.length; i++) {
-					if(r.compartimente[i].isEmpty == true && i == 0) {
-						int nrRandomCulori = random.nextInt(7);
-						r.compartimente[i].car = new Car(r.compartimente[i].x, r.compartimente[i].y, carColors.get(nrRandomCulori),40,40);
-						r.compartimente[i].isEmpty = false;
-					}
-					if(r.compartimente[i].isEmpty == true && i> 0) {
-						r.compartimente[i].car = r.compartimente[i-1].car;
-						r.compartimente[i-1].car = null;
-						r.compartimente[i-1].isEmpty = true;
-					}
-				}
-			}
-		
+		for(Road r: roads) {
+			
+			for(int i=0; i<r.compartimente.length; i++) {
 				
+				if(r.compartimente[i].isEmpty == true && i == 0) {
+					int nrRandomCulori = random.nextInt(7);
+					r.compartimente[i].car = new Car(r.compartimente[i].x, r.compartimente[i].y, carColors.get(nrRandomCulori),40,40);
+					r.compartimente[i].isEmpty = false;
+				}
+				if(r.compartimente[i].isEmpty == true && i> 0) {
+					r.compartimente[i].car.color = r.compartimente[i-1].car.color;
+					r.compartimente[i].car.x = r.compartimente[i-1].car.x;
+					r.compartimente[i].car.y = r.compartimente[i-1].car.y;
+					r.compartimente[i].car.width = r.compartimente[i-1].car.width;
+					r.compartimente[i].car.height = r.compartimente[i-1].car.height;
+					
+					//r.compartimente[i-1].car = null;
+					
+				}
+				
+			}
+		}
+		
 				
 				//System.out.println("FINAL");
 				
