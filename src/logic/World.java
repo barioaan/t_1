@@ -361,7 +361,7 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		//Road 7 - 11 compartiemnte ALBU ADELA
 		
-	//	Road7.setCompartimente(11);
+	
 		
 		Compartiment [] compartimenteR7 = new Compartiment[11];
 		
@@ -394,17 +394,17 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		Compartiment [] compartimenteR8 = new Compartiment[6];
 		
-		Compartiment c_road8_0 = new Compartiment(650, 23);
+		Compartiment c_road8_0 = new Compartiment(650, 977);
 		compartimenteR8[0] = c_road8_0;
-		Compartiment c_road8_1 = new Compartiment(650, 68);
+		Compartiment c_road8_1 = new Compartiment(650, 932);
 		compartimenteR8[1] = c_road8_1;
-		Compartiment c_road8_2 = new Compartiment(650, 113);
+		Compartiment c_road8_2 = new Compartiment(650, 887);
 		compartimenteR8[2] = c_road8_2;
-		Compartiment c_road8_3 = new Compartiment(650, 158);
+		Compartiment c_road8_3 = new Compartiment(650, 842);
 		compartimenteR8[3] = c_road8_3;
-		Compartiment c_road8_4 = new Compartiment(650, 203);
+		Compartiment c_road8_4 = new Compartiment(650, 797);
 		compartimenteR8[4] = c_road8_4;
-		Compartiment c_road8_5 = new Compartiment(650, 248);
+		Compartiment c_road8_5 = new Compartiment(650, 752);
 		compartimenteR8[5] = c_road8_5;
 		
 		Road8.compartimente = compartimenteR8;
