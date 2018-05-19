@@ -605,7 +605,7 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		//Road16 - 10 c BRADEA OCTAVIA
 
-		Compartiment [] compartimenteR16 = new Compartiment[10];
+		Compartiment [] compartimenteR16 = new Compartiment[13];
 		
 		Compartiment c_road16_0  = new Compartiment(1345, 500);
 		compartimenteR16[0] = c_road16_0;
@@ -862,40 +862,33 @@ public class World extends JPanel implements Space, ActionListener {
 		}
 		*/
 		
-		
-			for(int i=0; i<roads.get(0).compartimente.length; i++) {
-				roads.get(0).compartimente[i].setEmpty(true);
+		for(int j=0; j<roads.size(); j++) {
+			
+			for(int i=0; i<roads.get(j).compartimente.length; i++) {
+				roads.get(j).compartimente[i].setEmpty(true);
 		
 			}
+		}
+			
 		
 		
 
-			for(int i=0; i<roads.get(0).compartimente.length; i++) {
+		for(int j=0; j<roads.size(); j++) {
+			if(j==1 || j==7 || j==9 || j==10 || j==13 || j==14 || j==17) {
 				
-				if(roads.get(0).compartimente[i].isEmpty == true && i == 0) {
-					int nrRandomCulori = random.nextInt(7);
-					roads.get(0).compartimente[i].car = new Car(roads.get(0).compartimente[i].x, roads.get(0).compartimente[i].y, carColors.get(nrRandomCulori),40,40);
-					roads.get(0).compartimente[i].isEmpty = false;
+			
+				for(int i=0; i<roads.get(j).compartimente.length; i++) {
+					
+					
+					
+					if(roads.get(j).compartimente[i].isEmpty == true && i == 0) {
+						int nrRandomCulori = random.nextInt(7);
+						roads.get(j).compartimente[i].car = new Car(roads.get(j).compartimente[i].x, roads.get(j).compartimente[i].y, carColors.get(nrRandomCulori),40,40);
+						roads.get(j).compartimente[i].isEmpty = false;
+					}
 				}
-				if(roads.get(0).compartimente[i].isEmpty == true && i>0) {
-					/*roads.get(0).compartimente[i].car.color = roads.get(0).compartimente[i-1].car.color;
-					roads.get(0).compartimente[i].car.x = roads.get(0).compartimente[i].x;
-					roads.get(0).compartimente[i].car.y = roads.get(0).compartimente[i].y;
-					roads.get(0).compartimente[i].car.width = roads.get(0).compartimente[i-1].car.width;
-					roads.get(0).compartimente[i].car.height = roads.get(0).compartimente[i-1].car.height;
-					(/
-					//r.compartimente[i-1].car = null;
-					*/
-					roads.get(0).compartimente[i].car = roads.get(0).compartimente[0].car;
-					roads.get(0).compartimente[i].car.x = roads.get(0).compartimente[0].car.x;
-					roads.get(0).compartimente[i].car.y = roads.get(0).compartimente[0].car.y;
-				}
-				
 			}
-		
-		
-		
-		
+		}
 		
 	}
 	
@@ -1015,13 +1008,15 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		
 		
-		
-			for(int i=0; i<roads.get(0).compartimente.length; i++) {
-				if(roads.get(0).compartimente[i].isEmpty == false) {
-					g.setColor(roads.get(0).compartimente[i].car.color);
-					g.fillRect(roads.get(0).compartimente[i].car.x, roads.get(0).compartimente[i].car.y, roads.get(0).compartimente[i].car.width, roads.get(0).compartimente[i].car.height);
+		for(Road r: roads) {
+			for(int i=0; i<r.compartimente.length; i++) {
+				if(r.compartimente[i].isEmpty == false) {
+					g.setColor(r.compartimente[i].car.color);
+					g.fillRect(r.compartimente[i].car.x, r.compartimente[i].car.y, r.compartimente[i].car.width, r.compartimente[i].car.height);
 				}
 			}
+		}
+			
 				
 			
 		
@@ -1162,60 +1157,37 @@ public class World extends JPanel implements Space, ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		
 		/*
-		
-					
-					
-					//////////////////////////////
-					 
-		for(int i=0; i<13; i++) {
-			if(roads.get(0).compartimente[i].isEmpty == true && i == 0) {
-				
-					roads.get(0).listOFcars.add(new Car(roads.get(0).compartimente[i].x, roads.get(0).compartimente[i].y, carColors.get(nrRandom_colors),40,40));
-					roads.get(0).compartimente[i].isEmpty = false;
-			}
-			if(roads.get(0).compartimente[i].isEmpty == true && i > 0) {
-				
-				roads.get(0).listOFcars.get(i-1).x = roads.get(0).compartimente[i].x;
-				roads.get(0).listOFcars.get(i-1).y = roads.get(0).compartimente[i].y;
-			}
-		}
-		
-		////////////////car1.x = roads.get(9).compartimente[index].x;
-			car1.y = roads.get(9).compartimente[index].y;
-		index++;
-					
-				}*/
-		
-		//int nrRandom_colors = random.nextInt(7);
-		//roads.get(0).listOFcars.add(new Car(roads.get(0).compartimente[0].x, roads.get(0).compartimente[0].y, carColors.get(nrRandom_colors),40,40));
-		
-		
+for( Road r : roads) {
 
-		for(int i=0; i<roads.get(0).compartimente.length; i++) {
-			
-			if(roads.get(0).compartimente[i].isEmpty == true && i == 0) {
-				int nrRandomCulori = random.nextInt(7);
-				roads.get(0).compartimente[i].car = new Car(roads.get(0).compartimente[i].x, roads.get(0).compartimente[i].y, carColors.get(nrRandomCulori),40,40);
-				roads.get(0).compartimente[i].isEmpty = false;
-			}
-			if(roads.get(0).compartimente[i].isEmpty == true && i>0) {
-				/*roads.get(0).compartimente[i].car.color = roads.get(0).compartimente[i-1].car.color;
-				roads.get(0).compartimente[i].car.x = roads.get(0).compartimente[i].x;
-				roads.get(0).compartimente[i].car.y = roads.get(0).compartimente[i].y;
-				roads.get(0).compartimente[i].car.width = roads.get(0).compartimente[i-1].car.width;
-				roads.get(0).compartimente[i].car.height = roads.get(0).compartimente[i-1].car.height;
-				(/
-				//r.compartimente[i-1].car = null;
-				*/
-				roads.get(0).compartimente[i].car = roads.get(0).compartimente[0].car;
-				roads.get(0).compartimente[i].car.x = roads.get(0).compartimente[0].car.x;
-				roads.get(0).compartimente[i].car.y = roads.get(0).compartimente[0].car.y;
-			}
-			
+	for(int i=0; i<r.compartimente.length; i++) {
+		
+		
+		
+		if(r.compartimente[i].isEmpty == true && i == 0) {
+			int nrRandomCulori = random.nextInt(7);
+			r.compartimente[i].car = new Car(r.compartimente[i].x, r.compartimente[i].y, carColors.get(nrRandomCulori),40,40);
+			r.compartimente[i].isEmpty = false;
+		}
+		if(r.compartimente[i].isEmpty == true && i>0 && r.compartimente[i-1].isEmpty == false ) {
+			r.compartimente[i].car.color = r.compartimente[i-1].car.color;
+			r.compartimente[i].car.x = r.compartimente[i].x;
+			r.compartimente[i].car.y = r.compartimente[i].y;
+			r.compartimente[i].car.width = r.compartimente[i-1].car.width;
+			r.compartimente[i].car.height = r.compartimente[i-1].car.height;
+			r.compartimente[i-1].isEmpty = true;
+			r.compartimente[i].isEmpty = false;
+			r.compartimente[i-1].car = null;
+			System.out.println("Cordonata X =" + r.compartimente[i].car.x);
 		}
 		
+		r.compartimente[i].car = r.compartimente[i-1].car;
+		r.compartimente[i].car.x = r.compartimente[i].x;
+		r.compartimente[i].car.y = r.compartimente[i].y;
+		
+	}
+}
+		*/
 				
 				//System.out.println("FINAL");
 				
