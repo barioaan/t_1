@@ -356,9 +356,12 @@ public class World extends JPanel implements Space, ActionListener {
 		Road11.compartimente[9] = c_road11_9;
 
 		
-		for(int i=0; i<Road1.compartimente.length; i++) {
-			Road1.compartimente[i].setEmpty(true);
+		for(Road r: roads) {
+			for(int i=0; i<r.compartimente.length; i++) {
+				r.compartimente[i].setEmpty(true);
+			}
 		}
+		
 		
 		
 		
