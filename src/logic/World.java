@@ -23,7 +23,7 @@ public class World extends JPanel implements Space, ActionListener {
 	
 	public static Random random = new Random();
 
-	Timer timer = new Timer(850,this);
+	Timer timer = new Timer(300,this);
 
 	public static ArrayList<Color> carColors = new ArrayList<Color>();
 	
@@ -63,23 +63,15 @@ public class World extends JPanel implements Space, ActionListener {
 	}
 	
 
-	 
-
 	private static Port P1I, P2I, P3I, P4I, P5I, P6I, P7I, P8I, P9I, P10I, P11I, P12I, P13I, P14I, P15I, P16I, P17I, P18I, P19I;
 	private static Port P1O, P2O, P3O, P4O, P5O, P6O, P7O, P8O, P9O, P10O, P11O, P12O, P13O, P14O, P15O, P16O, P17O, P18O, P19O;
 	private static Road Road1, Road2, Road3, Road4, Road5, Road6, Road7, Road8, Road9, Road10, Road11, Road12, Road13, Road14, Road15, Road16, Road17, Road18, Road19;
 	public static Semaphore semaphore1, semaphore2, semaphore3, semaphore4, semaphore5, semaphore6, semaphore7, semaphore8;
 	
-	private static Intersection intersectia_A;
-	
-	
-	
+
 	private static List <Road> roads = new ArrayList <Road>();
 	private List <Port> ports = new ArrayList <Port>();
 	private static List <Intersection> intersections = new ArrayList <Intersection>();
-	
-	private static int xx = 0;
-	public static Car car1;
 	
 	
 	public void move() {
@@ -834,32 +826,10 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		roads.get(17).directionList = directionListRoad18;
 		
-		/*
-		//GENERAREA RANDOM A MASINILOR, CULORILOR MASINILOR SI PE CE DRUM SE POZITIONEAZA
-		//for(int i=0; i<numar_masini; i++) {
-		int i=0;
-		while(i<numar_masini) {
-			
-			int nrRandom_colors = random.nextInt(7);
-		    int nrRandom_roads = random.nextInt(18);
-		    if(nrRandom_roads == 1 || nrRandom_roads == 9 || nrRandom_roads == 10  ) {
-		    	
-		    	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).inputPort.cordX+5, roads.get(nrRandom_roads).inputPort.cordY+5, carColors.get(nrRandom_colors),40,40));
-		    	i++;
-		    }
-		    if (nrRandom_roads == 7 || nrRandom_roads == 17) {
-		    	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).inputPort.cordX+5, roads.get(nrRandom_roads).inputPort.cordY-50, carColors.get(nrRandom_colors),40,40));
-		    	i++;
-		    }
-		    
-		    
-		    if (nrRandom_roads == 13 || nrRandom_roads == 14) {
-			   	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).inputPort.cordX-50, roads.get(nrRandom_roads).inputPort.cordY+5, carColors.get(nrRandom_colors),40,40));
-			   	i++;
-			}
-		}
-		*/
 		
+		
+		
+		//BAR IOAN
 		for(int j=0; j<roads.size(); j++) {
 			
 			for(int i=0; i<roads.get(j).compartimente.length; i++) {
@@ -1162,6 +1132,19 @@ public class World extends JPanel implements Space, ActionListener {
 							roads.get(j).compartimente[i].isEmpty = false;
 						}						
 					}
+				}
+				
+				if(roads.get(j).compartimente[roads.get(j).compartimente.length-1].isEmpty == false && j==9 && roads.get(j-1).compartimente[0].isEmpty == true) {
+					
+						int nrRandomCulori = random.nextInt(7);
+						roads.get(j-1).compartimente[0].car.color = roads.get(j).compartimente[i].car.color;
+						roads.get(j-1).compartimente[0].car.width = roads.get(j).compartimente[i].car.width;
+						roads.get(j-1).compartimente[0].car.height = roads.get(j).compartimente[i].car.height;
+						roads.get(j-1).compartimente[0].car.x = roads.get(j-1).compartimente[0].x;
+						roads.get(j-1).compartimente[0].car.y = roads.get(j-1).compartimente[0].y;
+						roads.get(j).compartimente[i].isEmpty = true;
+						roads.get(j-1).compartimente[0].isEmpty = false;
+					
 				}
 			}
 		}
