@@ -233,9 +233,101 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		Road1.compartimente = compartimenteR1;
 		
+		//Road 2 - 6 compartimente BRANESCU SERBAN
 		
+		Compartiment [] compartimenteR2 = new Compartiment[6];
 		
+		Compartiment c_road2_0 = new Compartiment(600, 12);
+		compartimenteR2[0] = c_road2_0;
+		Compartiment c_road2_1 = new Compartiment(600, 57);
+		compartimenteR2[1] = c_road2_1;
+		Compartiment c_road2_2 = new Compartiment(600, 102);
+		compartimenteR2[2] = c_road2_2;
+		Compartiment c_road2_3 = new Compartiment(600, 147);
+		compartimenteR2[3] = c_road2_3;
+		Compartiment c_road2_4 = new Compartiment(600, 192);
+		compartimenteR2[4] = c_road2_4;
+		Compartiment c_road2_5 = new Compartiment(600, 237);
+		compartimenteR2[5] = c_road2_5;
 		
+		Road2.compartimente = compartimenteR2;
+		
+		//Road 3 - 8 compartimente BRANESCU SERBAN
+		
+		Compartiment [] compartimenteR3 = new Compartiment[8];
+		
+		Compartiment c_road3_0 = new Compartiment (650,40);
+		compartimenteR3[0] = c_road3_0;
+		Compartiment c_road3_1 = new Compartiment (650,85);
+		compartimenteR3[1] = c_road3_1;
+		Compartiment c_road3_2 = new Compartiment (650,130);
+		compartimenteR3[2] = c_road3_2;
+		Compartiment c_road3_3 = new Compartiment (650,175);
+		compartimenteR3[3] = c_road3_3;
+		Compartiment c_road3_4 = new Compartiment (650,220);
+		compartimenteR3[4] = c_road3_4;
+		Compartiment c_road3_5 = new Compartiment (650,265);
+		compartimenteR3[5] = c_road3_5;
+		Compartiment c_road3_6 = new Compartiment (650,310);
+		compartimenteR3[6] = c_road3_6;
+		Compartiment c_road3_7 = new Compartiment (650,355);
+		compartimenteR3[7] = c_road3_7;
+		
+		Road3.compartimente = compartimenteR3;
+		
+		//Road4 - 10 c BRADEA OCTAVIA
+		
+		Compartiment [] compartimenteR4 = new Compartiment[10];
+		
+		Compartiment c_road4_0  = new Compartiment(750, 400);
+		compartimenteR4[0] = c_road4_0;
+		Compartiment c_road4_1 = new Compartiment(795,400);
+		compartimenteR4[1] = c_road4_1;
+		Compartiment c_road4_2 = new Compartiment(840,400);
+		compartimenteR4[2] = c_road4_2;
+		Compartiment c_road4_3 = new Compartiment(885,400);
+		compartimenteR4[3] = c_road4_3;
+		Compartiment c_road4_4 = new Compartiment(930,400);
+		compartimenteR4[4] = c_road4_4;
+		Compartiment c_road4_5 = new Compartiment(975,400);
+		compartimenteR4[5] = c_road4_5;
+		Compartiment c_road4_6 = new Compartiment(1020,400);
+		compartimenteR4[6] = c_road4_6;
+		Compartiment c_road4_7 = new Compartiment(1065,400);
+		compartimenteR4[7] = c_road4_7;
+		Compartiment c_road4_8 = new Compartiment(1110,400);
+		compartimenteR4[8] = c_road4_8;
+		Compartiment c_road4_9 = new Compartiment(1155,400);
+		compartimenteR4[9] = c_road4_9;
+		
+		Road4.compartimente = compartimenteR4;
+
+		//Road5 - 10 c BRADEA
+
+		Compartiment [] compartimenteR5 = new Compartiment[10];
+		
+		Compartiment c_road5_0  = new Compartiment(750, 450);
+		compartimenteR5[0] = c_road5_0;
+		Compartiment c_road5_1 = new Compartiment(795,450);
+		compartimenteR5[1] = c_road5_1;
+		Compartiment c_road5_2 = new Compartiment(840,450);
+		compartimenteR5[2] = c_road5_2;
+		Compartiment c_road5_3 = new Compartiment(885,450);
+		compartimenteR5[3] = c_road5_3;
+		Compartiment c_road5_4 = new Compartiment(930,450);
+		compartimenteR5[4] = c_road5_4;
+		Compartiment c_road5_5 = new Compartiment(975,450);
+		compartimenteR5[5] = c_road5_5;
+		Compartiment c_road5_6 = new Compartiment(1020,450);
+		compartimenteR5[6] = c_road5_6;
+		Compartiment c_road5_7 = new Compartiment(1065,450);
+		compartimenteR5[7] = c_road5_7;
+		Compartiment c_road5_8 = new Compartiment(1110,450);
+		compartimenteR5[8] = c_road5_8;
+		Compartiment c_road5_9 = new Compartiment(1155,450);
+		compartimenteR5[9] = c_road5_9;
+		
+		Road5.compartimente = compartimenteR5;
 		//Road 6 - 11 compartimente ALBU ADELA
 		
 		//	Road6.setCompartimente(11);
@@ -264,6 +356,8 @@ public class World extends JPanel implements Space, ActionListener {
 		compartimenteR6[9] = c_road6_9;
 		Compartiment c_road6_10 = new Compartiment(1155, 500);
 		compartimenteR6[10] = c_road6_10;
+		
+		Road6.compartimente = compartimenteR6;
 		
 		//Road 7 - 11 compartiemnte ALBU ADELA
 		
@@ -294,6 +388,27 @@ public class World extends JPanel implements Space, ActionListener {
 		Compartiment c_road7_10 = new Compartiment(1155, 550);
 		compartimenteR7[10] = c_road7_10;
 		
+		Road7.compartimente = compartimenteR7;
+		
+		//Road8 - 6 c BRANESCU SERBAN
+		
+		Compartiment [] compartimenteR8 = new Compartiment[6];
+		
+		Compartiment c_road8_0 = new Compartiment(650, 23);
+		compartimenteR8[0] = c_road8_0;
+		Compartiment c_road8_1 = new Compartiment(650, 68);
+		compartimenteR8[1] = c_road8_1;
+		Compartiment c_road8_2 = new Compartiment(650, 113);
+		compartimenteR8[2] = c_road8_2;
+		Compartiment c_road8_3 = new Compartiment(650, 158);
+		compartimenteR8[3] = c_road8_3;
+		Compartiment c_road8_4 = new Compartiment(650, 203);
+		compartimenteR8[4] = c_road8_4;
+		Compartiment c_road8_5 = new Compartiment(650, 248);
+		compartimenteR8[5] = c_road8_5;
+		
+		Road8.compartimente = compartimenteR8;
+		
 		//Road 9 - 8 compartimente ALBU ADELA
 		
 		//Road9.setCompartimente(8);
@@ -316,6 +431,8 @@ public class World extends JPanel implements Space, ActionListener {
 		compartimenteR9[6] = c_road9_6;
 		Compartiment c_road9_7 = new Compartiment (600,960);
 		compartimenteR9[7] = c_road9_7;
+		
+		Road9.compartimente = compartimenteR9;
 		
 		//Road 10 - 10 compartimente ALBU ADELA
 		
@@ -343,6 +460,8 @@ public class World extends JPanel implements Space, ActionListener {
 		compartimenteR10[8] = c_road10_8;
 		Compartiment c_road10_9 = new Compartiment(437, 550);
 		compartimenteR10[9] = c_road10_9;
+		
+		Road10.compartimente = compartimenteR10;
 		
 		
 		// Road 11 - 10 compartimente ALBU ADELA
@@ -372,7 +491,225 @@ public class World extends JPanel implements Space, ActionListener {
 		Compartiment c_road11_9 = new Compartiment(437, 500);
 		compartimenteR11[9] = c_road11_9;
 
+		Road11.compartimente = compartimenteR11;
+		
+		//Road 12 - 13 c BRADEA OCTAVIA
+		
+		Compartiment [] compartimenteR12 = new Compartiment[13];
+		
+		Compartiment c_road12_0 = new Compartiment(555, 450);
+		compartimenteR12[0] = c_road12_0;
+		Compartiment c_road12_1 = new Compartiment(510,450);
+		compartimenteR12[1] = c_road12_1;
+		Compartiment c_road12_2 = new Compartiment(465,450);
+		compartimenteR12[2] = c_road12_2;
+		Compartiment c_road12_3 = new Compartiment(420,450);
+		compartimenteR12[3] = c_road12_3;
+		Compartiment c_road12_4 = new Compartiment(375,450);
+		compartimenteR12[4] = c_road12_4;
+		Compartiment c_road12_5 = new Compartiment(330,450);
+		compartimenteR12[5] = c_road12_5;
+		Compartiment c_road12_6 = new Compartiment(285,450);
+		compartimenteR12[6] = c_road12_6;
+		Compartiment c_road12_7 = new Compartiment(240,450);
+		compartimenteR12[7] = c_road12_7;
+		Compartiment c_road12_8 = new Compartiment(195,450);
+		compartimenteR12[8] = c_road12_8;
+		Compartiment c_road12_9 = new Compartiment(150,450);
+		compartimenteR12[9] = c_road12_9;
+		Compartiment c_road12_10 = new Compartiment(105,450);
+		compartimenteR12[10] = c_road12_10;
+		Compartiment c_road12_11 = new Compartiment(60,450);
+		compartimenteR12[11] = c_road12_11;
+		Compartiment c_road12_12 = new Compartiment(15,400);
+		compartimenteR12[12] = c_road12_12;
+		
+		Road12.compartimente = compartimenteR12;
+		
+		//Road 13 - 8 c BRANESCU SERBAN
+		
+		Compartiment [] compartimenteR13 = new Compartiment[8];
+		
+		Compartiment c_road13_0 = new Compartiment(1250, 40);
+		compartimenteR13[0] = c_road13_0;
+		Compartiment c_road13_1 = new Compartiment(1250, 85);
+		compartimenteR13[1] = c_road13_1;
+		Compartiment c_road13_2 = new Compartiment(1250, 130);
+		compartimenteR13[2] = c_road13_2;
+		Compartiment c_road13_3 = new Compartiment(1250, 175);
+		compartimenteR13[3] = c_road13_3;	
+		Compartiment c_road13_4 = new Compartiment(1250, 220);
+		compartimenteR13[4] = c_road13_4;
+		Compartiment c_road13_5 = new Compartiment(1250, 265);
+		compartimenteR13[5] = c_road13_5;
+		Compartiment c_road13_6 = new Compartiment(1250, 310);
+		compartimenteR13[6] = c_road13_6;
+		Compartiment c_road13_7 = new Compartiment(1250, 355);
+		compartimenteR13[7] = c_road13_7;
+		
+		Road13.compartimente = compartimenteR13;
+
+		//Road14 - 10 compartimente BRADEA OCTAVIA
+		
+		Compartiment [] compartimenteR14 = new Compartiment[10];
+		
+		Compartiment c_road14_0  = new Compartiment(1455, 400);
+		compartimenteR14[0] = c_road14_0;
+		Compartiment c_road14_1 = new Compartiment(1500,400);
+		compartimenteR14[1] = c_road14_1;
+		Compartiment c_road14_2 = new Compartiment(1545,400);
+		compartimenteR14[2] = c_road14_2;
+		Compartiment c_road14_3 = new Compartiment(1590,400);
+		compartimenteR14[3] = c_road14_3;
+		Compartiment c_road14_4 = new Compartiment(1635,400);
+		compartimenteR14[4] = c_road14_4;
+		Compartiment c_road14_5 = new Compartiment(1680,400);
+		compartimenteR14[5] = c_road14_5;
+		Compartiment c_road14_6 = new Compartiment(1725,400);
+		compartimenteR14[6] = c_road14_6;
+		Compartiment c_road14_7 = new Compartiment(1770,400);
+		compartimenteR14[7] = c_road14_7;
+		Compartiment c_road14_8 = new Compartiment(1815,400);
+		compartimenteR14[8] = c_road14_8;
+		Compartiment c_road14_9 = new Compartiment(1860,400);
+		compartimenteR14[9] = c_road14_9;
 			
+		Road14.compartimente = compartimenteR14;
+		
+		//Road15 -10 c - BRADEA OCTAVIA
+		
+		Compartiment [] compartimenteR15 = new Compartiment[10];
+		
+		Compartiment c_road15_0  = new Compartiment(1455, 450);
+		compartimenteR15[0] = c_road15_0;
+		Compartiment c_road15_1 = new Compartiment(1500,450);
+		compartimenteR15[1] = c_road15_1;
+		Compartiment c_road15_2 = new Compartiment(1545,450);
+		compartimenteR15[2] = c_road15_2;
+		Compartiment c_road15_3 = new Compartiment(1590,450);
+		compartimenteR15[3] = c_road15_3;
+		Compartiment c_road15_4 = new Compartiment(1635,450);
+		compartimenteR15[4] = c_road15_4;
+		Compartiment c_road15_5 = new Compartiment(1680,450);
+		compartimenteR15[5] = c_road15_5;
+		Compartiment c_road15_6 = new Compartiment(1725,450);
+		compartimenteR15[6] = c_road15_6;
+		Compartiment c_road15_7 = new Compartiment(1770,450);
+		compartimenteR15[7] = c_road15_7;
+		Compartiment c_road15_8 = new Compartiment(1815,450);
+		compartimenteR15[8] = c_road15_8;
+		Compartiment c_road15_9 = new Compartiment(1860,450);
+		compartimenteR15[9] = c_road15_9;
+		
+		Road15.compartimente = compartimenteR15;
+		
+		//Road16 - 10 c BRADEA OCTAVIA
+
+		Compartiment [] compartimenteR16 = new Compartiment[10];
+		
+		Compartiment c_road16_0  = new Compartiment(1345, 500);
+		compartimenteR16[0] = c_road16_0;
+		Compartiment c_road16_1 = new Compartiment(1390,500);
+		compartimenteR16[1] = c_road16_1;
+		Compartiment c_road16_2 = new Compartiment(1435,500);
+		compartimenteR16[2] = c_road16_2;
+		Compartiment c_road16_3 = new Compartiment(1480,500);
+		compartimenteR16[3] = c_road16_3;
+		Compartiment c_road16_4 = new Compartiment(1525,500);
+		compartimenteR16[4] = c_road16_4;
+		Compartiment c_road16_5 = new Compartiment(1570,500);
+		compartimenteR16[5] = c_road16_5;
+		Compartiment c_road16_6 = new Compartiment(1615,500);
+		compartimenteR16[6] = c_road16_6;
+		Compartiment c_road16_7 = new Compartiment(1660,500);
+		compartimenteR16[7] = c_road16_7;
+		Compartiment c_road16_8 = new Compartiment(1705,500);
+		compartimenteR16[8] = c_road16_8;
+		Compartiment c_road16_9 = new Compartiment(1750,500);
+		compartimenteR16[9] = c_road16_9;
+		Compartiment c_road16_10 = new Compartiment(1795,500);
+		compartimenteR16[10] = c_road16_10;
+		Compartiment c_road16_11 = new Compartiment(1840,500);
+		compartimenteR16[11] = c_road16_11;
+		Compartiment c_road16_12 = new Compartiment(1885,500);
+		compartimenteR16[12] = c_road16_12;
+		
+		Road16.compartimente = compartimenteR16;
+		
+		//Road 17 - 13 c BRADEA OCTAVIA
+
+		Compartiment [] compartimenteR17 = new Compartiment[13];
+		
+		Compartiment c_road17_0  = new Compartiment(1345, 550);
+		compartimenteR17[0] = c_road17_0;
+		Compartiment c_road17_1 = new Compartiment(1390,550);
+		compartimenteR17[1] = c_road17_1;
+		Compartiment c_road17_2 = new Compartiment(1435,550);
+		compartimenteR17[2] = c_road17_2;
+		Compartiment c_road17_3 = new Compartiment(1480,550);
+		compartimenteR17[3] = c_road17_3;
+		Compartiment c_road17_4 = new Compartiment(1525,550);
+		compartimenteR17[4] = c_road17_4;
+		Compartiment c_road17_5 = new Compartiment(1570,550);
+		compartimenteR17[5] = c_road17_5;
+		Compartiment c_road17_6 = new Compartiment(1615,550);
+		compartimenteR17[6] = c_road17_6;
+		Compartiment c_road17_7 = new Compartiment(1660,550);
+		compartimenteR17[7] = c_road17_7;
+		Compartiment c_road17_8 = new Compartiment(1705,550);
+		compartimenteR17[8] = c_road17_8;
+		Compartiment c_road17_9 = new Compartiment(1750,550);
+		compartimenteR17[9] = c_road17_9;
+		Compartiment c_road17_10 = new Compartiment(1795,550);
+		compartimenteR17[10] = c_road17_10;
+		Compartiment c_road17_11 = new Compartiment(1840,550);
+		compartimenteR17[11] = c_road17_11;
+		Compartiment c_road17_12 = new Compartiment(1885,550);
+		compartimenteR17[12] = c_road17_12;
+		
+		Road17.compartimente = compartimenteR17;
+		
+		//Road 18 - 6 c BRANESCU SERBAN
+		
+		Compartiment [] compartimenteR18 = new Compartiment[6];
+		
+		Compartiment c_road18_0 = new Compartiment(1250, 20);
+		compartimenteR18[0] = c_road18_0;
+		Compartiment c_road18_1 = new Compartiment(1250, 65);
+		compartimenteR18[1] = c_road18_1;
+		Compartiment c_road18_2 = new Compartiment(1250, 110);
+		compartimenteR18[2] = c_road18_2;
+		Compartiment c_road18_3 = new Compartiment(1250, 155);
+		compartimenteR18[3] = c_road18_3;
+		Compartiment c_road18_4 = new Compartiment(1250, 200);
+		compartimenteR18[4] = c_road18_4;
+		Compartiment c_road18_5 = new Compartiment(1250, 245);
+		compartimenteR18[5] = c_road18_5;
+		
+		Road18.compartimente = compartimenteR18;
+		
+		//Road 19 - 8 c BRANESCU SERBAN
+
+		Compartiment [] compartimenteR19 = new Compartiment[8];
+		
+		Compartiment c_road19_0 = new Compartiment(1200, 40);
+		compartimenteR19[0] = c_road19_0;
+		Compartiment c_road19_1 = new Compartiment(1200, 85);
+		compartimenteR19[1] = c_road19_1;
+		Compartiment c_road19_2 = new Compartiment(1200, 130);
+		compartimenteR19[2] = c_road19_2;
+		Compartiment c_road19_3 = new Compartiment(1200, 175);
+		compartimenteR19[3] = c_road19_3;	
+		Compartiment c_road19_4 = new Compartiment(1200, 220);
+		compartimenteR19[4] = c_road19_4;
+		Compartiment c_road19_5 = new Compartiment(1200, 265);
+		compartimenteR19[5] = c_road19_5;
+		Compartiment c_road19_6 = new Compartiment(1200, 310);
+		compartimenteR19[6] = c_road19_6;
+		Compartiment c_road19_7 = new Compartiment(1200, 355);
+		compartimenteR19[7] = c_road19_7;
+		
+		Road19.compartimente = compartimenteR19;
 		
 		
 		roads.add(Road1);
