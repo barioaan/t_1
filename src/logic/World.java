@@ -23,7 +23,7 @@ public class World extends JPanel implements Space, ActionListener {
 	
 	public static Random random = new Random();
 
-	Timer timer = new Timer(550,this);
+	Timer timer = new Timer(850,this);
 
 	public static ArrayList<Color> carColors = new ArrayList<Color>();
 	
@@ -62,9 +62,7 @@ public class World extends JPanel implements Space, ActionListener {
 		
 	}
 	
-	public static int adaugare = 0;
-	
-	//COMENTARIU DE TEST
+
 	 
 
 	private static Port P1I, P2I, P3I, P4I, P5I, P6I, P7I, P8I, P9I, P10I, P11I, P12I, P13I, P14I, P15I, P16I, P17I, P18I, P19I;
@@ -873,22 +871,6 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		
 
-		for(int j=0; j<roads.size(); j++) {
-			if(j==1 || j==7 || j==9 || j==10 || j==13 || j==14 || j==17) {
-				
-			
-				for(int i=0; i<roads.get(j).compartimente.length; i++) {
-					
-					
-					
-					if(roads.get(j).compartimente[i].isEmpty == true && i == 0) {
-						int nrRandomCulori = random.nextInt(7);
-						roads.get(j).compartimente[i].car = new Car(roads.get(j).compartimente[i].x, roads.get(j).compartimente[i].y, carColors.get(nrRandomCulori),40,40);
-						roads.get(j).compartimente[i].isEmpty = false;
-					}
-				}
-			}
-		}
 		
 	}
 	
@@ -1157,39 +1139,32 @@ public class World extends JPanel implements Space, ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		/*
-for( Road r : roads) {
-
-	for(int i=0; i<r.compartimente.length; i++) {
 		
-		
-		
-		if(r.compartimente[i].isEmpty == true && i == 0) {
-			int nrRandomCulori = random.nextInt(7);
-			r.compartimente[i].car = new Car(r.compartimente[i].x, r.compartimente[i].y, carColors.get(nrRandomCulori),40,40);
-			r.compartimente[i].isEmpty = false;
-		}
-		if(r.compartimente[i].isEmpty == true && i>0 && r.compartimente[i-1].isEmpty == false ) {
-			r.compartimente[i].car.color = r.compartimente[i-1].car.color;
-			r.compartimente[i].car.x = r.compartimente[i].x;
-			r.compartimente[i].car.y = r.compartimente[i].y;
-			r.compartimente[i].car.width = r.compartimente[i-1].car.width;
-			r.compartimente[i].car.height = r.compartimente[i-1].car.height;
-			r.compartimente[i-1].isEmpty = true;
-			r.compartimente[i].isEmpty = false;
-			r.compartimente[i-1].car = null;
-			System.out.println("Cordonata X =" + r.compartimente[i].car.x);
-		}
-		
-		r.compartimente[i].car = r.compartimente[i-1].car;
-		r.compartimente[i].car.x = r.compartimente[i].x;
-		r.compartimente[i].car.y = r.compartimente[i].y;
-		
-	}
-}
-		*/
+		for(int j=0; j<roads.size(); j++) {
+			
+			for(int i=roads.get(j).compartimente.length-1; i>=0; i--) {
+				if(i>0 && roads.get(j).compartimente[i].isEmpty == true && roads.get(j).compartimente[i-1].isEmpty == false) {
+					roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
+					roads.get(j).compartimente[i].car.width = roads.get(j).compartimente[i-1].car.width;
+					roads.get(j).compartimente[i].car.height = roads.get(j).compartimente[i-1].car.height;
+					roads.get(j).compartimente[i].car.x = roads.get(j).compartimente[i].x;
+					roads.get(j).compartimente[i].car.y = roads.get(j).compartimente[i].y;
+					roads.get(j).compartimente[i-1].isEmpty = true;
+					roads.get(j).compartimente[i].isEmpty = false;
+				}
 				
-				//System.out.println("FINAL");
+				if(i==0 && roads.get(j).compartimente[i].isEmpty == true) {
+					if(j==1 || j==7 || j==9 || j==10 || j==13 || j==14 || j==17) {
+						boolean randomB = random.nextBoolean();
+						if(randomB == true) {
+							int nrRandomCulori = random.nextInt(7);
+							roads.get(j).compartimente[i].car = new Car(roads.get(j).compartimente[i].x, roads.get(j).compartimente[i].y, carColors.get(nrRandomCulori),40,40);
+							roads.get(j).compartimente[i].isEmpty = false;
+						}						
+					}
+				}
+			}
+		}
 				
 		repaint();
 		
