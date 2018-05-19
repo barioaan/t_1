@@ -4,7 +4,7 @@ public class Compartiment {
 	
 	public int x,y;
 
-	public Car car;
+	public Car car = null;
 	
 	public Compartiment(int x, int y) {
 		super();

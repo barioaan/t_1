@@ -806,7 +806,18 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		
 			for(Road r: roads) {
-				for()
+				for(int i=0; i<r.compartimente.length; i++) {
+					if(r.compartimente[i].isEmpty == true && i == 0) {
+						int nrRandomCulori = random.nextInt(7);
+						r.compartimente[i].car = new Car(r.compartimente[i].x, r.compartimente[i].y, carColors.get(nrRandomCulori),40,40);
+						r.compartimente[i].isEmpty = false;
+					}
+					if(r.compartimente[i].isEmpty == true && i> 0) {
+						r.compartimente[i].car = r.compartimente[i-1].car;
+						r.compartimente[i-1].car = null;
+						r.compartimente[i-1].isEmpty = true;
+					}
+				}
 			}
 		
 				
