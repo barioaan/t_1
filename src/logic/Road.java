@@ -12,6 +12,8 @@ public class Road implements Space{
 	public Orientation orientation;
 	public int coordonataLiniePietoni;
 	public boolean areLiniePietoni = false;
+	public Compartiment compartimente [];
+	
 	
 	public Road(Port inputPort, Port outputPort, int size, Orientation orientation) {
 		super();
@@ -20,6 +22,10 @@ public class Road implements Space{
 		this.outputPort = outputPort;
 		this.orientation = orientation;
 		
+	}
+	
+	public void setCompartimente(int cateCompartimente ) {
+		this.compartimente = new Compartiment[cateCompartimente];
 	}
 
 	

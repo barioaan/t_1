@@ -23,7 +23,7 @@ public class World extends JPanel implements Space, ActionListener {
 	
 	public static Random random = new Random();
 
-	Timer timer = new Timer(100,this);
+	Timer timer = new Timer(1000,this);
 	
 	public static ArrayList<Color> carColors = new ArrayList<Color>();
 
@@ -194,6 +194,10 @@ public class World extends JPanel implements Space, ActionListener {
 		Road15.coordonataLiniePietoni  = 1410;
 		Road18.coordonataLiniePietoni  = 710;
 		
+		//ADELA MARIA - COMPARTIMENTE DRUMURI
+		Road1.compartimente[0].x = coordonataX;
+		Road1.compartimente[0].y = coordonataY;
+		
 		roads.add(Road1);
 		roads.add(Road2);
 		roads.add(Road3);
@@ -229,31 +233,7 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		
 		
-		//GENERAREA RANDOM A MASINILOR, CULORILOR MASINILOR SI PE CE DRUM SE POZITIONEAZA
-		//for(int i=0; i<numar_masini; i++) {
-		int i=0;
-		while(i<numar_masini) {
-			
-			int nrRandom_colors = random.nextInt(7);
-		    int nrRandom_roads = random.nextInt(18);
-		    if(nrRandom_roads == 1 || nrRandom_roads == 9 || nrRandom_roads == 10  ) {
-		    	
-		    	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).inputPort.cordX+5, roads.get(nrRandom_roads).inputPort.cordY+5, carColors.get(nrRandom_colors),40,40));
-		    	i++;
-		    }
-		    if (nrRandom_roads == 7 || nrRandom_roads == 17) {
-		    	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).inputPort.cordX+5, roads.get(nrRandom_roads).inputPort.cordY-50, carColors.get(nrRandom_colors),40,40));
-		    	i++;
-		    }
-		    
-		    
-		    if (nrRandom_roads == 13 || nrRandom_roads == 14) {
-			   	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).inputPort.cordX-50, roads.get(nrRandom_roads).inputPort.cordY+5, carColors.get(nrRandom_colors),40,40));
-			   	i++;
-			}
-			
-			
-		}
+		
 		
 		//SEMAFOARE 1-4 OCTAVIA
 		semaphore1 = new Semaphore(Color.RED, 530, 330);
@@ -600,6 +580,47 @@ public class World extends JPanel implements Space, ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		
+		/*
+		//GENERAREA RANDOM A MASINILOR, CULORILOR MASINILOR SI PE CE DRUM SE POZITIONEAZA
+				//for(int i=0; i<numar_masini; i++) {
+				int i=0;
+				while(i<numar_masini) {
+					
+					int nrRandom_colors = random.nextInt(7);
+				    int nrRandom_roads = random.nextInt(18);
+				    if(nrRandom_roads == 1 || nrRandom_roads == 9 || nrRandom_roads == 10  ) {
+				    	
+				    	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).inputPort.cordX+5, roads.get(nrRandom_roads).inputPort.cordY+5, carColors.get(nrRandom_colors),40,40));
+				    	i++;
+				    }
+				    if (nrRandom_roads == 7 || nrRandom_roads == 17) {
+				    	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).inputPort.cordX+5, roads.get(nrRandom_roads).inputPort.cordY-50, carColors.get(nrRandom_colors),40,40));
+				    	i++;
+				    }
+				    
+				    
+				    if (nrRandom_roads == 13 || nrRandom_roads == 14) {
+					   	roads.get(nrRandom_roads).listOFcars.add(new Car(roads.get(nrRandom_roads).inputPort.cordX-50, roads.get(nrRandom_roads).inputPort.cordY+5, carColors.get(nrRandom_colors),40,40));
+					   	i++;
+					}
+					
+					
+				}*/
+		
+		for(Road r : roads) {
+			if()
+			
+			int cateCompartimente = r.coordonataLiniePietoni / 45;
+			r.setCompartimente(cateCompartimente);
+			System.out.println("Cate compartimente: " + cateCompartimente);
+			
+			
+		}
+		
+		
+				
+				System.out.println("FINAL");
+				
 		repaint();
 		
 	}
