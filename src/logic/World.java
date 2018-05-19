@@ -394,17 +394,17 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		Compartiment [] compartimenteR8 = new Compartiment[6];
 		
-		Compartiment c_road8_0 = new Compartiment(650, 977);
+		Compartiment c_road8_0 = new Compartiment(650, 950);
 		compartimenteR8[0] = c_road8_0;
-		Compartiment c_road8_1 = new Compartiment(650, 932);
+		Compartiment c_road8_1 = new Compartiment(650, 900);
 		compartimenteR8[1] = c_road8_1;
-		Compartiment c_road8_2 = new Compartiment(650, 887);
+		Compartiment c_road8_2 = new Compartiment(650, 850);
 		compartimenteR8[2] = c_road8_2;
-		Compartiment c_road8_3 = new Compartiment(650, 842);
+		Compartiment c_road8_3 = new Compartiment(650, 800);
 		compartimenteR8[3] = c_road8_3;
-		Compartiment c_road8_4 = new Compartiment(650, 797);
+		Compartiment c_road8_4 = new Compartiment(650, 755);
 		compartimenteR8[4] = c_road8_4;
-		Compartiment c_road8_5 = new Compartiment(650, 752);
+		Compartiment c_road8_5 = new Compartiment(650, 710);
 		compartimenteR8[5] = c_road8_5;
 		
 		Road8.compartimente = compartimenteR8;
@@ -440,23 +440,23 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		Compartiment [] compartimenteR10 = new Compartiment[10];
 		
-		Compartiment c_road10_0 = new Compartiment(32, 550);
+		Compartiment c_road10_0 = new Compartiment(10, 550);
 		compartimenteR10[0] = c_road10_0;
-		Compartiment c_road10_1 = new Compartiment(77, 550);
+		Compartiment c_road10_1 = new Compartiment(60, 550);
 		compartimenteR10[1] = c_road10_1;
-		Compartiment c_road10_2 = new Compartiment(122, 550);
+		Compartiment c_road10_2 = new Compartiment(105, 550);
 		compartimenteR10[2] = c_road10_2;
-		Compartiment c_road10_3 = new Compartiment(167, 550);
+		Compartiment c_road10_3 = new Compartiment(150, 550);
 		compartimenteR10[3] = c_road10_3;
-		Compartiment c_road10_4 = new Compartiment(212, 550);
+		Compartiment c_road10_4 = new Compartiment(200, 550);
 		compartimenteR10[4] = c_road10_4;
-		Compartiment c_road10_5 = new Compartiment(257, 550);
+		Compartiment c_road10_5 = new Compartiment(248, 550);
 		compartimenteR10[5] = c_road10_5;
-		Compartiment c_road10_6 = new Compartiment(302, 550);
+		Compartiment c_road10_6 = new Compartiment(298, 550);
 		compartimenteR10[6] = c_road10_6;
-		Compartiment c_road10_7 = new Compartiment(347, 550);
+		Compartiment c_road10_7 = new Compartiment(345, 550);
 		compartimenteR10[7] = c_road10_7;
-		Compartiment c_road10_8 = new Compartiment(392, 550);
+		Compartiment c_road10_8 = new Compartiment(390, 550);
 		compartimenteR10[8] = c_road10_8;
 		Compartiment c_road10_9 = new Compartiment(437, 550);
 		compartimenteR10[9] = c_road10_9;
@@ -470,23 +470,23 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		Compartiment [] compartimenteR11 = new Compartiment[10];
 		
-		Compartiment c_road11_0 = new Compartiment(32, 500);
+		Compartiment c_road11_0 = new Compartiment(10, 500);
 		compartimenteR11[0] = c_road11_0;
-		Compartiment c_road11_1 = new Compartiment(77, 500);
+		Compartiment c_road11_1 = new Compartiment(60, 500);
 		compartimenteR11[1] = c_road11_1;
-		Compartiment c_road11_2 = new Compartiment(122, 500);
+		Compartiment c_road11_2 = new Compartiment(105, 500);
 		compartimenteR11[2] = c_road11_2;
-		Compartiment c_road11_3 = new Compartiment(167, 500);
+		Compartiment c_road11_3 = new Compartiment(150, 500);
 		compartimenteR11[3] = c_road11_3;
-		Compartiment c_road11_4 = new Compartiment(212, 500);
+		Compartiment c_road11_4 = new Compartiment(200, 500);
 		compartimenteR11[4] = c_road11_4;
-		Compartiment c_road11_5 = new Compartiment(257, 500);
+		Compartiment c_road11_5 = new Compartiment(248, 500);
 		compartimenteR11[5] = c_road11_5;
-		Compartiment c_road11_6 = new Compartiment(302, 500);
+		Compartiment c_road11_6 = new Compartiment(298, 500);
 		compartimenteR11[6] = c_road11_6;
-		Compartiment c_road11_7 = new Compartiment(347, 500);
+		Compartiment c_road11_7 = new Compartiment(345, 500);
 		compartimenteR11[7] = c_road11_7;
-		Compartiment c_road11_8 = new Compartiment(392, 500);
+		Compartiment c_road11_8 = new Compartiment(390, 500);
 		compartimenteR11[8] = c_road11_8;
 		Compartiment c_road11_9 = new Compartiment(437, 500);
 		compartimenteR11[9] = c_road11_9;
@@ -553,25 +553,25 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		Compartiment [] compartimenteR14 = new Compartiment[10];
 		
-		Compartiment c_road14_0  = new Compartiment(1455, 400);
+		Compartiment c_road14_0  = new Compartiment(1860, 400);
 		compartimenteR14[0] = c_road14_0;
-		Compartiment c_road14_1 = new Compartiment(1500,400);
+		Compartiment c_road14_1 = new Compartiment(1815,400);
 		compartimenteR14[1] = c_road14_1;
-		Compartiment c_road14_2 = new Compartiment(1545,400);
+		Compartiment c_road14_2 = new Compartiment(1770,400);
 		compartimenteR14[2] = c_road14_2;
-		Compartiment c_road14_3 = new Compartiment(1590,400);
+		Compartiment c_road14_3 = new Compartiment(1725,400);
 		compartimenteR14[3] = c_road14_3;
-		Compartiment c_road14_4 = new Compartiment(1635,400);
+		Compartiment c_road14_4 = new Compartiment(1680,400);
 		compartimenteR14[4] = c_road14_4;
-		Compartiment c_road14_5 = new Compartiment(1680,400);
+		Compartiment c_road14_5 = new Compartiment(1635,400);
 		compartimenteR14[5] = c_road14_5;
-		Compartiment c_road14_6 = new Compartiment(1725,400);
+		Compartiment c_road14_6 = new Compartiment(1590,400);
 		compartimenteR14[6] = c_road14_6;
-		Compartiment c_road14_7 = new Compartiment(1770,400);
+		Compartiment c_road14_7 = new Compartiment(1545,400);
 		compartimenteR14[7] = c_road14_7;
-		Compartiment c_road14_8 = new Compartiment(1815,400);
+		Compartiment c_road14_8 = new Compartiment(1500,400);
 		compartimenteR14[8] = c_road14_8;
-		Compartiment c_road14_9 = new Compartiment(1860,400);
+		Compartiment c_road14_9 = new Compartiment(1455,400);
 		compartimenteR14[9] = c_road14_9;
 			
 		Road14.compartimente = compartimenteR14;
@@ -580,25 +580,25 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		Compartiment [] compartimenteR15 = new Compartiment[10];
 		
-		Compartiment c_road15_0  = new Compartiment(1455, 450);
+		Compartiment c_road15_0  = new Compartiment(1860, 450);
 		compartimenteR15[0] = c_road15_0;
-		Compartiment c_road15_1 = new Compartiment(1500,450);
+		Compartiment c_road15_1 = new Compartiment(1815,450);
 		compartimenteR15[1] = c_road15_1;
-		Compartiment c_road15_2 = new Compartiment(1545,450);
+		Compartiment c_road15_2 = new Compartiment(1770,450);
 		compartimenteR15[2] = c_road15_2;
-		Compartiment c_road15_3 = new Compartiment(1590,450);
+		Compartiment c_road15_3 = new Compartiment(1725,450);
 		compartimenteR15[3] = c_road15_3;
-		Compartiment c_road15_4 = new Compartiment(1635,450);
+		Compartiment c_road15_4 = new Compartiment(1680,450);
 		compartimenteR15[4] = c_road15_4;
-		Compartiment c_road15_5 = new Compartiment(1680,450);
+		Compartiment c_road15_5 = new Compartiment(1635,450);
 		compartimenteR15[5] = c_road15_5;
-		Compartiment c_road15_6 = new Compartiment(1725,450);
+		Compartiment c_road15_6 = new Compartiment(1590,450);
 		compartimenteR15[6] = c_road15_6;
-		Compartiment c_road15_7 = new Compartiment(1770,450);
+		Compartiment c_road15_7 = new Compartiment(1545,450);
 		compartimenteR15[7] = c_road15_7;
-		Compartiment c_road15_8 = new Compartiment(1815,450);
+		Compartiment c_road15_8 = new Compartiment(1500,450);
 		compartimenteR15[8] = c_road15_8;
-		Compartiment c_road15_9 = new Compartiment(1860,450);
+		Compartiment c_road15_9 = new Compartiment(1455,450);
 		compartimenteR15[9] = c_road15_9;
 		
 		Road15.compartimente = compartimenteR15;
@@ -673,41 +673,41 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		Compartiment [] compartimenteR18 = new Compartiment[6];
 		
-		Compartiment c_road18_0 = new Compartiment(1250, 20);
+		Compartiment c_road18_0 = new Compartiment(1250, 950);
 		compartimenteR18[0] = c_road18_0;
-		Compartiment c_road18_1 = new Compartiment(1250, 65);
+		Compartiment c_road18_1 = new Compartiment(1250, 900);
 		compartimenteR18[1] = c_road18_1;
-		Compartiment c_road18_2 = new Compartiment(1250, 110);
+		Compartiment c_road18_2 = new Compartiment(1250, 850);
 		compartimenteR18[2] = c_road18_2;
-		Compartiment c_road18_3 = new Compartiment(1250, 155);
+		Compartiment c_road18_3 = new Compartiment(1250, 800);
 		compartimenteR18[3] = c_road18_3;
-		Compartiment c_road18_4 = new Compartiment(1250, 200);
+		Compartiment c_road18_4 = new Compartiment(1250, 755);
 		compartimenteR18[4] = c_road18_4;
-		Compartiment c_road18_5 = new Compartiment(1250, 245);
+		Compartiment c_road18_5 = new Compartiment(1250, 710);
 		compartimenteR18[5] = c_road18_5;
 		
 		Road18.compartimente = compartimenteR18;
 		
 		//Road 19 - 8 c BRANESCU SERBAN
 
-		Compartiment [] compartimenteR19 = new Compartiment[8];
+		Compartiment [] compartimenteR19 = new Compartiment[7];
 		
-		Compartiment c_road19_0 = new Compartiment(1200, 40);
+		Compartiment c_road19_0 = new Compartiment(1200, 600);
 		compartimenteR19[0] = c_road19_0;
-		Compartiment c_road19_1 = new Compartiment(1200, 85);
+		Compartiment c_road19_1 = new Compartiment(1200, 650);
 		compartimenteR19[1] = c_road19_1;
-		Compartiment c_road19_2 = new Compartiment(1200, 130);
+		Compartiment c_road19_2 = new Compartiment(1200, 750);
 		compartimenteR19[2] = c_road19_2;
-		Compartiment c_road19_3 = new Compartiment(1200, 175);
+		Compartiment c_road19_3 = new Compartiment(1200, 800);
 		compartimenteR19[3] = c_road19_3;	
-		Compartiment c_road19_4 = new Compartiment(1200, 220);
+		Compartiment c_road19_4 = new Compartiment(1200, 850);
 		compartimenteR19[4] = c_road19_4;
-		Compartiment c_road19_5 = new Compartiment(1200, 265);
+		Compartiment c_road19_5 = new Compartiment(1200, 900);
 		compartimenteR19[5] = c_road19_5;
-		Compartiment c_road19_6 = new Compartiment(1200, 310);
+		Compartiment c_road19_6 = new Compartiment(1200, 950);
 		compartimenteR19[6] = c_road19_6;
-		Compartiment c_road19_7 = new Compartiment(1200, 355);
-		compartimenteR19[7] = c_road19_7;
+		
+		
 		
 		Road19.compartimente = compartimenteR19;
 		
