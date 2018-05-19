@@ -197,10 +197,9 @@ public class World extends JPanel implements Space, ActionListener {
 		Road18.coordonataLiniePietoni  = 710;
 		
 		
-		//ADELA MARIA - COMPARTIMENTE DRUMURI
-		//Road 1 - 13 compartimente
+		//COMPARTIMENTE DRUMURI
+		//Road 1 - 13 compartimente ALBU ADELA
 
-		
 		//Road1.setCompartimente(13);
 		
 		Compartiment compartiment0 = new Compartiment(555, 400);
@@ -230,7 +229,7 @@ public class World extends JPanel implements Space, ActionListener {
 		Compartiment compartiment12 = new Compartiment(15,400);
 		Road1.compartimente[12] = compartiment12;
 		
-		//Road 6 - 11 compartimente
+		//Road 6 - 11 compartimente ALBU ADELA
 		
 		Compartiment c_road6_0 = new Compartiment(705, 500);
 		Road6.compartimente[0] = c_road6_0;
@@ -255,7 +254,7 @@ public class World extends JPanel implements Space, ActionListener {
 		Compartiment c_road6_10 = new Compartiment(1155, 500);
 		Road6.compartimente[10] = c_road6_10;
 		
-		//Road 7 - 11 compartiemnte
+		//Road 7 - 11 compartiemnte ALBU ADELA
 		
 		Compartiment c_road7_0 = new Compartiment(705, 550);
 		Road7.compartimente[0] = c_road7_0;
@@ -280,7 +279,7 @@ public class World extends JPanel implements Space, ActionListener {
 		Compartiment c_road7_10 = new Compartiment(1155, 550);
 		Road7.compartimente[10] = c_road7_10;
 		
-		//Road 9 - 8 compartimente
+		//Road 9 - 8 compartimente ALBU ADELA
 		
 		Compartiment c_road9_0 = new Compartiment (600,645);
 		Road9.compartimente[0] = c_road9_0;
@@ -299,7 +298,7 @@ public class World extends JPanel implements Space, ActionListener {
 		Compartiment c_road9_7 = new Compartiment (600,960);
 		Road9.compartimente[7] = c_road9_7;
 		
-		//Road 10 - 10 compartimente
+		//Road 10 - 10 compartimente ALBU ADELA
 		
 		Compartiment c_road10_0 = new Compartiment(32, 550);
 		Road10.compartimente[0] = c_road10_0;
@@ -323,7 +322,7 @@ public class World extends JPanel implements Space, ActionListener {
 		Road10.compartimente[9] = c_road10_9;
 		
 		
-		// Road 11 - 10 compartimente
+		// Road 11 - 10 compartimente ALBU ADELA
 		
 		Compartiment c_road11_0 = new Compartiment(32, 500);
 		Road11.compartimente[0] = c_road11_0;
