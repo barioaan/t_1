@@ -752,77 +752,77 @@ public class World extends JPanel implements Space, ActionListener {
 		semaphore8 = new Semaphore(Color.RED, 1320, 620);
 		
 		
-		//DIRECTII BENZI - ALBU ADELA
-		Direction [] directionListRoad2 = new Direction[3];
-		directionListRoad2[0] = Direction.E_left;
-		directionListRoad2[1] = Direction.E_Forward;
-		directionListRoad2[2] = Direction.E_right;
+		//DIRECTII BENZI - ALBU ADELA - COD SCHIMBAT DE BAR IOAN
+		Compartiment [] directionListRoad2 = new Compartiment[3];
+		directionListRoad2[0] = c_road6_0;
+		directionListRoad2[1] = c_road9_0;	
+		directionListRoad2[2] = compartiment0;
 		
 		roads.get(1).directionList = directionListRoad2;
 
-		Direction [] directionListRoad4 = new Direction[3];
-		directionListRoad4[0] = Direction.E_left;
-		directionListRoad4[1] = Direction.E_Forward;
-		directionListRoad4[2] = Direction.E_right;
+		Compartiment [] directionListRoad4 = new Compartiment[3];
+		directionListRoad4[0] = c_road3_0;
+		directionListRoad4[1] = compartiment0;
+		directionListRoad4[2] = c_road9_0;
 		
 		roads.get(3).directionList = directionListRoad4;
 
-		Direction [] directionListRoad5 = new Direction[3];
-		directionListRoad5[0] = Direction.E_left;
-		directionListRoad5[1] = Direction.E_Forward;
-		directionListRoad5[2] = Direction.E_right;
+		Compartiment [] directionListRoad5 = new Compartiment[3];
+		directionListRoad5[0] = c_road3_0;
+		directionListRoad5[1] = c_road12_0;
+		directionListRoad5[2] = c_road9_0;
 		
 		roads.get(4).directionList = directionListRoad5;
 
-		Direction [] directionListRoad6 = new Direction[3];
-		directionListRoad6[0] = Direction.E_left;
-		directionListRoad6[1] = Direction.E_Forward;
-		directionListRoad6[2] = Direction.E_right;
+		Compartiment [] directionListRoad6 = new Compartiment[3];
+		directionListRoad6[0] = c_road13_0;
+		directionListRoad6[1] = c_road16_0;
+		directionListRoad6[2] = c_road19_0;
 		
 		roads.get(5).directionList = directionListRoad6;
 
-		Direction [] directionListRoad7 = new Direction[3];
-		directionListRoad7[0] = Direction.E_left;
-		directionListRoad7[1] = Direction.E_Forward;
-		directionListRoad7[2] = Direction.E_right;
+		Compartiment [] directionListRoad7 = new Compartiment[3];
+		directionListRoad7[0] = c_road13_0;
+		directionListRoad7[1] = c_road17_0;
+		directionListRoad7[2] = c_road19_0;
 		
 		roads.get(6).directionList = directionListRoad7;
 
-		Direction [] directionListRoad8 = new Direction[3];
-		directionListRoad8[0] = Direction.E_left;
-		directionListRoad8[1] = Direction.E_Forward;
-		directionListRoad8[2] = Direction.E_right;
+		Compartiment [] directionListRoad8 = new Compartiment[3];
+		directionListRoad8[0] = c_road12_0;
+		directionListRoad8[1] = c_road3_0;
+		directionListRoad8[2] = c_road7_0;
 		
 		roads.get(7).directionList = directionListRoad8;
 
-		Direction [] directionListRoad10 = new Direction[2];
-		directionListRoad10[0] = Direction.E_Forward;
-		directionListRoad10[1] = Direction.E_right;
+		Compartiment [] directionListRoad10 = new Compartiment[2];
+		directionListRoad10[0] = c_road7_0;
+		directionListRoad10[1] = c_road9_0;
 		
 		roads.get(9).directionList = directionListRoad10;
 
-		Direction [] directionListRoad11 = new Direction[2];
-		directionListRoad11[0] = Direction.E_left;
-		directionListRoad11[1] = Direction.E_Forward;
+		Compartiment [] directionListRoad11 = new Compartiment[2];
+		directionListRoad11[0] = c_road3_0;
+		directionListRoad11[1] = c_road6_0;
 		
 		roads.get(10).directionList = directionListRoad11;
 
-		Direction [] directionListRoad14 = new Direction[2];
-		directionListRoad14[0] = Direction.E_left;
-		directionListRoad14[1] = Direction.E_Forward;
+		Compartiment [] directionListRoad14 = new Compartiment[2];
+		directionListRoad14[0] = c_road13_0;
+		directionListRoad14[1] = c_road4_0;
 		
 		roads.get(13).directionList = directionListRoad14;
 
-		Direction [] directionListRoad15 = new Direction[2];
-		directionListRoad15[0] = Direction.E_Forward;
-		directionListRoad15[1] = Direction.E_right;
+		Compartiment [] directionListRoad15 = new Compartiment[2];
+		directionListRoad15[0] = c_road5_0;
+		directionListRoad15[1] = c_road19_0;
 		
 		roads.get(14).directionList = directionListRoad15;
 
-		Direction [] directionListRoad18 = new Direction[3];
-		directionListRoad18[0] = Direction.E_left;
-		directionListRoad18[1] = Direction.E_Forward;
-		directionListRoad18[2] = Direction.E_right;
+		Compartiment [] directionListRoad18 = new Compartiment[3];
+		directionListRoad18[0] = c_road5_0;
+		directionListRoad18[1] = c_road13_0;
+		directionListRoad18[2] = c_road17_0;
 		
 		roads.get(17).directionList = directionListRoad18;
 		

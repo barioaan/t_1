@@ -8,7 +8,7 @@ public class Road implements Space{
 	public int size;
 	public Port inputPort, outputPort;
 	public ArrayList <Car> listOFcars = new ArrayList <Car>();
-	public Direction [] directionList;
+	public Compartiment [] directionList;
 	public Orientation orientation;
 	public int coordonataLiniePietoni;
 	public boolean areLiniePietoni = false;
