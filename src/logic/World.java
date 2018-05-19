@@ -793,7 +793,9 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		
 			for(Road r: roads) {
-				
+				if(r.areLiniePietoni) {
+					
+				}
 			}
 		
 				
