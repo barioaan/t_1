@@ -234,25 +234,25 @@ public class World extends JPanel implements Space, ActionListener {
 		//Road 10 - 10 compartimente
 		
 		Compartiment c_road10_0 = new Compartiment(32, 550);
-		Road2.compartimente[0] = c_road10_0;
+		Road10.compartimente[0] = c_road10_0;
 		Compartiment c_road10_1 = new Compartiment(77, 550);
-		Road2.compartimente[1] = c_road10_1;
+		Road10.compartimente[1] = c_road10_1;
 		Compartiment c_road10_2 = new Compartiment(122, 550);
-		Road2.compartimente[2] = c_road10_2;
+		Road10.compartimente[2] = c_road10_2;
 		Compartiment c_road10_3 = new Compartiment(167, 550);
-		Road2.compartimente[3] = c_road10_3;
+		Road10.compartimente[3] = c_road10_3;
 		Compartiment c_road10_4 = new Compartiment(212, 550);
-		Road2.compartimente[4] = c_road10_4;
+		Road10.compartimente[4] = c_road10_4;
 		Compartiment c_road10_5 = new Compartiment(257, 550);
-		Road2.compartimente[5] = c_road10_5;
+		Road10.compartimente[5] = c_road10_5;
 		Compartiment c_road10_6 = new Compartiment(302, 550);
-		Road2.compartimente[6] = c_road10_6;
+		Road10.compartimente[6] = c_road10_6;
 		Compartiment c_road10_7 = new Compartiment(347, 550);
-		Road2.compartimente[7] = c_road10_7;
+		Road10.compartimente[7] = c_road10_7;
 		Compartiment c_road10_8 = new Compartiment(392, 550);
-		Road2.compartimente[8] = c_road10_8;
+		Road10.compartimente[8] = c_road10_8;
 		Compartiment c_road10_9 = new Compartiment(437, 550);
-		Road2.compartimente[9] = c_road10_9;
+		Road10.compartimente[9] = c_road10_9;
 
 		
 		for(int i=0; i<Road1.compartimente.length; i++) {
@@ -296,7 +296,7 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		
 		
-		car1  = new Car(roads.get(0).compartimente[0].x, roads.get(0).compartimente[0].y, carColors.get(3),40,40);
+		car1  = new Car(roads.get(9).compartimente[0].x, roads.get(9).compartimente[0].y, carColors.get(3),40,40);
 		
 		//SEMAFOARE 1-4 OCTAVIA
 		semaphore1 = new Semaphore(Color.RED, 530, 330);
@@ -698,8 +698,8 @@ public class World extends JPanel implements Space, ActionListener {
 		//roads.get(0).listOFcars.add(new Car(roads.get(0).compartimente[0].x, roads.get(0).compartimente[0].y, carColors.get(nrRandom_colors),40,40));
 		
 		
-			car1.x = roads.get(0).compartimente[index].x;
-			car1.y = roads.get(0).compartimente[index].y;
+			car1.x = roads.get(9).compartimente[index].x;
+			car1.y = roads.get(9).compartimente[index].y;
 		index++;
 		
 				
