@@ -200,7 +200,7 @@ public class World extends JPanel implements Space, ActionListener {
 		//COMPARTIMENTE DRUMURI
 		//Road 1 - 13 compartimente ALBU ADELA
 
-		//Road1.setCompartimente(13);
+		Road1.setCompartimente(13);
 		
 		Compartiment compartiment0 = new Compartiment(555, 400);
 		Road1.compartimente[0] = compartiment0;
@@ -793,9 +793,7 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		
 			for(Road r: roads) {
-				if(r.areLiniePietoni) {
-					
-				}
+				for()
 			}
 		
 				
