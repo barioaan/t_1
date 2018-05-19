@@ -197,32 +197,36 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		//ADELA MARIA - COMPARTIMENTE DRUMURI
 		//Road 1 - 13 compartimente
-		Road1.compartimente[0].x = 555;
-		Road1.compartimente[0].y = 400;
-		Road1.compartimente[1].x = 510;
-		Road1.compartimente[1].y = 400;
-		Road1.compartimente[2].x = 465;
-		Road1.compartimente[2].y = 400;
-		Road1.compartimente[3].x = 420;
-		Road1.compartimente[3].y = 400;
-		Road1.compartimente[4].x = 375;
-		Road1.compartimente[4].y = 400;
-		Road1.compartimente[5].x = 330;
-		Road1.compartimente[5].y = 400;
-		Road1.compartimente[6].x = 285;
-		Road1.compartimente[6].y = 400;
-		Road1.compartimente[7].x = 240;
-		Road1.compartimente[7].y = 400;
-		Road1.compartimente[8].x = 195;
-		Road1.compartimente[8].y = 400;
-		Road1.compartimente[9].x = 150;
-		Road1.compartimente[9].y = 400;
-		Road1.compartimente[10].x = 105;
-		Road1.compartimente[10].y = 400;
-		Road1.compartimente[11].x = 60;
-		Road1.compartimente[11].y = 400;
-		Road1.compartimente[12].x = 15;
-		Road1.compartimente[12].y = 400;
+		
+		Road1.setCompartimente(13);
+		
+		Compartiment compartiment0 = new Compartiment(555, 400);
+		Road1.compartimente[0] = compartiment0;
+		Compartiment compartiment1 = new Compartiment(510,400);
+		Road1.compartimente[1] = compartiment1;
+		Compartiment compartiment2 = new Compartiment(465,400);
+		Road1.compartimente[2] = compartiment2;
+		Compartiment compartiment3 = new Compartiment(420,400);
+		Road1.compartimente[3] = compartiment3;
+		Compartiment compartiment4 = new Compartiment(375,400);
+		Road1.compartimente[4] = compartiment4;
+		Compartiment compartiment5 = new Compartiment(330,400);
+		Road1.compartimente[5] = compartiment5;
+		Compartiment compartiment6 = new Compartiment(285,400);
+		Road1.compartimente[6] = compartiment6;
+		Compartiment compartiment7 = new Compartiment(240,400);
+		Road1.compartimente[7] = compartiment7;
+		Compartiment compartiment8 = new Compartiment(195,400);
+		Road1.compartimente[8] = compartiment8;
+		Compartiment compartiment9 = new Compartiment(150,400);
+		Road1.compartimente[9] = compartiment9;
+		Compartiment compartiment10 = new Compartiment(105,400);
+		Road1.compartimente[10] = compartiment10;
+		Compartiment compartiment11 = new Compartiment(60,400);
+		Road1.compartimente[11] = compartiment11;
+		Compartiment compartiment12 = new Compartiment(15,400);
+		Road1.compartimente[12] = compartiment12;
+		
 		
 		
 		roads.add(Road1);
