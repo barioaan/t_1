@@ -4,7 +4,8 @@ public class Compartiment {
 	
 	public int x,y;
 
-
+	public Car car;
+	
 	public Compartiment(int x, int y) {
 		super();
 		this.x = x;
