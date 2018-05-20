@@ -192,7 +192,7 @@ public class World extends JPanel implements Space, ActionListener {
 
 	//	Road1.setCompartimente(13);
 		
-		Compartiment [] compartimenteR1 = new Compartiment[13];
+		Compartiment [] compartimenteR1 = new Compartiment[14];
 		
 		Compartiment compartiment0 = new Compartiment(555, 400);
 		compartimenteR1[0] = compartiment0;
@@ -220,6 +220,8 @@ public class World extends JPanel implements Space, ActionListener {
 		compartimenteR1[11] = compartiment11;
 		Compartiment compartiment12 = new Compartiment(15,400);
 		compartimenteR1[12] = compartiment12;
+		Compartiment compartiment13 = new Compartiment(-45,400);
+		compartimenteR1[13] = compartiment13;
 		
 		Road1.compartimente = compartimenteR1;
 		
