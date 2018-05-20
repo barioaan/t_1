@@ -8,9 +8,9 @@ public class Semaphore {
 	public Color color;
 	public int cordX, cordY;
 	public boolean isGreen = false;
-	public Semaphore(Color color, int cordX, int cordY) {
+	public Semaphore(int cordX, int cordY) {
 		super();
-		this.color = color;
+		
 		this.cordX = cordX;
 		this.cordY = cordY;
 	}
