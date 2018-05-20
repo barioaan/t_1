@@ -702,25 +702,7 @@ public class World extends JPanel implements Space, ActionListener {
 		Road19.compartimente = compartimenteR19;
 		
 		
-		roads.add(Road1);
-		roads.add(Road2);
-		roads.add(Road3);
-		roads.add(Road4);
-		roads.add(Road5);
-		roads.add(Road6);
-		roads.add(Road7);
-		roads.add(Road8);
-		roads.add(Road9);
-		roads.add(Road10);
-		roads.add(Road11);
-		roads.add(Road12);
-		roads.add(Road13);
-		roads.add(Road14);
-		roads.add(Road15);
-		roads.add(Road16);
-		roads.add(Road17);
-		roads.add(Road18);
-		roads.add(Road19);
+		
 		
 		
 		
@@ -758,86 +740,104 @@ public class World extends JPanel implements Space, ActionListener {
 		directionListRoad2[1] = c_road9_0;	
 		directionListRoad2[2] = compartiment0;
 		
-		roads.get(1).directionList = directionListRoad2;
-		roads.get(1).hasDirection = true;
+		Road2.directionList = directionListRoad2;
+		Road2.hasDirection = true;
 
 		Compartiment [] directionListRoad4 = new Compartiment[3];
 		directionListRoad4[0] = c_road3_0;
 		directionListRoad4[1] = compartiment0;
 		directionListRoad4[2] = c_road9_0;
 		
-		roads.get(3).directionList = directionListRoad4;
-		roads.get(3).hasDirection = true;
+		Road4.directionList = directionListRoad4;
+		Road4.hasDirection = true;
 		
 		Compartiment [] directionListRoad5 = new Compartiment[3];
 		directionListRoad5[0] = c_road3_0;
 		directionListRoad5[1] = c_road12_0;
 		directionListRoad5[2] = c_road9_0;
 		
-		roads.get(4).directionList = directionListRoad5;
-		roads.get(4).hasDirection = true;
+		Road5.directionList = directionListRoad5;
+		Road5.hasDirection = true;
 		
 		Compartiment [] directionListRoad6 = new Compartiment[3];
 		directionListRoad6[0] = c_road13_0;
 		directionListRoad6[1] = c_road16_0;
 		directionListRoad6[2] = c_road19_0;
 		
-		roads.get(5).directionList = directionListRoad6;
-		roads.get(5).hasDirection = true;
+		Road6.directionList = directionListRoad6;
+		Road6.hasDirection = true;
 		
 		Compartiment [] directionListRoad7 = new Compartiment[3];
 		directionListRoad7[0] = c_road13_0;
 		directionListRoad7[1] = c_road17_0;
 		directionListRoad7[2] = c_road19_0;
 		
-		roads.get(6).directionList = directionListRoad7;
-		roads.get(6).hasDirection = true;
+		Road7.directionList = directionListRoad7;
+		Road7.hasDirection = true;
 		
 		Compartiment [] directionListRoad8 = new Compartiment[3];
 		directionListRoad8[0] = c_road12_0;
 		directionListRoad8[1] = c_road3_0;
 		directionListRoad8[2] = c_road7_0;
 		
-		roads.get(7).directionList = directionListRoad8;
-		roads.get(7).hasDirection = true;
+		Road8.directionList = directionListRoad8;
+		Road8.hasDirection = true;
 		
 		Compartiment [] directionListRoad10 = new Compartiment[2];
 		directionListRoad10[0] = c_road7_0;
 		directionListRoad10[1] = c_road9_0;
 		
-		roads.get(9).directionList = directionListRoad10;
-		roads.get(9).hasDirection = true;
+		Road10.directionList = directionListRoad10;
+		Road10.hasDirection = true;
 		
 		Compartiment [] directionListRoad11 = new Compartiment[2];
 		directionListRoad11[0] = c_road3_0;
 		directionListRoad11[1] = c_road6_0;
 		
-		roads.get(10).directionList = directionListRoad11;
-		roads.get(10).hasDirection = true;
+		Road11.directionList = directionListRoad11;
+		Road11.hasDirection = true;
 		
 		Compartiment [] directionListRoad14 = new Compartiment[2];
 		directionListRoad14[0] = c_road13_0;
 		directionListRoad14[1] = c_road4_0;
 		
-		roads.get(13).directionList = directionListRoad14;
-		roads.get(13).hasDirection = true;
+		Road14.directionList = directionListRoad14;
+		Road14.hasDirection = true;
 		
 		Compartiment [] directionListRoad15 = new Compartiment[2];
 		directionListRoad15[0] = c_road5_0;
 		directionListRoad15[1] = c_road19_0;
 		
-		roads.get(14).directionList = directionListRoad15;
-		roads.get(14).hasDirection = true;
+		Road15.directionList = directionListRoad15;
+		Road15.hasDirection = true;
 		
 		Compartiment [] directionListRoad18 = new Compartiment[3];
 		directionListRoad18[0] = c_road5_0;
 		directionListRoad18[1] = c_road13_0;
 		directionListRoad18[2] = c_road17_0;
 		
-		roads.get(17).directionList = directionListRoad18;
-		roads.get(17).hasDirection = true;
+		Road18.directionList = directionListRoad18;
+		Road18.hasDirection = true;
 		
-		
+		roads.add(Road1);
+		roads.add(Road2);
+		roads.add(Road3);
+		roads.add(Road4);
+		roads.add(Road5);
+		roads.add(Road6);
+		roads.add(Road7);
+		roads.add(Road8);
+		roads.add(Road9);
+		roads.add(Road10);
+		roads.add(Road11);
+		roads.add(Road12);
+		roads.add(Road13);
+		roads.add(Road14);
+		roads.add(Road15);
+		roads.add(Road16);
+		roads.add(Road17);
+		roads.add(Road18);
+		roads.add(Road19);
 		
 		
 		//BAR IOAN
