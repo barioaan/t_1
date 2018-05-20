@@ -1148,7 +1148,7 @@ public class World extends JPanel implements Space, ActionListener {
 				if(i == roads.get(j).compartimente.length-1 && roads.get(j).compartimente[i].isEmpty == false ) {
 					
 					if(roads.get(j).hasDirection = true) {
-						int randomNR = random.nextInt(roads.get(j).directionList.length)-1;
+						int randomNR = random.nextInt(roads.get(j).directionList.length-1);
 						
 						if(roads.get(j).directionList[randomNR].isEmpty == true) {
 							roads.get(j).directionList[randomNR].car.color = roads.get(j).compartimente[i].car.color;
