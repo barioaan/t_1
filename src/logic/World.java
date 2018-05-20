@@ -27,6 +27,7 @@ public class World extends JPanel implements Space, ActionListener {
 
 	Timer timer = new Timer(400,this);
 	
+	
 	public boolean verde = false;
 	public static ArrayList<Semaphore> semaphoreList;
 	
@@ -50,7 +51,7 @@ public class World extends JPanel implements Space, ActionListener {
 				if(txtTimer.getText().isEmpty()==false) {
 					TIMER_SEMAFOARE = Integer.parseInt(txtTimer.getText());
 				}
-				roads.get(3).semaphore.isGreen = true;
+				roads.get(6).semaphore.isGreen = true;
 				roads.get(10).semaphore.isGreen = true;
 				
 				
@@ -86,7 +87,7 @@ public class World extends JPanel implements Space, ActionListener {
 			public void actionPerformed(ActionEvent e) {
 				//timer.stop();
 				//verde = false;
-				roads.get(3).semaphore.isGreen = false;
+				roads.get(6).semaphore.isGreen = false;
 				roads.get(10).semaphore.isGreen = false;
 				//repaint();
 			}
@@ -790,8 +791,8 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		//SETARE DEFAULT PE ROSU - BAR IOAN
 		semaphore1.isGreen = false;
-		semaphore2.isGreen = true;
-		semaphore3.isGreen = true;
+		semaphore2.isGreen = false;
+		semaphore3.isGreen = false;
 		semaphore4.isGreen = false;
 		semaphore6.isGreen = false;
 		semaphore7.isGreen = false;
