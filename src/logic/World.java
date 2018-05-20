@@ -489,7 +489,7 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		//Road 12 - 13 c BRADEA OCTAVIA
 		
-		Compartiment [] compartimenteR12 = new Compartiment[13];
+		Compartiment [] compartimenteR12 = new Compartiment[14];
 		
 		Compartiment c_road12_0 = new Compartiment(555, 450);
 		compartimenteR12[0] = c_road12_0;
@@ -511,12 +511,14 @@ public class World extends JPanel implements Space, ActionListener {
 		compartimenteR12[8] = c_road12_8;
 		Compartiment c_road12_9 = new Compartiment(150,450);
 		compartimenteR12[9] = c_road12_9;
-		Compartiment c_road12_10 = new Compartiment(105,450);
+		Compartiment c_road12_10 = new Compartiment(100,450);
 		compartimenteR12[10] = c_road12_10;
-		Compartiment c_road12_11 = new Compartiment(60,450);
+		Compartiment c_road12_11 = new Compartiment(50,450);
 		compartimenteR12[11] = c_road12_11;
-		Compartiment c_road12_12 = new Compartiment(15,400);
+		Compartiment c_road12_12 = new Compartiment(5,450);
 		compartimenteR12[12] = c_road12_12;
+		Compartiment c_road12_13 = new Compartiment(-45,450);
+		compartimenteR12[13] = c_road12_13;
 		
 		Road12.compartimente = compartimenteR12;
 		
@@ -884,8 +886,12 @@ public class World extends JPanel implements Space, ActionListener {
 			}
 		}
 			
-		roads.get(17).semaphore.isGreen = true;
-		roads.get(7).semaphore.isGreen = true;
+		for(Road r: roads) {
+			if(r.semaphore != null) {
+				r.semaphore.isGreen = true;
+			}
+		}
+		
 		
 
 		
@@ -1173,7 +1179,7 @@ public class World extends JPanel implements Space, ActionListener {
 						roads.get(j).compartimente[i].isEmpty = false;
 					}
 					if(j==12 || j==16 || j==15 || j==2 || j==0 || j==11 || j==19) {
-						if(i>0  && roads.get(j).compartimente[i-1].isEmpty == false) {
+						if(i==roads.get(j).compartimente.length-1  && roads.get(j).compartimente[i-1].isEmpty == false) {
 							roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
 							roads.get(j).compartimente[i].car.width = roads.get(j).compartimente[i-1].car.width;
 							roads.get(j).compartimente[i].car.height = roads.get(j).compartimente[i-1].car.height;
