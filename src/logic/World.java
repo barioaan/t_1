@@ -27,6 +27,8 @@ public class World extends JPanel implements Space, ActionListener {
 
 	Timer timer = new Timer(400,this);
 	
+	public boolean verde = false;
+	
 	public static int TIMER_SEMAFOARE;
 	public static ArrayList<Color> carColors = new ArrayList<Color>();
 	
@@ -40,11 +42,16 @@ public class World extends JPanel implements Space, ActionListener {
 		add(txtTimer);
 		txtTimer.setColumns(10);
 		
-		JButton btnClick = new JButton("CLICK");
+		JButton btnClick = new JButton("START");
 		btnClick.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				timer.start();
-				TIMER_SEMAFOARE = Integer.parseInt(txtTimer.getText().toString());
+				timer.start();verde = true;
+				if(txtTimer.getText().isEmpty()==false) {
+					TIMER_SEMAFOARE = Integer.parseInt(txtTimer.getText());
+				}
+				
+				
+				
 			}
 		});
 		btnClick.setBounds(86, 80, 89, 23);
@@ -67,6 +74,20 @@ public class World extends JPanel implements Space, ActionListener {
 		sens_unic.setIcon(sens);
 		sens_unic.setBounds(1315, 280, 55, 55);
 		add(sens_unic);
+		
+		JButton buttonStop = new JButton("STOP");
+		buttonStop.setBounds(213, 80, 89, 23);
+		buttonStop.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				timer.stop();
+				verde = false;
+				repaint();
+			}
+			
+		});
+		add(buttonStop);
 		
 		
 		
@@ -1017,15 +1038,29 @@ public class World extends JPanel implements Space, ActionListener {
 		g.fillRect(648,707, 50, 8);
 		g.fillRect(1250,710, 50, 8);
 		
+		if(verde == false) {
+			g.setColor(Color.RED);
+			g.fillOval(semaphore1.cordX, semaphore1.cordY, 50, 50);
+			g.fillOval(semaphore2.cordX, semaphore2.cordY, 50, 50);
+			g.fillOval(semaphore3.cordX, semaphore3.cordY, 50, 50);
+			g.fillOval(semaphore4.cordX, semaphore4.cordY, 50, 50);
+			g.fillOval(semaphore6.cordX, semaphore6.cordY, 50, 50);
+			g.fillOval(semaphore7.cordX, semaphore7.cordY, 50, 50);
+			g.fillOval(semaphore8.cordX, semaphore8.cordY, 50, 50);
+		}else {
+			g.setColor(Color.GREEN);
+			g.fillOval(semaphore1.cordX, semaphore1.cordY, 50, 50);
+			g.fillOval(semaphore2.cordX, semaphore2.cordY, 50, 50);
+			g.fillOval(semaphore3.cordX, semaphore3.cordY, 50, 50);
+			g.fillOval(semaphore4.cordX, semaphore4.cordY, 50, 50);
+			g.fillOval(semaphore6.cordX, semaphore6.cordY, 50, 50);
+			g.fillOval(semaphore7.cordX, semaphore7.cordY, 50, 50);
+			g.fillOval(semaphore8.cordX, semaphore8.cordY, 50, 50);
+		}
+			
 		
-		g.setColor(semaphore1.color);
-		g.fillOval(semaphore1.cordX, semaphore1.cordY, 50, 50);
-		g.fillOval(semaphore2.cordX, semaphore2.cordY, 50, 50);
-		g.fillOval(semaphore3.cordX, semaphore3.cordY, 50, 50);
-		g.fillOval(semaphore4.cordX, semaphore4.cordY, 50, 50);
-		g.fillOval(semaphore6.cordX, semaphore6.cordY, 50, 50);
-		g.fillOval(semaphore7.cordX, semaphore7.cordY, 50, 50);
-		g.fillOval(semaphore8.cordX, semaphore8.cordY, 50, 50);
+		
+		
 		
 		
 		
