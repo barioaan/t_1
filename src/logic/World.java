@@ -16,29 +16,38 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import javax.swing.JTextField;
+import java.awt.Font;
 
 public class World extends JPanel implements Space, ActionListener {
 
-	public static int numar_masini = 15 ;
+	public static int numar_masini = 0 ;
 	
 	public static Random random = new Random();
 
-	Timer timer = new Timer(1000,this);
-
+	Timer timer = new Timer(400,this);
+	
+	public static int TIMER_SEMAFOARE;
 	public static ArrayList<Color> carColors = new ArrayList<Color>();
 	
 	
 
 	public World() {
 		setLayout(null);
+		txtTimer = new JTextField();
+		txtTimer.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtTimer.setBounds(86, 49, 86, 20);
+		add(txtTimer);
+		txtTimer.setColumns(10);
 		
 		JButton btnClick = new JButton("CLICK");
 		btnClick.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				timer.start();
+				TIMER_SEMAFOARE = Integer.parseInt(txtTimer.getText().toString());
 			}
 		});
-		btnClick.setBounds(52, 78, 89, 23);
+		btnClick.setBounds(86, 80, 89, 23);
 		add(btnClick);
 		
 		
@@ -60,6 +69,8 @@ public class World extends JPanel implements Space, ActionListener {
 		add(sens_unic);
 		
 		
+		
+		
 	}
 	
 
@@ -74,6 +85,7 @@ public class World extends JPanel implements Space, ActionListener {
 	private static List <Intersection> intersections = new ArrayList <Intersection>();
 	
 	public int contorSemaphore = 0;
+	private JTextField txtTimer;
 	public void move() {
 		
 	}
@@ -407,7 +419,7 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		//Road9.setCompartimente(8);
 		
-		Compartiment [] compartimenteR9 = new Compartiment[8];
+		Compartiment [] compartimenteR9 = new Compartiment[9];
 		
 		Compartiment c_road9_0 = new Compartiment (600,645);
 		compartimenteR9[0] = c_road9_0;
@@ -425,6 +437,8 @@ public class World extends JPanel implements Space, ActionListener {
 		compartimenteR9[6] = c_road9_6;
 		Compartiment c_road9_7 = new Compartiment (600,960);
 		compartimenteR9[7] = c_road9_7;
+		Compartiment c_road9_8 = new Compartiment (600,1001);
+		compartimenteR9[8] = c_road9_8;
 		
 		Road9.compartimente = compartimenteR9;
 		
@@ -692,7 +706,7 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		//Road 19 - 8 c BRANESCU SERBAN
 
-		Compartiment [] compartimenteR19 = new Compartiment[7];
+		Compartiment [] compartimenteR19 = new Compartiment[8];
 		
 		Compartiment c_road19_0 = new Compartiment(1200, 600);
 		compartimenteR19[0] = c_road19_0;
@@ -708,6 +722,8 @@ public class World extends JPanel implements Space, ActionListener {
 		compartimenteR19[5] = c_road19_5;
 		Compartiment c_road19_6 = new Compartiment(1200, 950);
 		compartimenteR19[6] = c_road19_6;
+		Compartiment c_road19_7 = new Compartiment(1200, 1001);
+		compartimenteR19[7] = c_road19_7;
 		
 		
 		
@@ -1024,136 +1040,7 @@ public class World extends JPanel implements Space, ActionListener {
 			
 				
 			
-		
-		
-		
-		
-/*
-		for(Road r: roads) {
-			
-			for(int i=0; i<r.listOFcars.size(); i++) {
-				g.setColor(r.listOFcars.get(i).color);
-				g.fillRect(r.listOFcars.get(i).x, r.listOFcars.get(i).y, r.listOFcars.get(i).width, r.listOFcars.get(i).height);
-				
-			}
-			
-		}
-		*/
-		/*
-		for(int j=0; j<roads.size(); j++) {
-			
-			//ORIENTATION WEST
-				
-				if(roads.get(j).orientation == Orientation.E_West && roads.get(j).areLiniePietoni == true) {
-					
-					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-						if(roads.get(j).listOFcars.get(i).x >= roads.get(j).coordonataLiniePietoni+14) {
-							
-							roads.get(j).listOFcars.get(i).x -= 10;
-						}
-						
-						if(roads.get(j).listOFcars.get(i).x == roads.get(j).outputPort.cordX) {
-							int randomDirection = random.nextInt(roads.get(j).directionList.length-1);
-							
-						}
-					}	
-					
-				}
-				
-					if(roads.get(j).orientation == Orientation.E_West && roads.get(j).areLiniePietoni == false) {
-					
-					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-						if(roads.get(j).listOFcars.get(i).x >= roads.get(j).outputPort.cordX+14) {
-							
-							roads.get(j).listOFcars.get(i).x -= 10;
-						}
-						
-						if(roads.get(j).listOFcars.get(i).x == roads.get(j).outputPort.cordX) {
-							int randomDirection = random.nextInt(roads.get(j).directionList.length-1);
-							
-						}
-					}
-					}
-					
-					
-				//ORIENTATION NORTH
-				if(roads.get(j).orientation == Orientation.E_North && roads.get(j).areLiniePietoni ==true) {
-					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-						if(roads.get(j).listOFcars.get(i).y >= roads.get(j).coordonataLiniePietoni+14) {
-							
-							roads.get(j).listOFcars.get(i).y -= 10;
-							
-						}	
-					}
-				}
-				
-				if(roads.get(j).orientation == Orientation.E_North && roads.get(j).areLiniePietoni == false) {
-					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-						if(roads.get(j).listOFcars.get(i).y >= roads.get(j).outputPort.cordY+14) {
-							
-							roads.get(j).listOFcars.get(i).y -= 10;
-							
-						}	
-					}
-				}
-				
-				
-				//ORIENTATION EAST
-				if(roads.get(j).orientation == Orientation.E_East && roads.get(j).areLiniePietoni == false) {
-
-					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-						if(roads.get(j).listOFcars.get(i).x < roads.get(j).outputPort.cordX-54) {
-							
-							roads.get(j).listOFcars.get(i).x += 10;
-							
-						}
-						if(roads.get(j).listOFcars.get(i).x == roads.get(j).outputPort.cordX-54) {
-							int randomDirection = random.nextInt(roads.get(j).directionList.length-1);
-							if(roads.get(j).directionList[randomDirection] == Direction.E_Forward) {
-								
-							}
-						}
-					}
-				}
-				
-				if(roads.get(j).orientation == Orientation.E_East && roads.get(j).areLiniePietoni == true) {
-
-					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-						if(roads.get(j).listOFcars.get(i).x < roads.get(j).coordonataLiniePietoni-54) {
-							
-							roads.get(j).listOFcars.get(i).x += 10;
-							
-						}
-						if(roads.get(j).listOFcars.get(i).x == roads.get(j).outputPort.cordX-50) {
-							int randomDirection = random.nextInt(roads.get(j).directionList.length-1);
-							if(roads.get(j).directionList[randomDirection] == Direction.E_Forward) {
-								
-							}
-						}
-					}
-				}
-				
-				//ORIENTATION SOUTH
-				if(roads.get(j).orientation == Orientation.E_South && roads.get(j).areLiniePietoni == true) {
-					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-						if(roads.get(j).listOFcars.get(i).y < roads.get(j).coordonataLiniePietoni-54) {
-							
-							roads.get(j).listOFcars.get(i).y += 10;
-							
-						}	
-					}
-				}
-				if(roads.get(j).orientation == Orientation.E_South && roads.get(j).areLiniePietoni == false) {
-					for(int i=0; i<roads.get(j).listOFcars.size(); i++) {
-						if(roads.get(j).listOFcars.get(i).y < roads.get(j).outputPort.cordY-50) {
-							
-							roads.get(j).listOFcars.get(i).y += 10;
-							
-						}	
-					}
-				}
-				
-			} */
+	
 			
 		}
 	
@@ -1178,7 +1065,7 @@ public class World extends JPanel implements Space, ActionListener {
 						roads.get(j).compartimente[i-1].isEmpty = true;
 						roads.get(j).compartimente[i].isEmpty = false;
 					}
-					if(j==12 || j==16 || j==15 || j==2 || j==0 || j==11 || j==19) {
+					if(j==12 || j==16 || j==15 || j==2 || j==0 || j==11 || j==18 || j==8) {
 						if(i==roads.get(j).compartimente.length-1  && roads.get(j).compartimente[i-1].isEmpty == false) {
 							roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
 							roads.get(j).compartimente[i].car.width = roads.get(j).compartimente[i-1].car.width;
@@ -1187,17 +1074,23 @@ public class World extends JPanel implements Space, ActionListener {
 							roads.get(j).compartimente[i].car.y = roads.get(j).compartimente[i].y;
 							roads.get(j).compartimente[i-1].isEmpty = true;
 							roads.get(j).compartimente[i].isEmpty = false;
+							numar_masini--;
 						}
 						
 					}
 					
-					if(i==0 && roads.get(j).compartimente[i].isEmpty == true) {
+					if(i==0 && roads.get(j).compartimente[i].isEmpty == true && numar_masini<20) {
 						if(j==1 || j==7 || j==9 || j==10 || j==13 || j==14 || j==17) {
 							boolean randomB = random.nextBoolean();
 							if(randomB == true) {
+								
+								boolean randomB2 = random.nextBoolean();
+								if(randomB2 == true) {
 								int nrRandomCulori = random.nextInt(7);
 								roads.get(j).compartimente[i].car = new Car(roads.get(j).compartimente[i].x, roads.get(j).compartimente[i].y, carColors.get(nrRandomCulori),40,40);
 								roads.get(j).compartimente[i].isEmpty = false;
+								numar_masini++;
+								}
 							}						
 						}
 					}
