@@ -14,6 +14,8 @@ public class Road implements Space{
 	public boolean areLiniePietoni = false;
 	public Compartiment compartimente [];
 	
+	public boolean hasDirection = false;
+	
 	
 	public Road(Port inputPort, Port outputPort, int size, Orientation orientation) {
 		super();

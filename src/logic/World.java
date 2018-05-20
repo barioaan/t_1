@@ -23,7 +23,7 @@ public class World extends JPanel implements Space, ActionListener {
 	
 	public static Random random = new Random();
 
-	Timer timer = new Timer(300,this);
+	Timer timer = new Timer(1000,this);
 
 	public static ArrayList<Color> carColors = new ArrayList<Color>();
 	
@@ -269,25 +269,25 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		Compartiment [] compartimenteR4 = new Compartiment[10];
 		
-		Compartiment c_road4_0  = new Compartiment(750, 400);
+		Compartiment c_road4_0  = new Compartiment(1155, 400);
 		compartimenteR4[0] = c_road4_0;
-		Compartiment c_road4_1 = new Compartiment(795,400);
+		Compartiment c_road4_1 = new Compartiment(1110,400);
 		compartimenteR4[1] = c_road4_1;
-		Compartiment c_road4_2 = new Compartiment(840,400);
+		Compartiment c_road4_2 = new Compartiment(1065,400);
 		compartimenteR4[2] = c_road4_2;
-		Compartiment c_road4_3 = new Compartiment(885,400);
+		Compartiment c_road4_3 = new Compartiment(1020,400);
 		compartimenteR4[3] = c_road4_3;
-		Compartiment c_road4_4 = new Compartiment(930,400);
+		Compartiment c_road4_4 = new Compartiment(975,400);
 		compartimenteR4[4] = c_road4_4;
-		Compartiment c_road4_5 = new Compartiment(975,400);
+		Compartiment c_road4_5 = new Compartiment(930,400);
 		compartimenteR4[5] = c_road4_5;
-		Compartiment c_road4_6 = new Compartiment(1020,400);
+		Compartiment c_road4_6 = new Compartiment(885,400);
 		compartimenteR4[6] = c_road4_6;
-		Compartiment c_road4_7 = new Compartiment(1065,400);
+		Compartiment c_road4_7 = new Compartiment(840,400);
 		compartimenteR4[7] = c_road4_7;
-		Compartiment c_road4_8 = new Compartiment(1110,400);
+		Compartiment c_road4_8 = new Compartiment(795,400);
 		compartimenteR4[8] = c_road4_8;
-		Compartiment c_road4_9 = new Compartiment(1155,400);
+		Compartiment c_road4_9 = new Compartiment(750,400);
 		compartimenteR4[9] = c_road4_9;
 		
 		Road4.compartimente = compartimenteR4;
@@ -296,25 +296,25 @@ public class World extends JPanel implements Space, ActionListener {
 
 		Compartiment [] compartimenteR5 = new Compartiment[10];
 		
-		Compartiment c_road5_0  = new Compartiment(750, 450);
+		Compartiment c_road5_0  = new Compartiment(1155, 450);
 		compartimenteR5[0] = c_road5_0;
-		Compartiment c_road5_1 = new Compartiment(795,450);
+		Compartiment c_road5_1 = new Compartiment(1110,450);
 		compartimenteR5[1] = c_road5_1;
-		Compartiment c_road5_2 = new Compartiment(840,450);
+		Compartiment c_road5_2 = new Compartiment(1065,450);
 		compartimenteR5[2] = c_road5_2;
-		Compartiment c_road5_3 = new Compartiment(885,450);
+		Compartiment c_road5_3 = new Compartiment(1020,450);
 		compartimenteR5[3] = c_road5_3;
-		Compartiment c_road5_4 = new Compartiment(930,450);
+		Compartiment c_road5_4 = new Compartiment(975,450);
 		compartimenteR5[4] = c_road5_4;
-		Compartiment c_road5_5 = new Compartiment(975,450);
+		Compartiment c_road5_5 = new Compartiment(930,450);
 		compartimenteR5[5] = c_road5_5;
-		Compartiment c_road5_6 = new Compartiment(1020,450);
+		Compartiment c_road5_6 = new Compartiment(885,450);
 		compartimenteR5[6] = c_road5_6;
-		Compartiment c_road5_7 = new Compartiment(1065,450);
+		Compartiment c_road5_7 = new Compartiment(840,450);
 		compartimenteR5[7] = c_road5_7;
-		Compartiment c_road5_8 = new Compartiment(1110,450);
+		Compartiment c_road5_8 = new Compartiment(795,450);
 		compartimenteR5[8] = c_road5_8;
-		Compartiment c_road5_9 = new Compartiment(1155,450);
+		Compartiment c_road5_9 = new Compartiment(750,450);
 		compartimenteR5[9] = c_road5_9;
 		
 		Road5.compartimente = compartimenteR5;
@@ -520,21 +520,21 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		Compartiment [] compartimenteR13 = new Compartiment[8];
 		
-		Compartiment c_road13_0 = new Compartiment(1250, 40);
+		Compartiment c_road13_0 = new Compartiment(1250, 355);
 		compartimenteR13[0] = c_road13_0;
-		Compartiment c_road13_1 = new Compartiment(1250, 85);
+		Compartiment c_road13_1 = new Compartiment(1250, 310);
 		compartimenteR13[1] = c_road13_1;
-		Compartiment c_road13_2 = new Compartiment(1250, 130);
+		Compartiment c_road13_2 = new Compartiment(1250, 265);
 		compartimenteR13[2] = c_road13_2;
-		Compartiment c_road13_3 = new Compartiment(1250, 175);
+		Compartiment c_road13_3 = new Compartiment(1250, 220);
 		compartimenteR13[3] = c_road13_3;	
-		Compartiment c_road13_4 = new Compartiment(1250, 220);
+		Compartiment c_road13_4 = new Compartiment(1250, 175);
 		compartimenteR13[4] = c_road13_4;
-		Compartiment c_road13_5 = new Compartiment(1250, 265);
+		Compartiment c_road13_5 = new Compartiment(1250, 130);
 		compartimenteR13[5] = c_road13_5;
-		Compartiment c_road13_6 = new Compartiment(1250, 310);
+		Compartiment c_road13_6 = new Compartiment(1250, 85);
 		compartimenteR13[6] = c_road13_6;
-		Compartiment c_road13_7 = new Compartiment(1250, 355);
+		Compartiment c_road13_7 = new Compartiment(1250, 40);
 		compartimenteR13[7] = c_road13_7;
 		
 		Road13.compartimente = compartimenteR13;
@@ -759,6 +759,7 @@ public class World extends JPanel implements Space, ActionListener {
 		directionListRoad2[2] = compartiment0;
 		
 		roads.get(1).directionList = directionListRoad2;
+		roads.get(1).hasDirection = true;
 
 		Compartiment [] directionListRoad4 = new Compartiment[3];
 		directionListRoad4[0] = c_road3_0;
@@ -766,65 +767,75 @@ public class World extends JPanel implements Space, ActionListener {
 		directionListRoad4[2] = c_road9_0;
 		
 		roads.get(3).directionList = directionListRoad4;
-
+		roads.get(3).hasDirection = true;
+		
 		Compartiment [] directionListRoad5 = new Compartiment[3];
 		directionListRoad5[0] = c_road3_0;
 		directionListRoad5[1] = c_road12_0;
 		directionListRoad5[2] = c_road9_0;
 		
 		roads.get(4).directionList = directionListRoad5;
-
+		roads.get(4).hasDirection = true;
+		
 		Compartiment [] directionListRoad6 = new Compartiment[3];
 		directionListRoad6[0] = c_road13_0;
 		directionListRoad6[1] = c_road16_0;
 		directionListRoad6[2] = c_road19_0;
 		
 		roads.get(5).directionList = directionListRoad6;
-
+		roads.get(5).hasDirection = true;
+		
 		Compartiment [] directionListRoad7 = new Compartiment[3];
 		directionListRoad7[0] = c_road13_0;
 		directionListRoad7[1] = c_road17_0;
 		directionListRoad7[2] = c_road19_0;
 		
 		roads.get(6).directionList = directionListRoad7;
-
+		roads.get(6).hasDirection = true;
+		
 		Compartiment [] directionListRoad8 = new Compartiment[3];
 		directionListRoad8[0] = c_road12_0;
 		directionListRoad8[1] = c_road3_0;
 		directionListRoad8[2] = c_road7_0;
 		
 		roads.get(7).directionList = directionListRoad8;
-
+		roads.get(7).hasDirection = true;
+		
 		Compartiment [] directionListRoad10 = new Compartiment[2];
 		directionListRoad10[0] = c_road7_0;
 		directionListRoad10[1] = c_road9_0;
 		
 		roads.get(9).directionList = directionListRoad10;
-
+		roads.get(9).hasDirection = true;
+		
 		Compartiment [] directionListRoad11 = new Compartiment[2];
 		directionListRoad11[0] = c_road3_0;
 		directionListRoad11[1] = c_road6_0;
 		
 		roads.get(10).directionList = directionListRoad11;
-
+		roads.get(10).hasDirection = true;
+		
 		Compartiment [] directionListRoad14 = new Compartiment[2];
 		directionListRoad14[0] = c_road13_0;
 		directionListRoad14[1] = c_road4_0;
 		
 		roads.get(13).directionList = directionListRoad14;
-
+		roads.get(13).hasDirection = true;
+		
 		Compartiment [] directionListRoad15 = new Compartiment[2];
 		directionListRoad15[0] = c_road5_0;
 		directionListRoad15[1] = c_road19_0;
 		
 		roads.get(14).directionList = directionListRoad15;
-
+		roads.get(14).hasDirection = true;
+		
 		Compartiment [] directionListRoad18 = new Compartiment[3];
 		directionListRoad18[0] = c_road5_0;
 		directionListRoad18[1] = c_road13_0;
 		directionListRoad18[2] = c_road17_0;
 		
 		roads.get(17).directionList = directionListRoad18;
+		roads.get(17).hasDirection = true;
 		
 		
 		
@@ -1134,16 +1145,22 @@ public class World extends JPanel implements Space, ActionListener {
 					}
 				}
 				
-				if(roads.get(j).compartimente[roads.get(j).compartimente.length-1].isEmpty == false && j==9 && roads.get(j-1).compartimente[0].isEmpty == true) {
+				if(i == roads.get(j).compartimente.length-1 && roads.get(j).compartimente[i].isEmpty == false ) {
 					
-						int nrRandomCulori = random.nextInt(7);
-						roads.get(j-1).compartimente[0].car.color = roads.get(j).compartimente[i].car.color;
-						roads.get(j-1).compartimente[0].car.width = roads.get(j).compartimente[i].car.width;
-						roads.get(j-1).compartimente[0].car.height = roads.get(j).compartimente[i].car.height;
-						roads.get(j-1).compartimente[0].car.x = roads.get(j-1).compartimente[0].x;
-						roads.get(j-1).compartimente[0].car.y = roads.get(j-1).compartimente[0].y;
-						roads.get(j).compartimente[i].isEmpty = true;
-						roads.get(j-1).compartimente[0].isEmpty = false;
+					if(roads.get(j).hasDirection = true) {
+						int randomNR = random.nextInt(roads.get(j).directionList.length)-1;
+						
+						if(roads.get(j).directionList[randomNR].isEmpty == true) {
+							roads.get(j).directionList[randomNR].car.color = roads.get(j).compartimente[i].car.color;
+							roads.get(j).directionList[randomNR].car.width = roads.get(j).compartimente[i].car.width;
+							roads.get(j).directionList[randomNR].car.height = roads.get(j).compartimente[i].car.height;
+							roads.get(j).directionList[randomNR].car.x = roads.get(j).directionList[randomNR].x;
+							roads.get(j).directionList[randomNR].car.y = roads.get(j).directionList[randomNR].y;
+							roads.get(j).directionList[randomNR].isEmpty = false;
+							roads.get(j).compartimente[i].isEmpty = true;
+						}
+					}
+						
 					
 				}
 			}
