@@ -21,14 +21,14 @@ import java.awt.Font;
 
 public class World extends JPanel implements Space, ActionListener {
 
-	public static int numar_masini = 0 ;
+	public static int numar_masini = -20 ;
 	
 	public static Random random = new Random();
 
 	Timer timer = new Timer(400,this);
 	
 	public boolean verde = false;
-	public Color semahporeColor;
+	public static ArrayList<Semaphore> semaphoreList;
 	
 	public static int TIMER_SEMAFOARE;
 	public static ArrayList<Color> carColors = new ArrayList<Color>();
@@ -46,10 +46,12 @@ public class World extends JPanel implements Space, ActionListener {
 		JButton btnClick = new JButton("START");
 		btnClick.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				timer.start();//verde = true;
+				timer.start();//verde = true;x
 				if(txtTimer.getText().isEmpty()==false) {
 					TIMER_SEMAFOARE = Integer.parseInt(txtTimer.getText());
 				}
+				roads.get(3).semaphore.isGreen = true;
+				roads.get(10).semaphore.isGreen = true;
 				
 				
 				
@@ -83,7 +85,9 @@ public class World extends JPanel implements Space, ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				//timer.stop();
-				verde = false;
+				//verde = false;
+				roads.get(3).semaphore.isGreen = false;
+				roads.get(10).semaphore.isGreen = false;
 				//repaint();
 			}
 			
@@ -792,7 +796,7 @@ public class World extends JPanel implements Space, ActionListener {
 		semaphore6.isGreen = false;
 		semaphore7.isGreen = false;
 		semaphore8.isGreen = false;
-		
+	
 		
 		// ALOCARE SEMAFOARE PENTRU FIECARE BANDA - BAR IOAN
 		Road2.semaphore = semaphore1;
@@ -1042,16 +1046,19 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		
 			
+			for( Road r: roads) {
+				if(r.semaphore!=null && r.semaphore.isGreen == true) {
+					g.setColor(Color.GREEN);
+					g.fillOval(r.semaphore.cordX, r.semaphore.cordY, 50, 50);
+
+				}
+				if(r.semaphore!=null && r.semaphore.isGreen == false) {
+					g.setColor(Color.RED);
+					g.fillOval(r.semaphore.cordX, r.semaphore.cordY, 50, 50);
+
+				}
+			}
 			
-			
-			g.fillOval(semaphore1.cordX, semaphore1.cordY, 50, 50);
-			g.fillOval(semaphore3.cordX, semaphore3.cordY, 50, 50);
-			g.fillOval(semaphore6.cordX, semaphore6.cordY, 50, 50);
-			g.fillOval(semaphore7.cordX, semaphore7.cordY, 50, 50);
-			g.fillOval(semaphore8.cordX, semaphore8.cordY, 50, 50);
-			g.fillOval(semaphore2.cordX, semaphore2.cordY, 50, 50);		
-	     	g.fillOval(semaphore4.cordX, semaphore4.cordY, 50, 50);
-	
 			
 		
 		
