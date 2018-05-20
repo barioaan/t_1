@@ -64,10 +64,10 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		//POZA CU SCOALA - ALBU ADELA
 		JLabel poza_sc = new JLabel("");
-		URL scoala = getClass().getResource("/scoala.jpg");
+		URL scoala = getClass().getResource("/scoala2.jpg");
 		Icon imagine_scoala = new ImageIcon (scoala);
 		poza_sc.setIcon(imagine_scoala);
-		poza_sc.setBounds(70, 80, 300, 450);
+		poza_sc.setBounds(70, 30, 300, 450);
 		add(poza_sc);
 		
 		//POZA SENS UNIC - ALBU ADELA
