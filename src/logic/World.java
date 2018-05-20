@@ -73,7 +73,7 @@ public class World extends JPanel implements Space, ActionListener {
 	private List <Port> ports = new ArrayList <Port>();
 	private static List <Intersection> intersections = new ArrayList <Intersection>();
 	
-	
+	public int contorSemaphore = 0;
 	public void move() {
 		
 	}
@@ -244,24 +244,26 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		//Road 3 - 8 compartimente BRANESCU SERBAN
 		
-		Compartiment [] compartimenteR3 = new Compartiment[8];
+		Compartiment [] compartimenteR3 = new Compartiment[9];
 		
-		Compartiment c_road3_0 = new Compartiment (650,40);
+		Compartiment c_road3_0 = new Compartiment (650,355);
 		compartimenteR3[0] = c_road3_0;
-		Compartiment c_road3_1 = new Compartiment (650,85);
+		Compartiment c_road3_1 = new Compartiment (650,310);
 		compartimenteR3[1] = c_road3_1;
-		Compartiment c_road3_2 = new Compartiment (650,130);
+		Compartiment c_road3_2 = new Compartiment (650,265);
 		compartimenteR3[2] = c_road3_2;
-		Compartiment c_road3_3 = new Compartiment (650,175);
+		Compartiment c_road3_3 = new Compartiment (650,220);
 		compartimenteR3[3] = c_road3_3;
-		Compartiment c_road3_4 = new Compartiment (650,220);
+		Compartiment c_road3_4 = new Compartiment (650,175);
 		compartimenteR3[4] = c_road3_4;
-		Compartiment c_road3_5 = new Compartiment (650,265);
+		Compartiment c_road3_5 = new Compartiment (650,130);
 		compartimenteR3[5] = c_road3_5;
-		Compartiment c_road3_6 = new Compartiment (650,310);
+		Compartiment c_road3_6 = new Compartiment (650,85);
 		compartimenteR3[6] = c_road3_6;
-		Compartiment c_road3_7 = new Compartiment (650,355);
+		Compartiment c_road3_7 = new Compartiment (650,40);
 		compartimenteR3[7] = c_road3_7;
+		Compartiment c_road3_8 = new Compartiment (650,-45);
+		compartimenteR3[8] = c_road3_8;
 		
 		Road3.compartimente = compartimenteR3;
 		
@@ -518,7 +520,7 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		//Road 13 - 8 c BRANESCU SERBAN
 		
-		Compartiment [] compartimenteR13 = new Compartiment[8];
+		Compartiment [] compartimenteR13 = new Compartiment[10];
 		
 		Compartiment c_road13_0 = new Compartiment(1250, 355);
 		compartimenteR13[0] = c_road13_0;
@@ -536,6 +538,10 @@ public class World extends JPanel implements Space, ActionListener {
 		compartimenteR13[6] = c_road13_6;
 		Compartiment c_road13_7 = new Compartiment(1250, 40);
 		compartimenteR13[7] = c_road13_7;
+		Compartiment c_road13_8 = new Compartiment(1250, -5);
+		compartimenteR13[8] = c_road13_8;
+		Compartiment c_road13_9 = new Compartiment(1250, -50);
+		compartimenteR13[9] = c_road13_9;
 		
 		Road13.compartimente = compartimenteR13;
 
@@ -628,7 +634,7 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		//Road 17 - 13 c BRADEA OCTAVIA
 
-		Compartiment [] compartimenteR17 = new Compartiment[13];
+		Compartiment [] compartimenteR17 = new Compartiment[14];
 		
 		Compartiment c_road17_0  = new Compartiment(1345, 550);
 		compartimenteR17[0] = c_road17_0;
@@ -656,6 +662,8 @@ public class World extends JPanel implements Space, ActionListener {
 		compartimenteR17[11] = c_road17_11;
 		Compartiment c_road17_12 = new Compartiment(1885,550);
 		compartimenteR17[12] = c_road17_12;
+		Compartiment c_road17_13 = new Compartiment(1925,550);
+		compartimenteR17[13] = c_road17_13;
 		
 		Road17.compartimente = compartimenteR17;
 		
@@ -733,6 +741,31 @@ public class World extends JPanel implements Space, ActionListener {
 		semaphore7 = new Semaphore(Color.RED, 1130, 620);
 		semaphore8 = new Semaphore(Color.RED, 1320, 620);
 		
+		
+		//SETARE DEFAULT PE ROSU - BAR IOAN
+		semaphore1.isGreen = false;
+		semaphore2.isGreen = false;
+		semaphore3.isGreen = false;
+		semaphore4.isGreen = false;
+		
+		semaphore6.isGreen = false;
+		semaphore7.isGreen = false;
+		semaphore8.isGreen = false;
+		
+		
+		// ALOCARE SEMAFOARE PENTRU FIECARE BANDA - BAR IOAN
+		Road2.semaphore = semaphore1;
+		Road4.semaphore = semaphore2;
+		Road5.semaphore = semaphore2;
+		Road8.semaphore = semaphore4;
+		Road10.semaphore = semaphore3;
+		Road11.semaphore = semaphore3;
+		
+		Road14.semaphore = semaphore6;
+		Road15.semaphore = semaphore6;
+		Road18.semaphore = semaphore8;
+		Road6.semaphore = semaphore7;
+		Road7.semaphore = semaphore7;
 		
 		//DIRECTII BENZI - ALBU ADELA - COD SCHIMBAT DE BAR IOAN
 		Compartiment [] directionListRoad2 = new Compartiment[3];
@@ -812,9 +845,9 @@ public class World extends JPanel implements Space, ActionListener {
 		Road15.hasDirection = true;
 		
 		Compartiment [] directionListRoad18 = new Compartiment[3];
-		directionListRoad18[0] = c_road5_0;
+		directionListRoad18[0] = c_road17_0;
 		directionListRoad18[1] = c_road13_0;
-		directionListRoad18[2] = c_road17_0;
+		directionListRoad18[2] = c_road5_0;
 		
 		Road18.directionList = directionListRoad18;
 		Road18.hasDirection = true;
@@ -849,7 +882,8 @@ public class World extends JPanel implements Space, ActionListener {
 			}
 		}
 			
-		
+		roads.get(17).semaphore.isGreen = true;
+		roads.get(7).semaphore.isGreen = true;
 		
 
 		
@@ -1123,48 +1157,68 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		for(int j=0; j<roads.size(); j++) {
 			
-			for(int i=roads.get(j).compartimente.length-1; i>=0; i--) {
-				if(i>0 && roads.get(j).compartimente[i].isEmpty == true && roads.get(j).compartimente[i-1].isEmpty == false) {
-					roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
-					roads.get(j).compartimente[i].car.width = roads.get(j).compartimente[i-1].car.width;
-					roads.get(j).compartimente[i].car.height = roads.get(j).compartimente[i-1].car.height;
-					roads.get(j).compartimente[i].car.x = roads.get(j).compartimente[i].x;
-					roads.get(j).compartimente[i].car.y = roads.get(j).compartimente[i].y;
-					roads.get(j).compartimente[i-1].isEmpty = true;
-					roads.get(j).compartimente[i].isEmpty = false;
-				}
+			
 				
-				if(i==0 && roads.get(j).compartimente[i].isEmpty == true) {
-					if(j==1 || j==7 || j==9 || j==10 || j==13 || j==14 || j==17) {
-						boolean randomB = random.nextBoolean();
-						if(randomB == true) {
-							int nrRandomCulori = random.nextInt(7);
-							roads.get(j).compartimente[i].car = new Car(roads.get(j).compartimente[i].x, roads.get(j).compartimente[i].y, carColors.get(nrRandomCulori),40,40);
-							roads.get(j).compartimente[i].isEmpty = false;
-						}						
-					}
-				}
-				
-				if(i == roads.get(j).compartimente.length-1 && roads.get(j).compartimente[i].isEmpty == false ) {
+				for(int i=roads.get(j).compartimente.length-1; i>=0; i--) {
 					
-					if(roads.get(j).hasDirection = true) {
-						int randomNR = random.nextInt(roads.get(j).directionList.length-1);
+					if(i>0 && roads.get(j).compartimente[i].isEmpty == true && roads.get(j).compartimente[i-1].isEmpty == false) {
+						roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
+						roads.get(j).compartimente[i].car.width = roads.get(j).compartimente[i-1].car.width;
+						roads.get(j).compartimente[i].car.height = roads.get(j).compartimente[i-1].car.height;
+						roads.get(j).compartimente[i].car.x = roads.get(j).compartimente[i].x;
+						roads.get(j).compartimente[i].car.y = roads.get(j).compartimente[i].y;
+						roads.get(j).compartimente[i-1].isEmpty = true;
+						roads.get(j).compartimente[i].isEmpty = false;
+					}
+					if(j==12 || j==16 || j==15 || j==2 || j==0 || j==11 || j==19) {
+						if(i>0  && roads.get(j).compartimente[i-1].isEmpty == false) {
+							roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
+							roads.get(j).compartimente[i].car.width = roads.get(j).compartimente[i-1].car.width;
+							roads.get(j).compartimente[i].car.height = roads.get(j).compartimente[i-1].car.height;
+							roads.get(j).compartimente[i].car.x = roads.get(j).compartimente[i].x;
+							roads.get(j).compartimente[i].car.y = roads.get(j).compartimente[i].y;
+							roads.get(j).compartimente[i-1].isEmpty = true;
+							roads.get(j).compartimente[i].isEmpty = false;
+						}
 						
-						if(roads.get(j).directionList[randomNR].isEmpty == true) {
-							roads.get(j).directionList[randomNR].car.color = roads.get(j).compartimente[i].car.color;
-							roads.get(j).directionList[randomNR].car.width = roads.get(j).compartimente[i].car.width;
-							roads.get(j).directionList[randomNR].car.height = roads.get(j).compartimente[i].car.height;
-							roads.get(j).directionList[randomNR].car.x = roads.get(j).directionList[randomNR].x;
-							roads.get(j).directionList[randomNR].car.y = roads.get(j).directionList[randomNR].y;
-							roads.get(j).directionList[randomNR].isEmpty = false;
-							roads.get(j).compartimente[i].isEmpty = true;
+					}
+					
+					if(i==0 && roads.get(j).compartimente[i].isEmpty == true) {
+						if(j==1 || j==7 || j==9 || j==10 || j==13 || j==14 || j==17) {
+							boolean randomB = random.nextBoolean();
+							if(randomB == true) {
+								int nrRandomCulori = random.nextInt(7);
+								roads.get(j).compartimente[i].car = new Car(roads.get(j).compartimente[i].x, roads.get(j).compartimente[i].y, carColors.get(nrRandomCulori),40,40);
+								roads.get(j).compartimente[i].isEmpty = false;
+							}						
 						}
 					}
+					
+					if(roads.get(j).semaphore != null && roads.get(j).semaphore.isGreen == true) {
+					if(i == roads.get(j).compartimente.length-1 && roads.get(j).compartimente[i].isEmpty == false ) {
 						
+						if(roads.get(j).hasDirection == true) {
+							int randomNR = random.nextInt(roads.get(j).directionList.length);
+							
+							if(roads.get(j).directionList[randomNR].isEmpty == true) {
+								roads.get(j).directionList[randomNR].car.color = roads.get(j).compartimente[i].car.color;
+								roads.get(j).directionList[randomNR].car.width = roads.get(j).compartimente[i].car.width;
+								roads.get(j).directionList[randomNR].car.height = roads.get(j).compartimente[i].car.height;
+								roads.get(j).directionList[randomNR].car.x = roads.get(j).directionList[randomNR].x;
+								roads.get(j).directionList[randomNR].car.y = roads.get(j).directionList[randomNR].y;
+								roads.get(j).directionList[randomNR].isEmpty = false;
+								roads.get(j).compartimente[i].isEmpty = true;
+							}
+						}
+					}
+					}
 					
 				}
+				
 			}
-		}
+			
+			
+		
 				
 		repaint();
 		

@@ -7,7 +7,7 @@ public class Semaphore {
 	
 	public Color color;
 	public int cordX, cordY;
-	
+	public boolean isGreen = false;
 	public Semaphore(Color color, int cordX, int cordY) {
 		super();
 		this.color = color;

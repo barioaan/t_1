@@ -16,6 +16,8 @@ public class Road implements Space{
 	
 	public boolean hasDirection = false;
 	
+	public Semaphore semaphore;
+	
 	
 	public Road(Port inputPort, Port outputPort, int size, Orientation orientation) {
 		super();
