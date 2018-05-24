@@ -90,7 +90,7 @@ public class World extends JPanel implements Space, ActionListener {
 				roads.get(6).semaphore.isGreen = false;
 				roads.get(10).semaphore.isGreen = false;
 				//repaint();
-                //repaisafnsadfna
+                //repaisafnsadfnafdsaf
 			}
 			
 		});
