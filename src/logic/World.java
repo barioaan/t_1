@@ -66,16 +66,16 @@ public class World extends JPanel implements Space, ActionListener {
 		//POZA CU SCOALA - ALBU ADELA
 		JLabel poza_sc = new JLabel("");
 		URL scoala = getClass().getResource("/scoala2.jpg");
-//		Icon imagine_scoala = new ImageIcon (scoala);
-		//poza_sc.setIcon(imagine_scoala);
+		Icon imagine_scoala = new ImageIcon (scoala);
+		poza_sc.setIcon(imagine_scoala);
 		poza_sc.setBounds(70, 30, 300, 450);
 		add(poza_sc);
 		
 		//POZA SENS UNIC - ALBU ADELA
 		JLabel sens_unic = new JLabel("");
-		//URL sensunic = getClass().getResource("/imagine.jpg");
-		//Icon sens = new ImageIcon (sensunic);
-		//sens_unic.setIcon(sens);
+		URL sensunic = getClass().getResource("/imagine.jpg");
+	    Icon sens = new ImageIcon (sensunic);
+		sens_unic.setIcon(sens);
 		sens_unic.setBounds(1315, 280, 55, 55);
 		add(sens_unic);
 		
@@ -90,6 +90,7 @@ public class World extends JPanel implements Space, ActionListener {
 				roads.get(6).semaphore.isGreen = false;
 				roads.get(10).semaphore.isGreen = false;
 				//repaint();
+                //repaisafnsadfna
 			}
 			
 		});
@@ -107,7 +108,7 @@ public class World extends JPanel implements Space, ActionListener {
 	public static Semaphore semaphore1, semaphore2, semaphore3, semaphore4, semaphore5, semaphore6, semaphore7, semaphore8;
 	
 
-	private static List <Road> roads = new ArrayList <Road>();
+	private static List <Road> roads = new ArrayList <>();
 	private List <Port> ports = new ArrayList <Port>();
 	private static List <Intersection> intersections = new ArrayList <Intersection>();
 	
