@@ -21,17 +21,19 @@ import java.awt.Font;
 
 public class World extends JPanel implements Space, ActionListener {
 
-	public static int numar_masini = -20 ;
+
+    public static int numar_masini = -20 ;
+
+	public static Thread thread;
 	
 	public static Random random = new Random();
 
 	Timer timer = new Timer(400,this);
 	
 	
-	public boolean verde = false;
+
 	public static ArrayList<Semaphore> semaphoreList;
-	
-	public static int TIMER_SEMAFOARE;
+
 	public static ArrayList<Color> carColors = new ArrayList<Color>();
 	
 	
@@ -43,17 +45,14 @@ public class World extends JPanel implements Space, ActionListener {
 		txtTimer.setBounds(86, 49, 86, 20);
 		add(txtTimer);
 		txtTimer.setColumns(10);
-		
+
+
+
 		JButton btnClick = new JButton("START");
 		btnClick.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				timer.start();//verde = true;x
-				if(txtTimer.getText().isEmpty()==false) {
-					TIMER_SEMAFOARE = Integer.parseInt(txtTimer.getText());
-				}
-				roads.get(6).semaphore.isGreen = true;
-				roads.get(10).semaphore.isGreen = true;
-				
+				timer.start()ș
+				btnClick.setEnabled(false);
 				
 				
 			}
@@ -87,8 +86,8 @@ public class World extends JPanel implements Space, ActionListener {
 			public void actionPerformed(ActionEvent e) {
 				//timer.stop();
 				//verde = false;
-				roads.get(6).semaphore.isGreen = false;
-				roads.get(10).semaphore.isGreen = false;
+				//roads.get(6).semaphore.isGreen = false;
+				//roads.get(10).semaphore.isGreen = false;
 				//repaint();
                 //repaisafnsadfnafdsaf
 			}
@@ -102,18 +101,18 @@ public class World extends JPanel implements Space, ActionListener {
 	}
 	
 
-	private static Port P1I, P2I, P3I, P4I, P5I, P6I, P7I, P8I, P9I, P10I, P11I, P12I, P13I, P14I, P15I, P16I, P17I, P18I, P19I;
-	private static Port P1O, P2O, P3O, P4O, P5O, P6O, P7O, P8O, P9O, P10O, P11O, P12O, P13O, P14O, P15O, P16O, P17O, P18O, P19O;
-	private static Road Road1, Road2, Road3, Road4, Road5, Road6, Road7, Road8, Road9, Road10, Road11, Road12, Road13, Road14, Road15, Road16, Road17, Road18, Road19;
-	public static Semaphore semaphore1, semaphore2, semaphore3, semaphore4, semaphore5, semaphore6, semaphore7, semaphore8;
+	public static Port P1I, P2I, P3I, P4I, P5I, P6I, P7I, P8I, P9I, P10I, P11I, P12I, P13I, P14I, P15I, P16I, P17I, P18I, P19I;
+	public static Port P1O, P2O, P3O, P4O, P5O, P6O, P7O, P8O, P9O, P10O, P11O, P12O, P13O, P14O, P15O, P16O, P17O, P18O, P19O;
+	public static Road Road1, Road2, Road3, Road4, Road5, Road6, Road7, Road8, Road9, Road10, Road11, Road12, Road13, Road14, Road15, Road16, Road17, Road18, Road19;
+    public static Semaphore semaphore1, semaphore2, semaphore3, semaphore4, semaphore5, semaphore6, semaphore7, semaphore8, semaphoreP1_1, semaphoreP1_2, semaphoreP2_1, semaphoreP2_2, semaphoreP3_1, semaphoreP3_2;
 	
 
-	private static List <Road> roads = new ArrayList <>();
-	private List <Port> ports = new ArrayList <Port>();
-	private static List <Intersection> intersections = new ArrayList <Intersection>();
+	public static List <Road> roads = new ArrayList <>();
+	public List <Port> ports = new ArrayList <Port>();
+	public static List <Intersection> intersections = new ArrayList <Intersection>();
 	
 	
-	private JTextField txtTimer;
+	public JTextField txtTimer;
 	public void move() {
 		
 	}
@@ -129,49 +128,11 @@ public class World extends JPanel implements Space, ActionListener {
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().add(w);
-	
-		//Porturile de intrare ale benzilor - BRADEA OCTAVIA
-		P1I = new Port (600,400); 
-		P2I = new Port (600,0);  
-		P3I = new Port (650,400); 
-		P4I = new Port (1200,400);
-		P5I = new Port (1200,450); 
-		P6I = new Port (700,500);
-		P7I = new Port (700,550);
-		P8I = new Port (650,1000);
-		P9I = new Port (600,1000);
-		P10I = new Port (0,550);
-		P11I = new Port (0,500);
-		P12I = new Port (600,450); 
-		P13I = new Port (1250,400); 
-		P14I = new Port (1900,400);
-		P15I = new Port (1900,450);
-		P16I = new Port (1300,500);
-		P17I = new Port (1300,550);
-		P18I = new Port (1250,1000); 
-		P19I = new Port (1200,1000);
-		 
-		//Porturile de iesire ale benzilor - BRANESCU SERBAN 
-		P1O = new Port (0,400);
-		P2O = new Port (600,400);  
-		P3O = new Port (650,0); 
-		P4O = new Port (700,400); 
-		P5O = new Port (700,450);
-		P6O = new Port (1200,500); 
-		P7O = new Port (1200,550); 
-		P8O = new Port (650,600); 
-		P9O = new Port (600,600);
-		P10O = new Port (600,550); 
-		P11O = new Port (600,500); 
-		P12O = new Port (0,450); 
-		P13O = new Port (1250,0);  
-		P14O = new Port (1300,400); 
-		P15O = new Port (1300,450);  
-		P16O = new Port (1900,500); 
-		P17O = new Port (1900,550); 
-		P18O = new Port (1250,600); 
-		P19O = new Port (1200,600);  
-		
+
+        CreateObject.createPorts();
+
+
+
 		//Drumurile - ALBU ADELA
 		Road1 = new Road(P1I, P1O, 600, Orientation.E_West);
 		Road2 = new Road(P2I, P2O, 400, Orientation.E_South);
@@ -757,14 +718,6 @@ public class World extends JPanel implements Space, ActionListener {
 		
 		Road19.compartimente = compartimenteR19;
 		
-		
-		
-		
-		
-		
-	
-		
-		
 		//CULORILE MASINILOR - BRANESCU SERBAN
 		carColors.add(Color.BLACK);
 		carColors.add(Color.YELLOW);
@@ -788,8 +741,15 @@ public class World extends JPanel implements Space, ActionListener {
 		semaphore6 = new Semaphore( 1320, 340);
 		semaphore7 = new Semaphore( 1130, 620);
 		semaphore8 = new Semaphore( 1320, 620);
-		
-		
+
+        semaphoreP1_1 = new Semaphore (495, 365);
+        semaphoreP1_2 = new Semaphore (495, 610);
+        semaphoreP2_1 = new Semaphore (565, 290);
+        semaphoreP2_2 = new Semaphore (705, 290);
+        semaphoreP3_1 = new Semaphore (565, 680);
+        semaphoreP3_2 = new Semaphore (705, 680);
+
+
 		//SETARE DEFAULT PE ROSU - BAR IOAN
 		semaphore1.isGreen = false;
 		semaphore2.isGreen = false;
@@ -928,16 +888,6 @@ public class World extends JPanel implements Space, ActionListener {
 		
 			}
 		}
-			
-		/*
-		for(Road r: roads) {
-			if(r.semaphore != null) {
-				r.semaphore.isGreen = true;
-			}
-		}
-		
-		*/
-		
 
 		
 	}
@@ -1060,7 +1010,14 @@ public class World extends JPanel implements Space, ActionListener {
 
 				}
 			}
-			
+
+        g.setColor(Color.BLUE);
+        g.fillOval(semaphoreP1_1.cordX, semaphoreP1_1.cordY, 25, 25);
+        g.fillOval(semaphoreP1_2.cordX, semaphoreP1_1.cordY, 25, 25);
+        g.fillOval(semaphoreP2_1.cordX, semaphoreP1_1.cordY, 25, 25);
+        g.fillOval(semaphoreP2_2.cordX, semaphoreP1_1.cordY, 25, 25);
+        g.fillOval(semaphoreP3_1.cordX, semaphoreP1_1.cordY, 25, 25);
+        g.fillOval(semaphoreP3_2.cordX, semaphoreP1_1.cordY, 25, 25);
 			
 		
 		
@@ -1160,11 +1117,10 @@ public class World extends JPanel implements Space, ActionListener {
 				
 				
 			}
-			
-			
-		
+
 				
 		repaint();
 		
 	}
+
 }
