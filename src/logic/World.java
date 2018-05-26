@@ -32,7 +32,7 @@ public class World extends JPanel implements Space, ActionListener {
 	
 	
 
-	public static ArrayList<Semaphore> semaphoreList;
+//	public static ArrayList<Semaphore> semaphoreList;
 
 	public static ArrayList<Color> carColors = new ArrayList<Color>();
 	
@@ -96,6 +96,7 @@ public class World extends JPanel implements Space, ActionListener {
 		btnClick.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				timer.start();
+				thread.start();
 				btnClick.setEnabled(false);
 				
 				
