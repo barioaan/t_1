@@ -45,6 +45,50 @@ public class World extends JPanel implements Space, ActionListener {
 		txtTimer.setBounds(86, 49, 86, 20);
 		add(txtTimer);
 		txtTimer.setColumns(10);
+		
+		thread = new Thread (new Runnable() {
+
+			@Override
+			public void run() {
+				
+			for(int i=0; i<1000; i++) {
+				roads.get(9).semaphore.isGreen = true;
+				roads.get(6).semaphore.isGreen = true;
+				roads.get(13).semaphore.isGreen = true;
+				roads.get(3).semaphore.isGreen = true;
+				roads.get(7).semaphore.isGreen = false;
+				roads.get(17).semaphore.isGreen = false;
+				roads.get(1).semaphore.isGreen = false;
+				
+				try {
+					thread.sleep(10000);
+				} catch (InterruptedException e) {
+					
+					e.printStackTrace();
+				}
+				
+				roads.get(9).semaphore.isGreen = false;
+				roads.get(6).semaphore.isGreen = false;
+				roads.get(13).semaphore.isGreen = false;
+				roads.get(3).semaphore.isGreen = false;
+				roads.get(7).semaphore.isGreen = true;
+				roads.get(17).semaphore.isGreen = true;
+				roads.get(1).semaphore.isGreen = true;
+				
+				try {
+					thread.sleep(10000);
+				} catch (InterruptedException e) {
+					
+					e.printStackTrace();
+				}
+				
+			}
+				
+			}
+			
+				
+			
+		});
 
 
 
