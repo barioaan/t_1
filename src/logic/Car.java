@@ -2,16 +2,20 @@ package logic;
 
 import java.awt.Color;
 
-public class Car {
+class Car {
 	
 	
-	public Color color;
-	public int width, height;
-	public int x,y;
+	Color color;
+	int width, height;
+	int x,y;
 	private Direction direction;
 	public int xPietoni, yPietoni;
-	
-	public Car(int x, int y, Color color, int width, int height) {
+
+    public Car() {
+
+    }
+
+    Car(int x, int y, Color color, int width, int height) {
 		this.x = x;
 		this.y = y;
 		this.color = color;
@@ -19,9 +23,6 @@ public class Car {
 		this.height = height;
 	}
 
-	public Car() {
-		// TODO Auto-generated constructor stub
-	}
 	
 	
 }

@@ -1,23 +1,20 @@
 package logic;
 
-public class Compartiment {
+class Compartiment {
 	
-	public int x,y;
+	int x,y;
+    boolean isEmpty;
+	Car car = new Car();
 
-	public Car car = new Car();
-	
-	public Compartiment(int x, int y) {
+	Compartiment(int x, int y) {
 		super();
 		this.x = x;
 		this.y = y;
 	}
 
-	public boolean isEmpty;
-	
-	public void setEmpty(boolean isEmpty) {
-		this.isEmpty = isEmpty;
 
-	}
+	
+
 	
 	
 

@@ -8,40 +8,33 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
 import javax.swing.*;
-import java.awt.Font;
-
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 import static logic.CreateObject.*;
 
-public class World extends JPanel implements Space, ActionListener {
+public class World extends JPanel implements ActionListener {
 
 
-    private static int numar_masini = -20 ;
+    static Port P1I, P2I, P3I, P4I, P5I, P6I, P7I, P8I, P9I, P10I, P11I, P12I, P13I, P14I, P15I, P16I, P17I, P18I, P19I;
+    static Port P1O, P2O, P3O, P4O, P5O, P6O, P7O, P8O, P9O, P10O, P11O, P12O, P13O, P14O, P15O, P16O, P17O, P18O, P19O;
+    static Road Road1, Road2, Road3, Road4, Road5, Road6, Road7, Road8, Road9, Road10, Road11, Road12, Road13, Road14, Road15, Road16, Road17, Road18, Road19;
+    static Semaphore semaphore1, semaphore2, semaphore3, semaphore4, semaphore6, semaphore7, semaphore8, semaphoreP1_1, semaphoreP1_2, semaphoreP2_1, semaphoreP2_2, semaphoreP3_1, semaphoreP3_2;
+
+    static List <Road> roads = new ArrayList <>();
+    static List<Color> carColors = new ArrayList<>();
+
 
 	private static Thread thread;
-	
 	private static Random random = new Random();
-
     private Timer timer = new Timer(400,this);
+    private static int numar_masini = -20 ;
 	
 	
 
-//	public static ArrayList<Semaphore> semaphoreList;
-
-	public static ArrayList<Color> carColors = new ArrayList<Color>();
-	
-	
-
-	public World() {
+	private World() {
 		setLayout(null);
-		txtTimer = new JTextField();
-		txtTimer.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		txtTimer.setBounds(86, 49, 86, 20);
-		add(txtTimer);
-		txtTimer.setColumns(10);
-		
+
+
 		thread = new Thread (new Runnable() {
 
 			@Override
@@ -57,7 +50,7 @@ public class World extends JPanel implements Space, ActionListener {
 				roads.get(1).semaphore.isGreen = false;
 				
 				try {
-					thread.sleep(10000);
+					Thread.sleep(10000);
 				} catch (InterruptedException e) {
 					
 					e.printStackTrace();
@@ -72,7 +65,7 @@ public class World extends JPanel implements Space, ActionListener {
 				roads.get(1).semaphore.isGreen = true;
 				
 				try {
-					thread.sleep(10000);
+					Thread.sleep(10000);
 				} catch (InterruptedException e) {
 					
 					e.printStackTrace();
@@ -98,58 +91,32 @@ public class World extends JPanel implements Space, ActionListener {
 		});
 		btnClick.setBounds(86, 80, 89, 23);
 		add(btnClick);
-		
-		
-		
-		//POZA CU SCOALA - ALBU ADELA
-		JLabel poza_sc = new JLabel("");
-		URL scoala = getClass().getResource("/scoala2.jpg");
-		Icon imagine_scoala = new ImageIcon (scoala);
-		poza_sc.setIcon(imagine_scoala);
-		poza_sc.setBounds(70, 30, 300, 450);
-		add(poza_sc);
-		
-		//POZA SENS UNIC - ALBU ADELA
-		JLabel sens_unic = new JLabel("");
-		URL sensunic = getClass().getResource("/imagine.jpg");
-	    Icon sens = new ImageIcon (sensunic);
-		sens_unic.setIcon(sens);
-		sens_unic.setBounds(1315, 280, 55, 55);
-		add(sens_unic);
-		
+
 		JButton buttonStop = new JButton("STOP");
 		buttonStop.setBounds(213, 80, 89, 23);
 		buttonStop.addActionListener(e -> {
-            //timer.stop();
-            //verde = false;
-            //roads.get(6).semaphore.isGreen = false;
-            //roads.get(10).semaphore.isGreen = false;
-            //repaint();
 
         });
 		add(buttonStop);
-		
-		
-		
-		
+
+        //POZA CU SCOALA - ALBU ADELA
+        JLabel poza_sc = new JLabel("");
+        URL scoala = getClass().getResource("/scoala2.jpg");
+        Icon imagine_scoala = new ImageIcon (scoala);
+        poza_sc.setIcon(imagine_scoala);
+        poza_sc.setBounds(70, 30, 300, 450);
+        add(poza_sc);
+
+        //POZA SENS UNIC - ALBU ADELA
+        JLabel sens_unic = new JLabel("");
+        URL sensunic = getClass().getResource("/imagine.jpg");
+        Icon sens = new ImageIcon (sensunic);
+        sens_unic.setIcon(sens);
+        sens_unic.setBounds(1315, 280, 55, 55);
+        add(sens_unic);
+
 	}
-	
 
-	static Port P1I, P2I, P3I, P4I, P5I, P6I, P7I, P8I, P9I, P10I, P11I, P12I, P13I, P14I, P15I, P16I, P17I, P18I, P19I;
-	static Port P1O, P2O, P3O, P4O, P5O, P6O, P7O, P8O, P9O, P10O, P11O, P12O, P13O, P14O, P15O, P16O, P17O, P18O, P19O;
-	static Road Road1, Road2, Road3, Road4, Road5, Road6, Road7, Road8, Road9, Road10, Road11, Road12, Road13, Road14, Road15, Road16, Road17, Road18, Road19;
-    static Semaphore semaphore1, semaphore2, semaphore3, semaphore4, semaphore5, semaphore6, semaphore7, semaphore8, semaphoreP1_1, semaphoreP1_2, semaphoreP2_1, semaphoreP2_2, semaphoreP3_1, semaphoreP3_2;
-
-
-	static List <Road> roads = new ArrayList <>();
-
-
-	
-	
-	private JTextField txtTimer;
-	public void move() {
-		
-	}
 	
 	public static void main(String[] args) {
 		
@@ -173,19 +140,13 @@ public class World extends JPanel implements Space, ActionListener {
 		super.paintComponent(g);
 		paintObjects(g);
 		}
-	
-	
-	
+
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		
 		for(int j=0; j<roads.size(); j++) {
-			
-			
-				
-					
-					
+
 					for(int i=roads.get(j).compartimente.length-1; i>=0; i--) {
 						
 						if(i>0 && roads.get(j).compartimente[i].isEmpty && !roads.get(j).compartimente[i-1].isEmpty) {
@@ -247,12 +208,8 @@ public class World extends JPanel implements Space, ActionListener {
 							}
 						
 					}
-				
-				
-				
 			}
 
-				
 		repaint();
 		
 	}

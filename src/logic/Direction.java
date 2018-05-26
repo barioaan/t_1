@@ -1,6 +1,6 @@
 package logic;
 
-public enum Direction {
+enum Direction {
 	
 	E_left, E_right, E_Forward;
 

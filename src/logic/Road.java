@@ -3,7 +3,7 @@ package logic;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Road implements Space{
+public class Road {
 	
 	public int size;
 	public Port inputPort, outputPort;
@@ -27,22 +27,5 @@ public class Road implements Space{
 		this.orientation = orientation;
 		
 	}
-/*
-	public void setCompartimente(int cateCompartimente) {
-		this.compartimente = new Compartiment[cateCompartimente];
-	}
-*/
 
-
-
-
-
-
-
-
-
-	public void move() {
-		
-		
-	}
 }

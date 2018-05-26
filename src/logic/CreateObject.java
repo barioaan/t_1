@@ -1,7 +1,5 @@
 package logic;
-
 import java.awt.*;
-
 import static logic.World.*;
 
 class CreateObject {
@@ -797,7 +795,7 @@ class CreateObject {
         for (Road road : roads) {
 
             for (int i = 0; i < road.compartimente.length; i++) {
-                road.compartimente[i].setEmpty(true);
+                road.compartimente[i].isEmpty = true;
 
             }
         }
