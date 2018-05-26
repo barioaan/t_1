@@ -4,10 +4,10 @@ import java.awt.*;
 
 import static logic.World.*;
 
-public class CreateObject {
+class CreateObject {
 
 
-    public static void createPorts(){
+    static void createObjects(){
 
 
         //Porturile de intrare ale benzilor - BRADEA OCTAVIA
@@ -794,13 +794,158 @@ public class CreateObject {
         roads.add(Road19);
 
         //BAR IOAN
-        for(int j=0; j<roads.size(); j++) {
+        for (Road road : roads) {
 
-            for(int i=0; i<roads.get(j).compartimente.length; i++) {
-                roads.get(j).compartimente[i].setEmpty(true);
+            for (int i = 0; i < road.compartimente.length; i++) {
+                road.compartimente[i].setEmpty(true);
 
             }
         }
+
+    }
+
+    static void paintObjects(Graphics g){
+
+       // Color darkGreen = new Color(28,98,71);
+        Color backgroundColor = new Color(109,219,54);
+        //timer.start();
+
+        //DESENARE BACKGROUND - BAR IOAN\
+        //g.setColor(darkGreen);//
+        g.setColor(backgroundColor);
+        g.fillRect(0,0,1900,1000);
+
+
+        g.setColor(Color.DARK_GRAY);
+
+
+        // TRASARE INTERSECTII BAR IOAN
+        g.fillRect(Road1.inputPort.cordX, Road1.inputPort.cordY, 100, 200);
+        g.fillRect(Road1.inputPort.cordX+600, Road1.inputPort.cordY, 100, 200);
+
+        //TRASARE BENZI DE CIRCULATIE - BAR IOAN
+        g.fillRect(Road1.outputPort.cordX, Road1.outputPort.cordY, Road1.size, 50);
+        g.fillRect(Road12.outputPort.cordX, Road12.outputPort.cordY, Road12.size, 50);
+        g.fillRect(Road11.inputPort.cordX, Road11.inputPort.cordY, Road11.size, 50);
+        g.fillRect(Road10.inputPort.cordX, Road10.inputPort.cordY, Road10.size, 50);
+        g.fillRect(Road4.outputPort.cordX, Road4.outputPort.cordY, Road4.size, 50);
+        g.fillRect(Road5.outputPort.cordX, Road5.outputPort.cordY, Road5.size, 50);
+        g.fillRect(Road6.inputPort.cordX, Road6.inputPort.cordY, Road6.size, 50);
+        g.fillRect(Road7.inputPort.cordX, Road7.inputPort.cordY, Road7.size, 50);
+        g.fillRect(Road14.outputPort.cordX, Road14.outputPort.cordY, Road14.size, 50);
+        g.fillRect(Road15.outputPort.cordX, Road15.outputPort.cordY, Road15.size, 50);
+        g.fillRect(Road16.inputPort.cordX, Road16.inputPort.cordY, Road16.size, 50);
+        g.fillRect(Road17.inputPort.cordX, Road17.inputPort.cordY, Road17.size, 50);
+        g.fillRect(Road2.inputPort.cordX, Road2.inputPort.cordY, 50, Road2.size);
+        g.fillRect(Road3.outputPort.cordX, Road3.outputPort.cordY, 50, Road3.size);
+        g.fillRect(Road13.outputPort.cordX, Road13.outputPort.cordY, 50, Road13.size);
+        g.fillRect(Road9.outputPort.cordX, Road9.outputPort.cordY, 50, Road9.size);
+        g.fillRect(Road8.outputPort.cordX, Road8.outputPort.cordY, 50, Road8.size);
+        g.fillRect(Road19.outputPort.cordX, Road19.outputPort.cordY, 50, Road19.size);
+        g.fillRect(Road18.outputPort.cordX, Road18.outputPort.cordY, 50, Road18.size);
+
+        // TRASARE BENZI DELIMITATOARE - BRANESCU SERBAN
+        g.setColor(Color.WHITE);
+        g.fillRect(Road1.outputPort.cordX-110, Road1.outputPort.cordY+48, Road1.size, 2);
+        g.fillRect(Road12.outputPort.cordX-110, Road12.outputPort.cordY+48, Road12.size, 4);
+        g.fillRect(Road11.inputPort.cordX-110, Road11.inputPort.cordY+48, Road11.size, 2);
+        g.fillRect(Road4.outputPort.cordX, Road4.outputPort.cordY+48, Road4.size, 2);
+        g.fillRect(Road5.outputPort.cordX, Road5.outputPort.cordY+48, Road5.size, 4);
+        g.fillRect(Road6.inputPort.cordX, Road6.inputPort.cordY+48, Road6.size, 2);
+        g.fillRect(Road14.outputPort.cordX+110, Road14.outputPort.cordY+48, Road14.size, 2);
+        g.fillRect(Road15.outputPort.cordX+110, Road15.outputPort.cordY+48, Road15.size, 4);
+        g.fillRect(Road16.inputPort.cordX+110, Road16.inputPort.cordY+48, Road16.size, 2);
+        g.fillRect(Road2.inputPort.cordX+48, Road2.inputPort.cordY-110, 2, Road2.size);
+        g.fillRect(Road9.outputPort.cordX+48, Road9.outputPort.cordY+110, 2, Road9.size);
+        g.fillRect(Road19.outputPort.cordX+48, Road19.outputPort.cordY+110, 2, Road19.size);
+
+        //treceri pietoni Intersectia B - Branescu Serban
+
+        g.fillRect(1350, Road14.outputPort.cordY+5,50, 10);
+        g.fillRect(1350, Road14.outputPort.cordY+23,50, 10);
+        g.fillRect(1350, Road14.outputPort.cordY+43,50, 10);
+        g.fillRect(1350, Road14.outputPort.cordY+63,50, 10);
+        g.fillRect(1350, Road14.outputPort.cordY+83,50, 10);
+        g.fillRect(1350, Road14.outputPort.cordY+103,50, 10);
+        g.fillRect(1350, Road14.outputPort.cordY+123,50, 10);
+        g.fillRect(1350, Road14.outputPort.cordY+143,50, 10);
+        g.fillRect(1350, Road14.outputPort.cordY+163,50, 10);
+        g.fillRect(1350, Road14.outputPort.cordY+183,50, 10);
+
+        g.fillRect(1205, 650, 10, 50);
+        g.fillRect(1225, 650, 10, 50);
+        g.fillRect(1245, 650, 10, 50);
+        g.fillRect(1265, 650, 10, 50);
+        g.fillRect(1285, 650, 10, 50);
+
+        //treceri pietoni Intersectia A - Bradea Octavia
+        g.fillRect(500, Road1.outputPort.cordY+5,50, 10);
+        g.fillRect(500, Road1.outputPort.cordY+23,50, 10);
+        g.fillRect(500, Road1.outputPort.cordY+43,50, 10);
+        g.fillRect(500, Road1.outputPort.cordY+63,50, 10);
+        g.fillRect(500, Road1.outputPort.cordY+83,50, 10);
+        g.fillRect(500, Road1.outputPort.cordY+103,50, 10);
+        g.fillRect(500, Road1.outputPort.cordY+123,50, 10);
+        g.fillRect(500, Road1.outputPort.cordY+143,50, 10);
+        g.fillRect(500, Road1.outputPort.cordY+163,50, 10);
+        g.fillRect(500, Road1.outputPort.cordY+183,50, 10);
+        g.fillRect(Road2.inputPort.cordX+5,300, 10,50);
+        g.fillRect(Road2.inputPort.cordX+23,300, 10,50);
+        g.fillRect(Road2.inputPort.cordX+43,300, 10,50);
+        g.fillRect(Road2.inputPort.cordX+63,300, 10,50);
+        g.fillRect(Road2.inputPort.cordX+83,300, 10,50);
+        g.fillRect(Road9.outputPort.cordX+5, 650, 10, 50);
+        g.fillRect(Road9.outputPort.cordX+23, 650, 10, 50);
+        g.fillRect(Road9.outputPort.cordX+43, 650, 10, 50);
+        g.fillRect(Road9.outputPort.cordX+63, 650, 10, 50);
+        g.fillRect(Road9.outputPort.cordX+83, 650, 10, 50);
+
+        g.fillRect(482,498, 8, 100);
+        g.fillRect(1410,400, 8, 100);
+        g.fillRect(600,282, 50, 8);
+        g.fillRect(648,707, 50, 8);
+        g.fillRect(1250,710, 50, 8);
+
+
+
+        for( Road r: roads) {
+            if(r.semaphore!=null && r.semaphore.isGreen) {
+                g.setColor(Color.GREEN);
+                g.fillOval(r.semaphore.cordX, r.semaphore.cordY, 50, 50);
+
+            }
+            if(r.semaphore!=null && !r.semaphore.isGreen) {
+                g.setColor(Color.RED);
+                g.fillOval(r.semaphore.cordX, r.semaphore.cordY, 50, 50);
+
+            }
+        }
+
+        g.setColor(Color.BLUE);
+        g.fillOval(semaphoreP1_1.cordX, semaphoreP1_1.cordY, 25, 25);
+        g.fillOval(semaphoreP1_2.cordX, semaphoreP1_1.cordY, 25, 25);
+        g.fillOval(semaphoreP2_1.cordX, semaphoreP1_1.cordY, 25, 25);
+        g.fillOval(semaphoreP2_2.cordX, semaphoreP1_1.cordY, 25, 25);
+        g.fillOval(semaphoreP3_1.cordX, semaphoreP1_1.cordY, 25, 25);
+        g.fillOval(semaphoreP3_2.cordX, semaphoreP1_1.cordY, 25, 25);
+
+
+
+
+
+
+
+        for(Road r: roads) {
+            for(int i=0; i<r.compartimente.length; i++) {
+                if(!r.compartimente[i].isEmpty) {
+                    g.setColor(r.compartimente[i].car.color);
+                    g.fillRect(r.compartimente[i].car.x, r.compartimente[i].car.y, r.compartimente[i].car.width, r.compartimente[i].car.height);
+                }
+            }
+        }
+
+
+
 
     }
 }
