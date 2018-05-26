@@ -51,7 +51,7 @@ public class World extends JPanel implements Space, ActionListener {
 		JButton btnClick = new JButton("START");
 		btnClick.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				timer.start()ș
+				timer.start();
 				btnClick.setEnabled(false);
 				
 				
