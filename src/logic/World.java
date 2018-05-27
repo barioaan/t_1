@@ -31,63 +31,60 @@ public class World extends JPanel implements ActionListener {
 	
 	
 
+
+
+
+
 	private World() {
 		setLayout(null);
 
 
-		thread = new Thread (new Runnable() {
+		thread = new Thread (() -> {
 
-			@Override
-			public void run() {
-				
-			for(int i=0; i<1000; i++) {
-				roads.get(9).semaphore.isGreen = true;
-				roads.get(6).semaphore.isGreen = true;
-				roads.get(13).semaphore.isGreen = true;
-				roads.get(3).semaphore.isGreen = true;
-				roads.get(7).semaphore.isGreen = false;
-				roads.get(17).semaphore.isGreen = false;
-				roads.get(1).semaphore.isGreen = false;
-				
-				try {
-					Thread.sleep(10000);
-				} catch (InterruptedException e) {
-					
-					e.printStackTrace();
-				}
-				
-				roads.get(9).semaphore.isGreen = false;
-				roads.get(6).semaphore.isGreen = false;
-				roads.get(13).semaphore.isGreen = false;
-				roads.get(3).semaphore.isGreen = false;
-				roads.get(7).semaphore.isGreen = true;
-				roads.get(17).semaphore.isGreen = true;
-				roads.get(1).semaphore.isGreen = true;
-				
-				try {
-					Thread.sleep(10000);
-				} catch (InterruptedException e) {
-					
-					e.printStackTrace();
-				}
-				
+		for(int i=0; i<1000; i++) {
+			roads.get(9).semaphore.isGreen = true;
+			roads.get(6).semaphore.isGreen = true;
+			roads.get(13).semaphore.isGreen = true;
+			roads.get(3).semaphore.isGreen = true;
+			roads.get(7).semaphore.isGreen = false;
+			roads.get(17).semaphore.isGreen = false;
+			roads.get(1).semaphore.isGreen = false;
+
+			try {
+				Thread.sleep(10000);
+			} catch (InterruptedException e) {
+
+				e.printStackTrace();
 			}
-				
+
+			roads.get(9).semaphore.isGreen = false;
+			roads.get(6).semaphore.isGreen = false;
+			roads.get(13).semaphore.isGreen = false;
+			roads.get(3).semaphore.isGreen = false;
+			roads.get(7).semaphore.isGreen = true;
+			roads.get(17).semaphore.isGreen = true;
+			roads.get(1).semaphore.isGreen = true;
+
+			try {
+				Thread.sleep(10000);
+			} catch (InterruptedException e) {
+
+				e.printStackTrace();
 			}
-			
+
+		}
+
 		});
 
 
 
 		JButton btnClick = new JButton("START");
-		btnClick.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				timer.start();
-				thread.start();
-				btnClick.setEnabled(false);
-				
-				
-			}
+		btnClick.addActionListener(e -> {
+			timer.start();
+			thread.start();
+			btnClick.setEnabled(false);
+
+
 		});
 		btnClick.setBounds(86, 80, 89, 23);
 		add(btnClick);
@@ -117,7 +114,12 @@ public class World extends JPanel implements ActionListener {
 
 	}
 
-	
+
+
+
+
+
+
 	public static void main(String[] args) {
 		
 		World w = new World();
@@ -131,15 +133,23 @@ public class World extends JPanel implements ActionListener {
 		frame.getContentPane().add(w);
 
         createObjects();
-
 		
 	}
 	
-	
+
+
+
+
+
+
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		paintObjects(g);
 		}
+
+
+
+
 
 	
 	@Override
@@ -158,6 +168,8 @@ public class World extends JPanel implements ActionListener {
 							roads.get(j).compartimente[i-1].isEmpty = true;
 							roads.get(j).compartimente[i].isEmpty = false;
 						}
+
+
 						if(j==12 || j==16 || j==15 || j==2 || j==0 || j==11 || j==18 || j==8) {
 							if(i==roads.get(j).compartimente.length-1  && !roads.get(j).compartimente[i-1].isEmpty) {
 								roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
@@ -171,7 +183,9 @@ public class World extends JPanel implements ActionListener {
 							}
 							
 						}
-						
+
+
+
 						if(i==0 && roads.get(j).compartimente[i].isEmpty && numar_masini<20) {
 							if(j==1 || j==7 || j==9 || j==10 || j==13 || j==14 || j==17) {
 								boolean randomB = random.nextBoolean();
@@ -187,7 +201,9 @@ public class World extends JPanel implements ActionListener {
 								}						
 							}
 						}
-						
+
+
+
 						if(roads.get(j).semaphore != null && roads.get(j).semaphore.isGreen) {
 							if(i == roads.get(j).compartimente.length-1 && !roads.get(j).compartimente[i].isEmpty ) {
 								
