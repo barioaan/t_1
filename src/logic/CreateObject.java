@@ -858,7 +858,6 @@ class CreateObject {
         g.fillRect(Road19.outputPort.cordX+48, Road19.outputPort.cordY+110, 2, Road19.size);
 
         //treceri pietoni Intersectia B - Branescu Serban
-
         g.fillRect(1350, Road14.outputPort.cordY+5,50, 10);
         g.fillRect(1350, Road14.outputPort.cordY+23,50, 10);
         g.fillRect(1350, Road14.outputPort.cordY+43,50, 10);
@@ -921,11 +920,11 @@ class CreateObject {
 
         g.setColor(Color.BLUE);
         g.fillOval(semaphoreP1_1.cordX, semaphoreP1_1.cordY, 25, 25);
-        g.fillOval(semaphoreP1_2.cordX, semaphoreP1_1.cordY, 25, 25);
-        g.fillOval(semaphoreP2_1.cordX, semaphoreP1_1.cordY, 25, 25);
-        g.fillOval(semaphoreP2_2.cordX, semaphoreP1_1.cordY, 25, 25);
-        g.fillOval(semaphoreP3_1.cordX, semaphoreP1_1.cordY, 25, 25);
-        g.fillOval(semaphoreP3_2.cordX, semaphoreP1_1.cordY, 25, 25);
+        g.fillOval(semaphoreP1_2.cordX, semaphoreP1_2.cordY, 25, 25);
+        g.fillOval(semaphoreP2_1.cordX, semaphoreP2_1.cordY, 25, 25);
+        g.fillOval(semaphoreP2_2.cordX, semaphoreP2_2.cordY, 25, 25);
+        g.fillOval(semaphoreP3_1.cordX, semaphoreP3_1.cordY, 25, 25);
+        g.fillOval(semaphoreP3_2.cordX, semaphoreP3_2.cordY, 25, 25);
 
 
 
