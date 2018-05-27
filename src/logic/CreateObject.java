@@ -946,4 +946,80 @@ class CreateObject {
 
 
     }
+
+    static void doSimulation(){
+        for(int j=0; j<roads.size(); j++) {
+
+            for(int i=roads.get(j).compartimente.length-1; i>=0; i--) {
+
+                if(i>0 && roads.get(j).compartimente[i].isEmpty && !roads.get(j).compartimente[i-1].isEmpty) {
+                    roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
+                    roads.get(j).compartimente[i].car.width = roads.get(j).compartimente[i-1].car.width;
+                    roads.get(j).compartimente[i].car.height = roads.get(j).compartimente[i-1].car.height;
+                    roads.get(j).compartimente[i].car.x = roads.get(j).compartimente[i].x;
+                    roads.get(j).compartimente[i].car.y = roads.get(j).compartimente[i].y;
+                    roads.get(j).compartimente[i-1].isEmpty = true;
+                    roads.get(j).compartimente[i].isEmpty = false;
+                }
+
+
+                if(j==12 || j==16 || j==15 || j==2 || j==0 || j==11 || j==18 || j==8) {
+                    if(i==roads.get(j).compartimente.length-1  && !roads.get(j).compartimente[i-1].isEmpty) {
+                        roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
+                        roads.get(j).compartimente[i].car.width = roads.get(j).compartimente[i-1].car.width;
+                        roads.get(j).compartimente[i].car.height = roads.get(j).compartimente[i-1].car.height;
+                        roads.get(j).compartimente[i].car.x = roads.get(j).compartimente[i].x;
+                        roads.get(j).compartimente[i].car.y = roads.get(j).compartimente[i].y;
+                        roads.get(j).compartimente[i-1].isEmpty = true;
+                        roads.get(j).compartimente[i].isEmpty = false;
+                        numar_masini--;
+                    }
+
+                }
+
+
+
+                if(i==0 && roads.get(j).compartimente[i].isEmpty && numar_masini<20) {
+                    if(j==1 || j==7 || j==9 || j==10 || j==13 || j==14 || j==17) {
+                        boolean randomB = random.nextBoolean();
+                        if(randomB) {
+
+                            boolean randomB2 = random.nextBoolean();
+                            if(randomB2) {
+                                int nrRandomCulori = random.nextInt(7);
+                                roads.get(j).compartimente[i].car = new Car(roads.get(j).compartimente[i].x, roads.get(j).compartimente[i].y, carColors.get(nrRandomCulori),40,40);
+                                roads.get(j).compartimente[i].isEmpty = false;
+                                numar_masini++;
+                            }
+                        }
+                    }
+                }
+
+
+
+                if(roads.get(j).semaphore != null && roads.get(j).semaphore.isGreen) {
+                    if(i == roads.get(j).compartimente.length-1 && !roads.get(j).compartimente[i].isEmpty ) {
+
+                        if(roads.get(j).hasDirection) {
+                            int randomNR = random.nextInt(roads.get(j).directionList.length);
+
+                            if(roads.get(j).directionList[randomNR].isEmpty) {
+                                roads.get(j).directionList[randomNR].car.color = roads.get(j).compartimente[i].car.color;
+                                roads.get(j).directionList[randomNR].car.width = roads.get(j).compartimente[i].car.width;
+                                roads.get(j).directionList[randomNR].car.height = roads.get(j).compartimente[i].car.height;
+                                roads.get(j).directionList[randomNR].car.x = roads.get(j).directionList[randomNR].x;
+                                roads.get(j).directionList[randomNR].car.y = roads.get(j).directionList[randomNR].y;
+                                roads.get(j).directionList[randomNR].isEmpty = false;
+                                roads.get(j).compartimente[i].isEmpty = true;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+
+
+    }
 }
