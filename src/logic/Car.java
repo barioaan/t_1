@@ -4,7 +4,6 @@ import java.awt.Color;
 
 class Car {
 	
-	
 	Color color;
 	int width, height;
 	int x,y;

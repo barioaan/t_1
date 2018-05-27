@@ -5,21 +5,21 @@ import java.util.List;
 
 public class Road {
 	
-	public int size;
-	public Port inputPort, outputPort;
+	int size;
+	Port inputPort, outputPort;
 	public ArrayList <Car> listOFcars = new ArrayList <Car>();
-	public Compartiment [] directionList;
-	public Orientation orientation;
-	public int coordonataLiniePietoni;
-	public boolean areLiniePietoni = false;
-	public Compartiment compartimente [];
+	Compartiment [] directionList;
+	private Orientation orientation;
+	int coordonataLiniePietoni;
+	boolean areLiniePietoni = false;
+	Compartiment compartimente [];
 	
-	public boolean hasDirection = false;
+	boolean hasDirection = false;
 	
-	public Semaphore semaphore;
+	Semaphore semaphore;
 	
 	
-	public Road(Port inputPort, Port outputPort, int size, Orientation orientation) {
+	Road(Port inputPort, Port outputPort, int size, Orientation orientation) {
 		super();
 		this.size = size;
 		this.inputPort = inputPort;

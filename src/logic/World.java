@@ -29,10 +29,6 @@ public class World extends JPanel implements ActionListener {
     private Timer timer = new Timer(400,this);
     static int numar_masini = -20 ;
 	
-	
-
-
-
 
 
 	private World() {
@@ -115,11 +111,6 @@ public class World extends JPanel implements ActionListener {
 	}
 
 
-
-
-
-
-
 	public static void main(String[] args) {
 		
 		World w = new World();
@@ -135,21 +126,12 @@ public class World extends JPanel implements ActionListener {
         createObjects();
 		
 	}
-	
-
-
-
-
 
 
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		paintObjects(g);
 		}
-
-
-
-
 
 	
 	@Override

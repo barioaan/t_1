@@ -1,20 +1,12 @@
 package logic;
 
-public class Port {
-	public int id;
-	public int cordX, cordY;
+class Port {
 
-	public Port(int id, int cordX, int cordY) {
-		super();
-		this.id = id;
-		this.cordX = cordX;
-		this.cordY = cordY;
-		
-	}
+	int cordX, cordY;
+
 	
-	public Port(int cordX, int cordY) {
+	Port(int cordX, int cordY) {
 		super();
-		
 		this.cordX = cordX;
 		this.cordY = cordY;
 		
