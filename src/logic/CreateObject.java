@@ -916,7 +916,7 @@ class CreateObject {
             }
         }
 
-       // g.setColor(Color.BLUE);
+        g.setColor(Color.BLUE);
         g.fillOval(semaphoreP1_1.cordX, semaphoreP1_1.cordY, 25, 25);
         g.fillOval(semaphoreP1_2.cordX, semaphoreP1_2.cordY, 25, 25);
         g.fillOval(semaphoreP2_1.cordX, semaphoreP2_1.cordY, 25, 25);
