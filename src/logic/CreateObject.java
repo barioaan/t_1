@@ -238,6 +238,7 @@ class CreateObject {
         compartimenteR5[9] = c_road5_9;
 
         Road5.compartimente = compartimenteR5;
+        
         //Road 6 - 11 compartimente ALBU ADELA
 
         //	Road6.setCompartimente(11);
@@ -321,7 +322,6 @@ class CreateObject {
 
         //Road 9 - 8 compartimente ALBU ADELA
 
-        //Road9.setCompartimente(8);
 
         Compartiment [] compartimenteR9 = new Compartiment[9];
 
@@ -348,7 +348,6 @@ class CreateObject {
 
         //Road 10 - 10 compartimente ALBU ADELA
 
-        //	Road10.setCompartimente(10);
 
         Compartiment [] compartimenteR10 = new Compartiment[10];
 
@@ -378,7 +377,6 @@ class CreateObject {
 
         // Road 11 - 10 compartimente ALBU ADELA
 
-        //Road11.setCompartimente(10);
 
         Compartiment [] compartimenteR11 = new Compartiment[10];
 
@@ -918,7 +916,7 @@ class CreateObject {
             }
         }
 
-        g.setColor(Color.BLUE);
+       // g.setColor(Color.BLUE);
         g.fillOval(semaphoreP1_1.cordX, semaphoreP1_1.cordY, 25, 25);
         g.fillOval(semaphoreP1_2.cordX, semaphoreP1_2.cordY, 25, 25);
         g.fillOval(semaphoreP2_1.cordX, semaphoreP2_1.cordY, 25, 25);

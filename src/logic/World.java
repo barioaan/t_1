@@ -33,6 +33,9 @@ public class World extends JPanel implements ActionListener {
 
 	private World() {
 		setLayout(null);
+		
+		
+		//Thread semafoare Albu Adela
 
 
 		thread = new Thread (() -> {
@@ -45,6 +48,7 @@ public class World extends JPanel implements ActionListener {
 			roads.get(7).semaphore.isGreen = false;
 			roads.get(17).semaphore.isGreen = false;
 			roads.get(1).semaphore.isGreen = false;
+			
 
 			try {
 				Thread.sleep(10000);
