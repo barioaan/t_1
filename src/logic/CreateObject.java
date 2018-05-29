@@ -697,7 +697,7 @@ class CreateObject {
 
 
         /*
-        COMPARTIMENTE INTERSECTII
+        COMPARTIMENTE INTERSECTII  - ALBU ADELA
          */
 
         Compartiment r2_1 = new Compartiment(600, 350);
@@ -920,11 +920,13 @@ class CreateObject {
         compartimenteRoad15_19[6] = r15_7;
 
 
-        Compartiment [] compartimenteRoad18_7 = new Compartiment[4];
-        compartimenteRoad18_7[0] = r18_1;
-        compartimenteRoad18_7[1] = r18_2;
-        compartimenteRoad18_7[2] = r18_3;
-        compartimenteRoad18_7[3] = r15_6;
+        Compartiment [] compartimenteRoad18_5 = new Compartiment[6];
+        compartimenteRoad18_5[0] = r18_1;
+        compartimenteRoad18_5[1] = r18_2;
+        compartimenteRoad18_5[2] = r18_3;
+        compartimenteRoad18_5[3] = r18_5;
+        compartimenteRoad18_5[4] = r15_3;
+        compartimenteRoad18_5[5] = r15_4;
 
 
         Compartiment [] compartimenteRoad18_13 = new Compartiment[7];
@@ -991,8 +993,8 @@ class CreateObject {
         Road15_5.compartimente = compartimenteRoad15_5;
          Road15_19 = new Road(18);
         Road15_19.compartimente = compartimenteRoad15_19;
-         Road18_7 = new Road(6);
-        Road18_7.compartimente = compartimenteRoad18_7;
+         Road18_5 = new Road(6);
+        Road18_5.compartimente = compartimenteRoad18_5;
          Road18_13 = new Road(12);
         Road18_13.compartimente = compartimenteRoad18_13;
          Road18_17 = new Road(16);
@@ -1033,12 +1035,14 @@ class CreateObject {
         roadsIntersection.add(Road15_5);
         roadsIntersection.add(Road15_19);
 
-        roadsIntersection.add(Road18_7);
+        roadsIntersection.add(Road18_5);
         roadsIntersection.add(Road18_13);
         roadsIntersection.add(Road18_17);
 
 
 
+        //BAR IOAN
+        
         Compartiment [] directionListRoad2 = new Compartiment[3];
         directionListRoad2[0] = roadsIntersection.get(0).compartimente[0];
         directionListRoad2[1] = roadsIntersection.get(1).compartimente[0];
