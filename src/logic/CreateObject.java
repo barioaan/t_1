@@ -700,473 +700,312 @@ class CreateObject {
         COMPARTIMENTE INTERSECTII
          */
 
-/*
-        Compartiment [] compartimenteR11_6 = new Compartiment[5];
+        Compartiment r2_1 = new Compartiment(600, 285);
+        Compartiment r2_2 = new Compartiment(600, 335);
+        Compartiment r2_3 = new Compartiment(600, 380);
 
-        Compartiment c_road11_6_1 = new Compartiment(482, 500);
-        compartimenteR11_6[0] = c_road11_6_1;
-        Compartiment c_road11_6_2 = new Compartiment(527, 500);
-        compartimenteR11_6[1] = c_road11_6_2;
-        Compartiment c_road11_6_3 = new Compartiment(572, 500);
-        compartimenteR11_6[2] = c_road11_6_3;
-        Compartiment c_road11_6_4 = new Compartiment(617, 500);
-        compartimenteR11_6[3] = c_road11_6_4;
-        Compartiment c_road11_6_5 = new Compartiment(662, 500);
-        compartimenteR11_6[4] = c_road11_6_5;
+        Compartiment r4_1 = new Compartiment(705, 400);
 
-        Road Road11_6 = new Road();
-        Road11_6.compartimente = compartimenteR11_6;
+        Compartiment r5_1 = new Compartiment(705, 450);
+        Compartiment r5_2 = new Compartiment(615, 450);
 
-        Compartiment [] compartimenteR7_17 = new Compartiment[4];
+        Compartiment r8_1 = new Compartiment(650, 665);
+        Compartiment r8_2 = new Compartiment(650, 620);
 
-        Compartiment c_road7_17_0  = new Compartiment(1200, 550);
-        compartimenteR7_17[0] = c_road7_17_0;
-        Compartiment c_road7_17_1 = new Compartiment(1245, 550);
-        compartimenteR7_17[1] = c_road7_17_1;
-        Compartiment c_road7_17_2 = new Compartiment(1290, 550);
-        compartimenteR7_17[2] = c_road7_17_2;
-        Compartiment c_road7_17_3 = new Compartiment(1335, 550);
-        compartimenteR7_17[3] = c_road7_17_3;
+        Compartiment r10_1 = new Compartiment(482, 550);
+        Compartiment r10_2 = new Compartiment(527, 550);
+        Compartiment r10_3 = new Compartiment(572, 550);
+        Compartiment r10_4 = new Compartiment(572, 600);
+        Compartiment r10_5 = new Compartiment(617, 550);
+        Compartiment r10_6 = new Compartiment(617, 500);
+        Compartiment r10_7 = new Compartiment(617, 450);
+        Compartiment r10_8 = new Compartiment(617, 400);
 
-        Road Road7_17 = new Road();
-        Road7_17.compartimente = compartimenteR7_17;
+        Compartiment r11_1 = new Compartiment(482, 500);
+        Compartiment r11_2 = new Compartiment(527, 500);
+        Compartiment r11_3 = new Compartiment(572, 500);
 
-        Compartiment [] compartimenteR6_16 = new Compartiment[4];
+        Compartiment r14_1 = new Compartiment(1365, 400);
+        Compartiment r14_2 = new Compartiment(1320, 400);
+        Compartiment r14_3 = new Compartiment(1275, 400);
+        Compartiment r14_4 = new Compartiment(1275, 350);
+        Compartiment r14_5 = new Compartiment(1230, 400);
 
-        Compartiment c_road6_16_0  = new Compartiment(1200, 500);
-        compartimenteR6_16[0] = c_road6_16_0;
-        Compartiment c_road6_16_1 = new Compartiment(1245,500);
-        compartimenteR6_16[1] = c_road6_16_1;
-        Compartiment c_road6_16_2 = new Compartiment(1290,500);
-        compartimenteR6_16[2] = c_road6_16_2;
-        Compartiment c_road6_16_3 = new Compartiment(1235,500);
-        compartimenteR6_16[3] = c_road6_16_3;
+        Compartiment r15_1 = new Compartiment(1365, 450);
+        Compartiment r15_2 = new Compartiment(1320, 450);
+        Compartiment r15_3 = new Compartiment(1275, 450);
+        Compartiment r15_4 = new Compartiment(1230, 450);
+        Compartiment r15_5 = new Compartiment(1230, 500);
+        Compartiment r15_6 = new Compartiment(1230, 550);
+        Compartiment r15_7 = new Compartiment(1230, 600);
 
+        Compartiment r16_1 = new Compartiment(1320, 500);
 
-        Road Road6_16 = new Road();
-        Road6_16.compartimente = compartimenteR6_16;
-
-        Compartiment [] compartimenteR1_4 = new Compartiment[4];
-
-        Compartiment c_Road4_1_0  = new Compartiment(705, 400);
-        compartimenteR1_4[0] = c_Road4_1_0;
-        Compartiment c_Road4_1_1 = new Compartiment(660, 400);
-        compartimenteR1_4[1] = c_Road4_1_1;
-        Compartiment c_Road4_1_2 = new Compartiment(615, 400);
-        compartimenteR1_4[2] = c_Road4_1_2;
-        Compartiment c_Road4_1_3 = new Compartiment(570, 400);
-        compartimenteR1_4[3] = c_Road4_1_3;
-
-        Road Road4_1 = new Road();
-        Road4_1.compartimente = compartimenteR1_4;
-
-        Compartiment [] compartimenteR12_5 = new Compartiment[4];
-
-        Compartiment c_Road5_12_0  = new Compartiment(705, 450);
-        compartimenteR12_5[0] = c_Road5_12_0;
-        Compartiment c_Road5_12_1 = new Compartiment(660,450);
-        compartimenteR12_5[1] = c_Road5_12_1;
-        Compartiment c_Road5_12_2 = new Compartiment(615,450);
-        compartimenteR12_5[2] = c_Road5_12_2;
-        Compartiment c_Road5_12_3 = new Compartiment(570,450);
-        compartimenteR12_5[3] = c_Road5_12_3;
-
-
-        Road Road5_12 = new Road();
-        Road5_12.compartimente = compartimenteR12_5;
-
-        Compartiment [] compartimenteR4_14 = new Compartiment[6];
-
-        Compartiment c_road4_14_0  = new Compartiment(1410, 400);
-        compartimenteR4_14[0] = c_road4_14_0;
-        Compartiment c_road4_14_1 = new Compartiment(1365, 400);
-        compartimenteR4_14[1] = c_road4_14_1;
-        Compartiment c_road4_14_2 = new Compartiment(1320, 400);
-        compartimenteR4_14[2] = c_road4_14_2;
-        Compartiment c_road4_14_3 = new Compartiment(1275, 400);
-        compartimenteR4_14[3] = c_road4_14_3;
-        Compartiment c_road4_14_4 = new Compartiment(1230, 400);
-        compartimenteR4_14[4] = c_road4_14_4;
-        Compartiment c_road4_14_5 = new Compartiment(1185, 400);
-        compartimenteR4_14[5] = c_road4_14_5;
-
-
-        Road Road14_4 = new Road();
-        Road14_4.compartimente = compartimenteR4_14;
-
-        Compartiment [] compartimenteR5_15 = new Compartiment[6];
-
-        Compartiment c_Road15_5_0  = new Compartiment(1410, 450);
-        compartimenteR5_15[0] = c_Road15_5_0;
-        Compartiment c_Road15_5_1 = new Compartiment(1365, 450);
-        compartimenteR5_15[1] = c_Road15_5_1;
-        Compartiment c_Road15_5_2 = new Compartiment(1320, 450);
-        compartimenteR5_15[2] = c_Road15_5_2;
-        Compartiment c_Road15_5_3 = new Compartiment(1275, 450);
-        compartimenteR5_15[3] = c_Road15_5_3;
-        Compartiment c_Road15_5_4 = new Compartiment(1230, 450);
-        compartimenteR5_15[4] = c_Road15_5_4;
-        Compartiment c_Road15_5_5 = new Compartiment(1185, 450);
-        compartimenteR5_15[5] = c_Road15_5_5;
-
-        Road Road15_5 = new Road();
-        Road15_5.compartimente = compartimenteR5_15;
-
-        Compartiment [] compartimenteR10_7 = new Compartiment[5];
-
-        Compartiment c_road10_7_0  = new Compartiment(482, 550);
-        compartimenteR10_7[0] = c_road10_7_0;
-        Compartiment c_road10_7_1 = new Compartiment(527,550);
-        compartimenteR10_7[1] = c_road10_7_1;
-        Compartiment c_road10_7_2 = new Compartiment(572,550);
-        compartimenteR10_7[2] = c_road10_7_2;
-        Compartiment c_road10_7_3 = new Compartiment(617,550);
-        compartimenteR10_7[3] = c_road10_7_3;
-        Compartiment c_road10_7_4 = new Compartiment(662,550);
-        compartimenteR10_7[4] = c_road10_7_4;
-
-        Road Road10_7 = new Road();
-        Road10_7.compartimente = compartimenteR10_7;
-
-        Compartiment [] compartimenteR11_3 = new Compartiment[9];
-
-        Compartiment c_road11_3_0  = new Compartiment(482, 500);
-        compartimenteR11_3[0] = c_road11_3_0;
-        Compartiment c_road11_3_1 = new Compartiment(527, 500);
-        compartimenteR11_3[1] = c_road11_3_1;
-        Compartiment c_road11_3_2 = new Compartiment(572, 500);
-        compartimenteR11_3[2] = c_road11_3_2;
-        Compartiment c_road11_3_3 = new Compartiment(617, 500);// nu stiu daca astea mai trebe (road 3 incepe la 355)
-        compartimenteR11_3[3] = c_road11_3_3;
-        Compartiment c_road11_3_4 = new Compartiment(662, 500);// nu stiu daca astea mai trebe (road 3 incepe la 355)
-        compartimenteR11_3[4] = c_road11_3_4;
-        Compartiment c_road11_3_5 = new Compartiment(662, 455);// nu stiu daca astea mai trebe (road 3 incepe la 355)
-        compartimenteR11_3[5] = c_road11_3_5;
-        Compartiment c_road11_3_6 = new Compartiment(662, 410);// nu stiu daca astea mai trebe (road 3 incepe la 355)
-        compartimenteR11_3[6] = c_road11_3_6;
-        Compartiment c_road11_3_7 = new Compartiment(662, 365);// nu stiu daca astea mai trebe (road 3 incepe la 355)
-        compartimenteR11_3[7] = c_road11_3_7;
-        Compartiment c_road11_3_8 = new Compartiment(662, 320);// nu stiu daca astea mai trebe (road 3 incepe la 355)
-        compartimenteR11_3[8] = c_road11_3_8;
-
-        Road Road11_3 = new Road();
-        Road11_3.compartimente = compartimenteR11_3;
-
-
-        Compartiment [] compartimenteR10_9 = new Compartiment[4];
-
-        Compartiment c_road10_9_0  = new Compartiment(500, 550);
-        compartimenteR10_9[0] = c_road10_9_0;
-        Compartiment c_road10_9_1 = new Compartiment(550, 550);
-        compartimenteR10_9[1] = c_road10_9_1;
-        Compartiment c_road10_9_2 = new Compartiment(600, 550);
-        compartimenteR10_9[2] = c_road10_9_2;
-        Compartiment c_road10_9_3 = new Compartiment(600, 600);// nu stiu daca astea mai trebe ca road 9 incepe de la 645
-        compartimenteR10_9[3] = c_road10_9_3;
+        Compartiment r18_1 = new Compartiment(1250, 665);
+        Compartiment r18_2 = new Compartiment(1250, 600);
+        Compartiment r18_3 = new Compartiment(1250, 550);
+        Compartiment r18_4 = new Compartiment(1320, 550);
+        Compartiment r18_5 = new Compartiment(1250, 500);
 
 
 
-        Road Road10_9 = new Road();
-        Road10_9.compartimente = compartimenteR10_9;
-
-        Compartiment [] compartimenteR7_19 = new Compartiment[3];
-
-        Compartiment c_road7_19_0  = new Compartiment(1200, 550);
-        compartimenteR7_19[0] = c_road7_19_0;
-        Compartiment c_road7_19_1 = new Compartiment(1245, 550); // nu stiu daca 1245 sau 1200 si creste y
-        compartimenteR7_19[1] = c_road7_19_1;
-        Compartiment c_road7_19_2 = new Compartiment(1245, 595);
-        compartimenteR7_19[2] = c_road7_19_2;
-
-        Road Road7_19 = new Road();
-        Road7_19.compartimente = compartimenteR7_19;
-
-        Compartiment [] compartimenteR6_13 = new Compartiment[5];
-
-        Compartiment c_road6_13_0  = new Compartiment(1200, 500);
-        compartimenteR6_13[0] = c_road6_13_0;
-        Compartiment c_road6_13_1 = new Compartiment(1245, 500); // nu stiu daca 1245 sau 1200 si creste y
-        compartimenteR6_13[1] = c_road6_13_1;
-        Compartiment c_road6_13_2 = new Compartiment(1245, 455);
-        compartimenteR6_13[2] = c_road6_13_2;
-        Compartiment c_road6_13_3 = new Compartiment(1245, 410);
-        compartimenteR6_13[3] = c_road6_13_3;
-        Compartiment c_road6_13_4 = new Compartiment(1245, 365);// mai trebe???
-        compartimenteR6_13[4] = c_road6_13_4;
-
-        Road Road6_13 = new Road();
-        Road6_13.compartimente = compartimenteR6_13;
-
-        Compartiment [] compartimenteR14_13 = new Compartiment[5];
-
-        Compartiment c_road14_13_0  = new Compartiment(1410, 400);
-        compartimenteR14_13[0] = c_road14_13_0;
-        Compartiment c_road14_13_1 = new Compartiment(1360, 400); // nu stiu daca 1365 sau 1410 si scade y
-        compartimenteR14_13[1] = c_road14_13_1;
-        Compartiment c_road14_13_2 = new Compartiment(1310, 400);
-        compartimenteR14_13[2] = c_road14_13_2;
-        Compartiment c_road14_13_3 = new Compartiment(1257, 400);
-        compartimenteR14_13[3] = c_road14_13_3;
-        Compartiment c_road14_13_4 = new Compartiment(1257, 355);
-        compartimenteR14_13[4] = c_road14_13_4;
+        Compartiment [] compartimenteRoad2_1 = new Compartiment[3];
+        compartimenteRoad2_1[0] = r2_1;
+        compartimenteRoad2_1[1] = r2_2;
+        compartimenteRoad2_1[2] = r2_3;
 
 
 
-        Road Road14_13 = new Road();
-        Road14_13.compartimente = compartimenteR14_13;
+        Compartiment [] compartimenteRoad2_6 = new Compartiment[6];
+        compartimenteRoad2_6[0] = r2_1;
+        compartimenteRoad2_6[1] = r2_2;
+        compartimenteRoad2_6[2] = r2_3;
+        compartimenteRoad2_6[3] = r5_2;
+        compartimenteRoad2_6[4] = r11_3;
+        compartimenteRoad2_6[5] = r10_6;
 
-        Compartiment [] compartimenteR2_1 = new Compartiment[5];
 
-        Compartiment c_road2_1_0 = new Compartiment(600, 282);
-        compartimenteR2_1[0] = c_road2_1_0;
-        Compartiment c_road2_1_1 = new Compartiment(600, 327);
-        compartimenteR2_1[1] = c_road2_1_1;
-        Compartiment c_road2_1_2 = new Compartiment(600, 372);
-        compartimenteR2_1[2] = c_road2_1_2;
-        Compartiment c_road2_1_3 = new Compartiment(600, 417);
-        compartimenteR2_1[3] = c_road2_1_3;
-        Compartiment c_road2_1_4 = new Compartiment(555, 417);
-        compartimenteR2_1[4] = c_road2_1_4;
+
+        Compartiment [] compartimenteRoad2_9 = new Compartiment[7];
+        compartimenteRoad2_9[0] = r2_1;
+        compartimenteRoad2_9[1] = r2_2;
+        compartimenteRoad2_9[2] = r2_3;
+        compartimenteRoad2_9[3] = r5_2;
+        compartimenteRoad2_9[4] = r11_3;
+        compartimenteRoad2_9[5] = r10_3;
+        compartimenteRoad2_9[6] = r10_4;
+
+
+
+        Compartiment [] compartimenteRoad4_1 = new Compartiment[3];
+        compartimenteRoad4_1[0] = r4_1;
+        compartimenteRoad4_1[1] = r10_8;
+        compartimenteRoad4_1[2] = r2_3;
+
+
+
+        Compartiment [] compartimenteRoad4_3 = new Compartiment[2];
+        compartimenteRoad4_3[0] = r4_1;
+        compartimenteRoad4_3[1] = r10_8;
+
+
+
+        Compartiment [] compartimenteRoad5_2 = new Compartiment[3];
+        compartimenteRoad5_2[0] = r5_1;
+        compartimenteRoad5_2[1] = r10_7;
+        compartimenteRoad5_2[2] = r5_2;
+
+
+
+        Compartiment [] compartimenteRoad5_9 = new Compartiment[6];
+        compartimenteRoad5_9[0] = r5_1;
+        compartimenteRoad5_9[1] = r10_7;
+        compartimenteRoad5_9[2] = r5_2;
+        compartimenteRoad5_9[3] = r11_3;
+        compartimenteRoad5_9[4] = r10_3;
+        compartimenteRoad5_9[5] = r10_4;
+
+
+
+        Compartiment [] compartimenteRoad6_13 = new Compartiment[5];
+        compartimenteRoad6_13[0] = r15_5;
+        compartimenteRoad6_13[1] = r18_5;
+        compartimenteRoad6_13[2] = r15_3;
+        compartimenteRoad6_13[3] = r14_3;
+        compartimenteRoad6_13[4] = r14_4;
+
+
+
+        Compartiment [] compartimenteRoad6_16 = new Compartiment[3];
+        compartimenteRoad6_16[0] = r15_5;
+        compartimenteRoad6_16[1] = r18_5;
+        compartimenteRoad6_16[2] = r16_1;
+
+
+
+        Compartiment [] compartimenteRoad7_17 = new Compartiment[3];
+        compartimenteRoad7_17[0] = r15_6;
+        compartimenteRoad7_17[1] = r18_3;
+        compartimenteRoad7_17[2] = r18_4;
+
+
+
+        Compartiment [] compartimenteRoad7_19 = new Compartiment[2];
+        compartimenteRoad7_19[0] = r15_6;
+        compartimenteRoad7_19[1] = r15_7;
+
+
+        Compartiment [] compartimenteRoad8_3 = new Compartiment[4];
+        compartimenteRoad8_3[0] = r10_5;
+        compartimenteRoad8_3[1] = r10_6;
+        compartimenteRoad8_3[2] = r10_7;
+        compartimenteRoad8_3[3] = r10_8;
+
+
+        Compartiment [] compartimenteRoad8_7 = new Compartiment[3];
+        compartimenteRoad8_7[0] = r8_1;
+        compartimenteRoad8_7[1] = r8_2;
+        compartimenteRoad8_7[2] = r10_5;
+
+
+        Compartiment [] compartimenteRoad8_12 = new Compartiment[4];
+        compartimenteRoad8_12[0] = r10_5;
+        compartimenteRoad8_12[1] = r10_6;
+        compartimenteRoad8_12[2] = r10_7;
+        compartimenteRoad8_12[3] = r5_2;
+
+
+        Compartiment [] compartimenteRoad10_7 = new Compartiment[4];
+        compartimenteRoad10_7[0] = r10_1;
+        compartimenteRoad10_7[1] = r10_2;
+        compartimenteRoad10_7[2] = r10_3;
+        compartimenteRoad10_7[3] = r10_5;
+
+
+        Compartiment [] compartimenteRoad10_9 = new Compartiment[4];
+        compartimenteRoad10_9[0] = r10_1;
+        compartimenteRoad10_9[1] = r10_2;
+        compartimenteRoad10_9[2] = r10_3;
+        compartimenteRoad10_9[3] = r10_4;
+
+
+        Compartiment [] compartimenteRoad11_6 = new Compartiment[4];
+        compartimenteRoad11_6[0] = r11_1;
+        compartimenteRoad11_6[1] = r11_2;
+        compartimenteRoad11_6[2] = r11_3;
+        compartimenteRoad11_6[3] = r10_6;
+
+
+        Compartiment [] compartimenteRoad11_3 = new Compartiment[6];
+        compartimenteRoad11_3[0] = r11_1;
+        compartimenteRoad11_3[1] = r11_2;
+        compartimenteRoad11_3[2] = r11_3;
+        compartimenteRoad11_3[3] = r10_6;
+        compartimenteRoad11_3[4] = r10_7;
+        compartimenteRoad11_3[5] = r10_8;
+
+
+        Compartiment [] compartimenteRoad14_4 = new Compartiment[4];
+        compartimenteRoad14_4[0] = r14_1;
+        compartimenteRoad14_4[1] = r14_2;
+        compartimenteRoad14_4[2] = r14_3;
+        compartimenteRoad14_4[3] = r14_5;
+
+
+        Compartiment [] compartimenteRoad14_13 = new Compartiment[4];
+        compartimenteRoad14_13[0] = r14_1;
+        compartimenteRoad14_13[1] = r14_2;
+        compartimenteRoad14_13[2] = r14_3;
+        compartimenteRoad14_13[3] = r14_4;
+
+
+        Compartiment [] compartimenteRoad15_5 = new Compartiment[4];
+        compartimenteRoad15_5[0] = r15_1;
+        compartimenteRoad15_5[1] = r15_2;
+        compartimenteRoad15_5[2] = r15_3;
+        compartimenteRoad15_5[3] = r15_4;
+
+
+        Compartiment [] compartimenteRoad15_19 = new Compartiment[7];
+        compartimenteRoad15_19[0] = r15_1;
+        compartimenteRoad15_19[1] = r15_2;
+        compartimenteRoad15_19[2] = r15_3;
+        compartimenteRoad15_19[3] = r15_4;
+        compartimenteRoad15_19[4] = r15_5;
+        compartimenteRoad15_19[5] = r15_6;
+        compartimenteRoad15_19[6] = r15_7;
+
+
+        Compartiment [] compartimenteRoad18_7 = new Compartiment[4];
+        compartimenteRoad18_7[0] = r18_1;
+        compartimenteRoad18_7[1] = r18_2;
+        compartimenteRoad18_7[2] = r18_3;
+        compartimenteRoad18_7[3] = r15_6;
+
+
+        Compartiment [] compartimenteRoad18_13 = new Compartiment[7];
+        compartimenteRoad18_13[0] = r18_1;
+        compartimenteRoad18_13[1] = r18_2;
+        compartimenteRoad18_13[2] = r18_3;
+        compartimenteRoad18_13[3] = r18_5;
+        compartimenteRoad18_13[4] = r15_3;
+        compartimenteRoad18_13[5] = r14_3;
+        compartimenteRoad18_13[6] = r14_4;
+
+
+        Compartiment [] compartimenteRoad18_17 = new Compartiment[4];
+        compartimenteRoad18_17[0] = r18_1;
+        compartimenteRoad18_17[1] = r18_2;
+        compartimenteRoad18_17[2] = r18_3;
+        compartimenteRoad18_17[3] = r18_4;
+
+
+
 
 
         Road Road2_1 = new Road();
-        Road2_1.compartimente = compartimenteR2_1;
-
-
-        Compartiment [] compartimenteR2_9 = new Compartiment[9];
-
-        Compartiment c_road2_9_0 = new Compartiment(600, 282);
-        compartimenteR2_9[0] = c_road2_9_0;
-        Compartiment c_road2_9_1 = new Compartiment(600, 327);
-        compartimenteR2_9[1] = c_road2_9_1;
-        Compartiment c_road2_9_2 = new Compartiment(600, 372);
-        compartimenteR2_9[2] = c_road2_9_2;
-        Compartiment c_road2_9_3 = new Compartiment(600, 417);
-        compartimenteR2_9[3] = c_road2_9_3;
-        Compartiment c_road2_9_4 = new Compartiment(600, 462);
-        compartimenteR2_9[4] = c_road2_9_4;
-        Compartiment c_road2_9_5 = new Compartiment(600, 507);
-        compartimenteR2_9[5] = c_road2_9_5;
-        Compartiment c_road2_9_6 = new Compartiment(600, 552);
-        compartimenteR2_9[6] = c_road2_9_6;
-        Compartiment c_road2_9_7 = new Compartiment(600, 597);
-        compartimenteR2_9[7] = c_road2_9_7;
-        Compartiment c_road2_9_8 = new Compartiment(600, 642);
-        compartimenteR2_9[8] = c_road2_9_8;
-
-
-        Road Road2_9 = new Road();
-        Road2_9.compartimente = compartimenteR2_9;
-
-
-        Compartiment [] compartimenteR2_6 = new Compartiment[6];
-
-        Compartiment c_road2_6_0 = new Compartiment(600, 282);
-        compartimenteR2_6[0] = c_road2_6_0;
-        Compartiment c_road2_6_1 = new Compartiment(600, 327);
-        compartimenteR2_6[1] = c_road2_6_1;
-        Compartiment c_road2_6_2 = new Compartiment(600, 372);
-        compartimenteR2_6[2] = c_road2_6_2;
-        Compartiment c_road2_6_3 = new Compartiment(600, 417);
-        compartimenteR2_6[3] = c_road2_6_3;
-        Compartiment c_road2_6_4 = new Compartiment(645, 417);
-        compartimenteR2_6[4] = c_road2_6_4;
-        Compartiment c_road2_6_5 = new Compartiment(690, 417);
-        compartimenteR2_6[5] = c_road2_6_5;
-
-
+        Road2_1.compartimente = compartimenteRoad2_1;
         Road Road2_6 = new Road();
-        Road2_6.compartimente = compartimenteR2_6;
-
-
-        Compartiment [] compartimenteR8_3 = new Compartiment[7];
-
-        Compartiment c_road8_3_0 = new Compartiment(600, 665);
-        compartimenteR8_3[0] = c_road8_3_0;
-        Compartiment c_road8_3_1 = new Compartiment(600, 620);
-        compartimenteR8_3[1] = c_road8_3_1;
-        Compartiment c_road8_3_2 = new Compartiment(600, 575);
-        compartimenteR8_3[2] = c_road8_3_2;
-        Compartiment c_road8_3_3 = new Compartiment(600, 530);
-        compartimenteR8_3[3] = c_road8_3_3;
-        Compartiment c_road8_3_4 = new Compartiment(600, 485);
-        compartimenteR8_3[4] = c_road8_3_4;
-        Compartiment c_road8_3_5 = new Compartiment(600, 440);
-        compartimenteR8_3[5] = c_road8_3_5;
-        Compartiment c_road8_3_6 = new Compartiment(700, 395);
-        compartimenteR8_3[6] = c_road8_3_6;
-
-        Road Road8_3 = new Road();
-        Road8_3.compartimente = compartimenteR8_3;
-
-        Compartiment [] compartimenteR8_7 = new Compartiment[5]; // pe astea le-am facut de 55
-
-        Compartiment c_road8_7_0 = new Compartiment(600, 665);
-        compartimenteR8_7[0] = c_road8_7_0;
-        Compartiment c_road8_7_1 = new Compartiment(600, 610);
-        compartimenteR8_7[1] = c_road8_7_1;
-        Compartiment c_road8_7_2 = new Compartiment(600, 555);
-        compartimenteR8_7[2] = c_road8_7_2;
-        Compartiment c_road8_7_3 = new Compartiment(655, 555);
-        compartimenteR8_7[3] = c_road8_7_3;
-        Compartiment c_road8_7_4 = new Compartiment(705, 555);
-        compartimenteR8_7[4] = c_road8_7_4;
-
-        Road Road8_7 = new Road();
-        Road8_7.compartimente = compartimenteR8_7;
-
-        Compartiment [] compartimenteR8_12 = new Compartiment[6];
-
-        Compartiment c_road8_12_0 = new Compartiment(600, 665);
-        compartimenteR8_12[0] = c_road8_12_0;
-        Compartiment c_road8_12_1 = new Compartiment(600, 615);
-        compartimenteR8_12[1] = c_road8_12_1;
-        Compartiment c_road8_12_2 = new Compartiment(600, 565);
-        compartimenteR8_12[2] = c_road8_12_2;
-        Compartiment c_road8_12_3 = new Compartiment(600, 515);
-        compartimenteR8_12[3] = c_road8_12_3;
-        Compartiment c_road8_12_4 = new Compartiment(600, 465);
-        compartimenteR8_12[4] = c_road8_12_4;
-        Compartiment c_road8_12_5 = new Compartiment(555, 465);
-        compartimenteR8_12[5] = c_road8_12_5;
-        Compartiment c_road8_12_6 = new Compartiment(510, 465);
-        compartimenteR8_12[6] = c_road8_12_6;
-
-        Road Road8_12 = new Road();
-        Road8_12.compartimente = compartimenteR8_12;
-
-        Compartiment [] compartimenteR18_13 = new Compartiment[7];
-
-        Compartiment c_road18_13_0 = new Compartiment(1250, 665);
-        compartimenteR18_13[0] = c_road18_13_0;
-        Compartiment c_road18_13_1 = new Compartiment(1250, 620);
-        compartimenteR18_13[1] = c_road18_13_1;
-        Compartiment c_road18_13_2 = new Compartiment(1250, 575);
-        compartimenteR18_13[2] = c_road18_13_2;
-        Compartiment c_road18_13_3 = new Compartiment(1250, 530);
-        compartimenteR18_13[3] = c_road18_13_3;
-        Compartiment c_road18_13_4 = new Compartiment(1250, 485);
-        compartimenteR18_13[4] = c_road18_13_4;
-        Compartiment c_road18_13_5 = new Compartiment(1250, 440);
-        compartimenteR18_13[5] = c_road18_13_5;
-        Compartiment c_road18_13_6 = new Compartiment(1250, 395);
-        compartimenteR18_13[6] = c_road18_13_6;
-
-        Road Road18_13 = new Road();
-        Road18_13.compartimente = compartimenteR18_13;
-
-        Compartiment [] compartimenteR18_17 = new Compartiment[5];
-
-        Compartiment c_road18_17_0 = new Compartiment(1250, 665);
-        compartimenteR18_17[0] = c_road18_17_0;
-        Compartiment c_road18_17_1 = new Compartiment(1250, 610);
-        compartimenteR18_17[1] = c_road18_17_1;
-        Compartiment c_road18_17_2 = new Compartiment(1250, 555);
-        compartimenteR18_17[2] = c_road18_17_2;
-        Compartiment c_road18_17_3 = new Compartiment(1295, 555);
-        compartimenteR18_17[3] = c_road18_17_3;
-        Compartiment c_road18_17_4 = new Compartiment(1340, 555);
-        compartimenteR18_17[4] = c_road18_17_4;
-
-
-        Road Road18_17 = new Road();
-        Road18_17.compartimente = compartimenteR18_17;
-
-        Compartiment [] compartimenteR18_5 = new Compartiment[7];
-
-        Compartiment c_road18_5_0 = new Compartiment(1250, 665);
-        compartimenteR18_5[0] = c_road18_5_0;
-        Compartiment c_road18_5_1 = new Compartiment(1250, 615);
-        compartimenteR18_5[1] = c_road18_5_1;
-        Compartiment c_road18_5_2 = new Compartiment(1250, 565);
-        compartimenteR18_5[2] = c_road18_5_2;
-        Compartiment c_road18_5_3 = new Compartiment(1250, 515);
-        compartimenteR18_5[3] = c_road18_5_3;
-        Compartiment c_road18_5_4 = new Compartiment(1250, 465);
-        compartimenteR18_5[4] = c_road18_5_4;
-        Compartiment c_road18_5_5 = new Compartiment(1200, 465);
-        compartimenteR18_5[5] = c_road18_5_5;
-        Compartiment c_road18_5_6 = new Compartiment(1150, 465);
-        compartimenteR18_5[6] = c_road18_5_6;
-
-
-        Road Road18_5 = new Road();
-        Road18_5.compartimente = compartimenteR18_5;
-
-        Compartiment [] compartimenteR5_9 = new Compartiment[7];
-
-        Compartiment c_road5_9_0 = new Compartiment(700, 450);
-        compartimenteR5_9[0] = c_road5_9_0;
-        Compartiment c_road5_9_1 = new Compartiment(650, 450);
-        compartimenteR5_9[1] = c_road5_9_1;
-        Compartiment c_road5_9_2 = new Compartiment(600, 450);
-        compartimenteR5_9[2] = c_road5_9_2;
-        Compartiment c_road5_9_3 = new Compartiment(600, 500);
-        compartimenteR5_9[3] = c_road5_9_3;
-        Compartiment c_road5_9_4 = new Compartiment(600, 550);
-        compartimenteR5_9[4] = c_road5_9_4;
-        Compartiment c_road5_9_5 = new Compartiment(600, 600);
-        compartimenteR5_9[5] = c_road5_9_5;
-        Compartiment c_road5_9_6 = new Compartiment(600, 645);
-        compartimenteR5_9[6] = c_road5_9_6;
-
-        Road Road5_9 = new Road();
-        Road5_9.compartimente = compartimenteR5_9;
-
-
-
-        Compartiment [] compartimenteR15_19 = new Compartiment[9];
-
-        Compartiment c_road15_19_0 = new Compartiment(1405, 400);
-        compartimenteR15_19[0] = c_road15_19_0;
-        Compartiment c_road15_19_1 = new Compartiment(1355, 400);
-        compartimenteR15_19[1] = c_road15_19_1;
-        Compartiment c_road15_19_2 = new Compartiment(1305, 400);
-        compartimenteR15_19[2] = c_road15_19_2;
-        Compartiment c_road15_19_3 = new Compartiment(1255, 400);
-        compartimenteR15_19[3] = c_road15_19_3;
-        Compartiment c_road15_19_4 = new Compartiment(1200, 400);
-        compartimenteR15_19[4] = c_road15_19_4;
-        Compartiment c_road15_19_5 = new Compartiment(1200, 450);
-        compartimenteR15_19[5] = c_road15_19_5;
-        Compartiment c_road15_19_6 = new Compartiment(1200, 500);
-        compartimenteR15_19[6] = c_road15_19_6;
-        Compartiment c_road15_19_7 = new Compartiment(1200, 550);
-        compartimenteR15_19[7] = c_road15_19_7;
-        Compartiment c_road15_19_8 = new Compartiment(1200, 600);
-        compartimenteR15_19[8] = c_road15_19_8;
-
-
-        Road Road15_19 = new Road();
-        Road15_19.compartimente = (compartimenteR15_19);
-
-
-        Compartiment [] compartimenteR4_3 = new Compartiment[3];
-
-        Compartiment c_road4_3_0 = new Compartiment(700, 400);
-        compartimenteR4_3[0] = c_road4_3_0;
-        Compartiment c_road4_3_1 = new Compartiment(650, 400);
-        compartimenteR4_3[1] = c_road4_3_1;
-        Compartiment c_road4_3_2 = new Compartiment(650, 355);
-        compartimenteR4_3[2] = c_road4_3_2;
-
-
+        Road2_6.compartimente = compartimenteRoad2_6;
+        Road Road2_9 = new Road();
+        Road2_9.compartimente = compartimenteRoad2_9;
+        Road Road4_1 = new Road();
+        Road4_1.compartimente = compartimenteRoad4_1;
         Road Road4_3 = new Road();
-        Road4_3.compartimente = (compartimenteR4_3);
+        Road4_3.compartimente = compartimenteRoad4_3;
+        Road Road5_2 = new Road();
+        Road5_2.compartimente = compartimenteRoad5_2;
+        Road Road5_9 = new Road();
+        Road5_9.compartimente = compartimenteRoad5_9;
+        Road Road6_13 = new Road();
+        Road6_13.compartimente = compartimenteRoad6_13;
+        Road Road6_16 = new Road();
+        Road6_16.compartimente = compartimenteRoad6_16;
+        Road Road7_17 = new Road();
+        Road7_17.compartimente = compartimenteRoad7_17;
+        Road Road7_19 = new Road();
+        Road7_19.compartimente = compartimenteRoad7_19;
+        Road Road8_3 = new Road();
+        Road8_3.compartimente = compartimenteRoad8_3;
+        Road Road8_7 = new Road();
+        Road8_7.compartimente = compartimenteRoad8_7;
+        Road Road8_12 = new Road();
+        Road8_12.compartimente = compartimenteRoad8_12;
+        Road Road10_7 = new Road();
+        Road10_7.compartimente = compartimenteRoad10_7;
+        Road Road10_9 = new Road();
+        Road10_9.compartimente = compartimenteRoad10_9;
+        Road Road11_6 = new Road();
+        Road11_6.compartimente = compartimenteRoad11_6;
+        Road Road11_3 = new Road();
+        Road11_3.compartimente = compartimenteRoad11_3;
+        Road Road14_4 = new Road();
+        Road14_4.compartimente = compartimenteRoad14_4;
+        Road Road14_13 = new Road();
+        Road14_13.compartimente = compartimenteRoad14_13;
+        Road Road15_5 = new Road();
+        Road15_5.compartimente = compartimenteRoad15_5;
+        Road Road15_19 = new Road();
+        Road15_19.compartimente = compartimenteRoad15_19;
+        Road Road18_7 = new Road();
+        Road18_7.compartimente = compartimenteRoad18_7;
+        Road Road18_13 = new Road();
+        Road18_13.compartimente = compartimenteRoad18_13;
+        Road Road18_17 = new Road();
+        Road18_17.compartimente = compartimenteRoad18_17;
+
 
 
 
         roadsIntersection.add(Road2_1);
-        roadsIntersection.add(Road2_9);
         roadsIntersection.add(Road2_6);
+        roadsIntersection.add(Road2_9);
 
-        roadsIntersection.add(Road8_3);
-        roadsIntersection.add(Road8_7);
-        roadsIntersection.add(Road8_12);
+        roadsIntersection.add(Road4_1);
+        roadsIntersection.add(Road4_3);
 
-        roadsIntersection.add(Road18_13);
-        roadsIntersection.add(Road18_5);
-        roadsIntersection.add(Road18_17);
+        roadsIntersection.add(Road5_2);
+        roadsIntersection.add(Road5_9);
 
         roadsIntersection.add(Road6_13);
         roadsIntersection.add(Road6_16);
@@ -1174,25 +1013,26 @@ class CreateObject {
         roadsIntersection.add(Road7_17);
         roadsIntersection.add(Road7_19);
 
+        roadsIntersection.add(Road8_3);
+        roadsIntersection.add(Road8_7);
+        roadsIntersection.add(Road8_12);
+
         roadsIntersection.add(Road10_7);
         roadsIntersection.add(Road10_9);
 
-        roadsIntersection.add(Road11_3);
         roadsIntersection.add(Road11_6);
+        roadsIntersection.add(Road11_3);
 
-        roadsIntersection.add(Road14_13);
         roadsIntersection.add(Road14_4);
-
-        roadsIntersection.add(Road4_1);
-        roadsIntersection.add(Road4_3);
+        roadsIntersection.add(Road14_13);
 
         roadsIntersection.add(Road15_5);
         roadsIntersection.add(Road15_19);
 
-        roadsIntersection.add(Road5_9);
-        roadsIntersection.add(Road5_12);
+        roadsIntersection.add(Road18_7);
+        roadsIntersection.add(Road18_13);
+        roadsIntersection.add(Road18_17);
 
-       // System.out.println("Road 12 = " + roadsIntersection.get(12).compartimente[2].x);
 
 
         Compartiment [] directionListRoad2 = new Compartiment[3];
@@ -1202,72 +1042,82 @@ class CreateObject {
         Road2.directionList = directionListRoad2;
         Road2.hasDirection = true;
 
-        Compartiment [] directionListRoad8 = new Compartiment[3];
-        directionListRoad8[0] = roadsIntersection.get(3).compartimente[0];
-        directionListRoad8[1] = roadsIntersection.get(4).compartimente[0];
-        directionListRoad8[2] = roadsIntersection.get(5).compartimente[0];
-        Road8.directionList = directionListRoad8;
-        Road8.hasDirection = true;
-
-        Compartiment [] directionListRoad18 = new Compartiment[3];
-        directionListRoad18[0] = roadsIntersection.get(6).compartimente[0];
-        directionListRoad18[1] = roadsIntersection.get(7).compartimente[0];
-        directionListRoad18[2] = roadsIntersection.get(8).compartimente[0];
-        Road18.directionList = directionListRoad18;
-        Road18.hasDirection = true;
-
-        Compartiment [] directionListRoad6 = new Compartiment[2];
-        directionListRoad6[0] = roadsIntersection.get(9).compartimente[0];
-        directionListRoad6[1] = roadsIntersection.get(10).compartimente[0];
-        Road6.directionList = directionListRoad6;
-        Road6.hasDirection = true;
-
-        Compartiment [] directionListRoad7 = new Compartiment[2];
-        directionListRoad7[0] = roadsIntersection.get(11).compartimente[0];
-        directionListRoad7[1] = roadsIntersection.get(12).compartimente[0];
-        Road7.directionList = directionListRoad7;
-        Road7.hasDirection = true;
-
-        Compartiment [] directionListRoad10 = new Compartiment[2];
-        directionListRoad10[0] = roadsIntersection.get(13).compartimente[0];
-        directionListRoad10[1] = roadsIntersection.get(14).compartimente[0];
-        Road10.directionList = directionListRoad10;
-        Road10.hasDirection = true;
-
-        Compartiment [] directionListRoad11 = new Compartiment[2];
-        directionListRoad11[0] = roadsIntersection.get(15).compartimente[0];
-        directionListRoad11[1] = roadsIntersection.get(16).compartimente[0];
-        Road11.directionList = directionListRoad11;
-        Road11.hasDirection = true;
-
-        Compartiment [] directionListRoad14 = new Compartiment[2];
-        directionListRoad14[0] = roadsIntersection.get(17).compartimente[0];
-        directionListRoad14[1] = roadsIntersection.get(18).compartimente[0];
-        Road14.directionList = directionListRoad14;
-        Road14.hasDirection = true;
-
         Compartiment [] directionListRoad4 = new Compartiment[2];
-        directionListRoad4[0] = roadsIntersection.get(19).compartimente[0];
-        directionListRoad4[1] = roadsIntersection.get(20).compartimente[0];
+        directionListRoad4[0] = roadsIntersection.get(3).compartimente[0];
+        directionListRoad4[1] = roadsIntersection.get(4).compartimente[0];
         Road4.directionList = directionListRoad4;
         Road4.hasDirection = true;
 
         Compartiment [] directionListRoad5 = new Compartiment[2];
-        directionListRoad5[0] = roadsIntersection.get(21).compartimente[0];
-        directionListRoad5[1] = roadsIntersection.get(22).compartimente[0];
+        directionListRoad5[0] = roadsIntersection.get(5).compartimente[0];
+        directionListRoad5[1] = roadsIntersection.get(6).compartimente[0];
         Road5.directionList = directionListRoad5;
         Road5.hasDirection = true;
 
+        Compartiment [] directionListRoad6 = new Compartiment[2];
+        directionListRoad6[0] = roadsIntersection.get(7).compartimente[0];
+        directionListRoad6[1] = roadsIntersection.get(8).compartimente[0];
+        Road6.directionList = directionListRoad6;
+        Road6.hasDirection = true;
+
+        Compartiment [] directionListRoad7 = new Compartiment[2];
+        directionListRoad7[0] = roadsIntersection.get(9).compartimente[0];
+        directionListRoad7[1] = roadsIntersection.get(10).compartimente[0];
+        Road7.directionList = directionListRoad7;
+        Road7.hasDirection = true;
+
+        Compartiment [] directionListRoad8 = new Compartiment[3];
+        directionListRoad8[0] = roadsIntersection.get(11).compartimente[0];
+        directionListRoad8[1] = roadsIntersection.get(12).compartimente[0];
+        directionListRoad8[2] = roadsIntersection.get(13).compartimente[0];
+        Road8.directionList = directionListRoad8;
+        Road8.hasDirection = true;
+
+        Compartiment [] directionListRoad10 = new Compartiment[2];
+        directionListRoad10[0] = roadsIntersection.get(14).compartimente[0];
+        directionListRoad10[1] = roadsIntersection.get(15).compartimente[0];
+        Road10.directionList = directionListRoad10;
+        Road10.hasDirection = true;
+
+        Compartiment [] directionListRoad11 = new Compartiment[2];
+        directionListRoad11[0] = roadsIntersection.get(16).compartimente[0];
+        directionListRoad11[1] = roadsIntersection.get(17).compartimente[0];
+        Road11.directionList = directionListRoad11;
+        Road11.hasDirection = true;
+
+        Compartiment [] directionListRoad14 = new Compartiment[2];
+        directionListRoad14[0] = roadsIntersection.get(18).compartimente[0];
+        directionListRoad14[1] = roadsIntersection.get(19).compartimente[0];
+        Road14.directionList = directionListRoad14;
+        Road14.hasDirection = true;
+
         Compartiment [] directionListRoad15 = new Compartiment[2];
-        directionListRoad15[0] = roadsIntersection.get(23).compartimente[0];
-        directionListRoad15[1] = roadsIntersection.get(24).compartimente[0];
+        directionListRoad15[0] = roadsIntersection.get(20).compartimente[0];
+        directionListRoad15[1] = roadsIntersection.get(21).compartimente[0];
         Road15.directionList = directionListRoad15;
         Road15.hasDirection = true;
 
+        Compartiment [] directionListRoad18 = new Compartiment[3];
+        directionListRoad18[0] = roadsIntersection.get(22).compartimente[0];
+        directionListRoad18[1] = roadsIntersection.get(23).compartimente[0];
+        directionListRoad18[2] = roadsIntersection.get(24).compartimente[0];
+        Road18.directionList = directionListRoad18;
+        Road18.hasDirection = true;
 
 
 
-*/
+
+
+
+
+
+
+
+
+
+
+
+
 
         //ADAUGARE ROAD LA LISTA DE ROADS - ALBU ADELA
         roads.add(Road1);
@@ -1460,7 +1310,7 @@ class CreateObject {
         for(int j=0; j< roadsIntersection.size(); j++) {
             for(int i=0; i<roadsIntersection.get(j).compartimente.length; i++) {
                 try{
-                    if(!roadsIntersection.get(j).compartimente[i].isEmpty && j==17 ) {
+                    if(!roadsIntersection.get(j).compartimente[i].isEmpty && j==1 ) {
                         g.setColor(roadsIntersection.get(j).compartimente[i].car.color);
                         g.fillRect(roadsIntersection.get(j).compartimente[i].car.x, roadsIntersection.get(j).compartimente[i].car.y, roadsIntersection.get(j).compartimente[i].car.width, roadsIntersection.get(j).compartimente[i].car.height);
                     }

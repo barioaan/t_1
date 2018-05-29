@@ -43,13 +43,13 @@ public class World extends JPanel implements ActionListener {
 		thread = new Thread (() -> {
 
 		for(int i=0; i<1000; i++) {
-			roads.get(9).semaphore.isGreen = true;
-			roads.get(6).semaphore.isGreen = true;
-			roads.get(13).semaphore.isGreen = true;
-			roads.get(3).semaphore.isGreen = true;
+			roads.get(9).semaphore.isGreen = false;
+			roads.get(6).semaphore.isGreen = false;
+			roads.get(13).semaphore.isGreen = false;
+			roads.get(3).semaphore.isGreen = false;
 			roads.get(7).semaphore.isGreen = false;
 			roads.get(17).semaphore.isGreen = false;
-			roads.get(1).semaphore.isGreen = false;
+			roads.get(1).semaphore.isGreen = true;
 			
 
 			try {
@@ -66,13 +66,13 @@ public class World extends JPanel implements ActionListener {
 			roads.get(7).semaphore.isGreen = true;
 			roads.get(17).semaphore.isGreen = true;
 			roads.get(1).semaphore.isGreen = true;
-
+*/
 			try {
 				Thread.sleep(10000);
 			} catch (InterruptedException e) {
 
 				e.printStackTrace();
-			}*/
+			}
 
 		}
 
