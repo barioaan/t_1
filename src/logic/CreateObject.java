@@ -835,11 +835,13 @@ class CreateObject {
         compartimenteRoad7_19[1] = r15_7;
 
 
-        Compartiment [] compartimenteRoad8_3 = new Compartiment[4];
-        compartimenteRoad8_3[0] = r10_5;
-        compartimenteRoad8_3[1] = r10_6;
-        compartimenteRoad8_3[2] = r10_7;
-        compartimenteRoad8_3[3] = r10_8;
+        Compartiment [] compartimenteRoad8_3 = new Compartiment[6];
+        compartimenteRoad8_3[0] = r8_1;
+        compartimenteRoad8_3[1] = r8_2;
+        compartimenteRoad8_3[2] = r10_5;
+        compartimenteRoad8_3[3] = r10_6;
+        compartimenteRoad8_3[4] = r10_7;
+        compartimenteRoad8_3[5] = r10_8;
 
 
         Compartiment [] compartimenteRoad8_7 = new Compartiment[3];
@@ -848,11 +850,13 @@ class CreateObject {
         compartimenteRoad8_7[2] = r10_5;
 
 
-        Compartiment [] compartimenteRoad8_12 = new Compartiment[4];
-        compartimenteRoad8_12[0] = r10_5;
-        compartimenteRoad8_12[1] = r10_6;
-        compartimenteRoad8_12[2] = r10_7;
-        compartimenteRoad8_12[3] = r5_2;
+        Compartiment [] compartimenteRoad8_12 = new Compartiment[6];
+        compartimenteRoad8_12[0] = r8_1;
+        compartimenteRoad8_12[1] = r8_2;
+        compartimenteRoad8_12[2] = r10_5;
+        compartimenteRoad8_12[3] = r10_6;
+        compartimenteRoad8_12[4] = r10_7;
+        compartimenteRoad8_12[5] = r5_2;
 
 
         Compartiment [] compartimenteRoad10_7 = new Compartiment[4];
@@ -1035,10 +1039,10 @@ class CreateObject {
 
 
 
-        Compartiment [] directionListRoad2 = new Compartiment[1];
+        Compartiment [] directionListRoad2 = new Compartiment[3];
         directionListRoad2[0] = roadsIntersection.get(0).compartimente[0];
-        //directionListRoad2[1] = roadsIntersection.get(1).compartimente[0];
-       // directionListRoad2[2] = roadsIntersection.get(2).compartimente[0];
+        directionListRoad2[1] = roadsIntersection.get(1).compartimente[0];
+        directionListRoad2[2] = roadsIntersection.get(2).compartimente[0];
         Road2.directionList = directionListRoad2;
         Road2.hasDirection = true;
 
@@ -1449,7 +1453,7 @@ class CreateObject {
 
 
                     try{
-                        if(i>0 && roadsIntersection.get(j).compartimente[i].isEmpty && !roadsIntersection.get(j).compartimente[i-1].isEmpty && j==9) {
+                        if(i>0 && roadsIntersection.get(j).compartimente[i].isEmpty && !roadsIntersection.get(j).compartimente[i-1].isEmpty) {
                             roadsIntersection.get(j).compartimente[i].car.color = roadsIntersection.get(j).compartimente[i-1].car.color;
                             roadsIntersection.get(j).compartimente[i].car.width = roadsIntersection.get(j).compartimente[i-1].car.width;
                             roadsIntersection.get(j).compartimente[i].car.height = roadsIntersection.get(j).compartimente[i-1].car.height;
