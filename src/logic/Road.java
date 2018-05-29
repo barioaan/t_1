@@ -14,6 +14,7 @@ public class Road {
 	boolean areLiniePietoni = false;
 	Compartiment compartimente [];
 	int id;
+
 	
 	boolean hasDirection = false;
 	

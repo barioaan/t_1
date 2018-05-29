@@ -28,7 +28,7 @@ public class World extends JPanel implements ActionListener {
 
 	private static Thread thread;
 	static Random random = new Random();
-    private Timer timer = new Timer(200,this);
+    private Timer timer = new Timer(400,this);
     static int numar_masini;
 	
 
@@ -68,7 +68,7 @@ public class World extends JPanel implements ActionListener {
 			roads.get(1).semaphore.isGreen = true;
 
 			try {
-				Thread.sleep(10000);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 
 				e.printStackTrace();

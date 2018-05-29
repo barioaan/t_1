@@ -5,7 +5,7 @@ class Compartiment {
 	int x,y;
     boolean isEmpty = true;
 	Car car = new Car();
-
+	boolean check = false;
 	Compartiment(int x, int y) {
 		super();
 		this.x = x;
