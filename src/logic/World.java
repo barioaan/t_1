@@ -18,7 +18,7 @@ public class World extends JPanel implements ActionListener {
     static Port P1I, P2I, P3I, P4I, P5I, P6I, P7I, P8I, P9I, P10I, P11I, P12I, P13I, P14I, P15I, P16I, P17I, P18I, P19I;
     static Port P1O, P2O, P3O, P4O, P5O, P6O, P7O, P8O, P9O, P10O, P11O, P12O, P13O, P14O, P15O, P16O, P17O, P18O, P19O;
     static Road Road1, Road2, Road3, Road4, Road5, Road6, Road7, Road8, Road9, Road10, Road11, Road12, Road13, Road14, Road15, Road16, Road17, Road18, Road19;
-
+	static Road Road2_1, Road2_6, Road2_9, Road4_1, Road4_3, Road5_2, Road5_9, Road6_13, Road6_16, Road7_17, Road7_19, Road8_3, Road8_7, Road8_12, Road10_7, Road10_9, Road11_6, Road11_3, Road14_4, Road14_13, Road15_5, Road15_19, Road18_7, Road18_13, Road18_17;
     static Semaphore semaphore1, semaphore2, semaphore3, semaphore4, semaphore6, semaphore7, semaphore8, semaphoreP1_1, semaphoreP1_2, semaphoreP2_1, semaphoreP2_2, semaphoreP3_1, semaphoreP3_2, semaphoreP4_1, semaphoreP4_2, semaphoreP5_1, semaphoreP5_2;
 
     static List <Road> roads = new ArrayList <>();
@@ -28,7 +28,7 @@ public class World extends JPanel implements ActionListener {
 
 	private static Thread thread;
 	static Random random = new Random();
-    private Timer timer = new Timer(400,this);
+    private Timer timer = new Timer(200,this);
     static int numar_masini;
 	
 
@@ -43,13 +43,13 @@ public class World extends JPanel implements ActionListener {
 		thread = new Thread (() -> {
 
 		for(int i=0; i<1000; i++) {
-			roads.get(9).semaphore.isGreen = false;
-			roads.get(6).semaphore.isGreen = false;
-			roads.get(13).semaphore.isGreen = false;
-			roads.get(3).semaphore.isGreen = false;
+			roads.get(9).semaphore.isGreen = true;
+			roads.get(6).semaphore.isGreen = true;
+			roads.get(13).semaphore.isGreen = true;
+			roads.get(3).semaphore.isGreen = true;
 			roads.get(7).semaphore.isGreen = false;
 			roads.get(17).semaphore.isGreen = false;
-			roads.get(1).semaphore.isGreen = true;
+			roads.get(1).semaphore.isGreen = false;
 			
 
 			try {
@@ -58,7 +58,7 @@ public class World extends JPanel implements ActionListener {
 
 				e.printStackTrace();
 			}
-/*
+
 			roads.get(9).semaphore.isGreen = false;
 			roads.get(6).semaphore.isGreen = false;
 			roads.get(13).semaphore.isGreen = false;
@@ -66,7 +66,7 @@ public class World extends JPanel implements ActionListener {
 			roads.get(7).semaphore.isGreen = true;
 			roads.get(17).semaphore.isGreen = true;
 			roads.get(1).semaphore.isGreen = true;
-*/
+
 			try {
 				Thread.sleep(10000);
 			} catch (InterruptedException e) {

@@ -943,55 +943,55 @@ class CreateObject {
 
 
 
-        Road Road2_1 = new Road();
+         Road2_1 = new Road();
         Road2_1.compartimente = compartimenteRoad2_1;
-        Road Road2_6 = new Road();
+         Road2_6 = new Road();
         Road2_6.compartimente = compartimenteRoad2_6;
-        Road Road2_9 = new Road();
+         Road2_9 = new Road();
         Road2_9.compartimente = compartimenteRoad2_9;
-        Road Road4_1 = new Road();
+         Road4_1 = new Road();
         Road4_1.compartimente = compartimenteRoad4_1;
-        Road Road4_3 = new Road();
+         Road4_3 = new Road();
         Road4_3.compartimente = compartimenteRoad4_3;
-        Road Road5_2 = new Road();
+         Road5_2 = new Road();
         Road5_2.compartimente = compartimenteRoad5_2;
-        Road Road5_9 = new Road();
+         Road5_9 = new Road();
         Road5_9.compartimente = compartimenteRoad5_9;
-        Road Road6_13 = new Road();
+         Road6_13 = new Road();
         Road6_13.compartimente = compartimenteRoad6_13;
-        Road Road6_16 = new Road();
+         Road6_16 = new Road();
         Road6_16.compartimente = compartimenteRoad6_16;
-        Road Road7_17 = new Road();
+         Road7_17 = new Road();
         Road7_17.compartimente = compartimenteRoad7_17;
-        Road Road7_19 = new Road();
+         Road7_19 = new Road();
         Road7_19.compartimente = compartimenteRoad7_19;
-        Road Road8_3 = new Road();
+         Road8_3 = new Road();
         Road8_3.compartimente = compartimenteRoad8_3;
-        Road Road8_7 = new Road();
+         Road8_7 = new Road();
         Road8_7.compartimente = compartimenteRoad8_7;
-        Road Road8_12 = new Road();
+         Road8_12 = new Road();
         Road8_12.compartimente = compartimenteRoad8_12;
-        Road Road10_7 = new Road();
+         Road10_7 = new Road();
         Road10_7.compartimente = compartimenteRoad10_7;
-        Road Road10_9 = new Road();
+         Road10_9 = new Road();
         Road10_9.compartimente = compartimenteRoad10_9;
-        Road Road11_6 = new Road();
+         Road11_6 = new Road();
         Road11_6.compartimente = compartimenteRoad11_6;
-        Road Road11_3 = new Road();
+         Road11_3 = new Road();
         Road11_3.compartimente = compartimenteRoad11_3;
-        Road Road14_4 = new Road();
+         Road14_4 = new Road();
         Road14_4.compartimente = compartimenteRoad14_4;
-        Road Road14_13 = new Road();
+         Road14_13 = new Road();
         Road14_13.compartimente = compartimenteRoad14_13;
-        Road Road15_5 = new Road();
+         Road15_5 = new Road();
         Road15_5.compartimente = compartimenteRoad15_5;
-        Road Road15_19 = new Road();
+         Road15_19 = new Road();
         Road15_19.compartimente = compartimenteRoad15_19;
-        Road Road18_7 = new Road();
+         Road18_7 = new Road();
         Road18_7.compartimente = compartimenteRoad18_7;
-        Road Road18_13 = new Road();
+         Road18_13 = new Road();
         Road18_13.compartimente = compartimenteRoad18_13;
-        Road Road18_17 = new Road();
+         Road18_17 = new Road();
         Road18_17.compartimente = compartimenteRoad18_17;
 
 
@@ -1035,10 +1035,10 @@ class CreateObject {
 
 
 
-        Compartiment [] directionListRoad2 = new Compartiment[3];
+        Compartiment [] directionListRoad2 = new Compartiment[1];
         directionListRoad2[0] = roadsIntersection.get(0).compartimente[0];
-        directionListRoad2[1] = roadsIntersection.get(1).compartimente[0];
-        directionListRoad2[2] = roadsIntersection.get(2).compartimente[0];
+        //directionListRoad2[1] = roadsIntersection.get(1).compartimente[0];
+       // directionListRoad2[2] = roadsIntersection.get(2).compartimente[0];
         Road2.directionList = directionListRoad2;
         Road2.hasDirection = true;
 
@@ -1143,12 +1143,12 @@ class CreateObject {
         //BAR IOAN
 
              int j;
-             for (j=0; j<roads.size(); j++) {
+             for (j=0; j<roadsIntersection.size(); j++) {
 
 
-         for (int i = 0; i < roads.get(j).compartimente.length; i++) {
+         for (int i = 0; i < roadsIntersection.get(j).compartimente.length; i++) {
              try{
-                 roads.get(j).compartimente[i].isEmpty = true;
+                 roadsIntersection.get(j).compartimente[i].isEmpty = true;
              }catch (Exception e){
                  e.printStackTrace();
                  System.out.println("j = " + j + "i = " + i);
@@ -1310,7 +1310,7 @@ class CreateObject {
         for(int j=0; j< roadsIntersection.size(); j++) {
             for(int i=0; i<roadsIntersection.get(j).compartimente.length; i++) {
                 try{
-                    if(!roadsIntersection.get(j).compartimente[i].isEmpty && j==1 ) {
+                    if(!roadsIntersection.get(j).compartimente[i].isEmpty ) {
                         g.setColor(roadsIntersection.get(j).compartimente[i].car.color);
                         g.fillRect(roadsIntersection.get(j).compartimente[i].car.x, roadsIntersection.get(j).compartimente[i].car.y, roadsIntersection.get(j).compartimente[i].car.width, roadsIntersection.get(j).compartimente[i].car.height);
                     }
@@ -1402,7 +1402,7 @@ class CreateObject {
 
                         if(roads.get(j).hasDirection) {
                             int randomNR = random.nextInt(roads.get(j).directionList.length);
-                           if( roads.get(j).directionList[randomNR] != null){
+
                                if(roads.get(j).directionList[randomNR].isEmpty) {
                                    roads.get(j).directionList[randomNR].car.color = roads.get(j).compartimente[i].car.color;
                                    roads.get(j).directionList[randomNR].car.width = roads.get(j).compartimente[i].car.width;
@@ -1412,7 +1412,7 @@ class CreateObject {
                                    roads.get(j).directionList[randomNR].isEmpty = false;
                                    roads.get(j).compartimente[i].isEmpty = true;
                                }
-                           }
+
 
                         }
                     }
@@ -1447,8 +1447,9 @@ class CreateObject {
 
             for(int i=roadsIntersection.get(j).compartimente.length-1; i>=0; i--){
 
+
                     try{
-                        if(i>0 && roadsIntersection.get(j).compartimente[i].isEmpty && !roadsIntersection.get(j).compartimente[i-1].isEmpty) {
+                        if(i>0 && roadsIntersection.get(j).compartimente[i].isEmpty && !roadsIntersection.get(j).compartimente[i-1].isEmpty && j==9) {
                             roadsIntersection.get(j).compartimente[i].car.color = roadsIntersection.get(j).compartimente[i-1].car.color;
                             roadsIntersection.get(j).compartimente[i].car.width = roadsIntersection.get(j).compartimente[i-1].car.width;
                             roadsIntersection.get(j).compartimente[i].car.height = roadsIntersection.get(j).compartimente[i-1].car.height;
@@ -1460,6 +1461,8 @@ class CreateObject {
                     }catch(Exception e){
                        // System.out.println("j = " + j + " i = " + i);
                     }
+
+
 
 
 
@@ -1488,7 +1491,8 @@ class CreateObject {
                         roadsIntersection.get(j).compartimente[i].isEmpty = true;
 
                     }
-                }*/
+                }
+*/
 
             }
         }
