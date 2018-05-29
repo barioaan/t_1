@@ -700,44 +700,44 @@ class CreateObject {
         COMPARTIMENTE INTERSECTII
          */
 
-        Compartiment r2_1 = new Compartiment(600, 285);
-        Compartiment r2_2 = new Compartiment(600, 335);
-        Compartiment r2_3 = new Compartiment(600, 380);
+        Compartiment r2_1 = new Compartiment(600, 350);
+        Compartiment r2_2 = new Compartiment(600, 400);
+        Compartiment r2_3 = new Compartiment(600, 450); 
 
-        Compartiment r4_1 = new Compartiment(705, 400);
+        Compartiment r4_1 = new Compartiment(700, 400);
 
-        Compartiment r5_1 = new Compartiment(705, 450);
-        Compartiment r5_2 = new Compartiment(615, 450);
+        Compartiment r5_1 = new Compartiment(700, 450);
+        Compartiment r5_2 = new Compartiment(600, 450);
 
         Compartiment r8_1 = new Compartiment(650, 665);
         Compartiment r8_2 = new Compartiment(650, 620);
 
-        Compartiment r10_1 = new Compartiment(482, 550);
-        Compartiment r10_2 = new Compartiment(527, 550);
-        Compartiment r10_3 = new Compartiment(572, 550);
-        Compartiment r10_4 = new Compartiment(572, 600);
-        Compartiment r10_5 = new Compartiment(617, 550);
-        Compartiment r10_6 = new Compartiment(617, 500);
-        Compartiment r10_7 = new Compartiment(617, 450);
-        Compartiment r10_8 = new Compartiment(617, 400);
+        Compartiment r10_1 = new Compartiment(500, 550);
+        Compartiment r10_2 = new Compartiment(550, 550);
+        Compartiment r10_3 = new Compartiment(600, 550);
+        Compartiment r10_4 = new Compartiment(600, 600);
+        Compartiment r10_5 = new Compartiment(650, 550);
+        Compartiment r10_6 = new Compartiment(650, 500);
+        Compartiment r10_7 = new Compartiment(650, 500);
+        Compartiment r10_8 = new Compartiment(650, 450); 
 
-        Compartiment r11_1 = new Compartiment(482, 500);
-        Compartiment r11_2 = new Compartiment(527, 500);
-        Compartiment r11_3 = new Compartiment(572, 500);
+        Compartiment r11_1 = new Compartiment(500, 500);
+        Compartiment r11_2 = new Compartiment(550, 500);
+        Compartiment r11_3 = new Compartiment(600, 500);
 
-        Compartiment r14_1 = new Compartiment(1365, 400);
-        Compartiment r14_2 = new Compartiment(1320, 400);
-        Compartiment r14_3 = new Compartiment(1275, 400);
-        Compartiment r14_4 = new Compartiment(1275, 350);
-        Compartiment r14_5 = new Compartiment(1230, 400);
+        Compartiment r14_1 = new Compartiment(1415, 400); 
+        Compartiment r14_2 = new Compartiment(1320, 400); 
+        Compartiment r14_3 = new Compartiment(1250, 400); 
+        Compartiment r14_4 = new Compartiment(1250, 350); 
+        Compartiment r14_5 = new Compartiment(1200, 400); 
 
-        Compartiment r15_1 = new Compartiment(1365, 450);
-        Compartiment r15_2 = new Compartiment(1320, 450);
-        Compartiment r15_3 = new Compartiment(1275, 450);
-        Compartiment r15_4 = new Compartiment(1230, 450);
-        Compartiment r15_5 = new Compartiment(1230, 500);
-        Compartiment r15_6 = new Compartiment(1230, 550);
-        Compartiment r15_7 = new Compartiment(1230, 600);
+        Compartiment r15_1 = new Compartiment(1415, 450);
+        Compartiment r15_2 = new Compartiment(1300, 450);
+        Compartiment r15_3 = new Compartiment(1250, 450);
+        Compartiment r15_4 = new Compartiment(1200, 450); 
+        Compartiment r15_5 = new Compartiment(1200, 500); 
+        Compartiment r15_6 = new Compartiment(1200, 550); 
+        Compartiment r15_7 = new Compartiment(1200, 600); 
 
         Compartiment r16_1 = new Compartiment(1320, 500);
 
