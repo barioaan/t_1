@@ -947,55 +947,55 @@ class CreateObject {
 
 
 
-         Road2_1 = new Road();
+         Road2_1 = new Road(0);
         Road2_1.compartimente = compartimenteRoad2_1;
-         Road2_6 = new Road();
+         Road2_6 = new Road(5);
         Road2_6.compartimente = compartimenteRoad2_6;
-         Road2_9 = new Road();
+         Road2_9 = new Road(8);
         Road2_9.compartimente = compartimenteRoad2_9;
-         Road4_1 = new Road();
+         Road4_1 = new Road(0);
         Road4_1.compartimente = compartimenteRoad4_1;
-         Road4_3 = new Road();
+         Road4_3 = new Road(2);
         Road4_3.compartimente = compartimenteRoad4_3;
-         Road5_2 = new Road();
+         Road5_2 = new Road(1);
         Road5_2.compartimente = compartimenteRoad5_2;
-         Road5_9 = new Road();
+         Road5_9 = new Road(8);
         Road5_9.compartimente = compartimenteRoad5_9;
-         Road6_13 = new Road();
+         Road6_13 = new Road(12);
         Road6_13.compartimente = compartimenteRoad6_13;
-         Road6_16 = new Road();
+         Road6_16 = new Road(15);
         Road6_16.compartimente = compartimenteRoad6_16;
-         Road7_17 = new Road();
+         Road7_17 = new Road(16);
         Road7_17.compartimente = compartimenteRoad7_17;
-         Road7_19 = new Road();
+         Road7_19 = new Road(18);
         Road7_19.compartimente = compartimenteRoad7_19;
-         Road8_3 = new Road();
+         Road8_3 = new Road(2);
         Road8_3.compartimente = compartimenteRoad8_3;
-         Road8_7 = new Road();
+         Road8_7 = new Road(6);
         Road8_7.compartimente = compartimenteRoad8_7;
-         Road8_12 = new Road();
+         Road8_12 = new Road(11);
         Road8_12.compartimente = compartimenteRoad8_12;
-         Road10_7 = new Road();
+         Road10_7 = new Road(6);
         Road10_7.compartimente = compartimenteRoad10_7;
-         Road10_9 = new Road();
+         Road10_9 = new Road(8);
         Road10_9.compartimente = compartimenteRoad10_9;
-         Road11_6 = new Road();
+         Road11_6 = new Road(5);
         Road11_6.compartimente = compartimenteRoad11_6;
-         Road11_3 = new Road();
+         Road11_3 = new Road(2);
         Road11_3.compartimente = compartimenteRoad11_3;
-         Road14_4 = new Road();
+         Road14_4 = new Road(3);
         Road14_4.compartimente = compartimenteRoad14_4;
-         Road14_13 = new Road();
+         Road14_13 = new Road(12);
         Road14_13.compartimente = compartimenteRoad14_13;
-         Road15_5 = new Road();
+         Road15_5 = new Road(4);
         Road15_5.compartimente = compartimenteRoad15_5;
-         Road15_19 = new Road();
+         Road15_19 = new Road(18);
         Road15_19.compartimente = compartimenteRoad15_19;
-         Road18_7 = new Road();
+         Road18_7 = new Road(6);
         Road18_7.compartimente = compartimenteRoad18_7;
-         Road18_13 = new Road();
+         Road18_13 = new Road(12);
         Road18_13.compartimente = compartimenteRoad18_13;
-         Road18_17 = new Road();
+         Road18_17 = new Road(16);
         Road18_17.compartimente = compartimenteRoad18_17;
 
 
@@ -1143,7 +1143,7 @@ class CreateObject {
         roads.add(Road17);
         roads.add(Road18);
         roads.add(Road19);
-//safa
+
         //BAR IOAN
 
              int j;
@@ -1299,18 +1299,6 @@ class CreateObject {
 
 
 
-
-
-
-        for(Road r: roads) {
-            for(int i=0; i<r.compartimente.length; i++) {
-                if(!r.compartimente[i].isEmpty) {
-                    g.setColor(r.compartimente[i].car.color);
-                    g.fillRect(r.compartimente[i].car.x, r.compartimente[i].car.y, r.compartimente[i].car.width, r.compartimente[i].car.height);
-                }
-            }
-        }
-
         for(int j=0; j< roadsIntersection.size(); j++) {
             for(int i=0; i<roadsIntersection.get(j).compartimente.length; i++) {
                 try{
@@ -1324,6 +1312,18 @@ class CreateObject {
 
             }
         }
+
+
+        for(Road r: roads) {
+            for(int i=0; i<r.compartimente.length; i++) {
+                if(!r.compartimente[i].isEmpty) {
+                    g.setColor(r.compartimente[i].car.color);
+                    g.fillRect(r.compartimente[i].car.x, r.compartimente[i].car.y, r.compartimente[i].car.width, r.compartimente[i].car.height);
+                }
+            }
+        }
+
+
 
 
 
@@ -1401,6 +1401,7 @@ class CreateObject {
                 se alege random o directie din cele ale drumului pe care suntem situati
                 daca compartimentul drumului este gol, masina se muta in el, si se indica compartimentul actual ca fiind gol dupa mutare*/
 
+/*
                  if(roads.get(j).semaphore != null && roads.get(j).semaphore.isGreen) {
                     if(i == roads.get(j).compartimente.length-1 && !roads.get(j).compartimente[i].isEmpty ) {
 
@@ -1416,6 +1417,28 @@ class CreateObject {
                                    roads.get(j).directionList[randomNR].isEmpty = false;
                                    roads.get(j).compartimente[i].isEmpty = true;
                                }
+
+
+                        }
+                    }
+                }
+*/
+
+                if(roads.get(j).semaphore != null && roads.get(j).semaphore.isGreen) {
+                    if(i == roads.get(j).compartimente.length-1 && !roads.get(j).compartimente[i].isEmpty ) {
+
+                        if(roads.get(j).hasDirection) {
+                            int randomNR = 1; //random.nextInt(roads.get(j).directionList.length);
+
+                            if(roads.get(j).directionList[randomNR].isEmpty) {
+                                roads.get(j).directionList[randomNR].car.color = roads.get(j).compartimente[i].car.color;
+                                roads.get(j).directionList[randomNR].car.width = roads.get(j).compartimente[i].car.width;
+                                roads.get(j).directionList[randomNR].car.height = roads.get(j).compartimente[i].car.height;
+                                roads.get(j).directionList[randomNR].car.x = roads.get(j).directionList[randomNR].x;
+                                roads.get(j).directionList[randomNR].car.y = roads.get(j).directionList[randomNR].y;
+                                roads.get(j).directionList[randomNR].isEmpty = false;
+                                roads.get(j).compartimente[i].isEmpty = true;
+                            }
 
 
                         }
@@ -1452,7 +1475,7 @@ class CreateObject {
             for(int i=roadsIntersection.get(j).compartimente.length-1; i>=0; i--){
 
 
-                    try{
+
                         if(i>0 && roadsIntersection.get(j).compartimente[i].isEmpty && !roadsIntersection.get(j).compartimente[i-1].isEmpty) {
                             roadsIntersection.get(j).compartimente[i].car.color = roadsIntersection.get(j).compartimente[i-1].car.color;
                             roadsIntersection.get(j).compartimente[i].car.width = roadsIntersection.get(j).compartimente[i-1].car.width;
@@ -1462,9 +1485,19 @@ class CreateObject {
                             roadsIntersection.get(j).compartimente[i-1].isEmpty = true;
                             roadsIntersection.get(j).compartimente[i].isEmpty = false;
                         }
-                    }catch(Exception e){
-                       // System.out.println("j = " + j + " i = " + i);
+
+
+
+                    if(i == roadsIntersection.get(j).compartimente.length-1 && !roadsIntersection.get(j).compartimente[i].isEmpty ) {
+                        roads.get(roadsIntersection.get(j).id).compartimente[0].car.color = roadsIntersection.get(j).compartimente[i].car.color;
+                        roads.get(roadsIntersection.get(j).id).compartimente[0].car.width = roadsIntersection.get(j).compartimente[i].car.width;
+                        roads.get(roadsIntersection.get(j).id).compartimente[0].car.height = roadsIntersection.get(j).compartimente[i].car.height;
+                        roads.get(roadsIntersection.get(j).id).compartimente[0].car.x = roads.get(roadsIntersection.get(j).id).compartimente[0].x;
+                        roads.get(roadsIntersection.get(j).id).compartimente[0].car.y = roads.get(roadsIntersection.get(j).id).compartimente[0].y;
+                        roadsIntersection.get(j).compartimente[i].isEmpty = true;
+                        roads.get(roadsIntersection.get(j).id).compartimente[0].isEmpty = false;
                     }
+
 
 
 

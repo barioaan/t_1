@@ -13,6 +13,7 @@ public class Road {
 	int coordonataLiniePietoni;
 	boolean areLiniePietoni = false;
 	Compartiment compartimente [];
+	int id;
 	
 	boolean hasDirection = false;
 	
@@ -28,7 +29,8 @@ public class Road {
 		
 	}
 
-	public Road() {
+	public Road(int id) {
+		this.id = id;
 	}
 
 
