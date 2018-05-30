@@ -700,38 +700,39 @@ class CreateObject {
         COMPARTIMENTE INTERSECTII  - ALBU ADELA
          */
 
-        Compartiment r2_1 = new Compartiment(600, 350);
-        Compartiment r2_2 = new Compartiment(600, 400);
-        Compartiment r2_3 = new Compartiment(600, 450); 
+        Compartiment r2_1 = new Compartiment(600, 300);
+        Compartiment r2_2 = new Compartiment(600, 350);
+        Compartiment r2_3 = new Compartiment(600, 400);
 
         Compartiment r4_1 = new Compartiment(700, 400);
 
         Compartiment r5_1 = new Compartiment(700, 450);
         Compartiment r5_2 = new Compartiment(600, 450);
 
-        Compartiment r8_1 = new Compartiment(650, 665);
-        Compartiment r8_2 = new Compartiment(650, 620);
+        Compartiment r8_1 = new Compartiment(650, 650);
+        Compartiment r8_2 = new Compartiment(650, 600);
 
         Compartiment r10_1 = new Compartiment(500, 550);
         Compartiment r10_2 = new Compartiment(550, 550);
         Compartiment r10_3 = new Compartiment(600, 550);
         Compartiment r10_4 = new Compartiment(600, 600);
+
         Compartiment r10_5 = new Compartiment(650, 550);
         Compartiment r10_6 = new Compartiment(650, 500);
-        Compartiment r10_7 = new Compartiment(650, 500);
-        Compartiment r10_8 = new Compartiment(650, 450); 
+        Compartiment r10_7 = new Compartiment(650, 450);
+        Compartiment r10_8 = new Compartiment(650, 400);
 
         Compartiment r11_1 = new Compartiment(500, 500);
         Compartiment r11_2 = new Compartiment(550, 500);
         Compartiment r11_3 = new Compartiment(600, 500);
 
-        Compartiment r14_1 = new Compartiment(1415, 400); 
-        Compartiment r14_2 = new Compartiment(1320, 400); 
+        Compartiment r14_1 = new Compartiment(1350, 400);
+        Compartiment r14_2 = new Compartiment(1300, 400);
         Compartiment r14_3 = new Compartiment(1250, 400); 
         Compartiment r14_4 = new Compartiment(1250, 350); 
         Compartiment r14_5 = new Compartiment(1200, 400); 
 
-        Compartiment r15_1 = new Compartiment(1415, 450);
+        Compartiment r15_1 = new Compartiment(1350, 450);
         Compartiment r15_2 = new Compartiment(1300, 450);
         Compartiment r15_3 = new Compartiment(1250, 450);
         Compartiment r15_4 = new Compartiment(1200, 450); 
@@ -739,12 +740,12 @@ class CreateObject {
         Compartiment r15_6 = new Compartiment(1200, 550); 
         Compartiment r15_7 = new Compartiment(1200, 600); 
 
-        Compartiment r16_1 = new Compartiment(1320, 500);
+        Compartiment r16_1 = new Compartiment(1300, 500);
 
-        Compartiment r18_1 = new Compartiment(1250, 665);
+        Compartiment r18_1 = new Compartiment(1250, 650);
         Compartiment r18_2 = new Compartiment(1250, 600);
         Compartiment r18_3 = new Compartiment(1250, 550);
-        Compartiment r18_4 = new Compartiment(1320, 550);
+        Compartiment r18_4 = new Compartiment(1300, 550);
         Compartiment r18_5 = new Compartiment(1250, 500);
 
 
@@ -1117,16 +1118,6 @@ class CreateObject {
 
 
 
-
-
-
-
-
-
-
-
-
-
         //ADAUGARE ROAD LA LISTA DE ROADS - ALBU ADELA
         roads.add(Road1);
         roads.add(Road2);
@@ -1302,8 +1293,9 @@ class CreateObject {
 
 
 
-
+/*
         for(int j=0; j< roadsIntersection.size(); j++) {
+        int j=1;
             for(int i=0; i<roadsIntersection.get(j).compartimente.length; i++) {
                 try{
                     if(!roadsIntersection.get(j).compartimente[i].isEmpty ) {
@@ -1315,8 +1307,16 @@ class CreateObject {
                 }
 
             }
-        }
+        }*/
 
+        for(Road r: roadsIntersection) {
+            for(int i=0; i<r.compartimente.length; i++) {
+                if(!r.compartimente[i].isEmpty) {
+                    g.setColor(r.compartimente[i].car.color);
+                    g.fillRect(r.compartimente[i].car.x, r.compartimente[i].car.y, r.compartimente[i].car.width, r.compartimente[i].car.height);
+                }
+            }
+        }
 
         for(Road r: roads) {
             for(int i=0; i<r.compartimente.length; i++) {
@@ -1448,19 +1448,6 @@ class CreateObject {
                         }
                     }
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
             }
         }
 
@@ -1472,7 +1459,7 @@ class CreateObject {
             System.out.println("Road : " + j );
             for(int i=roadsIntersection.get(j).compartimente.length-1; i>=0; i--){
 
-                if (j==1) {
+               // if (!roadsIntersection.get(j).compartimente[i].check) {
                     System.out.println("Compartiment[" + i + "]= " + "cordX = " + roadsIntersection.get(j).compartimente[i].x + "  cordY = " + roadsIntersection.get(j).compartimente[i].y + " empty = " + roadsIntersection.get(j).compartimente[i].isEmpty);
 
                     if(i>0 && roadsIntersection.get(j).compartimente[i].isEmpty && !roadsIntersection.get(j).compartimente[i-1].isEmpty) {
@@ -1496,15 +1483,15 @@ class CreateObject {
                         roads.get(roadsIntersection.get(j).id).compartimente[0].isEmpty = false;
                     }
 
-
-                }
+                  //  roadsIntersection.get(j).compartimente[i].check = true;
+              //  }
 
 
 
             }
         }
 
-     /*   for(int j=0; j< roadsIntersection.size(); j++){
+     /*  for(int j=0; j< roadsIntersection.size(); j++){
             for(int i=roadsIntersection.get(j).compartimente.length-1; i>=0; i--){
                 roadsIntersection.get(j).compartimente[i].check = false;
             }
