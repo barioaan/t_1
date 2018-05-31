@@ -144,9 +144,14 @@ public class World extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 
-		doSimulation();
 
+		doSimulation();
+		doSim();
 		repaint();
+
+
+
+
 	}
 
 }

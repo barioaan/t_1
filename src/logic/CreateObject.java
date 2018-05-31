@@ -1336,6 +1336,8 @@ class CreateObject {
     }
 
     static void doSimulation(){
+
+
         for(int j=0; j<roads.size(); j++) {
 
             for(int i=roads.get(j).compartimente.length-1; i>=0; i--) {
@@ -1428,6 +1430,7 @@ class CreateObject {
                 }
 */
 
+/*
                 if(roads.get(j).semaphore != null && roads.get(j).semaphore.isGreen) {
                     if(i == roads.get(j).compartimente.length-1 && !roads.get(j).compartimente[i].isEmpty ) {
 
@@ -1435,6 +1438,7 @@ class CreateObject {
                             int randomNR = random.nextInt(roads.get(j).directionList.length);
 
                             if(roads.get(j).directionList[randomNR].isEmpty) {
+
                                 roads.get(j).directionList[randomNR].car.color = roads.get(j).compartimente[i].car.color;
                                 roads.get(j).directionList[randomNR].car.width = roads.get(j).compartimente[i].car.width;
                                 roads.get(j).directionList[randomNR].car.height = roads.get(j).compartimente[i].car.height;
@@ -1442,6 +1446,98 @@ class CreateObject {
                                 roads.get(j).directionList[randomNR].car.y = roads.get(j).directionList[randomNR].y;
                                 roads.get(j).directionList[randomNR].isEmpty = false;
                                 roads.get(j).compartimente[i].isEmpty = true;
+
+
+                            }
+
+
+                        }
+                    }
+                }
+*/
+            }
+        }
+
+
+
+
+
+     /*  for(int j=0; j< roadsIntersection.size(); j++){
+            for(int i=roadsIntersection.get(j).compartimente.length-1; i>=0; i--){
+                roadsIntersection.get(j).compartimente[i].check = false;
+            }
+        }*/
+
+
+
+
+
+
+    }
+
+    static void doSim(){
+
+
+        for(int j1=0; j1< roadsIntersection.size(); j1++){
+
+            System.out.println("Road : " + j1 );
+            for(int i1=roadsIntersection.get(j1).compartimente.length-1; i1>=0; i1--){
+
+                // if (!roadsIntersection.get(j1).compartimente[i1].check) {
+                System.out.println("Compartiment[" + i1 + "]= " + "cordX = " + roadsIntersection.get(j1).compartimente[i1].x + "  cordY = " + roadsIntersection.get(j1).compartimente[i1].y + " empty = " + roadsIntersection.get(j1).compartimente[i1].isEmpty);
+
+                if(i1>0 && roadsIntersection.get(j1).compartimente[i1].isEmpty && !roadsIntersection.get(j1).compartimente[i1-1].isEmpty) {
+                    roadsIntersection.get(j1).compartimente[i1].car.color = roadsIntersection.get(j1).compartimente[i1-1].car.color;
+                    roadsIntersection.get(j1).compartimente[i1].car.width = roadsIntersection.get(j1).compartimente[i1-1].car.width;
+                    roadsIntersection.get(j1).compartimente[i1].car.height = roadsIntersection.get(j1).compartimente[i1-1].car.height;
+                    roadsIntersection.get(j1).compartimente[i1].car.x = roadsIntersection.get(j1).compartimente[i1].x;
+                    roadsIntersection.get(j1).compartimente[i1].car.y = roadsIntersection.get(j1).compartimente[i1].y;
+                    roadsIntersection.get(j1).compartimente[i1-1].isEmpty = true;
+                    roadsIntersection.get(j1).compartimente[i1].isEmpty = false;
+                }
+
+
+                if(i1 == roadsIntersection.get(j1).compartimente.length-1 && !roadsIntersection.get(j1).compartimente[i1].isEmpty ) {
+                    roads.get(roadsIntersection.get(j1).id).compartimente[0].car.color = roadsIntersection.get(j1).compartimente[i1].car.color;
+                    roads.get(roadsIntersection.get(j1).id).compartimente[0].car.width = roadsIntersection.get(j1).compartimente[i1].car.width;
+                    roads.get(roadsIntersection.get(j1).id).compartimente[0].car.height = roadsIntersection.get(j1).compartimente[i1].car.height;
+                    roads.get(roadsIntersection.get(j1).id).compartimente[0].car.x = roads.get(roadsIntersection.get(j1).id).compartimente[0].x;
+                    roads.get(roadsIntersection.get(j1).id).compartimente[0].car.y = roads.get(roadsIntersection.get(j1).id).compartimente[0].y;
+                    roadsIntersection.get(j1).compartimente[i1].isEmpty = true;
+                    roads.get(roadsIntersection.get(j1).id).compartimente[0].isEmpty = false;
+                }
+
+                //  roadsIntersection.get(j1).compartimente[i1].check = true;
+                //  }
+
+
+
+            }
+        }
+
+//AICI INCEPE
+        for(int j=0; j<roads.size(); j++) {
+
+            for(int i=roads.get(j).compartimente.length-1; i>=0; i--) {
+
+
+                if(roads.get(j).semaphore != null && roads.get(j).semaphore.isGreen) {
+                    if(i == roads.get(j).compartimente.length-1 && !roads.get(j).compartimente[i].isEmpty ) {
+
+                        if(roads.get(j).hasDirection) {
+                            int randomNR = random.nextInt(roads.get(j).directionList.length);
+
+                            if(roads.get(j).directionList[randomNR].isEmpty) {
+
+                                roads.get(j).directionList[randomNR].car.color = roads.get(j).compartimente[i].car.color;
+                                roads.get(j).directionList[randomNR].car.width = roads.get(j).compartimente[i].car.width;
+                                roads.get(j).directionList[randomNR].car.height = roads.get(j).compartimente[i].car.height;
+                                roads.get(j).directionList[randomNR].car.x = roads.get(j).directionList[randomNR].x;
+                                roads.get(j).directionList[randomNR].car.y = roads.get(j).directionList[randomNR].y;
+                                roads.get(j).directionList[randomNR].isEmpty = false;
+                                roads.get(j).compartimente[i].isEmpty = true;
+
+
                             }
 
 
@@ -1452,50 +1548,7 @@ class CreateObject {
         }
 
 
-
-
-        for(int j=0; j< roadsIntersection.size(); j++){
-
-            System.out.println("Road : " + j );
-            for(int i=roadsIntersection.get(j).compartimente.length-1; i>=0; i--){
-
-               // if (!roadsIntersection.get(j).compartimente[i].check) {
-                    System.out.println("Compartiment[" + i + "]= " + "cordX = " + roadsIntersection.get(j).compartimente[i].x + "  cordY = " + roadsIntersection.get(j).compartimente[i].y + " empty = " + roadsIntersection.get(j).compartimente[i].isEmpty);
-
-                    if(i>0 && roadsIntersection.get(j).compartimente[i].isEmpty && !roadsIntersection.get(j).compartimente[i-1].isEmpty) {
-                        roadsIntersection.get(j).compartimente[i].car.color = roadsIntersection.get(j).compartimente[i-1].car.color;
-                        roadsIntersection.get(j).compartimente[i].car.width = roadsIntersection.get(j).compartimente[i-1].car.width;
-                        roadsIntersection.get(j).compartimente[i].car.height = roadsIntersection.get(j).compartimente[i-1].car.height;
-                        roadsIntersection.get(j).compartimente[i].car.x = roadsIntersection.get(j).compartimente[i].x;
-                        roadsIntersection.get(j).compartimente[i].car.y = roadsIntersection.get(j).compartimente[i].y;
-                        roadsIntersection.get(j).compartimente[i-1].isEmpty = true;
-                        roadsIntersection.get(j).compartimente[i].isEmpty = false;
-                    }
-
-
-                    if(i == roadsIntersection.get(j).compartimente.length-1 && !roadsIntersection.get(j).compartimente[i].isEmpty ) {
-                        roads.get(roadsIntersection.get(j).id).compartimente[0].car.color = roadsIntersection.get(j).compartimente[i].car.color;
-                        roads.get(roadsIntersection.get(j).id).compartimente[0].car.width = roadsIntersection.get(j).compartimente[i].car.width;
-                        roads.get(roadsIntersection.get(j).id).compartimente[0].car.height = roadsIntersection.get(j).compartimente[i].car.height;
-                        roads.get(roadsIntersection.get(j).id).compartimente[0].car.x = roads.get(roadsIntersection.get(j).id).compartimente[0].x;
-                        roads.get(roadsIntersection.get(j).id).compartimente[0].car.y = roads.get(roadsIntersection.get(j).id).compartimente[0].y;
-                        roadsIntersection.get(j).compartimente[i].isEmpty = true;
-                        roads.get(roadsIntersection.get(j).id).compartimente[0].isEmpty = false;
-                    }
-
-                  //  roadsIntersection.get(j).compartimente[i].check = true;
-              //  }
-
-
-
-            }
-        }
-
-     /*  for(int j=0; j< roadsIntersection.size(); j++){
-            for(int i=roadsIntersection.get(j).compartimente.length-1; i>=0; i--){
-                roadsIntersection.get(j).compartimente[i].check = false;
-            }
-        }*/
+        // AICI SE INCHEIE
 
 
 
