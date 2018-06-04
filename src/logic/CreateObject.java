@@ -1042,6 +1042,98 @@ class CreateObject {
 
 
 
+        //DIRECTII BENZI - ALBU ADELA - COD SCHIMBAT DE BAR IOAN
+        Compartiment [] directionListRoad2 = new Compartiment[3];
+        directionListRoad2[0] = c_road6_0;
+        directionListRoad2[1] = c_road9_0;
+        directionListRoad2[2] = compartiment0;
+
+        Road2.directionList = directionListRoad2;
+        Road2.hasDirection = true;
+
+        Compartiment [] directionListRoad4 = new Compartiment[3];
+        directionListRoad4[0] = c_road3_0;
+        directionListRoad4[1] = compartiment0;
+        directionListRoad4[2] = c_road9_0;
+
+        Road4.directionList = directionListRoad4;
+        Road4.hasDirection = true;
+
+        Compartiment [] directionListRoad5 = new Compartiment[3];
+        directionListRoad5[0] = c_road3_0;
+        directionListRoad5[1] = c_road12_0;
+        directionListRoad5[2] = c_road9_0;
+
+        Road5.directionList = directionListRoad5;
+        Road5.hasDirection = true;
+
+        Compartiment [] directionListRoad6 = new Compartiment[3];
+        directionListRoad6[0] = c_road13_0;
+        directionListRoad6[1] = c_road16_0;
+        directionListRoad6[2] = c_road19_0;
+
+        Road6.directionList = directionListRoad6;
+        Road6.hasDirection = true;
+
+        Compartiment [] directionListRoad7 = new Compartiment[3];
+        directionListRoad7[0] = c_road13_0;
+        directionListRoad7[1] = c_road17_0;
+        directionListRoad7[2] = c_road19_0;
+
+        Road7.directionList = directionListRoad7;
+        Road7.hasDirection = true;
+
+        Compartiment [] directionListRoad8 = new Compartiment[3];
+        directionListRoad8[0] = c_road12_0;
+        directionListRoad8[1] = c_road3_0;
+        directionListRoad8[2] = c_road7_0;
+
+        Road8.directionList = directionListRoad8;
+        Road8.hasDirection = true;
+
+        Compartiment [] directionListRoad10 = new Compartiment[2];
+        directionListRoad10[0] = c_road7_0;
+        directionListRoad10[1] = c_road9_0;
+
+        Road10.directionList = directionListRoad10;
+        Road10.hasDirection = true;
+
+        Compartiment [] directionListRoad11 = new Compartiment[2];
+        directionListRoad11[0] = c_road3_0;
+        directionListRoad11[1] = c_road6_0;
+
+        Road11.directionList = directionListRoad11;
+        Road11.hasDirection = true;
+
+        Compartiment [] directionListRoad14 = new Compartiment[2];
+        directionListRoad14[0] = c_road13_0;
+        directionListRoad14[1] = c_road4_0;
+
+        Road14.directionList = directionListRoad14;
+        Road14.hasDirection = true;
+
+        Compartiment [] directionListRoad15 = new Compartiment[2];
+        directionListRoad15[0] = c_road5_0;
+        directionListRoad15[1] = c_road19_0;
+
+        Road15.directionList = directionListRoad15;
+        Road15.hasDirection = true;
+
+        Compartiment [] directionListRoad18 = new Compartiment[3];
+        directionListRoad18[0] = c_road17_0;
+        directionListRoad18[1] = c_road13_0;
+        directionListRoad18[2] = c_road5_0;
+
+        Road18.directionList = directionListRoad18;
+        Road18.hasDirection = true;
+
+
+
+
+
+
+/*
+
         //BAR IOAN
         
         Compartiment [] directionListRoad2 = new Compartiment[3];
@@ -1114,6 +1206,7 @@ class CreateObject {
         Road18.hasDirection = true;
 
 
+*/
 
 
 
@@ -1141,7 +1234,7 @@ class CreateObject {
 
         //BAR IOAN
 
-             int j;
+            /* int j;
              for (j=0; j<roadsIntersection.size(); j++) {
 
 
@@ -1159,7 +1252,7 @@ class CreateObject {
 
         }
 
-
+*/
 
     }
 
@@ -1338,15 +1431,92 @@ class CreateObject {
     static void doSimulation(){
 
 
+
+        for(int j=0; j<roads.size(); j++) {
+
+
+
+
+
+            for(int i=roads.get(j).compartimente.length-1; i>=0; i--) {
+
+                if(i>0 && roads.get(j).compartimente[i].isEmpty == true && roads.get(j).compartimente[i-1].isEmpty == false) {
+                    roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
+                    roads.get(j).compartimente[i].car.width = roads.get(j).compartimente[i-1].car.width;
+                    roads.get(j).compartimente[i].car.height = roads.get(j).compartimente[i-1].car.height;
+                    roads.get(j).compartimente[i].car.x = roads.get(j).compartimente[i].x;
+                    roads.get(j).compartimente[i].car.y = roads.get(j).compartimente[i].y;
+                    roads.get(j).compartimente[i-1].isEmpty = true;
+                    roads.get(j).compartimente[i].isEmpty = false;
+                }
+                if(j==12 || j==16 || j==15 || j==2 || j==0 || j==11 || j==18 || j==8) {
+                    if(i==roads.get(j).compartimente.length-1  && roads.get(j).compartimente[i-1].isEmpty == false) {
+                        roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
+                        roads.get(j).compartimente[i].car.width = roads.get(j).compartimente[i-1].car.width;
+                        roads.get(j).compartimente[i].car.height = roads.get(j).compartimente[i-1].car.height;
+                        roads.get(j).compartimente[i].car.x = roads.get(j).compartimente[i].x;
+                        roads.get(j).compartimente[i].car.y = roads.get(j).compartimente[i].y;
+                        roads.get(j).compartimente[i-1].isEmpty = true;
+                        roads.get(j).compartimente[i].isEmpty = false;
+                        numar_masini--;
+                    }
+
+                }
+
+                if(i==0 && roads.get(j).compartimente[i].isEmpty == true && numar_masini<20) {
+                    if(j==1 || j==7 || j==9 || j==10 || j==13 || j==14 || j==17) {
+                        boolean randomB = random.nextBoolean();
+                        if(randomB == true) {
+
+                            boolean randomB2 = random.nextBoolean();
+                            if(randomB2 == true) {
+                                int nrRandomCulori = random.nextInt(7);
+                                roads.get(j).compartimente[i].car = new Car(roads.get(j).compartimente[i].x, roads.get(j).compartimente[i].y, carColors.get(nrRandomCulori),40,40);
+                                roads.get(j).compartimente[i].isEmpty = false;
+                                numar_masini++;
+                            }
+                        }
+                    }
+                }
+
+                if(roads.get(j).semaphore != null && roads.get(j).semaphore.isGreen == true) {
+                    if(i == roads.get(j).compartimente.length-1 && roads.get(j).compartimente[i].isEmpty == false ) {
+
+                        if(roads.get(j).hasDirection == true) {
+                            int randomNR = random.nextInt(roads.get(j).directionList.length);
+
+                            if(roads.get(j).directionList[randomNR].isEmpty == true) {
+                                roads.get(j).directionList[randomNR].car.color = roads.get(j).compartimente[i].car.color;
+                                roads.get(j).directionList[randomNR].car.width = roads.get(j).compartimente[i].car.width;
+                                roads.get(j).directionList[randomNR].car.height = roads.get(j).compartimente[i].car.height;
+                                roads.get(j).directionList[randomNR].car.x = roads.get(j).directionList[randomNR].x;
+                                roads.get(j).directionList[randomNR].car.y = roads.get(j).directionList[randomNR].y;
+                                roads.get(j).directionList[randomNR].isEmpty = false;
+                                roads.get(j).compartimente[i].isEmpty = true;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+
+
+        }
+
+
+    }/*{
+
+
         for(int j=0; j<roads.size(); j++) {
 
             for(int i=roads.get(j).compartimente.length-1; i>=0; i--) {
 
-                /*
+                *//*
                     Incepand cu compartimentul numarul 2, daca este gol compartimentul si in compartimentul anterior este o masina, acea masina o muta in compartimentul actual
                     iar apoi seteaza compartimentul anterior ca fiind gol si cel actual ca fiind plin.
 
-                 */
+                 *//*
                 if(i>0 && roads.get(j).compartimente[i].isEmpty && !roads.get(j).compartimente[i-1].isEmpty) {
                     roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
                     roads.get(j).compartimente[i].car.width = roads.get(j).compartimente[i-1].car.width;
@@ -1357,10 +1527,10 @@ class CreateObject {
                     roads.get(j).compartimente[i].isEmpty = false;
                 }
 
-                /*
+                *//*
                     Daca drumul este unul prin care se iasa din harta, si masina a ajuns in capat masina respectiva se pune in ultimul compartiment care este inafara hartii
                     fara verificarea conditiei daca este liber.
-                 */
+                 *//*
                 if(j==12 || j==16 || j==15 || j==2 || j==0 || j==11 || j==18 || j==8) {
                     if(i==roads.get(j).compartimente.length-1  && !roads.get(j).compartimente[i-1].isEmpty) {
                         roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
@@ -1375,12 +1545,12 @@ class CreateObject {
 
                 }
 
-                /*
+                *//*
                  Daca suntem pe roadurile de intrare
 
                  Daca compartimentul actual este primul, este gol si pe harta avem un numar de masini mai mic decat unul indicat de noi
                  Se creeaza o noua masina, se indica ca numarul de masini de pe harta a crescut cu 1 si compartimentul este plin.
-                 */
+                 *//*
 
 
                 if(j==1 || j==7 || j==9 || j==10 || j==13 || j==14 || j==17) {
@@ -1402,12 +1572,12 @@ class CreateObject {
 
 
 
-               /* Daca drumul are semafor si este verde
+               *//* Daca drumul are semafor si este verde
                 daca suntem situati la ultimul compartiment, si acesta are o masina in el, si daca drumul are directie
                 se alege random o directie din cele ale drumului pe care suntem situati
-                daca compartimentul drumului este gol, masina se muta in el, si se indica compartimentul actual ca fiind gol dupa mutare*/
+                daca compartimentul drumului este gol, masina se muta in el, si se indica compartimentul actual ca fiind gol dupa mutare*//*
 
-/*
+*//*
                  if(roads.get(j).semaphore != null && roads.get(j).semaphore.isGreen) {
                     if(i == roads.get(j).compartimente.length-1 && !roads.get(j).compartimente[i].isEmpty ) {
 
@@ -1428,9 +1598,9 @@ class CreateObject {
                         }
                     }
                 }
-*/
+*//*
 
-/*
+*//*
                 if(roads.get(j).semaphore != null && roads.get(j).semaphore.isGreen) {
                     if(i == roads.get(j).compartimente.length-1 && !roads.get(j).compartimente[i].isEmpty ) {
 
@@ -1454,7 +1624,7 @@ class CreateObject {
                         }
                     }
                 }
-*/
+*//*
             }
         }
 
@@ -1462,18 +1632,18 @@ class CreateObject {
 
 
 
-     /*  for(int j=0; j< roadsIntersection.size(); j++){
+     *//*  for(int j=0; j< roadsIntersection.size(); j++){
             for(int i=roadsIntersection.get(j).compartimente.length-1; i>=0; i--){
                 roadsIntersection.get(j).compartimente[i].check = false;
             }
-        }*/
+        }*//*
 
 
 
 
 
 
-    }
+    }*/
 
     static void doSim(){
 

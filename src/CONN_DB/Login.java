@@ -1,9 +1,10 @@
 package CONN_DB;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JButton;
+import com.sun.deploy.util.StringUtils;
+import jdk.nashorn.internal.scripts.JO;
+import logic.World;
+
+import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
@@ -12,14 +13,14 @@ import java.awt.Window.Type;
 import java.awt.Font;
 import java.awt.Cursor;
 import javax.swing.border.MatteBorder;
-import javax.swing.JPasswordField;
-import javax.swing.ImageIcon;
+
+import static com.sun.deploy.uitoolkit.ToolkitStore.dispose;
 
 public class Login {
 
     private JFrame frame;
     private JTextField txtUserName;
-    private JPasswordField txtPassword;
+    private JTextField txtPassword;
     public static DB db;
 
 
@@ -68,7 +69,7 @@ public class Login {
         txtUserName.setBounds(202, 154, 304, 32);
         frame.getContentPane().add(txtUserName);
 
-        txtPassword = new JPasswordField();
+        txtPassword = new JTextField();
         txtPassword.setCaretColor(Color.WHITE);
         txtPassword.setFont(new Font("Verdana", Font.PLAIN, 15));
         txtPassword.setForeground(Color.WHITE);
@@ -84,12 +85,12 @@ public class Login {
         frame.getContentPane().add(lblLogin);
 
         JLabel lblUserName = new JLabel("");
-        lblUserName.setIcon(new ImageIcon("C:\\Users\\bario\\Desktop\\PROJECT_TS\\user.png"));
+        lblUserName.setIcon(new ImageIcon("C:\\Users\\bario\\Desktop\\Staffs\\PROJECT_TS\\user.png"));
         lblUserName.setBounds(139, 146, 46, 40);
         frame.getContentPane().add(lblUserName);
 
         JLabel lblPassword = new JLabel("");
-        lblPassword.setIcon(new ImageIcon("C:\\Users\\bario\\Desktop\\PROJECT_TS\\password.png"));
+        lblPassword.setIcon(new ImageIcon("C:\\Users\\bario\\Desktop\\Staffs\\PROJECT_TS\\password.png"));
         lblPassword.setBounds(139, 210, 46, 40);
         frame.getContentPane().add(lblPassword);
 
@@ -109,8 +110,19 @@ public class Login {
                 password = txtPassword.getText().toLowerCase();
 
                 try {
-                    db.register(user, password);
-                } catch (SQLException e1) {
+                    if(verificaDate(user,password)){
+                        if( db.checkLogin(user, password)){
+                            dispose();
+                            World.main();
+                        }else{
+                            JOptionPane.showMessageDialog(null,"Contul nu exista!");
+                        }
+                    }else{
+                        JOptionPane.showMessageDialog(null,"Date tastate incorect.","EROARE",JOptionPane.ERROR_MESSAGE);
+                    }
+
+
+                } catch (Exception e1) {
                     // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
@@ -128,6 +140,80 @@ public class Login {
         btnRegister.setBorderPainted(false);
         btnRegister.setBackground(new Color(33, 150, 243));
         btnRegister.setBounds(396, 332, 150, 32);
+
+        btnRegister.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String user,password;
+                user = txtUserName.getText().toLowerCase();
+                password = txtPassword.getText().toLowerCase();
+
+                try {
+
+                    if(verificaDate(user,password)){
+                        if(db.register(user, password)){
+                            JOptionPane.showMessageDialog(null,"Conexiune reusita!");
+                        }else{
+                            JOptionPane.showMessageDialog(null,"Contul deja exista!");
+                        }
+                    }else{
+                        JOptionPane.showMessageDialog(null,"Date incorecte.");
+                    }
+
+                } catch (SQLException e1) {
+                    // TODO Auto-generated catch block
+                    e1.printStackTrace();
+                    System.out.println("Eroare la register");
+                }
+            }
+        });
         frame.getContentPane().add(btnRegister);
+
+/*
+            String sir2 = "salutarea";
+            String sir [] = sir2.split("");
+
+            char p = 'a',m = 'a';
+            int max = 0, min = 999;
+        int contor = 0;
+            for(char x = 'a'; x<='z'; x++){
+                 contor = 0;
+                 if(sir2.contains(String.valueOf(x))){
+                     for(int i=0; i<sir.length; i++){
+                         if(sir[i].charAt(0) == x){
+                             contor++;
+                         }
+                     }
+                     if(contor>max){
+                         max = contor;
+                         m = x;
+                     }
+
+                     if(contor<min){
+                         min = contor;
+                         p = x;
+                     }
+                 }
+
+            }
+            System.out.println(p + " are " + min);
+        System.out.println(m + " are " + max);*/
+
     }
+
+    private boolean verificaDate(String username, String password){
+
+        if(username.compareTo("") == 0 || (username.length() < 5) || username.contains(" ")){
+            return false;
+        }else{
+            if(password.compareTo("") == 0 || password.length() < 5 || username.contains(" ")){
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+
+    }
+
 }

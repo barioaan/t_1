@@ -30,7 +30,8 @@ public class World extends JPanel implements ActionListener {
 	static Random random = new Random();
     private Timer timer = new Timer(400,this);
     static int numar_masini;
-	
+    static int timp_semafoare;
+	private JButton button1;
 
 
 	private World() {
@@ -68,7 +69,7 @@ public class World extends JPanel implements ActionListener {
 			roads.get(1).semaphore.isGreen = true;
 
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(10000);
 			} catch (InterruptedException e) {
 
 				e.printStackTrace();
@@ -84,7 +85,7 @@ public class World extends JPanel implements ActionListener {
 		btnClick.addActionListener(e -> {
 			timer.start();
 			thread.start();
-			numar_masini = -50;
+			numar_masini = -20;
 			btnClick.setEnabled(false);
 
 
@@ -118,7 +119,7 @@ public class World extends JPanel implements ActionListener {
 	}
 
 
-	public static void main(String[] args) {
+	public static void main() {
 		
 		World w = new World();
 		
