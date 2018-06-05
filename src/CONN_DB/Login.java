@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
-import static com.sun.deploy.uitoolkit.ToolkitStore.dispose;
+
 
 public class Login {
 
@@ -108,7 +108,7 @@ public class Login {
                 try {
                     if(verificaDate(user,password)){
                         if( db.checkLogin(user, password)){
-                            dispose();
+                            frame.dispose();
                             World.main();
                         }else{
                             JOptionPane.showMessageDialog(null,"Contul nu exista!");
