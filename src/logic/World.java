@@ -11,6 +11,7 @@ import java.util.Random;
 import javax.swing.*;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 import static logic.CreateObject.*;
+import java.awt.Font;
 
 public class World extends JPanel implements ActionListener {
 
@@ -189,8 +190,14 @@ public class World extends JPanel implements ActionListener {
         add(sens_unic);
         
         txtNumarMasini = new JLabel("");
-        txtNumarMasini.setBounds(380, 56, 46, 14);
+        txtNumarMasini.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        txtNumarMasini.setBounds(461, 30, 46, 14);
         add(txtNumarMasini);
+        
+        JLabel numarMasiniText = new JLabel("Numar masini: ");
+        numarMasiniText.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        numarMasiniText.setBounds(339, 30, 120, 14);
+        add(numarMasiniText);
 
 	}
 
