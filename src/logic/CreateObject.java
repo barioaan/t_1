@@ -699,6 +699,7 @@ class CreateObject {
         /*
         COMPARTIMENTE INTERSECTII  - ALBU ADELA
          */
+/*
 
         Compartiment r2_1 = new Compartiment(600, 300);
         Compartiment r2_2 = new Compartiment(600, 350);
@@ -1126,20 +1127,21 @@ class CreateObject {
 
         Road18.directionList = directionListRoad18;
         Road18.hasDirection = true;
+*/
 
 
 
 
 
 
-/*
 
-        //BAR IOAN
-        
+
+ /*       //BAR IOAN
+
         Compartiment [] directionListRoad2 = new Compartiment[3];
-        directionListRoad2[0] = r2_1;
-        directionListRoad2[1] = r2_1;
-        directionListRoad2[2] = r2_1;
+        directionListRoad2[0] = ;
+        directionListRoad2[1] = ;
+        directionListRoad2[2] = ;
         Road2.directionList = directionListRoad2;
         Road2.hasDirection = true;
 
@@ -1209,6 +1211,90 @@ class CreateObject {
 */
 
 
+        //DIRECTII BENZI - ALBU ADELA - COD SCHIMBAT DE BAR IOAN
+        Compartiment [] directionListRoad2 = new Compartiment[3];
+        directionListRoad2[0] = c_road6_0;
+        directionListRoad2[1] = c_road9_0;
+        directionListRoad2[2] = compartiment0;
+
+        Road2.directionList = directionListRoad2;
+        Road2.hasDirection = true;
+
+        Compartiment [] directionListRoad4 = new Compartiment[2];
+        directionListRoad4[0] = c_road3_0;
+        directionListRoad4[1] = compartiment0;
+
+
+        Road4.directionList = directionListRoad4;
+        Road4.hasDirection = true;
+
+        Compartiment [] directionListRoad5 = new Compartiment[2];
+        directionListRoad5[0] = c_road9_0;
+        directionListRoad5[1] = c_road12_0;
+
+
+        Road5.directionList = directionListRoad5;
+        Road5.hasDirection = true;
+
+        Compartiment [] directionListRoad6 = new Compartiment[2];
+        directionListRoad6[0] = c_road13_0;
+        directionListRoad6[1] = c_road16_0;
+
+
+        Road6.directionList = directionListRoad6;
+        Road6.hasDirection = true;
+
+        Compartiment [] directionListRoad7 = new Compartiment[2];
+        directionListRoad7[0] = c_road19_0;
+        directionListRoad7[1] = c_road17_0;
+
+
+        Road7.directionList = directionListRoad7;
+        Road7.hasDirection = true;
+
+        Compartiment [] directionListRoad8 = new Compartiment[3];
+        directionListRoad8[0] = c_road12_0;
+        directionListRoad8[1] = c_road3_0;
+        directionListRoad8[2] = c_road7_0;
+
+        Road8.directionList = directionListRoad8;
+        Road8.hasDirection = true;
+
+        Compartiment [] directionListRoad10 = new Compartiment[2];
+        directionListRoad10[0] = c_road7_0;
+        directionListRoad10[1] = c_road9_0;
+
+        Road10.directionList = directionListRoad10;
+        Road10.hasDirection = true;
+
+        Compartiment [] directionListRoad11 = new Compartiment[2];
+        directionListRoad11[0] = c_road3_0;
+        directionListRoad11[1] = c_road6_0;
+
+        Road11.directionList = directionListRoad11;
+        Road11.hasDirection = true;
+
+        Compartiment [] directionListRoad14 = new Compartiment[2];
+        directionListRoad14[0] = c_road13_0;
+        directionListRoad14[1] = c_road4_0;
+
+        Road14.directionList = directionListRoad14;
+        Road14.hasDirection = true;
+
+        Compartiment [] directionListRoad15 = new Compartiment[2];
+        directionListRoad15[0] = c_road5_0;
+        directionListRoad15[1] = c_road19_0;
+
+        Road15.directionList = directionListRoad15;
+        Road15.hasDirection = true;
+
+        Compartiment [] directionListRoad18 = new Compartiment[3];
+        directionListRoad18[0] = c_road17_0;
+        directionListRoad18[1] = c_road13_0;
+        directionListRoad18[2] = c_road5_0;
+
+        Road18.directionList = directionListRoad18;
+        Road18.hasDirection = true;
 
 
         //ADAUGARE ROAD LA LISTA DE ROADS - ALBU ADELA
