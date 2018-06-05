@@ -34,7 +34,7 @@ public class World extends JPanel implements ActionListener {
     static int numar_actual_masini = 0;
     static int timp_semafoare;
     static int ts;
-    static JLabel txtNumarMasini;
+    static JLabel txtNumarMasini, txtNumarMasini2, txtNumarMasini3, txtNumarMasini4;
 
 
 
@@ -66,6 +66,9 @@ public class World extends JPanel implements ActionListener {
 				ts = timp_semafoare;
 				for(int k=0; k<timp_semafoare; k++){
 					txtNumarMasini.setText("" + ts);
+					txtNumarMasini2.setText("" + ts);
+					txtNumarMasini3.setText("" + ts);
+					txtNumarMasini4.setText("" + ts);
 					ts--;
 					Thread.sleep(1000);
 
@@ -206,13 +209,28 @@ public class World extends JPanel implements ActionListener {
         
         txtNumarMasini = new JLabel("");
         txtNumarMasini.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        txtNumarMasini.setBounds(461, 30, 46, 14);
+        txtNumarMasini.setBounds(738, 348, 46, 14);
         add(txtNumarMasini);
         
         JLabel numarMasiniText = new JLabel("Numar masini: ");
         numarMasiniText.setFont(new Font("Tahoma", Font.PLAIN, 15));
         numarMasiniText.setBounds(339, 30, 120, 14);
         add(numarMasiniText);
+        
+        txtNumarMasini2 = new JLabel("");
+        txtNumarMasini2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        txtNumarMasini2.setBounds(549, 638, 46, 14);
+        add(txtNumarMasini2);
+        
+        txtNumarMasini3 = new JLabel("");
+        txtNumarMasini3.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        txtNumarMasini3.setBounds(1335, 355, 46, 14);
+        add(txtNumarMasini3);
+        
+        txtNumarMasini4 = new JLabel("");
+        txtNumarMasini4.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        txtNumarMasini4.setBounds(1152, 649, 46, 14);
+        add(txtNumarMasini4);
 
 	}
 
