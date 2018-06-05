@@ -110,6 +110,7 @@ public class Login {
                         if( db.checkLogin(user, password)){
                             frame.dispose();
                             World.main();
+
                         }else{
                             JOptionPane.showMessageDialog(null,"Contul nu exista!");
                         }
