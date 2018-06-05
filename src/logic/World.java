@@ -32,6 +32,8 @@ public class World extends JPanel implements ActionListener {
     static int numar_masini ;
     static int numar_actual_masini = 0;
     static int timp_semafoare;
+    
+    static JLabel txtNumarMasini;
 
 
 
@@ -185,6 +187,10 @@ public class World extends JPanel implements ActionListener {
         sens_unic.setIcon(sens);
         sens_unic.setBounds(1315, 280, 55, 55);
         add(sens_unic);
+        
+        txtNumarMasini = new JLabel("");
+        txtNumarMasini.setBounds(380, 56, 46, 14);
+        add(txtNumarMasini);
 
 	}
 
@@ -224,5 +230,4 @@ public class World extends JPanel implements ActionListener {
 
 
 	}
-
 }
