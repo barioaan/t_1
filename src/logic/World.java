@@ -29,9 +29,9 @@ public class World extends JPanel implements ActionListener {
 	private static Thread thread;
 	static Random random = new Random();
     private Timer timer = new Timer(400,this);
-    static int numar_masini;
+    static int numar_masini ;
     static int timp_semafoare;
-	private JButton button1;
+
 
 
 	private World() {
@@ -43,7 +43,11 @@ public class World extends JPanel implements ActionListener {
 
 		thread = new Thread (() -> {
 
+
 		for(int i=0; i<1000; i++) {
+
+
+
 			roads.get(9).semaphore.isGreen = true;
 			roads.get(6).semaphore.isGreen = true;
 			roads.get(13).semaphore.isGreen = true;
@@ -54,9 +58,23 @@ public class World extends JPanel implements ActionListener {
 			
 
 			try {
-				Thread.sleep(10000);
+				Thread.sleep(timp_semafoare);
 			} catch (InterruptedException e) {
 
+				e.printStackTrace();
+			}
+
+			roads.get(9).semaphore.isGreen = false;
+			roads.get(6).semaphore.isGreen = false;
+			roads.get(13).semaphore.isGreen = false;
+			roads.get(3).semaphore.isGreen = false;
+			roads.get(7).semaphore.isGreen = false;
+			roads.get(17).semaphore.isGreen = false;
+			roads.get(1).semaphore.isGreen = false;
+
+			try{
+				Thread.sleep(2000);
+			}catch (Exception e){
 				e.printStackTrace();
 			}
 
@@ -69,9 +87,23 @@ public class World extends JPanel implements ActionListener {
 			roads.get(1).semaphore.isGreen = true;
 
 			try {
-				Thread.sleep(10000);
+				Thread.sleep(timp_semafoare);
 			} catch (InterruptedException e) {
 
+				e.printStackTrace();
+			}
+
+			roads.get(9).semaphore.isGreen = false;
+			roads.get(6).semaphore.isGreen = false;
+			roads.get(13).semaphore.isGreen = false;
+			roads.get(3).semaphore.isGreen = false;
+			roads.get(7).semaphore.isGreen = false;
+			roads.get(17).semaphore.isGreen = false;
+			roads.get(1).semaphore.isGreen = false;
+
+			try{
+				Thread.sleep(2000);
+			}catch (Exception e){
 				e.printStackTrace();
 			}
 
@@ -85,20 +117,49 @@ public class World extends JPanel implements ActionListener {
 		btnClick.addActionListener(e -> {
 			timer.start();
 			thread.start();
-			numar_masini = -20;
+			numar_masini = -5;
 			btnClick.setEnabled(false);
 
 
 		});
-		btnClick.setBounds(86, 80, 89, 23);
+		btnClick.setBounds(86, 100, 89, 23);
 		add(btnClick);
 
 		JButton buttonStop = new JButton("STOP");
-		buttonStop.setBounds(213, 80, 89, 23);
+		buttonStop.setBounds(213, 100, 89, 23);
 		buttonStop.addActionListener(e -> {
 
         });
 		add(buttonStop);
+
+		JButton btnScenariu1 = new JButton("SCENARIU 1");
+		btnScenariu1.setBounds(50,50,120,20);
+		btnScenariu1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				timer.start();
+				numar_masini = -40;
+				timp_semafoare = 10000;
+				thread.start();
+
+			}
+		});
+		add(btnScenariu1);
+
+
+		JButton btnScenariu2 = new JButton("SCENARIU 2");
+		btnScenariu2.setBounds(180,50,120,20);
+		btnScenariu2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				timer.start();
+				numar_masini = -40;
+				timp_semafoare = 6000;
+				thread.start();
+
+			}
+		});
+		add(btnScenariu2);
 
         //POZA CU SCOALA - ALBU ADELA
         JLabel poza_sc = new JLabel("");

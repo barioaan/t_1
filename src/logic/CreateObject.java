@@ -1310,7 +1310,7 @@ class CreateObject {
         g.fillRect(Road2.inputPort.cordX+48, Road2.inputPort.cordY-110, 2, Road2.size);
         g.fillRect(Road9.outputPort.cordX+48, Road9.outputPort.cordY+110, 2, Road9.size);
         g.fillRect(Road19.outputPort.cordX+48, Road19.outputPort.cordY+110, 2, Road19.size);
-
+//g.setColor(Color.BLUE);
         //treceri pietoni Intersectia B - Branescu Serban
         g.fillRect(1350, Road14.outputPort.cordY+5,50, 10);
         g.fillRect(1350, Road14.outputPort.cordY+23,50, 10);
@@ -1463,7 +1463,7 @@ class CreateObject {
 
                 }
 
-                if(i==0 && roads.get(j).compartimente[i].isEmpty == true && numar_masini<20) {
+                if(i==0 && roads.get(j).compartimente[i].isEmpty == true && numar_masini < 0) {
                     if(j==1 || j==7 || j==9 || j==10 || j==13 || j==14 || j==17) {
                         boolean randomB = random.nextBoolean();
                         if(randomB == true) {
