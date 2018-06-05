@@ -1503,7 +1503,8 @@ class CreateObject {
 
 
             for(int i=roads.get(j).compartimente.length-1; i>=0; i--) {
-
+System.out.println("Numar actual masini: " + numar_actual_masini);
+System.out.println("Numar maxim de maisini: " + numar_masini);
                 if(i>0 && roads.get(j).compartimente[i].isEmpty && !roads.get(j).compartimente[i - 1].isEmpty) {
                     roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
                     roads.get(j).compartimente[i].car.width = roads.get(j).compartimente[i-1].car.width;
@@ -1514,7 +1515,7 @@ class CreateObject {
                     roads.get(j).compartimente[i].isEmpty = false;
                 }
                 if(j==12 || j==16 || j==15 || j==2 || j==0 || j==11 || j==18 || j==8) {
-                    if(i==roads.get(j).compartimente.length-1  && !roads.get(j).compartimente[i - 1].isEmpty) {
+                    /*if(i==roads.get(j).compartimente.length-1  && !roads.get(j).compartimente[i - 1].isEmpty) {
                         roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
                         roads.get(j).compartimente[i].car.width = roads.get(j).compartimente[i-1].car.width;
                         roads.get(j).compartimente[i].car.height = roads.get(j).compartimente[i-1].car.height;
@@ -1522,12 +1523,18 @@ class CreateObject {
                         roads.get(j).compartimente[i].car.y = roads.get(j).compartimente[i].y;
                         roads.get(j).compartimente[i-1].isEmpty = true;
                         roads.get(j).compartimente[i].isEmpty = false;
-                        numar_masini--;
+                        numar_actual_masini--;
+                    }*/
+                    if(i==roads.get(j).compartimente.length-1  && !roads.get(j).compartimente[i].isEmpty) {
+
+
+                        roads.get(j).compartimente[i].isEmpty = true;
+                        numar_actual_masini--;
                     }
 
                 }
 
-                if(i==0 && roads.get(j).compartimente[i].isEmpty && numar_masini < 0) {
+                if(i==0 && roads.get(j).compartimente[i].isEmpty && numar_actual_masini < numar_masini) {
                     if(j==1 || j==7 || j==9 || j==10 || j==13 || j==14 || j==17) {
                         boolean randomB = random.nextBoolean();
                         if(randomB) {
@@ -1537,7 +1544,7 @@ class CreateObject {
                                 int nrRandomCulori = random.nextInt(7);
                                 roads.get(j).compartimente[i].car = new Car(roads.get(j).compartimente[i].x, roads.get(j).compartimente[i].y, carColors.get(nrRandomCulori),40,40);
                                 roads.get(j).compartimente[i].isEmpty = false;
-                                numar_masini++;
+                                numar_actual_masini++;
                             }
                         }
                     }

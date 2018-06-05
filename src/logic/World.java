@@ -30,7 +30,9 @@ public class World extends JPanel implements ActionListener {
 	static Random random = new Random();
     private Timer timer = new Timer(400,this);
     static int numar_masini ;
+    static int numar_actual_masini = 0;
     static int timp_semafoare;
+
 
 
 
@@ -117,7 +119,7 @@ public class World extends JPanel implements ActionListener {
 		btnClick.addActionListener(e -> {
 			timer.start();
 			thread.start();
-			numar_masini = -5;
+			numar_masini = 20;
 			btnClick.setEnabled(false);
 
 
@@ -137,10 +139,14 @@ public class World extends JPanel implements ActionListener {
 		btnScenariu1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+
+
 				timer.start();
-				numar_masini = -40;
+				numar_masini = 2;
 				timp_semafoare = 10000;
-				thread.start();
+				if(!thread.isAlive()){
+					thread.start();
+				}
 
 			}
 		});
@@ -152,10 +158,13 @@ public class World extends JPanel implements ActionListener {
 		btnScenariu2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+
+
 				timer.start();
-				numar_masini = -40;
+				numar_masini = 20;
 				timp_semafoare = 6000;
-				thread.start();
+
+
 
 			}
 		});
