@@ -1527,7 +1527,6 @@ System.out.println("Numar maxim de maisini: " + numar_masini);
                     }*/
                     if(i==roads.get(j).compartimente.length-1  && !roads.get(j).compartimente[i].isEmpty) {
 
-
                         roads.get(j).compartimente[i].isEmpty = true;
                         numar_actual_masini--;
                     }
