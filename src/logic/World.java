@@ -33,8 +33,9 @@ public class World extends JPanel implements ActionListener {
     static int numar_masini ;
     static int numar_actual_masini = 0;
     static int timp_semafoare;
+	static int timerSemafoarePrincipaleVerde, timerSemafoarePrincipaleRosu ,timerSemafoareSecundareVerde, timerSemafoareSecundareRosu;
     static int ts;
-    static JLabel txtNumarMasini, txtNumarMasini2, txtNumarMasini3, txtNumarMasini4;
+    static JLabel timerSP, timerSP2, timerSP3, timerSP4;
 
 
 
@@ -51,7 +52,14 @@ public class World extends JPanel implements ActionListener {
 
 		for(int i=0; i<1000; i++) {
 
+//2 secunde inainte de a incepe semafoarele se isi schimbe starea
+			try{
+				Thread.sleep(2000);
+			}catch (Exception e){
+				e.printStackTrace();
+			}
 
+//semafoarele principale devin verde
 
 			roads.get(9).semaphore.isGreen = true;
 			roads.get(6).semaphore.isGreen = true;
@@ -63,12 +71,12 @@ public class World extends JPanel implements ActionListener {
 
 
 			try {
-				ts = timp_semafoare;
-				for(int k=0; k<timp_semafoare; k++){
-					txtNumarMasini.setText("" + ts);
-					txtNumarMasini2.setText("" + ts);
-					txtNumarMasini3.setText("" + ts);
-					txtNumarMasini4.setText("" + ts);
+				ts = timerSemafoarePrincipaleVerde;
+				for(int k=0; k<timerSemafoarePrincipaleVerde; k++){
+					timerSP.setText("" + ts);
+					timerSP2.setText("" + ts);
+					timerSP3.setText("" + ts);
+					timerSP4.setText("" + ts);
 					ts--;
 					Thread.sleep(1000);
 
@@ -78,7 +86,7 @@ public class World extends JPanel implements ActionListener {
 
 				e.printStackTrace();
 			}
-
+//toate semafoarele devin rosii pt 2 secunde
 			roads.get(9).semaphore.isGreen = false;
 			roads.get(6).semaphore.isGreen = false;
 			roads.get(13).semaphore.isGreen = false;
@@ -92,7 +100,7 @@ public class World extends JPanel implements ActionListener {
 			}catch (Exception e){
 				e.printStackTrace();
 			}
-
+//semafoarele secundare devin verzi
 			roads.get(9).semaphore.isGreen = false;
 			roads.get(6).semaphore.isGreen = false;
 			roads.get(13).semaphore.isGreen = false;
@@ -102,9 +110,9 @@ public class World extends JPanel implements ActionListener {
 			roads.get(1).semaphore.isGreen = true;
 
 			try {
-				ts = timp_semafoare;
-				for(int k=0; k<timp_semafoare; k++){
-					txtNumarMasini.setText("" + ts);
+				ts = timerSemafoarePrincipaleRosu;
+				for(int k=0; k<timerSemafoarePrincipaleRosu; k++){
+					timerSP.setText("" + ts);
 					ts--;
 					Thread.sleep(1000);
 
@@ -114,7 +122,7 @@ public class World extends JPanel implements ActionListener {
 
 				e.printStackTrace();
 			}
-
+//toate semafoarele rosii din nou
 			roads.get(9).semaphore.isGreen = false;
 			roads.get(6).semaphore.isGreen = false;
 			roads.get(13).semaphore.isGreen = false;
@@ -123,11 +131,7 @@ public class World extends JPanel implements ActionListener {
 			roads.get(17).semaphore.isGreen = false;
 			roads.get(1).semaphore.isGreen = false;
 
-			try{
-				Thread.sleep(2000);
-			}catch (Exception e){
-				e.printStackTrace();
-			}
+			
 
 		}
 
@@ -162,9 +166,14 @@ public class World extends JPanel implements ActionListener {
 
 
 				timer.start();
-				numar_masini = 2;
+				numar_masini = 15;
 				//TIMP SEMAFOARE * 1 SECUNDE
-				timp_semafoare = 10;
+
+				timerSemafoarePrincipaleVerde = 20;
+				timerSemafoarePrincipaleRosu = 15;
+
+
+
 				if(!thread.isAlive()){
 					thread.start();
 				}
@@ -207,30 +216,30 @@ public class World extends JPanel implements ActionListener {
         sens_unic.setBounds(1315, 280, 55, 55);
         add(sens_unic);
         
-        txtNumarMasini = new JLabel("");
-        txtNumarMasini.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        txtNumarMasini.setBounds(738, 348, 46, 14);
-        add(txtNumarMasini);
+        timerSP = new JLabel("");
+        timerSP.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        timerSP.setBounds(738, 348, 46, 14);
+        add(timerSP);
         
         JLabel numarMasiniText = new JLabel("Numar masini: ");
         numarMasiniText.setFont(new Font("Tahoma", Font.PLAIN, 15));
         numarMasiniText.setBounds(339, 30, 120, 14);
         add(numarMasiniText);
         
-        txtNumarMasini2 = new JLabel("");
-        txtNumarMasini2.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        txtNumarMasini2.setBounds(549, 638, 46, 14);
-        add(txtNumarMasini2);
+        timerSP2 = new JLabel("");
+        timerSP2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        timerSP2.setBounds(549, 638, 46, 14);
+        add(timerSP2);
         
-        txtNumarMasini3 = new JLabel("");
-        txtNumarMasini3.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        txtNumarMasini3.setBounds(1335, 355, 46, 14);
-        add(txtNumarMasini3);
+        timerSP3 = new JLabel("");
+        timerSP3.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        timerSP3.setBounds(1335, 355, 46, 14);
+        add(timerSP3);
         
-        txtNumarMasini4 = new JLabel("");
-        txtNumarMasini4.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        txtNumarMasini4.setBounds(1152, 649, 46, 14);
-        add(txtNumarMasini4);
+        timerSP4 = new JLabel("");
+        timerSP4.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        timerSP4.setBounds(1152, 649, 46, 14);
+        add(timerSP4);
 
 	}
 
