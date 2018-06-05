@@ -208,7 +208,7 @@ public class World extends JPanel implements ActionListener {
 
 
 		doSimulation();
-		doSim();
+		//doSim();
 		repaint();
 
 
