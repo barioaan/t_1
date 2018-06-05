@@ -33,7 +33,7 @@ public class World extends JPanel implements ActionListener {
     static int numar_masini ;
     static int numar_actual_masini = 0;
     static int timp_semafoare;
-    
+    static int ts;
     static JLabel txtNumarMasini;
 
 
@@ -60,10 +60,17 @@ public class World extends JPanel implements ActionListener {
 			roads.get(7).semaphore.isGreen = false;
 			roads.get(17).semaphore.isGreen = false;
 			roads.get(1).semaphore.isGreen = false;
-			
+
 
 			try {
-				Thread.sleep(timp_semafoare);
+				ts = timp_semafoare;
+				for(int k=0; k<timp_semafoare; k++){
+					txtNumarMasini.setText("" + ts);
+					ts--;
+					Thread.sleep(1000);
+
+				}
+
 			} catch (InterruptedException e) {
 
 				e.printStackTrace();
@@ -92,7 +99,14 @@ public class World extends JPanel implements ActionListener {
 			roads.get(1).semaphore.isGreen = true;
 
 			try {
-				Thread.sleep(timp_semafoare);
+				ts = timp_semafoare;
+				for(int k=0; k<timp_semafoare; k++){
+					txtNumarMasini.setText("" + ts);
+					ts--;
+					Thread.sleep(1000);
+
+				}
+
 			} catch (InterruptedException e) {
 
 				e.printStackTrace();
@@ -146,7 +160,8 @@ public class World extends JPanel implements ActionListener {
 
 				timer.start();
 				numar_masini = 2;
-				timp_semafoare = 10000;
+				//TIMP SEMAFOARE * 1 SECUNDE
+				timp_semafoare = 10;
 				if(!thread.isAlive()){
 					thread.start();
 				}
