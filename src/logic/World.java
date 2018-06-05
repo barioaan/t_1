@@ -35,7 +35,7 @@ public class World extends JPanel implements ActionListener {
     static int timp_semafoare;
 	static int timerSemafoarePrincipaleVerde, timerSemafoarePrincipaleRosu ,timerSemafoareSecundareVerde, timerSemafoareSecundareRosu;
     static int ts;
-    static JLabel timerSP, timerSP2, timerSP3, timerSP4;
+    static JLabel timerSP, timerSP2, timerSP3, timerSP4, timerSS, timerSS2, timerSS3;
 
 
 
@@ -72,15 +72,32 @@ public class World extends JPanel implements ActionListener {
 
 			try {
 				ts = timerSemafoarePrincipaleVerde;
+				timerSP.setText("" + ts);
+				timerSP2.setText("" + ts);
+				timerSP3.setText("" + ts);
+				timerSP4.setText("" + ts);
+				timerSS.setText("" + ts);
+				timerSS2.setText("" + ts);
+				timerSS3.setText("" + ts);
 				for(int k=0; k<timerSemafoarePrincipaleVerde; k++){
 					timerSP.setText("" + ts);
 					timerSP2.setText("" + ts);
 					timerSP3.setText("" + ts);
 					timerSP4.setText("" + ts);
+					timerSS.setText("" + ts);
+					timerSS2.setText("" + ts);
+					timerSS3.setText("" + ts);
 					ts--;
 					Thread.sleep(1000);
 
 				}
+				timerSP.setText("" + ts);
+				timerSP2.setText("" + ts);
+				timerSP3.setText("" + ts);
+				timerSP4.setText("" + ts);
+				timerSS.setText("" + ts);
+				timerSS2.setText("" + ts);
+				timerSS3.setText("" + ts);
 
 			} catch (InterruptedException e) {
 
@@ -111,12 +128,32 @@ public class World extends JPanel implements ActionListener {
 
 			try {
 				ts = timerSemafoarePrincipaleRosu;
+				timerSP.setText("" + ts);
+				timerSP2.setText("" + ts);
+				timerSP3.setText("" + ts);
+				timerSP4.setText("" + ts);
+				timerSS.setText("" + ts);
+				timerSS2.setText("" + ts);
+				timerSS3.setText("" + ts);
 				for(int k=0; k<timerSemafoarePrincipaleRosu; k++){
 					timerSP.setText("" + ts);
+					timerSP2.setText("" + ts);
+					timerSP3.setText("" + ts);
+					timerSP4.setText("" + ts);
+					timerSS.setText("" + ts);
+					timerSS2.setText("" + ts);
+					timerSS3.setText("" + ts);
 					ts--;
 					Thread.sleep(1000);
 
 				}
+				timerSP.setText("" + ts);
+				timerSP2.setText("" + ts);
+				timerSP3.setText("" + ts);
+				timerSP4.setText("" + ts);
+				timerSS.setText("" + ts);
+				timerSS2.setText("" + ts);
+				timerSS3.setText("" + ts);
 
 			} catch (InterruptedException e) {
 
@@ -216,15 +253,17 @@ public class World extends JPanel implements ActionListener {
         sens_unic.setBounds(1315, 280, 55, 55);
         add(sens_unic);
         
-        timerSP = new JLabel("");
-        timerSP.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        timerSP.setBounds(738, 348, 46, 14);
-        add(timerSP);
+        
         
         JLabel numarMasiniText = new JLabel("Numar masini: ");
         numarMasiniText.setFont(new Font("Tahoma", Font.PLAIN, 15));
         numarMasiniText.setBounds(339, 30, 120, 14);
         add(numarMasiniText);
+        
+        timerSP = new JLabel("");
+        timerSP.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        timerSP.setBounds(738, 348, 46, 14);
+        add(timerSP);
         
         timerSP2 = new JLabel("");
         timerSP2.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -233,13 +272,32 @@ public class World extends JPanel implements ActionListener {
         
         timerSP3 = new JLabel("");
         timerSP3.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        timerSP3.setBounds(1335, 355, 46, 14);
+        timerSP3.setBounds(1338, 355, 46, 14);
         add(timerSP3);
         
         timerSP4 = new JLabel("");
         timerSP4.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        timerSP4.setBounds(1152, 649, 46, 14);
+        timerSP4.setBounds(1153, 640, 46, 14);
         add(timerSP4);
+        
+        
+        
+        timerSS = new JLabel("");
+        timerSS.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        timerSS.setBounds(544, 348, 46, 14);
+        add(timerSS);
+        
+        timerSS2 = new JLabel("");
+        timerSS2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        timerSS2.setBounds(735, 638, 46, 14);
+        add(timerSS2);
+        
+        timerSS3 = new JLabel("");
+        timerSS3.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        timerSS3.setBounds(1337, 638, 46, 14);
+        add(timerSS3);
+        
+       
 
 	}
 
