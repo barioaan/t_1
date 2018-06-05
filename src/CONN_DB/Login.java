@@ -1,18 +1,14 @@
 package CONN_DB;
 
-import com.sun.deploy.util.StringUtils;
-import jdk.nashorn.internal.scripts.JO;
 import logic.World;
 
 import javax.swing.*;
+import javax.swing.border.MatteBorder;
+import java.awt.*;
+import java.awt.Window.Type;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
-import java.awt.Window.Type;
-import java.awt.Font;
-import java.awt.Cursor;
-import javax.swing.border.MatteBorder;
 
 import static com.sun.deploy.uitoolkit.ToolkitStore.dispose;
 
