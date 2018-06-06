@@ -11,6 +11,9 @@ import java.util.Random;
 import javax.swing.*;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 import static logic.CreateObject.*;
+import static logic.World.numar_actual_masini;
+import static logic.World.textArea;
+
 import java.awt.Font;
 
 public class World extends JPanel implements ActionListener {
@@ -36,6 +39,7 @@ public class World extends JPanel implements ActionListener {
 	static int timerSemafoarePrincipaleVerde, timerSemafoarePrincipaleRosu ,timerSemafoareSecundareVerde, timerSemafoareSecundareRosu;
     static int ts;
     static JLabel timerSP, timerSP2, timerSP3, timerSP4, timerSS, timerSS2, timerSS3, numarMasiniText;
+    static JTextArea textArea;
 
 
 
@@ -209,7 +213,9 @@ public class World extends JPanel implements ActionListener {
 				timerSemafoarePrincipaleVerde = 20;
 				timerSemafoarePrincipaleRosu = 15;
 
-
+				textArea.append("#NUMAR_MASINI : " + numar_masini + "\n");
+				textArea.append("#SEMAFOARE_PRINCIPALE_VERDE : " + timerSemafoarePrincipaleVerde + "\n");
+				textArea.append("#SEMAFOARE_SECUNDARE_VERDE : " + timerSemafoarePrincipaleRosu + "\n");
 
 				if(!thread.isAlive()){
 					thread.start();
@@ -295,6 +301,10 @@ public class World extends JPanel implements ActionListener {
         timerSS3.setFont(new Font("Tahoma", Font.PLAIN, 15));
         timerSS3.setBounds(1337, 638, 46, 14);
         add(timerSS3);
+        
+        textArea = new JTextArea();
+        textArea.setBounds(798, 99, 366, 200);
+        add(textArea);
         
        
 
