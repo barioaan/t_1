@@ -39,7 +39,7 @@ public class World extends JPanel implements ActionListener {
     static int ts;
     static JLabel timerSP, timerSP2, timerSP3, timerSP4, timerSS, timerSS2, timerSS3, numarMasiniText;
     static JTextArea textArea;
-    private JButton btnScenariu3;
+    private JButton btnScenariu3, btnScenariu4;
     static int timp_timer;
     static int verde_pietoni_principal, verde_pietoni_secundar;
 
@@ -399,6 +399,51 @@ public class World extends JPanel implements ActionListener {
 			}
 		});
 	    add(btnScenariu3);
+
+		btnScenariu4 = new JButton("SCENARIU 4");
+		btnScenariu4.setBounds(1170, 47, 115, 20);
+		btnScenariu4.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+
+				if(!timer.isRunning()) {
+					timer.start();
+				}
+
+				if(thread.isAlive()){
+					thread.interrupt();
+				}
+
+				timp_timer = 100;
+				timer.setDelay(timp_timer);
+				numar_masini = 10;
+
+				timerSemafoarePrincipaleVerde = 10;
+				timerSemafoarePrincipaleRosu = 7;
+				verde_pietoni_principal = 5;
+				verde_pietoni_secundar = 4;
+
+				textArea.setText(null);
+				textArea.append("\n");
+				textArea.append("\n");
+				textArea.append("####################################################\n\n");
+				textArea.append("#INTERVAL_ORAR : " + " 22:00 - 07:00 \n");
+				textArea.append("#NUMAR_MASINI : " + numar_masini + "\n");
+				textArea.append("#SEMAFOARE_PRINCIPALE_VERDE : " + timerSemafoarePrincipaleVerde + "\n");
+				textArea.append("#SEMAFOARE_SECUNDARE_VERDE : " + timerSemafoarePrincipaleRosu + "\n");
+				textArea.append("\n");
+				textArea.append("\n");
+				textArea.append("####################################################\n");
+
+
+				if(!thread.isAlive()){
+					thread.start();
+				}
+
+			}
+		});
+		add(btnScenariu4);
 
         //POZA CU SCOALA - ALBU ADELA
         JLabel poza_sc = new JLabel("");
