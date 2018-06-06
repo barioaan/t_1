@@ -11,8 +11,7 @@ import java.util.Random;
 import javax.swing.*;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 import static logic.CreateObject.*;
-import static logic.World.numar_actual_masini;
-import static logic.World.textArea;
+
 
 import java.awt.Font;
 
@@ -66,6 +65,9 @@ public class World extends JPanel implements ActionListener {
 			}
 
 			//semafoarele principale devin verde
+
+			roads.get(8).compartimente[0].pietoni = true;
+
 			roads.get(9).semaphore.isGreen = true;
 			roads.get(6).semaphore.isGreen = true;
 			roads.get(13).semaphore.isGreen = true;
@@ -108,7 +110,9 @@ public class World extends JPanel implements ActionListener {
 
 				
 			}
-			
+
+			roads.get(8).compartimente[0].pietoni = false;
+
 			//toate semafoarele devin rosii pt 2 secunde
 			roads.get(9).semaphore.isGreen = false;
 			roads.get(6).semaphore.isGreen = false;

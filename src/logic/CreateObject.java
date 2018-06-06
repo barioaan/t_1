@@ -6,7 +6,7 @@ import static logic.World.*;
 
 class CreateObject {
 
-
+static  Compartiment c1;
     static void createObjects(){
 
 
@@ -140,6 +140,8 @@ class CreateObject {
         compartimenteR1[12] = compartiment12;
         Compartiment compartiment13 = new Compartiment(-45,400);
         compartimenteR1[13] = compartiment13;
+
+
 
         Road1.compartimente = compartimenteR1;
 
@@ -373,6 +375,7 @@ class CreateObject {
         compartimenteR10[8] = c_road10_8;
         Compartiment c_road10_9 = new Compartiment(437, 550);
         compartimenteR10[9] = c_road10_9;
+
 
         Road10.compartimente = compartimenteR10;
 
@@ -1504,7 +1507,7 @@ class CreateObject {
 
             for(int i=roads.get(j).compartimente.length-1; i>=0; i--) {
 
-                if(i>0 && roads.get(j).compartimente[i].isEmpty && !roads.get(j).compartimente[i - 1].isEmpty) {
+                if(i>0 && roads.get(j).compartimente[i].isEmpty && !roads.get(j).compartimente[i - 1].isEmpty && !roads.get(j).compartimente[i].pietoni) {
                     roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
                     roads.get(j).compartimente[i].car.width = roads.get(j).compartimente[i-1].car.width;
                     roads.get(j).compartimente[i].car.height = roads.get(j).compartimente[i-1].car.height;
@@ -1562,6 +1565,13 @@ class CreateObject {
                                 roads.get(j).directionList[randomNR].car.y = roads.get(j).directionList[randomNR].y;
                                 roads.get(j).directionList[randomNR].isEmpty = false;
                                 roads.get(j).compartimente[i].isEmpty = true;
+                                roads.get(j).compartimente[i].pietoni = false;
+
+                            }
+
+                            if(roads.get(j).directionList[randomNR].isEmpty && roads.get(j).directionList[randomNR].pietoni) {
+
+                                roads.get(j).compartimente[i].pietoni = false;
                             }
                         }
                     }
