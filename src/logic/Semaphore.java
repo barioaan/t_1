@@ -1,7 +1,7 @@
 package logic;
 
 import java.awt.Color;
-
+//adela
 class Semaphore {
 	
 	Color color;

@@ -3,7 +3,7 @@ package logic;
 import java.awt.*;
 
 import static logic.World.*;
-
+//ionut
 class CreateObject {
 
     static int randomNR;
@@ -1441,6 +1441,7 @@ class CreateObject {
             }
         }
 
+/*
         g.setColor(Color.BLUE);
         g.fillOval(semaphoreP1_1.cordX, semaphoreP1_1.cordY, 25, 25);
         g.fillOval(semaphoreP1_2.cordX, semaphoreP1_2.cordY, 25, 25);
@@ -1452,6 +1453,7 @@ class CreateObject {
         g.fillOval(semaphoreP4_2.cordX, semaphoreP4_2.cordY, 25, 25);
         g.fillOval(semaphoreP5_1.cordX, semaphoreP4_1.cordY, 25, 25);
         g.fillOval(semaphoreP5_2.cordX, semaphoreP5_2.cordY, 25, 25);
+*/
 
 
 
@@ -1511,10 +1513,10 @@ class CreateObject {
                     }
                 }
             }
-            //System.out.println("Sunt toate false: " + toateFalse + " j = " + j);
+
             if(roads.get(j).hasDirection){
                 randomNR = random.nextInt(roads.get(j).directionList.length);
-                System.out.println("RANDOM NR = " + randomNR);
+
             }
 
             for(int i=roads.get(j).compartimente.length-1; i>=0; i--) {
@@ -1612,229 +1614,9 @@ class CreateObject {
         }
 
 
-    }/*{
-
-
-        for(int j=0; j<roads.size(); j++) {
-
-            for(int i=roads.get(j).compartimente.length-1; i>=0; i--) {
-
-                *//*
-                    Incepand cu compartimentul numarul 2, daca este gol compartimentul si in compartimentul anterior este o masina, acea masina o muta in compartimentul actual
-                    iar apoi seteaza compartimentul anterior ca fiind gol si cel actual ca fiind plin.
-
-                 *//*
-                if(i>0 && roads.get(j).compartimente[i].isEmpty && !roads.get(j).compartimente[i-1].isEmpty) {
-                    roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
-                    roads.get(j).compartimente[i].car.width = roads.get(j).compartimente[i-1].car.width;
-                    roads.get(j).compartimente[i].car.height = roads.get(j).compartimente[i-1].car.height;
-                    roads.get(j).compartimente[i].car.x = roads.get(j).compartimente[i].x;
-                    roads.get(j).compartimente[i].car.y = roads.get(j).compartimente[i].y;
-                    roads.get(j).compartimente[i-1].isEmpty = true;
-                    roads.get(j).compartimente[i].isEmpty = false;
-                }
-
-                *//*
-                    Daca drumul este unul prin care se iasa din harta, si masina a ajuns in capat masina respectiva se pune in ultimul compartiment care este inafara hartii
-                    fara verificarea conditiei daca este liber.
-                 *//*
-                if(j==12 || j==16 || j==15 || j==2 || j==0 || j==11 || j==18 || j==8) {
-                    if(i==roads.get(j).compartimente.length-1  && !roads.get(j).compartimente[i-1].isEmpty) {
-                        roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
-                        roads.get(j).compartimente[i].car.width = roads.get(j).compartimente[i-1].car.width;
-                        roads.get(j).compartimente[i].car.height = roads.get(j).compartimente[i-1].car.height;
-                        roads.get(j).compartimente[i].car.x = roads.get(j).compartimente[i].x;
-                        roads.get(j).compartimente[i].car.y = roads.get(j).compartimente[i].y;
-                        roads.get(j).compartimente[i-1].isEmpty = true;
-                        roads.get(j).compartimente[i].isEmpty = false;
-                        numar_masini--;
-                    }
-
-                }
-
-                *//*
-                 Daca suntem pe roadurile de intrare
-
-                 Daca compartimentul actual este primul, este gol si pe harta avem un numar de masini mai mic decat unul indicat de noi
-                 Se creeaza o noua masina, se indica ca numarul de masini de pe harta a crescut cu 1 si compartimentul este plin.
-                 *//*
-
-
-                if(j==1 || j==7 || j==9 || j==10 || j==13 || j==14 || j==17) {
-                if(i==0 && roads.get(j).compartimente[i].isEmpty && numar_masini<20) {
-
-                        boolean randomB = random.nextBoolean();
-                        if(randomB) {
-
-                            boolean randomB2 = random.nextBoolean();
-                            if(randomB2) {
-                                int nrRandomCulori = random.nextInt(7);
-                                roads.get(j).compartimente[i].car = new Car(roads.get(j).compartimente[i].x, roads.get(j).compartimente[i].y, carColors.get(nrRandomCulori),40,40);
-                                roads.get(j).compartimente[i].isEmpty = false;
-                                numar_masini++;
-                            }
-                        }
-                    }
-                }
-
-
-
-               *//* Daca drumul are semafor si este verde
-                daca suntem situati la ultimul compartiment, si acesta are o masina in el, si daca drumul are directie
-                se alege random o directie din cele ale drumului pe care suntem situati
-                daca compartimentul drumului este gol, masina se muta in el, si se indica compartimentul actual ca fiind gol dupa mutare*//*
-
-*//*
-                 if(roads.get(j).semaphore != null && roads.get(j).semaphore.isGreen) {
-                    if(i == roads.get(j).compartimente.length-1 && !roads.get(j).compartimente[i].isEmpty ) {
-
-                        if(roads.get(j).hasDirection) {
-                            int randomNR = random.nextInt(roads.get(j).directionList.length);
-
-                               if(roads.get(j).directionList[randomNR].isEmpty) {
-                                   roads.get(j).directionList[randomNR].car.color = roads.get(j).compartimente[i].car.color;
-                                   roads.get(j).directionList[randomNR].car.width = roads.get(j).compartimente[i].car.width;
-                                   roads.get(j).directionList[randomNR].car.height = roads.get(j).compartimente[i].car.height;
-                                   roads.get(j).directionList[randomNR].car.x = roads.get(j).directionList[randomNR].x;
-                                   roads.get(j).directionList[randomNR].car.y = roads.get(j).directionList[randomNR].y;
-                                   roads.get(j).directionList[randomNR].isEmpty = false;
-                                   roads.get(j).compartimente[i].isEmpty = true;
-                               }
-
-
-                        }
-                    }
-                }
-*//*
-
-*//*
-                if(roads.get(j).semaphore != null && roads.get(j).semaphore.isGreen) {
-                    if(i == roads.get(j).compartimente.length-1 && !roads.get(j).compartimente[i].isEmpty ) {
-
-                        if(roads.get(j).hasDirection) {
-                            int randomNR = random.nextInt(roads.get(j).directionList.length);
-
-                            if(roads.get(j).directionList[randomNR].isEmpty) {
-
-                                roads.get(j).directionList[randomNR].car.color = roads.get(j).compartimente[i].car.color;
-                                roads.get(j).directionList[randomNR].car.width = roads.get(j).compartimente[i].car.width;
-                                roads.get(j).directionList[randomNR].car.height = roads.get(j).compartimente[i].car.height;
-                                roads.get(j).directionList[randomNR].car.x = roads.get(j).directionList[randomNR].x;
-                                roads.get(j).directionList[randomNR].car.y = roads.get(j).directionList[randomNR].y;
-                                roads.get(j).directionList[randomNR].isEmpty = false;
-                                roads.get(j).compartimente[i].isEmpty = true;
-
-
-                            }
-
-
-                        }
-                    }
-                }
-*//*
-            }
-        }
-
-
-
-
-
-     *//*  for(int j=0; j< roadsIntersection.size(); j++){
-            for(int i=roadsIntersection.get(j).compartimente.length-1; i>=0; i--){
-                roadsIntersection.get(j).compartimente[i].check = false;
-            }
-        }*//*
-
-
-
-
-
-
-    }*/
-
-/*
-    static void doSim(){
-
-
-        for(int j1=0; j1< roadsIntersection.size(); j1++){
-
-            System.out.println("Road : " + j1 );
-            for(int i1=roadsIntersection.get(j1).compartimente.length-1; i1>=0; i1--){
-
-                // if (!roadsIntersection.get(j1).compartimente[i1].check) {
-                System.out.println("Compartiment[" + i1 + "]= " + "cordX = " + roadsIntersection.get(j1).compartimente[i1].x + "  cordY = " + roadsIntersection.get(j1).compartimente[i1].y + " empty = " + roadsIntersection.get(j1).compartimente[i1].isEmpty);
-
-                if(i1>0 && roadsIntersection.get(j1).compartimente[i1].isEmpty && !roadsIntersection.get(j1).compartimente[i1-1].isEmpty) {
-                    roadsIntersection.get(j1).compartimente[i1].car.color = roadsIntersection.get(j1).compartimente[i1-1].car.color;
-                    roadsIntersection.get(j1).compartimente[i1].car.width = roadsIntersection.get(j1).compartimente[i1-1].car.width;
-                    roadsIntersection.get(j1).compartimente[i1].car.height = roadsIntersection.get(j1).compartimente[i1-1].car.height;
-                    roadsIntersection.get(j1).compartimente[i1].car.x = roadsIntersection.get(j1).compartimente[i1].x;
-                    roadsIntersection.get(j1).compartimente[i1].car.y = roadsIntersection.get(j1).compartimente[i1].y;
-                    roadsIntersection.get(j1).compartimente[i1-1].isEmpty = true;
-                    roadsIntersection.get(j1).compartimente[i1].isEmpty = false;
-                }
-
-
-                if(i1 == roadsIntersection.get(j1).compartimente.length-1 && !roadsIntersection.get(j1).compartimente[i1].isEmpty ) {
-                    roads.get(roadsIntersection.get(j1).id).compartimente[0].car.color = roadsIntersection.get(j1).compartimente[i1].car.color;
-                    roads.get(roadsIntersection.get(j1).id).compartimente[0].car.width = roadsIntersection.get(j1).compartimente[i1].car.width;
-                    roads.get(roadsIntersection.get(j1).id).compartimente[0].car.height = roadsIntersection.get(j1).compartimente[i1].car.height;
-                    roads.get(roadsIntersection.get(j1).id).compartimente[0].car.x = roads.get(roadsIntersection.get(j1).id).compartimente[0].x;
-                    roads.get(roadsIntersection.get(j1).id).compartimente[0].car.y = roads.get(roadsIntersection.get(j1).id).compartimente[0].y;
-                    roadsIntersection.get(j1).compartimente[i1].isEmpty = true;
-                    roads.get(roadsIntersection.get(j1).id).compartimente[0].isEmpty = false;
-                }
-
-                //  roadsIntersection.get(j1).compartimente[i1].check = true;
-                //  }
-
-
-
-            }
-        }
-
-//AICI INCEPE
-        for(int j=0; j<roads.size(); j++) {
-
-            for(int i=roads.get(j).compartimente.length-1; i>=0; i--) {
-
-
-                if(roads.get(j).semaphore != null && roads.get(j).semaphore.isGreen) {
-                    if(i == roads.get(j).compartimente.length-1 && !roads.get(j).compartimente[i].isEmpty ) {
-
-                        if(roads.get(j).hasDirection) {
-                            int randomNR = random.nextInt(roads.get(j).directionList.length);
-
-                            if(roads.get(j).directionList[randomNR].isEmpty) {
-
-                                roads.get(j).directionList[randomNR].car.color = roads.get(j).compartimente[i].car.color;
-                                roads.get(j).directionList[randomNR].car.width = roads.get(j).compartimente[i].car.width;
-                                roads.get(j).directionList[randomNR].car.height = roads.get(j).compartimente[i].car.height;
-                                roads.get(j).directionList[randomNR].car.x = roads.get(j).directionList[randomNR].x;
-                                roads.get(j).directionList[randomNR].car.y = roads.get(j).directionList[randomNR].y;
-                                roads.get(j).directionList[randomNR].isEmpty = false;
-                                roads.get(j).compartimente[i].isEmpty = true;
-
-
-                            }
-
-
-                        }
-                    }
-                }
-            }
-        }
-
-
-        // AICI SE INCHEIE
-
-
-
-
-
-
     }
-*/
+
+
 
 }
 

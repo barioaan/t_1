@@ -2,7 +2,7 @@ package logic;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//adela
 public class Road {
 	
 	int size;

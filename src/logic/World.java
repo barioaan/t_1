@@ -40,7 +40,7 @@ public class World extends JPanel implements ActionListener {
     static JLabel timerSP, timerSP2, timerSP3, timerSP4, timerSS, timerSS2, timerSS3, numarMasiniText;
     static JTextArea textArea;
     private JButton btnScenariu3, btnScenariu4, btnTimer;
-    static int timp_timer;
+    static int timp_timer = 200;
     static int verde_pietoni_principal, verde_pietoni_secundar;
 
 
@@ -280,8 +280,7 @@ public class World extends JPanel implements ActionListener {
 					thread.interrupt();
 				}
 				
-				timp_timer = 100;
-				timer.setDelay(timp_timer);
+
 				numar_masini = 50;
 
 				timerSemafoarePrincipaleVerde = 20;
@@ -291,12 +290,13 @@ public class World extends JPanel implements ActionListener {
 
 				textArea.setText(null);
 				textArea.append("\n");
-				textArea.append("\n");
 				textArea.append("####################################################\n\n");
 				textArea.append("#INTERVAL_ORAR : " + " 07:00 - 09:00 | 17:00 - 19:00\n");
 				textArea.append("#NUMAR_MASINI : " + numar_masini + "\n");
 				textArea.append("#SEMAFOARE_PRINCIPALE_VERDE : " + timerSemafoarePrincipaleVerde + "\n");
 				textArea.append("#SEMAFOARE_SECUNDARE_VERDE : " + timerSemafoarePrincipaleRosu + "\n");
+				textArea.append("#SEMAFOARE_PIETONI_PRINCIPAL : " + verde_pietoni_principal + "\n");
+				textArea.append("#SEMAFOARE_PIETONI_SECUNDAR : " + verde_pietoni_secundar + "\n");
 				textArea.append("\n");
 				textArea.append("\n");
 				textArea.append("####################################################\n");
@@ -326,8 +326,7 @@ public class World extends JPanel implements ActionListener {
 					thread.interrupt();
 				}
 
-				timp_timer = 100;
-				timer.setDelay(timp_timer);
+
 				numar_masini = 35;
 
 				timerSemafoarePrincipaleVerde = 16;
@@ -337,12 +336,13 @@ public class World extends JPanel implements ActionListener {
 
 				textArea.setText(null);
 				textArea.append("\n");
-				textArea.append("\n");
 				textArea.append("####################################################\n\n");
 				textArea.append("#INTERVAL_ORAR : " + " 09:00 - 12:00 | 15:00 - 16:00 | 20:00 - 22:00\n");
 				textArea.append("#NUMAR_MASINI : " + numar_masini + "\n");
 				textArea.append("#SEMAFOARE_PRINCIPALE_VERDE : " + timerSemafoarePrincipaleVerde + "\n");
 				textArea.append("#SEMAFOARE_SECUNDARE_VERDE : " + timerSemafoarePrincipaleRosu + "\n");
+				textArea.append("#SEMAFOARE_PIETONI_PRINCIPAL : " + verde_pietoni_principal + "\n");
+				textArea.append("#SEMAFOARE_PIETONI_SECUNDAR : " + verde_pietoni_secundar + "\n");
 				textArea.append("\n");
 				textArea.append("\n");
 				textArea.append("####################################################\n");
@@ -370,8 +370,7 @@ public class World extends JPanel implements ActionListener {
 					thread.interrupt();
 				}
 
-				timp_timer = 100;
-				timer.setDelay(timp_timer);
+
 				numar_masini = 28;
 
 				timerSemafoarePrincipaleVerde = 14;
@@ -381,12 +380,13 @@ public class World extends JPanel implements ActionListener {
 
 				textArea.setText(null);
 				textArea.append("\n");
-				textArea.append("\n");
 				textArea.append("####################################################\n\n");
 				textArea.append("#INTERVAL_ORAR : " + " 12:00 - 15:00 \n");
 				textArea.append("#NUMAR_MASINI : " + numar_masini + "\n");
 				textArea.append("#SEMAFOARE_PRINCIPALE_VERDE : " + timerSemafoarePrincipaleVerde + "\n");
 				textArea.append("#SEMAFOARE_SECUNDARE_VERDE : " + timerSemafoarePrincipaleRosu + "\n");
+				textArea.append("#SEMAFOARE_PIETONI_PRINCIPAL : " + verde_pietoni_principal + "\n");
+				textArea.append("#SEMAFOARE_PIETONI_SECUNDAR : " + verde_pietoni_secundar + "\n");
 				textArea.append("\n");
 				textArea.append("\n");
 				textArea.append("####################################################\n");
@@ -415,8 +415,7 @@ public class World extends JPanel implements ActionListener {
 					thread.interrupt();
 				}
 
-				timp_timer = 100;
-				timer.setDelay(timp_timer);
+
 				numar_masini = 10;
 
 				timerSemafoarePrincipaleVerde = 10;
@@ -426,12 +425,13 @@ public class World extends JPanel implements ActionListener {
 
 				textArea.setText(null);
 				textArea.append("\n");
-				textArea.append("\n");
 				textArea.append("####################################################\n\n");
 				textArea.append("#INTERVAL_ORAR : " + " 22:00 - 07:00 \n");
 				textArea.append("#NUMAR_MASINI : " + numar_masini + "\n");
 				textArea.append("#SEMAFOARE_PRINCIPALE_VERDE : " + timerSemafoarePrincipaleVerde + "\n");
 				textArea.append("#SEMAFOARE_SECUNDARE_VERDE : " + timerSemafoarePrincipaleRosu + "\n");
+				textArea.append("#SEMAFOARE_PIETONI_PRINCIPAL : " + verde_pietoni_principal + "\n");
+				textArea.append("#SEMAFOARE_PIETONI_SECUNDAR : " + verde_pietoni_secundar + "\n");
 				textArea.append("\n");
 				textArea.append("\n");
 				textArea.append("####################################################\n");
@@ -447,6 +447,13 @@ public class World extends JPanel implements ActionListener {
 
 		btnTimer = new JButton("100");
 		btnTimer.setBounds(798, 329, 115, 20);
+		btnTimer.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				timp_timer = 100;
+				timer.setDelay(timp_timer);
+			}
+		});
 		add(btnTimer);
 
         //POZA CU SCOALA - ALBU ADELA
@@ -509,10 +516,24 @@ public class World extends JPanel implements ActionListener {
         
         JButton btnTimer2 = new JButton("400");
         btnTimer2.setBounds(923, 329, 115, 20);
+        btnTimer2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				timp_timer = 400;
+				timer.setDelay(timp_timer);
+			}
+		});
         add(btnTimer2);
         
         JButton btnTimer3 = new JButton("700");
         btnTimer3.setBounds(1049, 329, 115, 20);
+        btnTimer3.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				timp_timer = 700;
+				timer.setDelay(timp_timer);
+			}
+		});
         add(btnTimer3);
         
        

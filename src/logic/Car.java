@@ -1,7 +1,7 @@
 package logic;
 
 import java.awt.Color;
-
+//car
 class Car {
 	
 	Color color;
