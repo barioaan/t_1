@@ -35,7 +35,7 @@ public class World extends JPanel implements ActionListener {
     static int timp_semafoare;
 	static int timerSemafoarePrincipaleVerde, timerSemafoarePrincipaleRosu ,timerSemafoareSecundareVerde, timerSemafoareSecundareRosu;
     static int ts;
-    static JLabel timerSP, timerSP2, timerSP3, timerSP4, timerSS, timerSS2, timerSS3;
+    static JLabel timerSP, timerSP2, timerSP3, timerSP4, timerSS, timerSS2, timerSS3, numarMasiniText;
 
 
 
@@ -255,9 +255,9 @@ public class World extends JPanel implements ActionListener {
         
         
         
-        JLabel numarMasiniText = new JLabel("Numar masini: ");
+        numarMasiniText = new JLabel("Numar masini: ");
         numarMasiniText.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        numarMasiniText.setBounds(339, 30, 120, 14);
+        numarMasiniText.setBounds(339, 30, 200, 200);
         add(numarMasiniText);
         
         timerSP = new JLabel("");
@@ -279,12 +279,11 @@ public class World extends JPanel implements ActionListener {
         timerSP4.setFont(new Font("Tahoma", Font.PLAIN, 15));
         timerSP4.setBounds(1153, 640, 46, 14);
         add(timerSP4);
-        
-        
+
         
         timerSS = new JLabel("");
         timerSS.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        timerSS.setBounds(544, 348, 46, 14);
+        timerSS.setBounds(545, 348, 46, 14);
         add(timerSS);
         
         timerSS2 = new JLabel("");

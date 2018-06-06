@@ -1505,7 +1505,7 @@ class CreateObject {
             for(int i=roads.get(j).compartimente.length-1; i>=0; i--) {
 System.out.println("Numar actual masini: " + numar_actual_masini);
 System.out.println("Numar maxim de maisini: " + numar_masini);
-//txtNumarMasini.setText(numar_actual_masini+"");
+numarMasiniText.setText("Numarul de masini: " + numar_actual_masini+ " \n "  + "  Numarul de altceva:" + 10);
                 if(i>0 && roads.get(j).compartimente[i].isEmpty && !roads.get(j).compartimente[i - 1].isEmpty) {
                     roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
                     roads.get(j).compartimente[i].car.width = roads.get(j).compartimente[i-1].car.width;
