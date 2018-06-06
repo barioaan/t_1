@@ -577,7 +577,7 @@ class CreateObject {
         Compartiment c_road17_4 = new Compartiment(1525,550);
         compartimenteR17[4] = c_road17_4;
         Compartiment c_road17_5 = new Compartiment(1570,550);
-        compartimenteR17[5] = c_road17_5;
+        compartimenteR17[5] = c_road17_5;//
         Compartiment c_road17_6 = new Compartiment(1615,550);
         compartimenteR17[6] = c_road17_6;
         Compartiment c_road17_7 = new Compartiment(1660,550);
