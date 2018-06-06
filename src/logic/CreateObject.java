@@ -6,7 +6,7 @@ import static logic.World.*;
 
 class CreateObject {
 
-static  Compartiment c1;
+    static int randomNR;
     static void createObjects(){
 
 
@@ -1503,11 +1503,25 @@ static  Compartiment c1;
 
         for(int j=0; j<roads.size(); j++) {
 
-
+            boolean toateFalse = true;
+            if(roads.get(j).hasDirection){
+                for(int i2 = 0; i2<roads.get(j).directionList.length-1; i2++){
+                    if(roads.get(j).directionList[i2].pietoni){
+                        toateFalse = false;
+                    }
+                }
+            }
+            //System.out.println("Sunt toate false: " + toateFalse + " j = " + j);
+            if(roads.get(j).hasDirection){
+                randomNR = random.nextInt(roads.get(j).directionList.length);
+                System.out.println("RANDOM NR = " + randomNR);
+            }
 
             for(int i=roads.get(j).compartimente.length-1; i>=0; i--) {
 
-                if(i>0 && roads.get(j).compartimente[i].isEmpty && !roads.get(j).compartimente[i - 1].isEmpty && !roads.get(j).compartimente[i].pietoni) {
+
+
+                if(i>0 && roads.get(j).compartimente[i].isEmpty && !roads.get(j).compartimente[i - 1].isEmpty && !roads.get(j).compartimente[i-1].pietoni) {
                     roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
                     roads.get(j).compartimente[i].car.width = roads.get(j).compartimente[i-1].car.width;
                     roads.get(j).compartimente[i].car.height = roads.get(j).compartimente[i-1].car.height;
@@ -1515,18 +1529,13 @@ static  Compartiment c1;
                     roads.get(j).compartimente[i].car.y = roads.get(j).compartimente[i].y;
                     roads.get(j).compartimente[i-1].isEmpty = true;
                     roads.get(j).compartimente[i].isEmpty = false;
+
                 }
+
+
+
                 if(j==12 || j==16 || j==15 || j==2 || j==0 || j==11 || j==18 || j==8) {
-                    /*if(i==roads.get(j).compartimente.length-1  && !roads.get(j).compartimente[i - 1].isEmpty) {
-                        roads.get(j).compartimente[i].car.color = roads.get(j).compartimente[i-1].car.color;
-                        roads.get(j).compartimente[i].car.width = roads.get(j).compartimente[i-1].car.width;
-                        roads.get(j).compartimente[i].car.height = roads.get(j).compartimente[i-1].car.height;
-                        roads.get(j).compartimente[i].car.x = roads.get(j).compartimente[i].x;
-                        roads.get(j).compartimente[i].car.y = roads.get(j).compartimente[i].y;
-                        roads.get(j).compartimente[i-1].isEmpty = true;
-                        roads.get(j).compartimente[i].isEmpty = false;
-                        numar_actual_masini--;
-                    }*/
+
                     if(i==roads.get(j).compartimente.length-1  && !roads.get(j).compartimente[i].isEmpty) {
 
                         roads.get(j).compartimente[i].isEmpty = true;
@@ -1534,6 +1543,9 @@ static  Compartiment c1;
                     }
 
                 }
+
+
+
 
                 if(i==0 && roads.get(j).compartimente[i].isEmpty && numar_actual_masini < numar_masini) {
                     if(j==1 || j==7 || j==9 || j==10 || j==13 || j==14 || j==17) {
@@ -1552,28 +1564,44 @@ static  Compartiment c1;
                 }
 
                 if(roads.get(j).semaphore != null && roads.get(j).semaphore.isGreen) {
-                    if(i == roads.get(j).compartimente.length-1 && !roads.get(j).compartimente[i].isEmpty) {
-
+                    if(i == roads.get(j).compartimente.length-1 && !roads.get(j).compartimente[i].isEmpty ) {
                         if(roads.get(j).hasDirection) {
-                            int randomNR = random.nextInt(roads.get(j).directionList.length);
 
-                            if(roads.get(j).directionList[randomNR].isEmpty) {
-                                roads.get(j).directionList[randomNR].car.color = roads.get(j).compartimente[i].car.color;
-                                roads.get(j).directionList[randomNR].car.width = roads.get(j).compartimente[i].car.width;
-                                roads.get(j).directionList[randomNR].car.height = roads.get(j).compartimente[i].car.height;
-                                roads.get(j).directionList[randomNR].car.x = roads.get(j).directionList[randomNR].x;
-                                roads.get(j).directionList[randomNR].car.y = roads.get(j).directionList[randomNR].y;
-                                roads.get(j).directionList[randomNR].isEmpty = false;
-                                roads.get(j).compartimente[i].isEmpty = true;
-                                roads.get(j).compartimente[i].pietoni = false;
 
+
+
+                            if (!roads.get(j).compartimente[randomNR].pietoni ) {
+                                if (roads.get(j).directionList[randomNR].isEmpty) {
+                                    roads.get(j).directionList[randomNR].car.color = roads.get(j).compartimente[i].car.color;
+                                    roads.get(j).directionList[randomNR].car.width = roads.get(j).compartimente[i].car.width;
+                                    roads.get(j).directionList[randomNR].car.height = roads.get(j).compartimente[i].car.height;
+                                    roads.get(j).directionList[randomNR].car.x = roads.get(j).directionList[randomNR].x;
+                                    roads.get(j).directionList[randomNR].car.y = roads.get(j).directionList[randomNR].y;
+                                    roads.get(j).directionList[randomNR].isEmpty = false;
+                                    roads.get(j).compartimente[i].isEmpty = true;
+                                    roads.get(j).compartimente[i].pietoni = true;
+
+                                }
                             }
 
-                            if(roads.get(j).directionList[randomNR].isEmpty && roads.get(j).directionList[randomNR].pietoni) {
-
-                                roads.get(j).compartimente[i].pietoni = false;
-                            }
                         }
+
+                    }else{
+                        if(roads.get(j).hasDirection) {
+
+
+
+
+
+
+                                if (!roads.get(j).compartimente[randomNR].pietoni ) {
+                                    roads.get(j).compartimente[i].pietoni = false;
+                                }
+
+
+
+                        }
+
                     }
                 }
 

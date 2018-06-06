@@ -41,6 +41,7 @@ public class World extends JPanel implements ActionListener {
     static JTextArea textArea;
     private JButton btnScenariu3;
     static int timp_timer;
+    static int verde_pietoni_principal, verde_pietoni_secundar;
 
 
 
@@ -66,7 +67,24 @@ public class World extends JPanel implements ActionListener {
 
 			//semafoarele principale devin verde
 
+			roads.get(0).compartimente[0].pietoni = false;
+			roads.get(9).compartimente[0].pietoni = false;
+			roads.get(10).compartimente[0].pietoni = false;
+			roads.get(11).compartimente[0].pietoni = false;
+			roads.get(13).compartimente[0].pietoni = false;
+			roads.get(14).compartimente[0].pietoni = false;
+			roads.get(15).compartimente[0].pietoni = false;
+			roads.get(16).compartimente[0].pietoni = false;
+
+
+			roads.get(1).compartimente[0].pietoni = true;
+			roads.get(2).compartimente[0].pietoni = true;
+			roads.get(7).compartimente[0].pietoni = true;
 			roads.get(8).compartimente[0].pietoni = true;
+			roads.get(17).compartimente[0].pietoni = true;
+			roads.get(18).compartimente[0].pietoni = true;
+
+
 
 			roads.get(9).semaphore.isGreen = true;
 			roads.get(6).semaphore.isGreen = true;
@@ -86,6 +104,7 @@ public class World extends JPanel implements ActionListener {
 				timerSS.setText("" + ts);
 				timerSS2.setText("" + ts);
 				timerSS3.setText("" + ts);
+				roads.get(8).compartimente[0].pietoni = true;
 				for(int k=0; k<timerSemafoarePrincipaleVerde; k++){
 					timerSP.setText("" + ts);
 					timerSP2.setText("" + ts);
@@ -96,6 +115,24 @@ public class World extends JPanel implements ActionListener {
 					timerSS3.setText("" + ts);
 					ts--;
 					Thread.sleep(1000);
+					if(k==verde_pietoni_secundar-1){
+						roads.get(0).compartimente[0].pietoni = false;
+						roads.get(9).compartimente[0].pietoni = false;
+						roads.get(10).compartimente[0].pietoni = false;
+						roads.get(11).compartimente[0].pietoni = false;
+						roads.get(13).compartimente[0].pietoni = false;
+						roads.get(14).compartimente[0].pietoni = false;
+						roads.get(15).compartimente[0].pietoni = false;
+						roads.get(16).compartimente[0].pietoni = false;
+
+
+						roads.get(1).compartimente[0].pietoni = false;
+						roads.get(2).compartimente[0].pietoni = false;
+						roads.get(7).compartimente[0].pietoni = false;
+						roads.get(8).compartimente[0].pietoni = false;
+						roads.get(17).compartimente[0].pietoni = false;
+						roads.get(18).compartimente[0].pietoni = false;
+					}
 
 				}
 				timerSP.setText("" + ts);
@@ -111,7 +148,7 @@ public class World extends JPanel implements ActionListener {
 				
 			}
 
-			roads.get(8).compartimente[0].pietoni = false;
+
 
 			//toate semafoarele devin rosii pt 2 secunde
 			roads.get(9).semaphore.isGreen = false;
@@ -129,6 +166,26 @@ public class World extends JPanel implements ActionListener {
 			}
 			
 			//semafoarele secundare devin verzi
+
+			roads.get(0).compartimente[0].pietoni = true;
+			roads.get(9).compartimente[0].pietoni = true;
+			roads.get(10).compartimente[0].pietoni = true;
+			roads.get(11).compartimente[0].pietoni = true;
+			roads.get(13).compartimente[0].pietoni = true;
+			roads.get(14).compartimente[0].pietoni = true;
+			roads.get(15).compartimente[0].pietoni = true;
+			roads.get(16).compartimente[0].pietoni = true;
+
+
+			roads.get(1).compartimente[0].pietoni = false;
+			roads.get(2).compartimente[0].pietoni = false;
+			roads.get(7).compartimente[0].pietoni = false;
+			roads.get(8).compartimente[0].pietoni = false;
+			roads.get(17).compartimente[0].pietoni = false;
+			roads.get(18).compartimente[0].pietoni = false;
+
+
+
 			roads.get(9).semaphore.isGreen = false;
 			roads.get(6).semaphore.isGreen = false;
 			roads.get(13).semaphore.isGreen = false;
@@ -156,6 +213,24 @@ public class World extends JPanel implements ActionListener {
 					timerSS3.setText("" + ts);
 					ts--;
 					Thread.sleep(1000);
+					if(k==verde_pietoni_principal-1){
+						roads.get(0).compartimente[0].pietoni = false;
+						roads.get(9).compartimente[0].pietoni = false;
+						roads.get(10).compartimente[0].pietoni = false;
+						roads.get(11).compartimente[0].pietoni = false;
+						roads.get(13).compartimente[0].pietoni = false;
+						roads.get(14).compartimente[0].pietoni = false;
+						roads.get(15).compartimente[0].pietoni = false;
+						roads.get(16).compartimente[0].pietoni = false;
+
+
+						roads.get(1).compartimente[0].pietoni = false;
+						roads.get(2).compartimente[0].pietoni = false;
+						roads.get(7).compartimente[0].pietoni = false;
+						roads.get(8).compartimente[0].pietoni = false;
+						roads.get(17).compartimente[0].pietoni = false;
+						roads.get(18).compartimente[0].pietoni = false;
+					}
 
 				}
 				timerSP.setText("" + ts);
@@ -207,20 +282,21 @@ public class World extends JPanel implements ActionListener {
 				
 				timp_timer = 100;
 				timer.setDelay(timp_timer);
-				numar_masini = 100;
+				numar_masini = 50;
 
 				timerSemafoarePrincipaleVerde = 20;
 				timerSemafoarePrincipaleRosu = 15;
+				verde_pietoni_principal = 6;
+				verde_pietoni_secundar = 4;
 
 				textArea.setText(null);
 				textArea.append("\n");
 				textArea.append("\n");
 				textArea.append("####################################################\n\n");
-				textArea.append("#INTERVAL_ORAR : " + " 07:00 - 09:00\n");
+				textArea.append("#INTERVAL_ORAR : " + " 07:00 - 09:00 | 17:00 - 19:00\n");
 				textArea.append("#NUMAR_MASINI : " + numar_masini + "\n");
 				textArea.append("#SEMAFOARE_PRINCIPALE_VERDE : " + timerSemafoarePrincipaleVerde + "\n");
 				textArea.append("#SEMAFOARE_SECUNDARE_VERDE : " + timerSemafoarePrincipaleRosu + "\n");
-				textArea.append("#VITEZA_SIMULARE : " + timp_timer);
 				textArea.append("\n");
 				textArea.append("\n");
 				textArea.append("####################################################\n");
@@ -245,24 +321,25 @@ public class World extends JPanel implements ActionListener {
 				if(!timer.isRunning()) {
 					timer.start();
 				}
-				
+
 				if(thread.isAlive()){
 					thread.interrupt();
 				}
 
-				numar_masini = 5;
-				
-				timp_timer = 300;
+				timp_timer = 100;
 				timer.setDelay(timp_timer);
-				
-				timerSemafoarePrincipaleVerde = 10;
-				timerSemafoarePrincipaleRosu = 5;
+				numar_masini = 35;
+
+				timerSemafoarePrincipaleVerde = 16;
+				timerSemafoarePrincipaleRosu = 12;
+				verde_pietoni_principal = 8;
+				verde_pietoni_secundar = 6;
 
 				textArea.setText(null);
 				textArea.append("\n");
 				textArea.append("\n");
 				textArea.append("####################################################\n\n");
-				textArea.append("#INTERVAL_ORAR : " + " 09:00 - 12:00\n");
+				textArea.append("#INTERVAL_ORAR : " + " 09:00 - 12:00 | 15:00 - 16:00 | 20:00 - 22:00\n");
 				textArea.append("#NUMAR_MASINI : " + numar_masini + "\n");
 				textArea.append("#SEMAFOARE_PRINCIPALE_VERDE : " + timerSemafoarePrincipaleVerde + "\n");
 				textArea.append("#SEMAFOARE_SECUNDARE_VERDE : " + timerSemafoarePrincipaleRosu + "\n");
@@ -275,9 +352,7 @@ public class World extends JPanel implements ActionListener {
 					thread.start();
 				}
 
-
-			}
-		});
+			}		});
 		add(btnScenariu2);
 		
 		btnScenariu3 = new JButton("SCENARIU 3");
@@ -286,27 +361,29 @@ public class World extends JPanel implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
+
 				if(!timer.isRunning()) {
 					timer.start();
 				}
-				
+
 				if(thread.isAlive()){
 					thread.interrupt();
-				}	
+				}
 
-				numar_masini = 10;
-
-				timp_timer = 700;
+				timp_timer = 100;
 				timer.setDelay(timp_timer);
-				
-				timerSemafoarePrincipaleVerde = 15;
-				timerSemafoarePrincipaleRosu = 10;
+				numar_masini = 28;
+
+				timerSemafoarePrincipaleVerde = 14;
+				timerSemafoarePrincipaleRosu = 11;
+				verde_pietoni_principal = 10;
+				verde_pietoni_secundar = 8;
 
 				textArea.setText(null);
 				textArea.append("\n");
 				textArea.append("\n");
 				textArea.append("####################################################\n\n");
-				textArea.append("#INTERVAL_ORAR : " + " 15:00 - 17:00\n");
+				textArea.append("#INTERVAL_ORAR : " + " 12:00 - 15:00 \n");
 				textArea.append("#NUMAR_MASINI : " + numar_masini + "\n");
 				textArea.append("#SEMAFOARE_PRINCIPALE_VERDE : " + timerSemafoarePrincipaleVerde + "\n");
 				textArea.append("#SEMAFOARE_SECUNDARE_VERDE : " + timerSemafoarePrincipaleRosu + "\n");

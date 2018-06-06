@@ -7,6 +7,7 @@ class Compartiment {
 	Car car = new Car();
 	boolean check = false;
 	boolean pietoni = false;
+	//Compartiment setFalse;
 	Compartiment(int x, int y) {
 		super();
 		this.x = x;
