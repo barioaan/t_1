@@ -39,7 +39,7 @@ public class World extends JPanel implements ActionListener {
     static int ts;
     static JLabel timerSP, timerSP2, timerSP3, timerSP4, timerSS, timerSS2, timerSS3, numarMasiniText;
     static JTextArea textArea;
-    private JButton btnScenariu3, btnScenariu4;
+    private JButton btnScenariu3, btnScenariu4, btnTimer;
     static int timp_timer;
     static int verde_pietoni_principal, verde_pietoni_secundar;
 
@@ -444,6 +444,9 @@ public class World extends JPanel implements ActionListener {
 			}
 		});
 		add(btnScenariu4);
+
+		btnTimer = new JButton("100");
+		btnTimer.setBounds(1170, 47, 115, 20);
 
         //POZA CU SCOALA - ALBU ADELA
         JLabel poza_sc = new JLabel("");
