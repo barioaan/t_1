@@ -266,7 +266,7 @@ public class World extends JPanel implements ActionListener {
 
 
 		JButton btnScenariu1 = new JButton("SCENARIU 1");
-		btnScenariu1.setBounds(798,47,115,20);
+		btnScenariu1.setBounds(750,46,115,20);
 		btnScenariu1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -312,7 +312,7 @@ public class World extends JPanel implements ActionListener {
 
 
 		JButton btnScenariu2 = new JButton("SCENARIU 2");
-		btnScenariu2.setBounds(923,47,115,20);
+		btnScenariu2.setBounds(875,46,115,20);
 		btnScenariu2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -356,7 +356,7 @@ public class World extends JPanel implements ActionListener {
 		add(btnScenariu2);
 		
 		btnScenariu3 = new JButton("SCENARIU 3");
-	    btnScenariu3.setBounds(1049, 47, 115, 20);
+	    btnScenariu3.setBounds(1001, 46, 115, 20);
 	    btnScenariu3.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -401,7 +401,7 @@ public class World extends JPanel implements ActionListener {
 	    add(btnScenariu3);
 
 		btnScenariu4 = new JButton("SCENARIU 4");
-		btnScenariu4.setBounds(1170, 47, 115, 20);
+		btnScenariu4.setBounds(1122, 46, 115, 20);
 		btnScenariu4.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -446,7 +446,8 @@ public class World extends JPanel implements ActionListener {
 		add(btnScenariu4);
 
 		btnTimer = new JButton("100");
-		btnTimer.setBounds(1170, 47, 115, 20);
+		btnTimer.setBounds(798, 329, 115, 20);
+		add(btnTimer);
 
         //POZA CU SCOALA - ALBU ADELA
         JLabel poza_sc = new JLabel("");
@@ -505,6 +506,14 @@ public class World extends JPanel implements ActionListener {
         timerSS3.setFont(new Font("Tahoma", Font.PLAIN, 15));
         timerSS3.setBounds(1337, 638, 46, 14);
         add(timerSS3);
+        
+        JButton btnTimer2 = new JButton("400");
+        btnTimer2.setBounds(923, 329, 115, 20);
+        add(btnTimer2);
+        
+        JButton btnTimer3 = new JButton("700");
+        btnTimer3.setBounds(1049, 329, 115, 20);
+        add(btnTimer3);
         
        
 
