@@ -180,24 +180,7 @@ public class World extends JPanel implements ActionListener {
 
 
 
-		JButton btnClick = new JButton("START");
-		btnClick.addActionListener(e -> {
-			timer.start();
-			thread.start();
-			numar_masini = 20;
-			btnClick.setEnabled(false);
 
-
-		});
-		btnClick.setBounds(86, 100, 89, 23);
-		add(btnClick);
-
-		JButton buttonStop = new JButton("STOP");
-		buttonStop.setBounds(213, 100, 89, 23);
-		buttonStop.addActionListener(e -> {
-
-        });
-		add(buttonStop);
 
 		JButton btnScenariu1 = new JButton("SCENARIU 1");
 		btnScenariu1.setBounds(50,50,120,20);
@@ -205,17 +188,25 @@ public class World extends JPanel implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-
 				timer.start();
+
 				numar_masini = 15;
-				//TIMP SEMAFOARE * 1 SECUNDE
 
 				timerSemafoarePrincipaleVerde = 20;
 				timerSemafoarePrincipaleRosu = 15;
 
+				textArea.setText(null);
+				textArea.append("\n");
+				textArea.append("\n");
+				textArea.append("####################################################\n\n");
+				textArea.append("#INTERVAL_ORAR : " + " 07:00 - 09:00\n");
 				textArea.append("#NUMAR_MASINI : " + numar_masini + "\n");
 				textArea.append("#SEMAFOARE_PRINCIPALE_VERDE : " + timerSemafoarePrincipaleVerde + "\n");
 				textArea.append("#SEMAFOARE_SECUNDARE_VERDE : " + timerSemafoarePrincipaleRosu + "\n");
+				textArea.append("\n");
+				textArea.append("\n");
+				textArea.append("####################################################\n");
+
 
 				if(!thread.isAlive()){
 					thread.start();
@@ -233,9 +224,22 @@ public class World extends JPanel implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
 
 
-				timer.start();
-				numar_masini = 20;
-				timp_semafoare = 6000;
+				numar_masini = 2;
+
+				timerSemafoarePrincipaleVerde = 5;
+				timerSemafoarePrincipaleRosu = 4;
+
+				textArea.setText(null);
+				textArea.append("\n");
+				textArea.append("\n");
+				textArea.append("####################################################\n\n");
+				textArea.append("#INTERVAL_ORAR : " + " 09:00 - 12:00\n");
+				textArea.append("#NUMAR_MASINI : " + numar_masini + "\n");
+				textArea.append("#SEMAFOARE_PRINCIPALE_VERDE : " + timerSemafoarePrincipaleVerde + "\n");
+				textArea.append("#SEMAFOARE_SECUNDARE_VERDE : " + timerSemafoarePrincipaleRosu + "\n");
+				textArea.append("\n");
+				textArea.append("\n");
+				textArea.append("####################################################\n");
 
 
 
@@ -304,6 +308,7 @@ public class World extends JPanel implements ActionListener {
         
         textArea = new JTextArea();
         textArea.setBounds(798, 99, 366, 200);
+		textArea.setEditable(false);
         add(textArea);
         
        
@@ -339,7 +344,6 @@ public class World extends JPanel implements ActionListener {
 
 
 		doSimulation();
-		//doSim();
 		repaint();
 
 
